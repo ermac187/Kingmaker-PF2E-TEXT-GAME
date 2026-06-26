@@ -1,0 +1,694 @@
+{
+  "save_version": "1.9.4",
+  "chapter_completed": "pre_prologue",
+  "save_timestamp": "2026-05-22T00:00:00Z",
+  "save_label": "eRmaC — Barbarian Tactical Reach King | Character Creation Complete | Pre-Prologue Not Yet Started | KAORI CHRONICLER VARIANT (Linzi not picked)",
+  "turns_elapsed": 15,
+
+  "dm_resume_note": {
+    "instruction": "Character creation complete. Player has NOT yet entered the Pre-Prologue scene. On resume, load KM_PP_01_arrival.md and run the opening narration. build_id is set — the build gate in PP_01 will pass. Party of 5 confirmed: Erza, Atalanta, Kasumi, Aqua, Kaori. KAORI IS THE CHRONICLER-BARD — picked over Linzi at character selection. Linzi and Kaori are MUTUALLY EXCLUSIVE (never both); Linzi is NOT in this run, not recruitable. kaori_chronicler_mode = true; linzi_primary_chronicler = false. Per Route 1 (KM_Companions_Behaviors.md § LINZI-REPLACEMENT GATE), Kaori is PRESENT FROM THE START — she begins outside Restov and WITNESSES THE OPENING (the gate / Malak scene) exactly as Linzi would, then chronicles from turn 1. Her chronicle is the BOOK OF DIARY + SONG (each scene: a clear diary passage + a song she composed): use `.score` (`.book` redirects to it); entries AUTO-FILL into kaori_score_archive every scene. Her combat build IS Linzi's (Bard Maestro, identical statblock); her instrument is the violin (the Unfinished Violin → the Endless Violin on title grant). Seekers hardcoded. No scene content has fired yet.",
+    "active_player_plans": [],
+    "standing_intents": [
+      "Kaori is the chronicler-bard — never both with Linzi; Linzi is not in this run.",
+      "Kaori chronicles every scene into kaori_score_archive (diary + song); .book redirects to .score."
+    ],
+    "player_position": "Pre-game — character creation just completed. Not yet at Restov gate.",
+    "player_last_action": "Completed companion selection (A B D E C). Gear purchased. Save block being issued.",
+    "player_intent": "Enter Pre-Prologue. Load KM_PP_01_arrival.md on resume.",
+    "room_state": {},
+    "carousel_state": "none",
+    "open_threads": ["Pre-Prologue arrival scene not yet run"],
+    "level_up": "none pending",
+    "weapons": "Guisarme (primary) — 2H S 1d10 reach trip"
+  },
+
+  "delegated_orders": [],
+
+  "pending_questions": {},
+
+  "player": {
+    "name": "eRmaC",
+    "gender": "male",
+    "build_id": "Barbarian — Tactical Reach King",
+    "build": "Tactical Reach King (Giant Instinct, Heavy Plate Variant)",
+    "build_source": "KM_Builds_Barb_Bard.md",
+    "class": "Barbarian",
+    "ancestry": "Human",
+    "heritage": "Versatile Human",
+    "heritage_source": "ancestry-specific",
+    "heritage_granted_features": ["Armor Proficiency (Heavy) — worn Dragon Plate at L1"],
+    "background": "Warrior",
+    "background_skill": "Athletics",
+    "background_skill_feat": "Powerful Leap",
+    "weapon": "Guisarme (2H S, 1d10, Reach, Trip)",
+    "armor": "Dragon Plate (AC +6, Dex cap 0, -5ft speed, Bulwark, Resist fire 5, Aerynth-origin PC-locked)",
+    "deity": "none",
+    "level": 1,
+    "xp": 0,
+    "attributes": { "STR": 18, "DEX": 10, "CON": 16, "INT": 10, "WIS": 12, "CHA": 12 },
+    "hp_current": 23,
+    "hp_max": 23,
+    "hero_points": 1,
+    "ac": 19,
+    "speed": 20,
+    "saves": { "fort": 8, "ref": 3, "will": 6 },
+    "perception": 6,
+    "conditions": [],
+    "skills_trained": [
+      "Athletics +7 (Expert proficiency via class, STR +4, L1 = +7)",
+      "Intimidation +4 (Trained, CHA +1, L1 = +4)",
+      "Medicine +4 (Trained, WIS +1, L1 = +4)",
+      "Acrobatics +3 (Trained, DEX +0, L1 = +3)",
+      "Survival +4 (Trained, WIS +1, L1 = +4)",
+      "Warfare Lore +3 (Trained, INT +0, L1 = +3)"
+    ],
+    "languages": ["Common", "Sylvan"],
+    "feats": {
+      "ancestry": "Natural Ambition (grants bonus L1 class feat slot)",
+      "background": "Powerful Leap (Warrior bg auto — L1 skill feat)",
+      "class_1": "Raging Intimidation (L1 class feat slot 1)",
+      "class_1b": "Sudden Charge (L1 class feat slot 2 — Natural Ambition bonus)",
+      "general": ["Armor Proficiency (Heavy) — Versatile Human heritage general feat"],
+      "skill": ["Powerful Leap"]
+    },
+    "known_spells": [],
+    "focus_points": 0,
+    "inventory": [
+      "Adventurer's Pack (backpack, bedroll, chalk x10, flint & steel, rope 50ft hemp, rations x14, torch x5, waterskin)",
+      "Healer's Tools",
+      "Rope 50ft (hemp) — extra",
+      "Rations (1 week) — extra",
+      "Torch — extra",
+      "Bedroll — extra",
+      "Waterskin — extra"
+    ],
+    "gold": { "gp": 7, "sp": 8, "cp": 4 },
+    "marriage": {
+      "married": false, "spouse": "", "spouse_origin": "", "wedding_chapter": null,
+      "wedding_type": "", "wedding_vow_freeform": false, "anniversary_count": 0,
+      "anniversary_last_session": 0, "heir_declared": false, "heir_source": "",
+      "heir_name": "", "heir_age_narrative": 0, "separated": false,
+      "separation_reason": "", "separation_chapter": null, "partner_left_voluntarily": false,
+      "widowed": false, "widow_chapter": null, "marriage_history": [],
+      "marriage_strain": 0, "strain_scene_fired": false, "strain_confrontation_active": false
+    },
+    "notes": [
+      "Dragon Plate is Aerynth-origin artifact — PC-locked to eRmaC. Grants its own trained-Heavy proficiency as personal artifact.",
+      "Giant Instinct rage: grow to Large, +6 damage, 10ft reach on Guisarme (becomes 15ft while Large)",
+      "Bulwark trait (Dragon Plate): failed Reflex save vs area = treated as success",
+      "Raging Intimidation: can Demoralize without action cost while raging; can use Intimidating Glare/Scare to Death while raging",
+      "Sudden Charge: Stride twice then Strike as part of one action sequence",
+      "Powerful Leap: leap much farther/higher; leap as single action without running start",
+      "L1 proficiencies: Perception Expert, Fort Expert, Ref Trained, Will Trained",
+      "Boost priority: STR > CON > WIS > CHA (per build map)"
+    ]
+  },
+
+  "companions": [
+    {
+      "name": "Erza_Scarlet",
+      "build_id": "NEW_001",
+      "class": "Fighter (Warrior bg)",
+      "level": 1,
+      "hp_current": 19,
+      "hp_max": 19,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Atalanta",
+      "build_id": "NEW_002",
+      "class": "Magus (Starlit Span)",
+      "level": 1,
+      "hp_current": 24,
+      "hp_max": 24,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Kasumi",
+      "build_id": "NEW_004",
+      "class": "Rogue (Thief)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Aqua",
+      "build_id": "NEW_005",
+      "class": "Cleric (Cloistered)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Kaori_Miyazono",
+      "build_id": "NEW_003",
+      "class": "Bard (Maestro) / CHRONICLER",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": ["Violin — \"the Unfinished Violin\" (becomes \"the Endless Violin\" on title grant; played with its bow)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    }
+  ],
+
+  "companions_selected": ["Erza_Scarlet", "Atalanta", "Kasumi", "Aqua", "Kaori_Miyazono"],
+  "companions_not_picked": ["Linzi", "Velvet_Crowe", "Amiri", "Valerie", "Harrim", "Jaethal"],
+  "linzi_replacement": "Kaori_Miyazono",
+  "linzi_replacement_letter": "C",
+  "chronicler_active": true,
+  "kaori_chronicler_mode": true,
+  "linzi_primary_chronicler": false,
+  "linzi_replacement_gate_fired": true,
+  "kaori_score_archive": [],
+  "notebook_entries": [],
+  "pick6_dropped": "DEPRECATED — use companions_not_picked instead",
+  "manor_companions_joined": "DEPRECATED — Manor 5 now in open pool, see companions_selected",
+  "quest_locked_joined": [],
+
+  "five_seekers": {
+    "seeker_1": "Morgan le Fay",
+    "seeker_2": "Cagliostro",
+    "seeker_3": "Esdeath",
+    "seeker_4": "Jeanne Alter",
+    "seeker_5": "Medusa"
+  },
+
+  "npc_threads": {},
+
+  "romance": {
+    "active_romance": "none",
+    "companions": {
+      "Erza_Scarlet": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0,
+        "cheating_detected": false, "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      },
+      "Atalanta": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0,
+        "cheating_detected": false, "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      },
+      "Kasumi": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0,
+        "cheating_detected": false, "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      },
+      "Aqua": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0,
+        "cheating_detected": false, "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      },
+      "Kaori_Miyazono": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0,
+        "cheating_detected": false, "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      }
+    }
+  },
+
+  "companion_quests": {
+    "Kaori_Miyazono": {
+      "status": "active_chronicler",
+      "kaori_opus_named": false,
+      "kaori_opus_name": "",
+      "kaori_opus_performed": false,
+      "kaori_illness_disclosed": false
+    }
+  },
+
+  "active_quests": [],
+  "completed_quests": [],
+  "npc_relations": {},
+
+  "kingdom": {
+    "name": "",
+    "founded": false,
+    "ruler_title": "",
+    "advisors": {},
+    "stats": { "economy": 0, "loyalty": 0, "stability": 0, "unrest": 0 },
+    "buildings": [],
+    "active_events": [],
+    "completed_events": [],
+    "treasury": { "gp": 0 },
+    "army_units": [],
+    "prestige_upgrades": [],
+    "pending_modifiers": []
+  },
+
+  "crafting": {
+    "known_formulas": [],
+    "in_progress": []
+  },
+
+  "story_flags": {
+    "gate_entry": "",
+    "gate_remanned_by": "",
+    "malak_arrested": false,
+    "malak_in_player_custody": false,
+    "malak_fled": false,
+    "malak_broken": false,
+    "malak_contact_revealed": false,
+    "malak_broke_first": false,
+    "malak_found_letter_himself": false,
+    "malak_deal_made": false,
+    "malak_bribe_evidence": false,
+    "parchment_source": "unknown",
+    "parchment_recovered": false,
+    "parchment_on_malak_person": false,
+    "malak_escort": {
+      "player_escorting": false,
+      "kesten_joined_escort": false,
+      "biggs_in_escort": false,
+      "wedge_in_escort": false,
+      "escort_note": ""
+    },
+    "malak_custody_detail": "",
+    "kesten_met": false,
+    "kesten_searched_malak": false,
+    "kesten_delivered_evidence": false,
+    "kesten_respect": false,
+    "biggs_respect": false,
+    "kassil_met": false,
+    "kassil_first_impression": "neutral",
+    "arrived_with_kassil": false,
+    "prison_arc": false,
+    "arrived_late": false,
+    "player_clean_hands": false,
+    "second_hero_witnessed": false,
+    "second_hero_name": "",
+    "tartuccio_knows_player_is_aware": false,
+    "tartuccio_team": "five_seekers",
+    "tartuccio_spy_discovered": false,
+    "tartuccio_spy_discovery_method": "",
+    "tartuccio_plot_armor_intact": true,
+    "tartuccio_recruited_seekers": false,
+    "malak_coin_purse_assessed": false,
+    "jail_detour_taken": false,
+    "five_seekers_freed_by_player": false,
+    "five_seekers_freed_by_jamandi": false,
+    "five_seekers_released_late": false,
+    "kesten_dispatched_to_jail": false,
+    "drevic_released_on": "",
+    "public_reputation": 0,
+    "reputation_tier": "UNKNOWN",
+    "reputation_deeds": [],
+    "reputation_notes": "",
+    "marriage": {
+      "married": false,
+      "spouse": "",
+      "spouse_origin": "",
+      "wedding_chapter": null,
+      "wedding_type": "",
+      "wedding_vow_freeform": false,
+      "anniversary_count": 0,
+      "anniversary_last_session": 0,
+      "heir_declared": false,
+      "heir_source": "",
+      "heir_name": "",
+      "heir_age_narrative": 0,
+      "separated": false,
+      "separation_reason": "",
+      "separation_chapter": null,
+      "partner_left_voluntarily": false,
+      "widowed": false,
+      "widow_chapter": null,
+      "marriage_history": [],
+      "marriage_strain": 0,
+      "strain_scene_fired": false,
+      "strain_confrontation_active": false
+    },
+    "jealousy": {
+      "love_triangle_active": false,
+      "competing_companions": [],
+      "tier_reached": 0,
+      "open_arrangement": false,
+      "open_partners": [],
+      "secretly_aware": {},
+      "resolution_attempts": [],
+      "jealousy_resolved": false,
+      "resolution_session": null
+    },
+    "weapons_in_garden": false,
+    "promises": [],
+    "dialogue_choices": [],
+    "linzi_witnessed_gate": false,
+    "kaori_witnessed_gate": false,
+    "tutorial_pickpocket_resolved": "",
+    "tutorial_thief_gender": "",
+    "tutorial_thief_class": "",
+    "feast_approval": 0,
+    "feast_companions_satisfied": [],
+    "feast_companions_unsatisfied": [],
+    "feast_companions_declared": [],
+    "night_attack_outcome": "",
+    "jamandi_survived": true,
+    "oleg_met": false,
+    "stag_lord_known": false,
+    "irovetti_letter_found": false
+  },
+
+  "pre_prologue_state": {
+    "active": true,
+    "malak_anger": 0,
+    "biggs_drift": 0,
+    "wedge_drift": 0,
+    "gate_window": "open",
+    "tutorial_state": "pending",
+    "tutorial_outcome": "",
+    "linzi_beats_fired": [],
+    "perception_tells_revealed": [],
+    "companions_witnessed": [],
+    "malak_priority_violations": [],
+    "scene_phase": "not_yet_started",
+    "exit_trigger": "enters_jamandi_manor"
+  },
+
+  "scene_log": [
+    {
+      "scene_id": "char_create",
+      "scene_label": "Character Creation — eRmaC Barbarian Tactical Reach King",
+      "entered_at_turn": 1,
+      "exited_at_turn": 14,
+      "key_events": [
+        "Class selected: Barbarian (Build 1 — Tactical Reach King)",
+        "Ancestry: Human (Versatile Human heritage)",
+        "Heritage general feat: Armor Proficiency (Heavy)",
+        "Weapon: Guisarme (Cat C — reach, trip)",
+        "Armor: Dragon Plate (PC-locked Aerynth artifact)",
+        "Background: Warrior (STR/CON, Athletics, Warfare Lore, Powerful Leap L1)",
+        "Skills: Intimidation, Medicine, Acrobatics, Survival (4 free picks + Athletics locked + Warfare Lore)",
+        "Stats finalized: STR 18 / DEX 10 / CON 16 / INT 10 / WIS 12 / CHA 12",
+        "Language bonus: Sylvan",
+        "Ancestry feat: Natural Ambition (bonus class feat slot)",
+        "Class feat 1: Raging Intimidation",
+        "Class feat 2: Sudden Charge (Natural Ambition slot)",
+        "Gear: Adventurer's Pack + Healer's Tools + extra rope/rations/torch/bedroll/waterskin",
+        "Gold remaining: 7gp 8sp 4cp",
+        "Companions picked: Erza Scarlet (A), Atalanta (B), Kasumi (D), Aqua (E), Kaori (C)",
+        "Kaori IS in party as the CHRONICLER-BARD — picked over Linzi (mutually exclusive, never both). kaori_chronicler_mode true; linzi_primary_chronicler false; Linzi NOT in run.",
+        "Seekers hardcoded: Morgan le Fay, Cagliostro, Esdeath, Jeanne Alter, Medusa"
+      ],
+      "outcome": "Character creation complete. Ready for Pre-Prologue arrival scene."
+    }
+  ],
+
+  "dice_log": [
+    {
+      "turn": 0,
+      "scene_id": "char_create",
+      "actor": "system",
+      "check": "no rolls — character creation only",
+      "dc": 0,
+      "modifier": 0,
+      "raw_roll": 0,
+      "total": 0,
+      "result": "n/a",
+      "consequence": "no rolls fired during character creation"
+    }
+  ],
+
+  "dialogue_log_by_npc": {
+    "Malak": [],
+    "Biggs": [],
+    "Wedge": [],
+    "Kaori": [],
+    "Squire_Aldric": [],
+    "Kesten": [],
+    "Kassil": [],
+    "Jamandi": [],
+    "Tartuccio": []
+  },
+
+  "decision_log": [
+    {
+      "turn": 1, "scene_id": "char_create",
+      "prompt_summary": "Class selection — 27 classes offered",
+      "options_offered": 27,
+      "player_choice": "3 — Barbarian",
+      "consequence": "Barbarian build list presented"
+    },
+    {
+      "turn": 2, "scene_id": "char_create",
+      "prompt_summary": "Barbarian build selection — 10 builds offered",
+      "options_offered": 10,
+      "player_choice": "1 — Tactical Reach King",
+      "consequence": "Build confirmed. Giant Instinct, Guisarme, Full Plate route."
+    },
+    {
+      "turn": 3, "scene_id": "char_create",
+      "prompt_summary": "Ancestry selection — 10 race options shown",
+      "options_offered": 10,
+      "player_choice": "1 — Human (Versatile Human)",
+      "consequence": "Human selected. Heritage prompt queued."
+    },
+    {
+      "turn": 4, "scene_id": "char_create",
+      "prompt_summary": "Heritage selection — 3 Human heritages + Versatile option",
+      "options_offered": 4,
+      "player_choice": "V — Versatile Human",
+      "consequence": "Versatile Human confirmed. Armor Proficiency (Heavy) granted as L1 general feat."
+    },
+    {
+      "turn": 5, "scene_id": "char_create",
+      "prompt_summary": "Weapon selection — Category C (14 options)",
+      "options_offered": 14,
+      "player_choice": "5 — Guisarme (2H S 1d10 reach trip)",
+      "consequence": "Guisarme locked as primary weapon."
+    },
+    {
+      "turn": 6, "scene_id": "char_create",
+      "prompt_summary": "Armor selection — 11 options (0-10)",
+      "options_offered": 11,
+      "player_choice": "10 — Dragon Plate",
+      "consequence": "Dragon Plate locked. AC 19, Bulwark, Resist fire 5, -5ft speed. Aerynth artifact."
+    },
+    {
+      "turn": 7, "scene_id": "char_create",
+      "prompt_summary": "Background selection — 42 options",
+      "options_offered": 42,
+      "player_choice": "42 — Warrior (STR/CON, Athletics, Warfare Lore, Powerful Leap)",
+      "consequence": "Warrior background locked. Athletics overlap → +1 free skill pick."
+    },
+    {
+      "turn": 8, "scene_id": "char_create",
+      "prompt_summary": "Skill selection — 4 free picks (K/S/?)",
+      "options_offered": 3,
+      "player_choice": "Custom: Intimidation, Medicine, Acrobatics, Survival",
+      "consequence": "4 free skills locked. Full trained list: Athletics, Intimidation, Medicine, Acrobatics, Survival, Warfare Lore."
+    },
+    {
+      "turn": 9, "scene_id": "char_create",
+      "prompt_summary": "Ability boost allocation — 6 free boosts (Ancestry x2 + Standard x4)",
+      "options_offered": 6,
+      "player_choice": "Ancestry: CON, STR. Standard: WIS, STR, CON, CHA",
+      "consequence": "Final stats: STR 18 / DEX 10 / CON 16 / INT 10 / WIS 12 / CHA 12"
+    },
+    {
+      "turn": 10, "scene_id": "char_create",
+      "prompt_summary": "Language selection — 12 options",
+      "options_offered": 12,
+      "player_choice": "3 — Sylvan",
+      "consequence": "Languages: Common, Sylvan"
+    },
+    {
+      "turn": 11, "scene_id": "char_create",
+      "prompt_summary": "Ancestry feat — Human L1 feats (7 options)",
+      "options_offered": 7,
+      "player_choice": "1 — Natural Ambition",
+      "consequence": "Natural Ambition grants bonus L1 class feat slot."
+    },
+    {
+      "turn": 12, "scene_id": "char_create",
+      "prompt_summary": "L1 Class feat slot 1",
+      "options_offered": 6,
+      "player_choice": "1 — Raging Intimidation",
+      "consequence": "Raging Intimidation locked."
+    },
+    {
+      "turn": 13, "scene_id": "char_create",
+      "prompt_summary": "L1 Class feat slot 2 (Natural Ambition bonus)",
+      "options_offered": 5,
+      "player_choice": "2 — Sudden Charge",
+      "consequence": "Sudden Charge locked."
+    },
+    {
+      "turn": 14, "scene_id": "char_create",
+      "prompt_summary": "Starting gear — B (Buy your own, 15gp budget)",
+      "options_offered": 27,
+      "player_choice": "Adventurer's Pack, Healer's Tools, rope, rations, torch, bedroll, waterskin",
+      "consequence": "Gear locked. 7gp 8sp 4cp remaining."
+    },
+    {
+      "turn": 15, "scene_id": "char_create",
+      "prompt_summary": "Companion selection — Pick 5 of 11",
+      "options_offered": 11,
+      "player_choice": "A B D E C — Erza, Atalanta, Kasumi, Aqua, Kaori",
+      "consequence": "Party of 5 confirmed. Kaori present as the CHRONICLER-BARD (picked over Linzi; never both). kaori_chronicler_mode true. Not-picked: Linzi, Velvet, Amiri, Valerie, Harrim, Jaethal."
+    }
+  ],
+
+  "perception_log": [
+    {
+      "turn": 0,
+      "target": "none — character creation, no perception rolls",
+      "dc": 0,
+      "rolled": 0,
+      "tell_revealed": ""
+    }
+  ],
+
+  "loot_log": [
+    {
+      "turn": 0,
+      "source": "starting gear purchase",
+      "items": ["Adventurer's Pack", "Healer's Tools", "Rope 50ft (extra)", "Rations 1wk (extra)", "Torch (extra)", "Bedroll (extra)", "Waterskin (extra)"],
+      "gold_added": { "gp": 0, "sp": 0, "cp": 0 },
+      "hp_award_loot": false
+    }
+  ],
+
+  "hp_ledger": [
+    {
+      "turn": 0,
+      "trigger": "character creation — base HP",
+      "awarded": 23,
+      "pool_after": 23,
+      "overflow_after": 0
+    }
+  ],
+
+  "xp_ledger": [
+    {
+      "turn": 0,
+      "source": "character creation — no XP yet",
+      "amount": 0,
+      "running_total": 0
+    }
+  ],
+
+  "fail_log": [],
+
+  "dispositions": {
+    "merciful": 0,
+    "ruthless": 0,
+    "cunning": 0,
+    "blunt": 0,
+    "scholarly": 0
+  },
+
+  "companion_titles": {},
+
+  "pending_hp_loot_rolls": 0,
+  "pending_overflow": 0,
+  "dream_log": [],
+  "dream_cooldown": 0,
+  "player_legacy": [],
+
+  "current_chapter": "pre_prologue",
+  "current_scene": "char_create_complete",
+  "current_location": "Restov — South Gate (not yet entered)",
+  "discovered_locations": [],
+
+  "party_formation": {
+    "vanguard": ["eRmaC", "Erza_Scarlet", "Atalanta", "", "", ""],
+    "rearguard": ["Kasumi", "Aqua", "Kaori_Miyazono", "", "", ""],
+    "reserve": [],
+    "reserve_activities": {},
+    "combat_formation": "shield_wall",
+    "custom_positions": {}
+  },
+
+  "expedition_funds": 0,
+  "injuries": [],
+
+  "passive_jealousy": {
+    "placeholder": {
+      "heat": 0,
+      "rival": "",
+      "last_trigger": "",
+      "behavior_tier": "none",
+      "boiling_point": 10,
+      "confrontation_fired": false
+    }
+  },
+
+  "companion_rivalry": {
+    "placeholder": {
+      "tier": 0,
+      "cause": "",
+      "last_event": "",
+      "combat_cohesion": true,
+      "mutual_respect": false,
+      "resolution": null
+    }
+  },
+
+  "date_log": [],
+  "dates_this_chapter": 0,
+
+  "companion_fights": {
+    "placeholder": {
+      "fight_active": false,
+      "fight_trigger": "",
+      "fight_chapter": null,
+      "posture_used": "",
+      "paused_duration": 0,
+      "paused_chapters_remaining": 0,
+      "grand_gesture_available": true,
+      "agenda_ignored_count": 0,
+      "mend_attempts": []
+    }
+  },
+
+  "game_options": {
+    "leveling_mode": "manual",
+    "companion_leveling_mode": "auto",
+    "companion_combat": "auto",
+    "response_length": "medium",
+    "min_paragraphs": 4,
+    "max_paragraphs": 6,
+    "npc_dialogue_beats_min": 6,
+    "tts_mode": true
+  }
+}

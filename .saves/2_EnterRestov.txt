@@ -1,0 +1,1366 @@
+{
+  "save_version": "1.9.4",
+  "chapter_completed": "pre_prologue",
+  "save_timestamp": "2026-06-04T14:00:00Z",
+  "save_label": "eRmaC — Barbarian Tactical Reach King | Pre-Prologue Gate Complete | Path E Shackling | Malak Arrested | XP 1350 | PP_08 Exit Gate Fired | LELIANA CHRONICLER",
+  "turns_elapsed": 27,
+  "dm_resume_note": {
+    "instruction": "Pre-Prologue gate scene complete. PATH E (Shackling) confirmed. gate_entry=shackling. Malak in player custody — shackled, walking under own power, uninjured (28/28 HP), DENIAL stage active. leliana_witnessed_gate=TRUE. gate_remanned_by=wedge (Woody and Wang on arch duty per Wedge signal). directive_two_uncovered=TRUE. Parchment NOT yet searched — parchment_source=unknown. Coin purse not assessed. Biggs and Wedge allied. biggs_crowd_hero=TRUE, wedge_crowd_hero=TRUE. jamandi_pre_impression=heard about it first (grants +2 Diplomacy on first feast conversation with Jamandi). public_reputation=8 (FAVORABLE). XP=1350 total. Hero Points 3/3 pool full. pending_overflow=2 (two overflow Hero Point loot rolls owed — type .loot to claim). Level 2 available — manual leveling; player has not declared .levelup. PP_08 exit gate fired this session. Awaiting .continue to load PP_09 (Restov walk route). PP_09 offers four route options: direct to manor / scenic / via jail / jail then manor. JAIL ROUTE IS THE ONLY PATH TO THE FIVE SEEKERS before the feast — five_seekers_freed_by_player=FALSE currently; do NOT skip the PP_09 route menu. Leliana is the active chronicler-bard (not Linzi — Linzi is not in this run). Do NOT auto-march Malak to the manor; wait for player's walk route choice in PP_09.",
+    "active_player_plans": [],
+    "standing_intents": [
+      "Leliana is the chronicler-bard for this run. Linzi is not in this run. Never treat Linzi as present or as the default chronicler.",
+      "Malak escort to Lady Jamandi pending — player will choose route in PP_09 walk route menu."
+    ],
+    "player_position": "Restov — East Gate arch, entering city. Malak shackled, Biggs holding chain.",
+    "player_last_action": "ARM + TRIANGLE FORMATION WITH ME ON MALAK + BIGGS SHACKLE HIM + WEDGE SIGNAL ARCHERS TO GATE DUTY — military formation commands. Then: I take Malak into Restov.",
+    "player_intent": "Escort shackled Malak to Lady Jamandi at the Aldori manor.",
+    "room_state": {
+      "Malak": "shackled, walking under own power, uninjured, DENIAL stage active, in player custody at East Gate arch",
+      "Biggs": "holds Malak's chain, crowd hero, positive disposition toward player, escorting",
+      "Wedge": "re-assigned to gate coordination — signaled Woody and Wang to arch duty; positive disposition; mirrors Biggs",
+      "Woody_Wang": "on arch duty above row 1, east gate manned per Wedge signal",
+      "Willy_Johnson": "posted on left wall; no shots fired this scene",
+      "Leliana": "journal closed, lute case on back, walking at observation distance behind procession, gate scene entry logged to leliana_ballad_cycle"
+    },
+    "carousel_state": "pre-feast — no carousel active; companions not yet met at feast",
+    "open_threads": [
+      "Malak unsearched — parchment and coin purse on his person; search available during PP_09 escort if player chooses",
+      "Malak in DENIAL stage — ANGER, BARGAINING, DESPAIR, ACCEPTANCE stages will cycle during escort march (PP_09)",
+      "Five seekers currently in jail — five_seekers_freed_by_player=FALSE; reachable ONLY via PP_09 jail route option",
+      "Overflow Hero Points: 2 pending loot rolls (type .loot to claim each)",
+      "Level 2 available — XP 1350; manual leveling; player has not declared .levelup"
+    ],
+    "level_up": "Level 2 available — 1350 XP vs 1000 threshold; manual leveling; player has not declared .levelup",
+    "weapons": "Guisarme (primary, 2H S, 1d10, Reach, Trip) — carried, sheathed at back"
+  },
+  "delegated_orders": [],
+  "pending_questions": {},
+  "player": {
+    "name": "eRmaC",
+    "gender": "male",
+    "build_id": "Barbarian — Tactical Reach King",
+    "build": "Tactical Reach King (Giant Instinct, Heavy Plate Variant)",
+    "build_source": "KM_Builds_Barb_Bard.md",
+    "class": "Barbarian",
+    "ancestry": "Human",
+    "heritage": "Versatile Human",
+    "heritage_source": "ancestry-specific",
+    "heritage_granted_features": [
+      "Armor Proficiency (Heavy) — Versatile Human general feat; allows Dragon Plate at L1 regardless of Barbarian class proficiency"
+    ],
+    "background": "Warrior",
+    "background_skill": "Athletics",
+    "background_skill_feat": "Powerful Leap",
+    "weapon": "Guisarme (2H S, 1d10, Reach, Trip) — polearm with hooked head, reach 10ft, becomes 15ft while Large from Giant Instinct rage",
+    "armor": "Dragon Plate (AC +6, Dex cap 0, speed -5ft, Bulwark trait, Resist fire 5, Aerynth-origin artifact, PC-locked to eRmaC)",
+    "deity": "none",
+    "level": 1,
+    "xp": 1350,
+    "attributes": {
+      "STR": 18,
+      "DEX": 10,
+      "CON": 16,
+      "INT": 10,
+      "WIS": 12,
+      "CHA": 12
+    },
+    "hp_current": 23,
+    "hp_max": 23,
+    "hero_points": 3,
+    "ac": 19,
+    "speed": 20,
+    "saves": {
+      "fort": 8,
+      "ref": 3,
+      "will": 6
+    },
+    "perception": 6,
+    "conditions": [],
+    "skills_trained": [
+      "Athletics +7 (Expert proficiency from Barbarian class at L1, STR mod +4, level bonus +1 = +7 total)",
+      "Intimidation +4 (Trained proficiency, CHA mod +1, level bonus +1 = +4 total; Raging Intimidation allows Demoralize free during Rage)",
+      "Medicine +4 (Trained proficiency, WIS mod +1, level bonus +1 = +4 total; used first aid on tutorial thief)",
+      "Acrobatics +3 (Trained proficiency, DEX mod +0, level bonus +1 = +3 total)",
+      "Survival +4 (Trained proficiency, WIS mod +1, level bonus +1 = +4 total)",
+      "Warfare Lore +3 (Trained proficiency from Warrior background, INT mod +0, level bonus +1 = +3 total; used for ARM/TRIANGLE FORMATION commands at gate)"
+    ],
+    "languages": [
+      "Common",
+      "Sylvan (Versatile Human language bonus)"
+    ],
+    "feats": {
+      "ancestry": "Natural Ambition — Versatile Human heritage feat; grants one bonus Level 1 class feat slot",
+      "background": "Powerful Leap — Warrior background skill feat (Level 1); leap much farther and higher; leap as single action without running start",
+      "class_1": "Raging Intimidation — Level 1 class feat (primary slot); can Demoralize as part of Rage without spending an action; can use Intimidating Glare and Scare to Death while raging",
+      "class_1b": "Sudden Charge — Level 1 class feat (Natural Ambition bonus slot); Stride twice then Strike as part of one action sequence",
+      "general": [
+        "Armor Proficiency (Heavy) — Versatile Human heritage general feat; unlocks Dragon Plate at Level 1"
+      ],
+      "skill": [
+        "Powerful Leap — from Warrior background (Level 1 skill feat)"
+      ]
+    },
+    "known_spells": [],
+    "focus_points": 0,
+    "inventory": [
+      "Adventurer's Pack — backpack with bedroll, chalk x10, flint and steel, rope 50ft hemp, rations x14, torch x5, waterskin",
+      "Healer's Tools — used for first aid on tutorial thief (Medicine DC 15 success)",
+      "Rope 50ft (hemp) — extra coil beyond pack contents",
+      "Rations (1 week) — extra supply beyond pack contents",
+      "Torch — extra beyond pack contents",
+      "Bedroll — extra beyond pack contents",
+      "Waterskin — extra beyond pack contents",
+      "8 cp — salvaged from Cutpurse's belt pouch during tutorial"
+    ],
+    "gold": {
+      "gp": 14,
+      "sp": 5,
+      "cp": 2
+    },
+    "notes": [
+      "Dragon Plate is Aerynth-origin artifact, PC-locked to eRmaC. It was fitted and worn-in across the campaigns that preceded the Aldori invitation. Grants its own trained Heavy armor proficiency as a personal artifact regardless of class proficiency.",
+      "Giant Instinct Rage: eRmaC grows to Large size, gains +6 damage bonus, reach extends to 10ft on Guisarme (15ft while Large). Rage lasts until end of encounter or voluntarily ended.",
+      "Bulwark trait (Dragon Plate): when eRmaC fails a Reflex save against an area effect, treat it as a success instead.",
+      "Resist fire 5 from Dragon Plate obsidian outer layer — does not stack with other fire resist sources; take the higher value.",
+      "L1 proficiencies: Perception Expert (+6), Fortitude Expert (+8), Reflex Trained (+3), Will Trained (+6).",
+      "Boost priority order per build: STR > CON > WIS > CHA at each boost opportunity."
+    ]
+  },
+  "companions": [
+    {
+      "name": "Hu Tao",
+      "build_id": "NEW_001",
+      "class": "Fighter (Warrior background)",
+      "level": 1,
+      "hp_current": 19,
+      "hp_max": 19,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Keqing",
+      "build_id": "NEW_002",
+      "class": "Magus (Laughing Shadow)",
+      "level": 1,
+      "hp_current": 24,
+      "hp_max": 24,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Leliana",
+      "build_id": "NEW_003",
+      "class": "Bard (Maestro) — CHRONICLER-BARD for this run",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": [
+        "Lute — the Traveler's Lute (personal instrument)"
+      ],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Yor_Forger",
+      "build_id": "NEW_004",
+      "class": "Rogue (Thief)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Aerith",
+      "build_id": "NEW_005",
+      "class": "Cleric (Cloistered)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": [],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6"
+    }
+  ],
+  "companions_selected": [
+    "Hu Tao",
+    "Keqing",
+    "Leliana",
+    "Yor_Forger",
+    "Aerith"
+  ],
+  "companions_not_picked": [
+    "Linzi",
+    "Amiri",
+    "Valerie",
+    "Harrim",
+    "Jaethal"
+  ],
+  "linzi_replacement": "Leliana",
+  "linzi_replacement_letter": "C",
+  "chronicler_active": true,
+  "leliana_chronicler_mode": true,
+  "linzi_primary_chronicler": false,
+  "linzi_replacement_gate_fired": true,
+  "leliana_ballad_cycle": [
+    {
+      "scene_id": "pre_prologue_tutorial",
+      "cycle_number": 1,
+      "scene_label": "The Alley at the East Gate — Restov",
+      "fact": "eRmaC arrived at Restov east gate after a 12-day journey from Nivakta's Crossing. He pursued a female rogue pickpocket who stole a customer's longsword from armorer Corryn's bench display — Athletics d20[14]+7=21 vs DC 12, Critical Success. In a dead-end alley he activated Giant Instinct rage and struck once — 16 damage vs 14 HP — KO'd her before she could act. Two crew appeared; he held the Guisarme over the unconscious thief and demanded they strip and leave. They complied. He stabilized the thief with Medicine (d20[12]+4=16 vs DC 15, SUCCESS), returned all gear plus the stolen sword to Corryn, paid 7gp + 8cp. Bought food for Corryn, Squire Aldric, and the thief. public_rep +3 (NOTICED). Squire Aldric witnessed.",
+      "diary": "I watched from a crate by the wall, notebook open across my knees, the lute-case at my feet. He walked in from the road wearing armor that has no name in any Golarion catalogue I have read — I have read most of them — and the vendor strip, which has seen everything, did not quite know what to do with him. She ran and he caught her. He struck once with the reach weapon and what happened after that was, for a moment, the whole picture: she dropped, and he did not follow up. He stood there and let the two who came next decide for themselves. They did not decide to fight. He used the unconscious girl as leverage — the polearm lowered to her ribs, the Dragon Plate between them and her — and they read the math and stripped and left. When they were gone he knelt with his tools and did first aid. I write what I see, and I saw a hand that could end and a hand that could mend, used in that order, on the same person, in the same alley, inside ten minutes. He bought bread for the armorer and the squire and set a portion beside the girl for when she wakes.",
+      "ballad": "🎵 Key: D minor, 3/4, moderate\n[VERSE 1]\nHe came to the gate in blood-red plate,\nand the vendor strip parted to let him through straight.\nShe lifted a sword from the leatherworker's rack —\nhe followed her into the alley and didn't come back.\n[VERSE 2]\nOne strike and she dropped, and he lowered the blade.\nTwo more at the entrance decided to trade.\nHe put the point down by her ribs — they went pale —\nstripped down in that alley and followed the trail.\n[CHORUS]\nHe healed what he broke and returned what was owed.\nHe bought bread for the boy and the man at the road.\nNot much of a story. I write it the same.\nFirst page. First hour. First act. Learn his name."
+    },
+    {
+      "scene_id": "pre_prologue_gate",
+      "cycle_number": 2,
+      "scene_label": "The Gate Captain — Restov East Arch",
+      "fact": "Captain Malak of the Restov east gate ran an off-gate shakedown — holding travelers thirty paces south of the arch with the gate deliberately unmanned, per a parchment order (source unknown, on Malak's person unsearched). Over five turns eRmaC identified Malak's rhetorical DARVO tactic by name, deduced the gate-window conspiracy publicly (unmanned gate + payment + timed window for assassins/spies/contraband), and issued military formation commands: ARM, TRIANGLE FORMATION, Biggs shackle him. Biggs (12-yr veteran, Drift 3) complied without hesitation. Wedge mirrored. Malak arrested and shackled. Wedge signaled archers to resume gate duty on player order — gate remanned. Crowd celebrated with chant for Biggs and Wedge. eRmaC never drew his weapon. Jamandi's invitation never produced. Path E (Shackling). XP: +1,150 gate + +200 tutorial = 1,350 total. Level 2 available.",
+      "diary": "The second entry writes itself differently from the first. The alley was fast — one strike, one decision, and it was over before I had time to understand what I was watching. The gate was slow. Five turns of a man being dismantled by someone who did not raise his voice once. I have watched negotiations. I have watched interrogations. I have watched a king argue with his own council until the council ran out of words. I have not watched someone name a rhetorical tactic — by its clinical term, on a public road, to the man using it — and then simply wait for the man to realize the tactic was gone. Malak reached for contempt, then fabrication, then volume, then circular reasoning, then a rule that did not exist. Each time the man in red plate noted what it was and asked the next question. By the time the formation command came, Biggs had already answered it internally. The manacles closed. The crowd chanted the guards' names, not his. He stood slightly to the side while they got the credit. I am not sure if that was strategy or instinct. I am not sure it matters. My book is open and I am still here and the gate has guards again.",
+      "ballad": "🎵 Key: D minor, 4/4, deliberate\n[VERSE 1]\nThe captain stood thirty paces from his post,\nand called it a check, and called it the law.\nThe gate stood empty behind him — a ghost —\nand a man in red plate noticed the flaw.\n[VERSE 2]\nNo shout and no sword and no raising of hands,\njust questions that didn't accept the reply.\nYou named what he did. You issued commands.\nBiggs heard them. He didn't ask why.\n[CHORUS]\nThe manacles closed and the gate filled again.\nThe crowd called two names and yours wasn't one.\nI write what I see at the end of my pen —\nthe gate has its guards. The work here is done."
+    }
+  ],
+  "notebook_entries": [],
+  "pick6_dropped": "DEPRECATED — use companions_not_picked instead",
+  "manor_companions_joined": "DEPRECATED — Manor 5 now in open pool, see companions_selected",
+  "quest_locked_joined": [],
+  "five_seekers": {
+    "seeker_1": "Bellatrix Lestrange",
+    "seeker_2": "Revy",
+    "seeker_3": "Satsuki Kiryūin",
+    "seeker_4": "Velvet Crowe",
+    "seeker_5": "Atalanta Alter"
+  },
+  "npc_threads": {
+    "Corryn_armorer": {
+      "status": "armorer_favor=TRUE, reward paid",
+      "last_seen": "vendor strip bench, gate area, eating flatbread from purchase",
+      "notes": "Paid 7 gp reward for sword returned + thief delivered + crew gear. Confirmed will give thief stern talking-to when she wakes. armorer_bonus_paid=7."
+    },
+    "tutorial_thief": {
+      "status": "unconscious, stabilized at armorer bench",
+      "disposition": "unconscious",
+      "gear_taken": true,
+      "notes": "Female Rogue. Knocked out nonlethally with guisarme haft strike. First aid rendered (Medicine SUCCESS). Food and wine left beside her. Corryn supervising until she wakes."
+    },
+    "Squire_Aldric": {
+      "status": "witnessed tutorial outcome",
+      "last_seen": "vendor strip, 15 ft from armorer bench — may have departed during gate confrontation",
+      "notes": "Tabard of Sir Brennan's household. squire_aldric_witnessed=TRUE. Testimony tier neutral ('He did the job'). +1 manor crowd rep at feast."
+    },
+    "Malak": {
+      "status": "ARRESTED — shackled, in player custody, Biggs holding chain",
+      "last_seen": "East Gate arch, being escorted north into Restov",
+      "notes": "Uninjured (28/28 HP). malak_fear_state=FALSE. DENIAL stage active ('Misunderstanding. I am a Captain. Eight years. Biggs, tell them—'). Knows courier description and drop location — does NOT know the cipher C identity (Castruccio — Chapter 5 reveal). Parchment and coin purse unsearched on his person. ANGER, BARGAINING, DESPAIR, ACCEPTANCE stages pending during escort march."
+    },
+    "Biggs": {
+      "status": "allied — biggs_crowd_hero=TRUE, holds Malak's chain, escorting",
+      "last_seen": "East Gate arch, chain in left hand, Malak at the other end",
+      "notes": "12-year veteran. Drift 3 manifested through cumulative comprehension — spoke one flat word, 'Captain.', the verdict of a man who had decided. Sided with player on ARM/TRIANGLE FORMATION command (Warfare Lore SUCCESS). Crowd chanted his name during Arrest Celebration Beat. Positive disposition. Escort duty active."
+    },
+    "Wedge": {
+      "status": "allied — wedge_crowd_hero=TRUE, gate duty reassigned",
+      "last_seen": "East Gate, signaling Woody and Wang to arch position",
+      "notes": "2-year guard. Mirrors Biggs throughout. Drift 3. Sided with player. gate_remanned_by=wedge. Signaled right-wall archers to arch duty per player order 'Do what Malak should have done when he left the gates.' Positive disposition."
+    }
+  },
+  "romance": {
+    "active_romance": "none",
+    "companions": {
+      "Hu Tao": {
+        "stage": 0,
+        "score": 0,
+        "declaration_made": false,
+        "declaration_result": "",
+        "consort_unlocked": false,
+        "date_count": 0,
+        "gesture_returned": 0,
+        "awkward_flag": false,
+        "heart_scene_triggered": false,
+        "date_awkward": false,
+        "love_scene_occurred": false,
+        "love_scene_partner": "",
+        "love_scene_interrupted": false,
+        "love_scene_rival": "",
+        "love_scene_choice": "",
+        "love_scene_aborted": false,
+        "fade_active": false,
+        "fade_chapters_remaining": 0,
+        "cheating_detected": false,
+        "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Keqing": {
+        "stage": 0,
+        "score": 0,
+        "declaration_made": false,
+        "declaration_result": "",
+        "consort_unlocked": false,
+        "date_count": 0,
+        "gesture_returned": 0,
+        "awkward_flag": false,
+        "heart_scene_triggered": false,
+        "date_awkward": false,
+        "love_scene_occurred": false,
+        "love_scene_partner": "",
+        "love_scene_interrupted": false,
+        "love_scene_rival": "",
+        "love_scene_choice": "",
+        "love_scene_aborted": false,
+        "fade_active": false,
+        "fade_chapters_remaining": 0,
+        "cheating_detected": false,
+        "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Leliana": {
+        "stage": 0,
+        "score": 0,
+        "declaration_made": false,
+        "declaration_result": "",
+        "consort_unlocked": false,
+        "date_count": 0,
+        "gesture_returned": 0,
+        "awkward_flag": false,
+        "heart_scene_triggered": false,
+        "date_awkward": false,
+        "love_scene_occurred": false,
+        "love_scene_partner": "",
+        "love_scene_interrupted": false,
+        "love_scene_rival": "",
+        "love_scene_choice": "",
+        "love_scene_aborted": false,
+        "fade_active": false,
+        "fade_chapters_remaining": 0,
+        "cheating_detected": false,
+        "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Yor_Forger": {
+        "stage": 0,
+        "score": 0,
+        "declaration_made": false,
+        "declaration_result": "",
+        "consort_unlocked": false,
+        "date_count": 0,
+        "gesture_returned": 0,
+        "awkward_flag": false,
+        "heart_scene_triggered": false,
+        "date_awkward": false,
+        "love_scene_occurred": false,
+        "love_scene_partner": "",
+        "love_scene_interrupted": false,
+        "love_scene_rival": "",
+        "love_scene_choice": "",
+        "love_scene_aborted": false,
+        "fade_active": false,
+        "fade_chapters_remaining": 0,
+        "cheating_detected": false,
+        "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Aerith": {
+        "stage": 0,
+        "score": 0,
+        "declaration_made": false,
+        "declaration_result": "",
+        "consort_unlocked": false,
+        "date_count": 0,
+        "gesture_returned": 0,
+        "awkward_flag": false,
+        "heart_scene_triggered": false,
+        "date_awkward": false,
+        "love_scene_occurred": false,
+        "love_scene_partner": "",
+        "love_scene_interrupted": false,
+        "love_scene_rival": "",
+        "love_scene_choice": "",
+        "love_scene_aborted": false,
+        "fade_active": false,
+        "fade_chapters_remaining": 0,
+        "cheating_detected": false,
+        "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      }
+    }
+  },
+  "companion_quests": {
+    "Leliana": {
+      "status": "active_chronicler",
+      "leliana_opus_named": false,
+      "leliana_opus_name": "",
+      "leliana_opus_performed": false,
+      "leliana_illness_disclosed": false
+    }
+  },
+  "active_quests": [],
+  "completed_quests": [],
+  "npc_relations": {
+    "Biggs": {
+      "disposition": "allied",
+      "drift": 3,
+      "crowd_hero": true,
+      "note": "Refused illegal fire order publicly; complied with arrest formation; holds chain; escort duty active."
+    },
+    "Wedge": {
+      "disposition": "allied",
+      "drift": 3,
+      "crowd_hero": true,
+      "note": "Mirrored Biggs throughout; signaled arch duty; positive disposition."
+    },
+    "Malak": {
+      "disposition": "arrested",
+      "fear_state": false,
+      "hp": 28,
+      "stage": "DENIAL",
+      "note": "Shackled, uninjured (28/28 HP). In player custody. Parchment and coin purse unsearched."
+    }
+  },
+  "kingdom": {
+    "name": "",
+    "founded": false,
+    "ruler_title": "",
+    "advisors": {},
+    "stats": {
+      "economy": 0,
+      "loyalty": 0,
+      "stability": 0,
+      "unrest": 0
+    },
+    "buildings": [],
+    "active_events": [],
+    "completed_events": [],
+    "treasury": {
+      "gp": 0
+    },
+    "army_units": [],
+    "prestige_upgrades": [],
+    "pending_modifiers": []
+  },
+  "crafting": {
+    "known_formulas": [],
+    "in_progress": []
+  },
+  "story_flags": {
+    "gate_entry": "shackling",
+    "gate_remanned_by": "wedge",
+    "malak_arrested": true,
+    "malak_in_player_custody": true,
+    "malak_arrested_publicly": true,
+    "malak_fled": false,
+    "malak_broken": false,
+    "malak_contact_revealed": false,
+    "malak_broke_first": false,
+    "malak_found_letter_himself": false,
+    "malak_deal_made": false,
+    "malak_bribe_evidence": false,
+    "parchment_source": "unknown",
+    "parchment_recovered": false,
+    "parchment_on_malak_person": true,
+    "malak_escort": {
+      "player_escorting": true,
+      "kesten_joined_escort": false,
+      "biggs_in_escort": true,
+      "wedge_in_escort": false,
+      "escort_note": "Biggs holds chain. Wedge re-assigned to arch duty. Escort formation: eRmaC leading, Biggs with Malak, heading north into Restov."
+    },
+    "malak_custody_detail": "shackled at wrists, uninjured (28/28 HP), DENIAL stage active, conscious but subdued, walking under own power",
+    "kesten_met": false,
+    "kesten_searched_malak": false,
+    "kesten_delivered_evidence": false,
+    "kesten_respect": false,
+    "biggs_respect": true,
+    "biggs_crowd_hero": true,
+    "wedge_crowd_hero": true,
+    "directive_two_uncovered": true,
+    "malak_fear_state": false,
+    "malak_voice_mimicked": false,
+    "kassil_met": false,
+    "kassil_first_impression": "neutral",
+    "arrived_with_kassil": false,
+    "prison_arc": false,
+    "arrived_late": false,
+    "player_clean_hands": true,
+    "second_hero_witnessed": false,
+    "second_hero_name": "",
+    "jamandi_pre_impression": "heard about it first",
+    "tartuccio_knows_player_is_aware": false,
+    "tartuccio_team": "five_seekers",
+    "tartuccio_spy_discovered": false,
+    "tartuccio_spy_discovery_method": "",
+    "tartuccio_plot_armor_intact": true,
+    "tartuccio_recruited_seekers": false,
+    "tartuccio_evidence": [],
+    "tartuccio_evidence_pressure": 0,
+    "malak_coin_purse_assessed": false,
+    "jail_detour_taken": false,
+    "five_seekers_freed_by_player": false,
+    "five_seekers_freed_by_jamandi": false,
+    "five_seekers_released_late": false,
+    "kesten_dispatched_to_jail": false,
+    "drevic_released_on": "",
+    "public_reputation": 8,
+    "reputation_tier": "FAVORABLE",
+    "reputation_deeds": [
+      "+2 returned customer's sword to armorer after combat and delivered the thief alive rather than leaving her in the alley — tutorial (PP_04)",
+      "+1 hauled unconscious thief to armorer bench and rendered first aid rather than abandoning her — tutorial (PP_04)",
+      "no rep delta — bought food and drink for both thief and armorer; goodwill deed logged for disposition — tutorial (PP_04)",
+      "+3 arrested corrupt gate captain via military formation command — Path E confirmed (PP_07)",
+      "+2 publicly exposed gate captain's corruption before his own guards and the assembled crowd — gate (PP_07)"
+    ],
+    "reputation_notes": "public_reputation 3 (tutorial total) + 3 (Path E gate) + 2 (public exposure before guards and crowd) = 8 total (FAVORABLE band, +6..+12). jamandi_pre_impression=heard about it first — grants +2 circumstance bonus to first Diplomacy check with Jamandi at the feast.",
+    "marriage": {
+      "married": false,
+      "spouse": "",
+      "spouse_origin": "",
+      "wedding_chapter": null,
+      "wedding_type": "",
+      "wedding_vow_freeform": false,
+      "anniversary_count": 0,
+      "anniversary_last_session": 0,
+      "heir_declared": false,
+      "heir_source": "",
+      "heir_name": "",
+      "heir_age_narrative": 0,
+      "separated": false,
+      "separation_reason": "",
+      "separation_chapter": null,
+      "partner_left_voluntarily": false,
+      "widowed": false,
+      "widow_chapter": null,
+      "marriage_history": [],
+      "marriage_strain": 0,
+      "strain_scene_fired": false,
+      "strain_confrontation_active": false
+    },
+    "jealousy": {
+      "love_triangle_active": false,
+      "competing_companions": [],
+      "tier_reached": 0,
+      "open_arrangement": false,
+      "open_partners": [],
+      "secretly_aware": {},
+      "resolution_attempts": [],
+      "jealousy_resolved": false,
+      "resolution_session": null
+    },
+    "weapons_in_garden": false,
+    "promises": [],
+    "dialogue_choices": [],
+    "linzi_witnessed_gate": false,
+    "leliana_witnessed_gate": true,
+    "chronicler_introduced": false,
+    "tutorial_pickpocket_resolved": "won",
+    "tutorial_thief_gender": "female",
+    "tutorial_thief_class": "Rogue",
+    "thief_disposition": "unconscious",
+    "thief_gear_taken": true,
+    "crew_gear_taken": "both",
+    "crew_resolved_status": "both_fled",
+    "armorer_favor": true,
+    "armorer_bonus_paid": 7,
+    "squire_aldric_witnessed": true,
+    "feast_approval": 0,
+    "feast_companions_satisfied": [],
+    "feast_companions_unsatisfied": [],
+    "feast_companions_declared": [],
+    "night_attack_outcome": "",
+    "jamandi_survived": true,
+    "oleg_met": false,
+    "stag_lord_known": false,
+    "irovetti_letter_found": false
+  },
+  "pre_prologue_state": {
+    "active": false,
+    "malak_anger": 2,
+    "biggs_drift": 3,
+    "wedge_drift": 3,
+    "gate_window": "closed",
+    "tutorial_state": "complete",
+    "tutorial_outcome": "won",
+    "linzi_beats_fired": [],
+    "perception_tells_revealed": [],
+    "companions_witnessed": [
+      "Leliana"
+    ],
+    "malak_priority_violations": [],
+    "scene_phase": "PP_GATE_EXIT",
+    "exit_trigger": "enters_jamandi_manor"
+  },
+  "scene_log": [
+    {
+      "scene_id": "char_create",
+      "scene_label": "Character Creation — eRmaC Barbarian Tactical Reach King",
+      "entered_at_turn": 1,
+      "exited_at_turn": 14,
+      "key_events": [
+        "Class selected: Barbarian — Tactical Reach King build (Giant Instinct, Heavy Plate Variant) from KM_Builds_Barb_Bard.md",
+        "Ancestry selected: Human (Versatile Human heritage) — grants one general feat slot used for Armor Proficiency Heavy",
+        "Weapon selected: Guisarme (2H S, 1d10, Reach, Trip) — Category C polearm; enables 10ft reach, 15ft while Large from Giant Instinct",
+        "Armor selected: Dragon Plate — Aerynth-origin artifact, AC +6, Dex cap 0, speed -5ft, Bulwark, Resist fire 5; PC-locked to eRmaC",
+        "Background selected: Warrior — grants Athletics trained and Expert (via Barbarian class), Warfare Lore trained, Powerful Leap skill feat",
+        "Free skills selected: Intimidation, Medicine, Acrobatics, Survival (4 picks from the open pool)",
+        "Ability scores finalized: STR 18 (+4), DEX 10 (+0), CON 16 (+3), INT 10 (+0), WIS 12 (+1), CHA 12 (+1)",
+        "Language bonus: Sylvan (Versatile Human language selection) — Common always included",
+        "Ancestry feat: Natural Ambition — grants bonus Level 1 class feat slot",
+        "Class feat slot 1: Raging Intimidation — Demoralize free during Rage; can use Intimidating Glare and Scare to Death while raging",
+        "Class feat slot 2 (Natural Ambition): Sudden Charge — Stride twice then Strike as one action sequence",
+        "Starting gear: Adventurer's Pack + Healer's Tools + extra rope/rations/torch/bedroll/waterskin",
+        "Companions selected: A=Hu Tao, B=Keqing, C=Leliana (CHRONICLER-BARD), D=Yor_Forger, E=Aerith",
+        "Linzi is NOT in this run. Leliana takes the chronicler role. linzi_replacement=Leliana, leliana_chronicler_mode=TRUE",
+        "Seekers hardcoded as Tartuccio's jailed roster: Bellatrix Lestrange, Revy, Satsuki Kiryūin, Velvet Crowe, Atalanta Alter"
+      ],
+      "outcome": "Character creation complete. All 63 root keys initialized. Proceeding to PP_01 arrival."
+    },
+    {
+      "scene_id": "PP_01_arrival",
+      "scene_label": "Pre-Prologue Beat 01 — Arrival at Restov East Gate",
+      "entered_at_turn": 15,
+      "exited_at_turn": 16,
+      "key_events": [
+        "Opening narration delivered verbatim from PP_01: 12-day journey south from Brevoy, three Aldori outriders as escort, road passing through Nivakta's Crossing, arrival at Restov East Gate on feast day",
+        "Leliana first witnessed as chronicler-bard: seated on a barrel near the gate road, journal on knee, lute case beside her, writing in notational shorthand — establishing her as a present observer before the tutorial triggers",
+        "Tutorial trigger fired: mobile armorer Corryn Vasic on the vendor strip had a customer's longsword stolen by a hooded figure slipping through the morning crowd",
+        "Player presented with approach options: pursue / cut off / shout / appeal to public / ignore",
+        "Player chose option 1 — PURSUE: Athletics or Acrobatics DC 12"
+      ],
+      "outcome": "Tutorial trigger fired cleanly. Player chose to pursue. Transition to PP_02 tutorial setup."
+    },
+    {
+      "scene_id": "PP_02_tutorial_setup",
+      "scene_label": "Pre-Prologue Beat 02 — Tutorial Setup (Hood Up)",
+      "entered_at_turn": 16,
+      "exited_at_turn": 17,
+      "key_events": [
+        "Pursuit roll: Athletics d20[14] + 7 = 21 vs DC 12 — CRITICAL SUCCESS (21 exceeds DC by 9, one below crit threshold of 10; treated as success with best positioning advantage)",
+        "Player arrived at alley junction before the thief — thief backed against the wall with nowhere to go, sword from Corryn's display in hand",
+        "Gate 5 (gender selection) presented as a menu: player selected Female — tutorial_thief_gender=female, pronouns she/her for remainder of tutorial",
+        "Class menu presented: player selected Rogue — tutorial_thief_class=Rogue",
+        "Cinematic reveal fired: hood pulled back — compact stance, two daggers already out, the customer's sword dropped to lean against the wall behind her",
+        "Thief's opening line delivered verbatim: 'You found me. Question is whether you can keep me.'",
+        "Phase B unlocked with non-combat and combat resolution options presented"
+      ],
+      "outcome": "Reveal complete. Thief identified as female Rogue. Menu presented for resolution approach. Player committed to combat path."
+    },
+    {
+      "scene_id": "PP_03_tutorial_combat",
+      "scene_label": "Pre-Prologue Beat 03 — Tutorial Combat (Alley)",
+      "entered_at_turn": 17,
+      "exited_at_turn": 19,
+      "key_events": [
+        "Player declared: Rage + Stride + Strike + Strike (four actions declared; three legally resolved since thief reached 0 HP before fourth action could fire)",
+        "Action 1 — RAGE: Giant Instinct fires. eRmaC grows to Large size. Damage bonus +6 applied. Reach extends to 10ft on Guisarme (15ft while Large). Dragon Plate flares red-orange at the joints. Rage condition active.",
+        "Action 2 — STRIDE: 10 ft closed into melee range. Guisarme drawn mid-stride. Thief at eRmaC's reach threshold.",
+        "Action 3 — STRIKE: Guisarme vs thief AC 12 (off-guard from Critical Success arrival positioning): d20[11] + 7 = 18 vs AC 12 — HIT. 1d10[6] + 4 (STR) + 6 (Giant Instinct Rage) = 16 damage. Thief 14 HP → 0 HP, Dying 1. KO'd on the first strike, before she could act. Surrender threshold reached immediately.",
+        "Fourth Strike: not resolved — thief already at 0 HP after the first strike landed",
+        "Crew escalation fired (mandatory per scene file): three-note whistle from thief triggered Bruiser (hatchet, heavy shoulders) and Cutpurse (shortsword, flanking) to enter at alley mouth",
+        "Crew line delivered: 'Give us the sword and walk away.'",
+        "Player declared hostage control: boot planted on thief's back (she's at 0 HP, surrendered prone), Guisarme hook swept to her throat, spine bent backward — a displayed threat, not a lethal action",
+        "Player speech delivered verbatim to crew: 'That's a dumb plan, to call for backup while I can easily kill you. Leave everything. All their clothes and their weapons or I'll take everything from your corpses.'",
+        "Raging Intimidation fired (free during Rage via feat): Demoralize against both Bruiser and Cutpurse. d20[18] + 5 = 23 vs DC 10 (base Demoralize, lower due to critical hit visible and hostage displayed) — CRITICAL SUCCESS. Both Bruiser and Cutpurse: Frightened 2 condition applied.",
+        "Bruiser dropped hatchet first. Cutpurse dropped shortsword second.",
+        "Full strip demanded and delivered: shirts, trousers, belts, boots removed by both crew members. Cutpurse retained leather thong on wrist — too minor to demand. Two piles of clothing, two piles of weapons.",
+        "Player told crew to leave. Both fled barefoot and shirtless south into the crowd. crew_resolved_status=both_fled.",
+        "Hook removed from thief's throat in same motion. Guisarme haft swung nonlethal: d20[11] + 5 = 16 vs AC 12 — HIT (nonlethal). Thief rendered fully unconscious (already at 0 HP; nonlethal confirms KO state).",
+        "Guisarme stowed. All loot (crew weapons, crew clothing, thief daggers) knotted into bundle using crew shirts. Thief's daggers taken from her belt before bundling.",
+        "Thief lifted over shoulder. Bundle held in other hand. Walked out of alley to armorer's bench on vendor strip."
+      ],
+      "outcome": "Combat resolved without player taking damage. Thief unconscious and captured. Crew stripped and fled. tutorial_pickpocket_resolved=won. Proceeding to PP_04."
+    },
+    {
+      "scene_id": "PP_04_tutorial_outcome",
+      "scene_label": "Pre-Prologue Beat 04 — Tutorial Outcome (Armorer Bench)",
+      "entered_at_turn": 19,
+      "exited_at_turn": 20,
+      "key_events": [
+        "Player administered first aid to unconscious thief at armorer bench: Medicine check d20[13] + 4 = 17 vs DC 15 — SUCCESS. Thief stabilized. Breathing steady. Bruising at base of skull from haft strike — not catastrophic; will wake with severe headache.",
+        "Player instructed armorer Corryn to give thief 'a stern talking to' when she wakes",
+        "Player purchased flatbread and watered wine from oven-vendor on the strip: 4 sp total, one portion for thief left beside her when she wakes, one portion for Corryn as gesture",
+        "Corryn Vasic's reaction: 'You beat her half-unconscious, carried her here, fixed her up, and bought her lunch.' Ate the flatbread. Pulled the customer's longsword from the bundle and set it apart. Assessed remaining gear.",
+        "Reward breakdown: base 2 gp (customer's sword returned safely) + 1 gp (thief delivered unconscious, not just gear recovered) + 2 gp (thief's own daggers and personal gear included) + 2 gp (both crew weapon sets: Bruiser hatchet + Cutpurse shortsword) = 7 gp total paid. armorer_bonus_paid=7.",
+        "Corryn confirmed he will give thief the stern talking-to when she wakes: 'This one's going back to its owner. The rest — I'll pay you for the gear. Fair rate, not charity. And when she wakes up, I'll have a conversation with her.'",
+        "Squire Aldric (Sir Brennan's household tabard, 15 ft away, arms crossed) witnessed the entire outcome sequence. He said nothing. His expression: 'He did the job.' squire_aldric_witnessed=TRUE.",
+        "Aldric testimony tier: neutral — +1 manor crowd reputation at feast (carried to jamandi_pre_impression stack)",
+        "Gold update: 7gp 8sp 4cp (prior) + 7gp reward - 4sp food purchase + 8cp (Cutpurse pouch) = 14gp 5sp 2cp total",
+        "Save point offered before Malak gate. Player selected [S] — save block issued. PP_08 save gate does not fire here (PP_04 is a natural break, not the exit gate). Player chose to save and continue in this session.",
+        "HERO POINT awarded retroactively for tutorial social-tactical coup: hostage control + crew stripped without eRmaC taking any damage + Critical Intimidation Success. Hero Points 1 → 2.",
+        "pre_prologue_state advanced to PP_GATE_APPROACH. current_scene=restov_gate. malak_unlocked=YES."
+      ],
+      "outcome": "PP_04 complete. armorer_favor=TRUE. Thief stabilized. Crew gear sold. Reward paid. squire_aldric_witnessed=TRUE. public_reputation +3 (tutorial total). Proceeding to PP_05 gate approach."
+    },
+    {
+      "scene_id": "PP_05_06_07_gate",
+      "scene_label": "Pre-Prologue Beats 05-07 — East Gate Confrontation (Path E Shackling)",
+      "entered_at_turn": 22,
+      "exited_at_turn": 27,
+      "key_events": [
+        "PP_05 fired: three guards in Aldori-issue mail walked out to meet eRmaC on the approach road — 60 ft (30 paces) south of the gate arch. The arch itself was unmanned at ground level. Two guards hung back: stout dwarf Biggs (halberd smooth from real use) and younger human Wedge (longsword, eyes on Biggs for cues). Malak stepped forward: stocky, corded, chainmail under gate-captain tabard, scuffed boots, helmet under left arm, sword hilt worn from use, faint smell of cheap ale.",
+        "PP_05 Malak Speech 1 delivered verbatim: 'Halt, stranger. Hands clear of that guisarme and pack. Palms where I can see them. Now.' / Without looking back: 'Biggs. Wedge. Close up.' — Biggs shifted half a pace. Wedge mirrored.",
+        "PP_05 Malak Speech 2 delivered verbatim: 'You think you can just stroll up to Restov's gate looking like you crawled out of a bandit's grave? Guisarme, blood-red plate with black accents, dragon-hide texture, impossibly fitted at the joints, that dead-man stare — you reek of trouble. Kneel. Right here in the dirt. Slowly. Then you're going to unbuckle every belt, lay every weapon on the ground, open your pack, and let us search you. Every pouch, every fold. I'll do the patting-down myself — nice and thorough — so don't get twitchy or modest.'",
+        "PP_05 Malak Speech 3 delivered verbatim: '(His eyes flick over your scars.) Got a letter from some noble, do you? Everyone's got a letter when they want in. Doesn't make you special. Makes you suspicious. Move wrong and I'll have you facedown with my boot on your neck.'",
+        "19-option menu + 3 build-specific options presented. Player chose Custom — sardonic mock-compliance with gate-location condition: 'This is a gate check, and you are gate guards? Great I love gate checks, I been looking foward to this all morning, I will comply 100% with anything and everything you want as soon as we arrive at the gate.'",
+        "PP_06 Turn 1 (Turn 22) — Anger tick: sardonic tone + conditional refusal of immediate compliance = mockery/defiance (+1). Malak: 0→1. Malak escalated: invented 'sixty-foot inspection distance' as fabricated protocol (FABRICATION #1). 'Sixty-foot inspection distance on this road. Standard procedure. Gate's a bottleneck. We don't want to create one. So we do this here.' Archer ambient threat: 'There are four bows on that wall. They get bored. Don't give them a reason.' Biggs Drift ticks: mandatory first-turn off-gate shakedown (+1) = 1; Malak's fabricated sixty-foot protocol (+1) = 2. Biggs: 0→2. Weight shifted. Face went flat.",
+        "PP_06 Turn 2 (Turn 23) — Player speech delivered verbatim: 'Standard procedure? I think that's a lie. I have 15 gold on me, if your escorts answer that this is a regular procedure you can have it. Otherwise I call bullshit. I dont know them, they're your men, you want to take my money and watch me get humiliated, easy gold.' Malak escalated further: added second fabrication 'The sixty-foot inspection distance is documented at the watch station on the south road. You passed it on your way here.' (FABRICATION #2). Biggs Drift +1 (second fabricated protocol) = 3 — THRESHOLD. Biggs went very still, deliberately. Not the shifting-weight still of before. The kind of still where a decision has been made and is waiting for its moment. Anger tick for 'I think that's a lie' + 'I call bullshit' = +1. Malak: 1→2. Anger 2 deployment: 'Willy. Eyes on him.' — left-wall archer Willy adjusted angle, bow came level. Deliberate and visible from the road. Hero Point awarded (pool 2→3): conditional bribe as verification sting; turned Malak's fabricated protocol against him by making his own guards the arbiters of a test he cannot pass.",
+        "PP_06 Turn 3 (Turn 24) — Player named the DARVO tactic by its clinical term, publicly, to the man using it, and issued a treason ultimatum. Malak performed disbelief: 'Treason. You're threatening a gate captain with treason charges. You. A stranger. On a public road.' Anger rose. Biggs Drift +1 → 3 (THRESHOLD): Biggs went very still — the stillness of a decision made and waiting for its moment. Hero Point banked (social deduction). Rina Pavlek at flatbread cart (A8): 'He doesn't leave it empty like this. Not once.'",
+        "PP_06 Turn 4 (Turn 25) — Player delivered the full conspiracy deduction publicly: an unmanned gate + payment + a timed window = a captain paid to let assassins, spies, poisoned daggers, and spy correspondence through unchecked, and that hour is now. Malak's last verbal defense: 'The guards are where I put them. I put them here. That is my authority as Captain of this gate.' Anger held at 2 (max for this resolution). No weapon was drawn; no archer fired; the confrontation stayed verbal throughout.",
+        "PP_07 Turn 5 (Turn 26) — Player speech delivered verbatim in full: 'Only 1 reason a gate captain would take the guards off the gate, He needs the gate unmanned to let undesirables in, assassins, spies, explosives, concealed assassination weapons like poisoned daggers, spy correspondence. Without you these things enter without a check. And the only reason why a captain would do that is he was paid to do so. The person that paid you asked you to leave the gates open for him at a certain hour, that hour is now.' / To Biggs and Wedge: 'You have done zero things 30 paces away from the gate while he occupies your time by pretending to do gate checks on the road.' / To Biggs and Wedge: 'I can tell you work hard from the wear on your armor. I don't want you to get in trouble, but I have to tell Lady Jamandi what's happened here. Your Captain has made criminals out of you.' / 'Think of it this way if your captain shows up at the gates and says lets go drink instead at the tavern, if you go with him, the Just following the Captain excuse wouldn't work, the same applies here.' / 'But I could instead tell the Lady that you helped me capture this traitor. Now is the time to choose. If you help me capture him, I will take him to the lady, and I will tell her you helped me capture him instead.' / Commands: ARM. TRIANGLE FORMATION WITH ME, ON MALAK. Converge slowly do not let him get away. Biggs: Shackle him. After Malak is shackled: Wedge: Do what Malak should of done when he left the gates, Signal 2 archers to take over gate duty while we are dealing with this.",
+        "Warfare Lore check (military commands ARM/TRIANGLE FORMATION/SHACKLE/SIGNAL): d20[13] + 3 = 16 vs DC 12 — SUCCESS. Biggs and Wedge complied fully.",
+        "Biggs armed on 'ARM' command — straightened from crouch over Malak. Moved left to F10, positioning on Malak's northwest. Produced manacles from gate-guard belt equipment. Applied in two practiced motions. Click of each shackle. Biggs stood, chain in hand, face giving nothing. Said: 'Gate's clear.'",
+        "Wedge moved right to H10 on TRIANGLE FORMATION command, completing the triangle with Biggs and eRmaC around Malak. Raised two fingers toward right wall on SIGNAL command — Woody and Wang received, shifted toward arch position. Gate arch no longer unmanned.",
+        "Malak DENIAL stage: 'Misunderstanding. I am a Captain. Eight years. Biggs, tell them—' — Biggs did not respond.",
+        "PATH CONFIRMED: E (Shackling). Conditions: Biggs Drift 3 (MET), triangle formation + manacles applied (MET), Warfare Lore SUCCESS (MET), gate re-manned (MET). gate_entry=shackling. Resolved entirely by argument — no weapon drawn, no invitation shown, no civilian harmed, no archer fired.",
+        "ARREST CELEBRATION BEAT fired (mandatory per scene file): Pyotr Volkov from caravan line: 'About damn time!' — his voice carries 30 paces. Rina Pavlek banged tray against brazier — one sharp CLANG — eye contact with Biggs, not with eRmaC. Mother Talvi raised hawthorn staff: 'Erastil bless you both — Biggs! Wedge! You held this gate today!' Kostya climbed barrel: 'BIGGS! WEDGE! BIGGS! WEDGE!' Mikha chant two beats later. Cooking pot banged in rhythm somewhere. Lyuba Krenn came forward with flatbread held in both hands: 'For the hero.' Borys Radchenko without turning from fish board: 'Gate's been empty since he dragged you out here.' Grandfather Sava held up one finger and three: 'Thirty.' — meaning thirty paces from the gate, where no search belongs. Crowd swelled. The chant used Biggs's and Wedge's names. Not eRmaC's. story_flags: malak_arrested_publicly=TRUE, biggs_crowd_hero=TRUE, wedge_crowd_hero=TRUE, jamandi_pre_impression=heard about it first.",
+        "Player: 'I take Malak into Restov.' PP_08 exit gate fired."
+      ],
+      "outcome": "Path E (Shackling) confirmed. gate_entry=shackling. public_reputation 3→8 (FAVORABLE). XP +1150 (gate scene). Total XP 1350. Malak: uninjured (28/28 HP), shackled, DENIAL stage, in player custody. Gate re-manned: gate_remanned_by=wedge. PP_08 six proofs complete. Awaiting .continue for PP_09."
+    }
+  ],
+  "dice_log": [
+    {
+      "turn": 0,
+      "scene_id": "char_create",
+      "actor": "system",
+      "check": "No rolls — character creation only; all choices were player selections from menus",
+      "dc": 0,
+      "modifier": 0,
+      "raw_roll": 0,
+      "total": 0,
+      "result": "n/a",
+      "consequence": "No dice rolled during character creation sequence. All outcomes determined by player menu choices."
+    },
+    {
+      "turn": 16,
+      "scene_id": "PP_02_tutorial_setup",
+      "actor": "eRmaC",
+      "check": "Athletics — Pursue thief through morning crowd on vendor strip road",
+      "dc": 12,
+      "modifier": 7,
+      "raw_roll": 14,
+      "total": 21,
+      "result": "CRITICAL SUCCESS (beat DC by 9)",
+      "consequence": "eRmaC arrived at alley junction before the thief, cutting off her escape route. Thief found with back to wall, nowhere to go. eRmaC had the positioning advantage — thief off-guard for Round 1 of any combat."
+    },
+    {
+      "turn": 17,
+      "scene_id": "PP_03_tutorial_combat",
+      "actor": "eRmaC",
+      "check": "Strike — Guisarme attack vs Rogue thief (off-guard, eRmaC Large from Giant Instinct Rage, Raging)",
+      "dc": 12,
+      "modifier": 7,
+      "raw_roll": 11,
+      "total": 18,
+      "result": "HIT (6 over AC)",
+      "consequence": "Damage 1d10[6] + 4 (STR mod) + 6 (Giant Instinct Rage bonus) = 16. Thief 14 HP → 0 HP, Dying 1. KO'd on the first strike, before she could act. Crew escalation fires."
+    },
+    {
+      "turn": 18,
+      "scene_id": "PP_03_tutorial_combat",
+      "actor": "eRmaC",
+      "check": "Intimidation — Raging Demoralize vs Bruiser and Cutpurse simultaneously (hostage-control context, eRmaC Large, Raging, critical hit fresh and visible, guisarme at thief's throat)",
+      "dc": 10,
+      "modifier": 5,
+      "raw_roll": 18,
+      "total": 23,
+      "result": "CRITICAL SUCCESS (beat DC by 13)",
+      "consequence": "Both Bruiser and Cutpurse: Frightened 2. Both dropped weapons without further prompting. Both complied with full strip demand — shirts, trousers, belts, boots removed. Both fled barefoot and shirtless south into the crowd. crew_resolved_status=both_fled."
+    },
+    {
+      "turn": 19,
+      "scene_id": "PP_03_tutorial_combat",
+      "actor": "eRmaC",
+      "check": "Strike (nonlethal, guisarme haft) vs unconscious thief (already at 0 HP)",
+      "dc": 12,
+      "modifier": 5,
+      "raw_roll": 11,
+      "total": 16,
+      "result": "HIT (nonlethal)",
+      "consequence": "Thief confirmed fully unconscious — KO state locked in. Already at 0 HP; nonlethal hit confirms she is not conscious and will not be faking. No additional damage tracked (already downed)."
+    },
+    {
+      "turn": 20,
+      "scene_id": "PP_04_tutorial_outcome",
+      "actor": "eRmaC",
+      "check": "Medicine — First Aid (Stabilize unconscious thief at armorer bench)",
+      "dc": 15,
+      "modifier": 4,
+      "raw_roll": 13,
+      "total": 17,
+      "result": "SUCCESS",
+      "consequence": "Thief stabilized. Breathing steady. Skull bruise from haft strike is dark and raised but not catastrophic — no bone fracture. Will regain consciousness with a severe headache. Corryn's 'stern talking-to' plan remains viable."
+    },
+    {
+      "turn": 27,
+      "scene_id": "PP_07_path_resolution",
+      "actor": "eRmaC",
+      "check": "Warfare Lore — Military commands: ARM + TRIANGLE FORMATION WITH ME ON MALAK + BIGGS SHACKLE HIM + WEDGE SIGNAL ARCHERS TO GATE DUTY (all in one coherent command sequence)",
+      "dc": 12,
+      "modifier": 3,
+      "raw_roll": 13,
+      "total": 16,
+      "result": "SUCCESS (4 over DC)",
+      "consequence": "Biggs and Wedge responded to military commands without hesitation. Biggs moved to F10, produced manacles, applied them in two practiced motions. Wedge moved to H10 and signaled Woody and Wang to arch duty. Triangle formation established. Gate re-manned. Path E trigger conditions fully met."
+    }
+  ],
+  "dialogue_log_by_npc": {
+    "Malak": [
+      "PP_05 T22 Speech 1 (verbatim): 'Halt, stranger. Hands clear of that guisarme and pack. Palms where I can see them. Now.' Pause. Without looking back: 'Biggs. Wedge. Close up.'",
+      "PP_05 T22 Speech 2 (verbatim): 'You think you can just stroll up to Restov's gate looking like you crawled out of a bandit's grave? Guisarme, blood-red plate with black accents, dragon-hide texture, impossibly fitted at the joints, that dead-man stare — you reek of trouble. Kneel. Right here in the dirt. Slowly. Then you're going to unbuckle every belt, lay every weapon on the ground, open your pack, and let us search you. Every pouch, every fold. I'll do the patting-down myself — nice and thorough — so don't get twitchy or modest.'",
+      "PP_05 T22 Speech 3 (verbatim): 'Got a letter from some noble, do you? Everyone's got a letter when they want in. Doesn't make you special. Makes you suspicious. Move wrong and I'll have you facedown with my boot on your neck.'",
+      "PP_06 T22 Fabrication #1: 'Sixty-foot inspection distance on this road. Standard procedure. Gate's a bottleneck. We don't want to create one. So we do this here. You comply here. And you kneel here. That's what compliance looks like. Everything you want — that's what I want. Right now.' Then: 'There are four bows on that wall. They get bored. Don't give them a reason.'",
+      "PP_06 T23 Fabrication #2: 'The sixty-foot inspection distance is documented at the watch station on the south road. You passed it on your way here. Doesn't matter if you read it. The rule exists whether you believe it or not.' Then: 'Keep your fifteen. I don't negotiate the terms of a gate search, and I don't take bets from men who owe me a kneel. Calling my guards liars by implication while you hand me money isn't as clever as you think the sequence is.' Then: 'I think you came to this gate knowing exactly what a search looks like, and came ready to argue it instead of walking through. Either you've got something on you that you'd rather I didn't find, or you've done this enough times that you think you're clever. Either answer, I'm still waiting. Last time I ask nice. Kneel.' Willy told: 'Eyes on him.' — Willy leveled bow.",
+      "PP_06 T24: 'That's — that's a legal inspection, this is a standard gate procedure, you can't— You're twisting this. You're resisting a lawful search order and you're making a scene in front of civilians.' (defensive, circular; the framing already collapsing)",
+      "PP_06 T25: 'The guards are where I put them. I put them here. That is my authority as Captain of this gate.' (last verbal defense before the formation command)",
+      "PP_07 T26 DENIAL stage: 'Misunderstanding. I am a Captain. Eight years. Biggs, tell them—' [Biggs did not tell them. Biggs applied the manacles instead.]"
+    ],
+    "Biggs": [
+      "PP_06 T24: 'Captain.' — one flat word, aimed at Malak; the first word Biggs spoke across the entire confrontation; Drift 3 manifested through cumulative comprehension — the verdict of a man who had decided",
+      "PP_07 T26: 'Gate's clear.' — after manacles clicked shut; flat and professional; the verdict of a twelve-year gate veteran who has decided something"
+    ],
+    "Wedge": [],
+    "Linzi": [],
+    "Squire_Aldric": [],
+    "Kesten": [],
+    "Kassil": [],
+    "Jamandi": [],
+    "Tartuccio": [],
+    "Corryn_armorer": [
+      "PP_04 T19: 'That's my customer's sword in that bundle.' / 'And that is the person who took it.' / 'I owe you something for that.' [assessing the returned sword and the unconscious thief delivered]",
+      "PP_04 T20: 'You beat her half-unconscious, carried her here, fixed her up, and bought her lunch.' [eating flatbread, watching Malak's guards out of the corner of his eye] 'This one's going back to its owner. The rest — I'll pay you for the gear. Fair rate, not charity. And when she wakes up, I'll have a conversation with her. The kind a man has when he's still annoyed but doesn't want to see someone dead in an alley over six inches of steel.' / 'Today of all days. Feast day. Half of Restov's trying to get somewhere.' [glancing toward gate guards on the approach road]",
+      "PP_05 T21 (at bench, gate visible): 'They've been out there since before you came back with her. That's not how it works. Gate guard stands at the gate. You walk someone out to meet them on the road like that, you're not checking them — you're moving them. Keeping them from the gate. Different thing entirely.'"
+    ],
+    "tutorial_thief": [
+      "PP_02 T17 (reveal): 'You found me. Question is whether you can keep me.' [hood pulled back, daggers out, compact stance already set, sword from Corryn's bench leaning against wall behind her]",
+      "PP_03 T18 (crew arrived, thief spoke for crew): 'Give us the sword and walk away.' [crew visible at alley mouth, thief relaying their demand while on the ground]"
+    ],
+    "Pyotr_Volkov": [
+      "PP_07 T26 Arrest Celebration Beat: 'About damn time!' [caravan driver, 50s, black beard streaked grey, voice carrying easily from the line]"
+    ],
+    "Rina_Pavlek": [
+      "PP_06 T24 (crowd tell): 'He doesn't leave it empty like this. Not once.' [flatbread vendor, not quite loud enough to address anyone in particular but heard by several people nearby; marking today as anomalous, not routine]",
+      "PP_07 T26 Arrest Celebration Beat: CLANG [tray against brazier frame, one sharp ring; eye contact made with Biggs, not with eRmaC]"
+    ],
+    "Mother_Talvi": [
+      "PP_07 T26 Arrest Celebration Beat: 'Erastil bless you both — Biggs! Wedge! You held this gate today!' [lead pilgrim, 70s, silver-braided crone, hawthorn staff raised in both hands, using their names because she heard eRmaC name them in his commands]"
+    ],
+    "Kostya": [
+      "PP_07 T26 Arrest Celebration Beat: 'BIGGS! WEDGE! BIGGS! WEDGE!' [water boy, 13, climbed a barrel to project the chant; Mikha picked it up two counts later; cooking pot joined in rhythm from somewhere unidentified]"
+    ],
+    "Lyuba_Krenn": [
+      "PP_07 T26 Arrest Celebration Beat: 'For the hero.' [pie girl, 14, freckles, came forward with flatbread held in both hands; addressed toward eRmaC but the crowd heard it as the crowd's verdict]"
+    ],
+    "Borys_Radchenko": [
+      "PP_07 T26 (Arrest Celebration Beat): 'Gate's been empty since he dragged you out here.' [fish seller, milky right eye, said to the road surface in front of him without turning from his fish board]"
+    ],
+    "Grandfather_Sava": [
+      "PP_07 T26 (Arrest Celebration Beat): 'Thirty.' [nut roaster, deaf in right ear, held up one finger then three fingers; meaning thirty paces from the gate — where no gate search has lawful standing; did not join the chant but did not stop roasting]"
+    ]
+  },
+  "decision_log": [
+    {
+      "turn": 1,
+      "scene_id": "char_create",
+      "prompt_summary": "Class selection — 27 classes offered across all published PF2e categories",
+      "options_offered": 27,
+      "player_choice": "3 — Barbarian",
+      "consequence": "Barbarian class selected. Build list for Barbarian presented: 10 builds available."
+    },
+    {
+      "turn": 2,
+      "scene_id": "char_create",
+      "prompt_summary": "Barbarian build selection — 10 builds offered",
+      "options_offered": 10,
+      "player_choice": "1 — Tactical Reach King (Giant Instinct, Heavy Plate Variant)",
+      "consequence": "Build confirmed. Giant Instinct subclass, Guisarme primary weapon, Full Plate or Dragon Plate armor route. God Combo backbone: Heavy Armor at L1 via Versatile Human → Sentinel Dedication scaling."
+    },
+    {
+      "turn": 3,
+      "scene_id": "char_create",
+      "prompt_summary": "Ancestry selection — 10 ancestries offered",
+      "options_offered": 10,
+      "player_choice": "1 — Human (Versatile Human heritage)",
+      "consequence": "Human ancestry selected. Versatile Human heritage chosen for the extra general feat slot, used for Armor Proficiency Heavy — enabling Dragon Plate at Level 1."
+    },
+    {
+      "turn": 4,
+      "scene_id": "char_create",
+      "prompt_summary": "Heritage selection — 4 options offered for Human",
+      "options_offered": 4,
+      "player_choice": "V — Versatile Human",
+      "consequence": "Versatile Human confirmed. General feat slot added. Player selected Armor Proficiency (Heavy) for that slot. Dragon Plate now available at Level 1 regardless of Barbarian class proficiency."
+    },
+    {
+      "turn": 5,
+      "scene_id": "char_create",
+      "prompt_summary": "Weapon selection — Category C (14 options offered)",
+      "options_offered": 14,
+      "player_choice": "5 — Guisarme",
+      "consequence": "Guisarme locked as primary weapon: 2H S, 1d10, Reach 10ft (15ft while Large from Giant Instinct), Trip. Enables battlefield control through reach and trip maneuvers."
+    },
+    {
+      "turn": 6,
+      "scene_id": "char_create",
+      "prompt_summary": "Armor selection — 11 options offered (0-10)",
+      "options_offered": 11,
+      "player_choice": "10 — Dragon Plate",
+      "consequence": "Dragon Plate locked: AC +6, Dex cap 0, speed -5ft (20ft total), Bulwark trait, Resist fire 5. Aerynth-origin artifact, PC-locked to eRmaC. Appearance: blood-red plate with black accents, dragon-hide texture, impossibly fitted at joints."
+    },
+    {
+      "turn": 7,
+      "scene_id": "char_create",
+      "prompt_summary": "Background selection — 42 options offered",
+      "options_offered": 42,
+      "player_choice": "42 — Warrior",
+      "consequence": "Warrior background locked. Grants: Athletics trained (and Expert via Barbarian class), Warfare Lore trained, Powerful Leap as Level 1 skill feat. STR/CON ability boost options."
+    },
+    {
+      "turn": 8,
+      "scene_id": "char_create",
+      "prompt_summary": "Skill selection — 4 free picks from open pool",
+      "options_offered": 3,
+      "player_choice": "Custom: Intimidation, Medicine, Acrobatics, Survival",
+      "consequence": "Four free trained skills locked. Athletics already Expert from class+background. Warfare Lore from background. Total trained: Athletics, Intimidation, Medicine, Acrobatics, Survival, Warfare Lore."
+    },
+    {
+      "turn": 9,
+      "scene_id": "char_create",
+      "prompt_summary": "Ability boost allocation — ancestry and standard boosts",
+      "options_offered": 6,
+      "player_choice": "Ancestry: CON + STR. Standard: WIS + STR + CON + CHA",
+      "consequence": "Final scores: STR 18 (+4), DEX 10 (+0), CON 16 (+3), INT 10 (+0), WIS 12 (+1), CHA 12 (+1). STR maxed for Guisarme damage and Athletics. CON high for HP and Fort. WIS/CHA split for saves and Intimidation."
+    },
+    {
+      "turn": 10,
+      "scene_id": "char_create",
+      "prompt_summary": "Language selection — bonus language from Versatile Human",
+      "options_offered": 12,
+      "player_choice": "3 — Sylvan",
+      "consequence": "Languages: Common (default) and Sylvan (bonus). Sylvan opens communication with fey creatures and some regional wildlife."
+    },
+    {
+      "turn": 11,
+      "scene_id": "char_create",
+      "prompt_summary": "Ancestry feat — 7 options offered",
+      "options_offered": 7,
+      "player_choice": "1 — Natural Ambition",
+      "consequence": "Natural Ambition selected. Grants one bonus Level 1 class feat slot beyond the standard slot. Enables taking both Raging Intimidation and Sudden Charge at character creation."
+    },
+    {
+      "turn": 12,
+      "scene_id": "char_create",
+      "prompt_summary": "Level 1 class feat — primary slot (6 options offered)",
+      "options_offered": 6,
+      "player_choice": "1 — Raging Intimidation",
+      "consequence": "Raging Intimidation locked. Can Demoralize as free action during Rage. Can use Intimidating Glare and Scare to Death while raging. Core social combat tool for non-lethal intimidation encounters."
+    },
+    {
+      "turn": 13,
+      "scene_id": "char_create",
+      "prompt_summary": "Level 1 class feat — Natural Ambition bonus slot (5 options offered)",
+      "options_offered": 5,
+      "player_choice": "2 — Sudden Charge",
+      "consequence": "Sudden Charge locked. Stride twice then Strike as a single action sequence. Enables fast gap-closing from reach advantage without burning all three actions."
+    },
+    {
+      "turn": 14,
+      "scene_id": "char_create",
+      "prompt_summary": "Starting gear selection — 27 options offered across gear categories",
+      "options_offered": 27,
+      "player_choice": "Adventurer's Pack, Healer's Tools, rope (extra), rations (extra), torch (extra), bedroll (extra), waterskin (extra)",
+      "consequence": "Gear locked. Gold remaining: 7gp 8sp 4cp after purchases. Healer's Tools enable Medicine checks. Extra supplies provide redundancy for extended wilderness travel."
+    },
+    {
+      "turn": 15,
+      "scene_id": "char_create",
+      "prompt_summary": "Companion selection — Pick 5 of 11 cross-IP companions (A-K)",
+      "options_offered": 11,
+      "player_choice": "A B C D E — Hu Tao, Keqing, Leliana, Yor_Forger, Aerith",
+      "consequence": "Party of 5 confirmed. Leliana (C) selected as CHRONICLER-BARD — linzi_replacement=Leliana, leliana_chronicler_mode=TRUE, linzi_primary_chronicler=FALSE. Linzi NOT in this run. Seekers hardcoded."
+    },
+    {
+      "turn": 16,
+      "scene_id": "PP_01_arrival",
+      "prompt_summary": "Tutorial trigger — thief stole longsword from armorer's display in morning crowd. How does eRmaC respond?",
+      "options_offered": 5,
+      "player_choice": "1 — PURSUE (Athletics or Acrobatics DC 12)",
+      "consequence": "Athletics roll: d20[14]+7=21 vs DC 12 — Critical Success (near threshold). eRmaC arrived at alley junction before the thief. Thief cornered with back to wall."
+    },
+    {
+      "turn": 16,
+      "scene_id": "PP_02_tutorial_setup",
+      "prompt_summary": "Gate 5 — Thief gender selection",
+      "options_offered": 3,
+      "player_choice": "2 — Female",
+      "consequence": "tutorial_thief_gender=female. Pronouns she/her for remainder of tutorial. Cinematic reveal begins."
+    },
+    {
+      "turn": 16,
+      "scene_id": "PP_02_tutorial_setup",
+      "prompt_summary": "Class menu — Thief class selection (10 options offered)",
+      "options_offered": 10,
+      "player_choice": "1 — Rogue",
+      "consequence": "tutorial_thief_class=Rogue. Cinematic reveal fired: hood pulled, two daggers out, compact stance already set, customer's sword leaned against wall. Thief line: 'You found me. Question is whether you can keep me.'"
+    },
+    {
+      "turn": 17,
+      "scene_id": "PP_03_tutorial_combat",
+      "prompt_summary": "Combat opened after thief's taunt — non-combat options also presented. What does eRmaC do?",
+      "options_offered": 11,
+      "player_choice": "Custom — Rage + Stride + Strike + Strike (four declared; three legally executed before thief hit 0 HP)",
+      "consequence": "Giant Instinct Rage fired. Stride 10ft. Strike HIT (d20[11]+7=18 vs AC 12, 16 damage). Thief 14→0 HP, Dying 1. KO'd before she could act. Crew escalated per scene file."
+    },
+    {
+      "turn": 18,
+      "scene_id": "PP_03_tutorial_combat",
+      "prompt_summary": "Crew arrived at alley mouth — Bruiser and Cutpurse. What does eRmaC do?",
+      "options_offered": 11,
+      "player_choice": "Custom — boot on thief's back, guisarme hook at her throat, demanded crew leave all clothes and all weapons or die",
+      "consequence": "Raging Intimidation: d20[18]+5=23 vs DC 10 — Critical Success. Both Frightened 2. Both stripped. Both fled barefoot. crew_resolved_status=both_fled."
+    },
+    {
+      "turn": 19,
+      "scene_id": "PP_03_tutorial_combat",
+      "prompt_summary": "Crew fled, thief pinned. What does eRmaC do?",
+      "options_offered": 12,
+      "player_choice": "Custom — remove guisarme hook, nonlethal haft strike, bundle all gear in crew clothing, carry thief over shoulder to armorer bench",
+      "consequence": "Nonlethal haft strike: d20[11]+5=16 vs AC 12 — Hit. Thief fully KO'd. Gear bundled. Thief carried out of alley. Transition to PP_04."
+    },
+    {
+      "turn": 20,
+      "scene_id": "PP_04_tutorial_outcome",
+      "prompt_summary": "At armorer bench with thief and gear bundle. What does eRmaC do?",
+      "options_offered": 12,
+      "player_choice": "Custom — first aid on thief, tell armorer to give her stern talking-to when she wakes, buy food and drink for both",
+      "consequence": "Medicine: d20[13]+4=17 vs DC 15 — Success. Thief stabilized. Food 4sp spent. Corryn paid 7gp reward. armorer_favor=TRUE. Save issued at PP_04 break point."
+    },
+    {
+      "turn": 22,
+      "scene_id": "PP_05_gate",
+      "prompt_summary": "At armorer bench, foreground actions menu. Gate is 30 paces north. What does eRmaC do?",
+      "options_offered": 11,
+      "player_choice": "1 — Approach the gate now",
+      "consequence": "PP_05 fired. Three guards on approach road. Malak three speeches delivered verbatim. 22-option menu + 3 build-specific presented."
+    },
+    {
+      "turn": 23,
+      "scene_id": "PP_06_gate_confrontation",
+      "prompt_summary": "After Malak's three speeches — what does eRmaC do? (22+3 options offered)",
+      "options_offered": 25,
+      "player_choice": "Custom — sardonic mock-compliance with gate-location condition: 'I will comply 100% with anything and everything you want as soon as we arrive at the gate'",
+      "consequence": "Anger +1 (sardonic mockery + conditional refusal). Malak: 0→1. Malak fabricated sixty-foot inspection distance (Fabrication #1). Biggs Drift +2 (mandatory first-turn +1, fabricated protocol +1). Biggs: 0→2."
+    },
+    {
+      "turn": 24,
+      "scene_id": "PP_06_gate_confrontation",
+      "prompt_summary": "Malak at Anger 1 with Biggs at Drift 2. What does eRmaC do?",
+      "options_offered": 25,
+      "player_choice": "Custom — conditional bribe: 'if your escorts answer that this is a regular procedure you can have it. Otherwise I call bullshit'",
+      "consequence": "Malak refused deal (can't let Biggs verify — Biggs would confirm there is no such rule). Biggs Drift +1 (watch-station fabrication #2). Biggs: 2→3. Hero Point 2→3 (pool full). Social coup: made guards verification arbiters Malak cannot allow."
+    },
+    {
+      "turn": 25,
+      "scene_id": "PP_06_gate_confrontation",
+      "prompt_summary": "Biggs at Drift 3 threshold, Malak escalating. What does eRmaC do?",
+      "options_offered": 25,
+      "player_choice": "Custom — named the DARVO tactic by its clinical term, publicly, to the man using it; issued a treason ultimatum; addressed Biggs and Wedge directly",
+      "consequence": "Anger rose. Malak performed disbelief ('Treason. You. A stranger. On a public road.'). Biggs Drift → 3 (THRESHOLD): went very still, decision made. Hero Point banked (social deduction). Rina: 'He doesn't leave it empty like this. Not once.'"
+    },
+    {
+      "turn": 26,
+      "scene_id": "PP_06_gate_confrontation",
+      "prompt_summary": "Biggs at Drift 3, Malak out of framing. What does eRmaC do?",
+      "options_offered": 25,
+      "player_choice": "Custom — full conspiracy deduction delivered publicly to Biggs and Wedge (unmanned gate + payment + timed window = paid passage for assassins/spies/contraband, that hour is now); named 'just following orders' as no shield; offered the guards the path out",
+      "consequence": "Malak's last defense: 'The guards are where I put them ... my authority as Captain.' Anger held at 2. Biggs spoke one flat word — 'Captain.' — Drift 3 confirmed. Confrontation stayed verbal; no weapon drawn, no archer fired."
+    },
+    {
+      "turn": 27,
+      "scene_id": "PP_07_path_resolution",
+      "prompt_summary": "Malak out of verbal defenses, Biggs at Drift 3. What does eRmaC do?",
+      "options_offered": 15,
+      "player_choice": "Custom — full speech to Biggs+Wedge (conspiracy deduction + personal appeal + tavern analogy + favorable-testimony offer) + ARM + TRIANGLE FORMATION WITH ME ON MALAK + BIGGS SHACKLE HIM + WEDGE SIGNAL ARCHERS TO GATE DUTY",
+      "consequence": "Warfare Lore: d20[13]+3=16 vs DC 12 — SUCCESS. Path E (Shackling) confirmed. Malak arrested, uninjured. Gate re-manned. Arrest Celebration Beat fired. public_reputation 3→8 (FAVORABLE)."
+    },
+    {
+      "turn": 27,
+      "scene_id": "PP_08_exit_gate",
+      "prompt_summary": "Path E resolved. Arrest Celebration Beat complete. What does eRmaC do? (15 options offered)",
+      "options_offered": 15,
+      "player_choice": "I take Malak into Restov",
+      "consequence": "PP_08 exit gate fired. Six proofs delivered. Save block issued from template. Awaiting .continue for PP_09."
+    }
+  ],
+  "perception_log": [
+    {
+      "turn": 0,
+      "target": "none — character creation phase; no Perception rolls fired",
+      "dc": 0,
+      "rolled": 0,
+      "tell_revealed": "no tell — no roll made"
+    }
+  ],
+  "loot_log": [
+    {
+      "turn": 14,
+      "source": "Starting gear purchase during character creation — 15gp starting gold, gear costs deducted",
+      "items": [
+        "Adventurer's Pack (backpack, bedroll, chalk x10, flint and steel, rope 50ft hemp, rations x14, torch x5, waterskin) — standard pack contents",
+        "Healer's Tools — for Medicine checks; used in PP_04 first aid",
+        "Rope 50ft hemp — extra coil beyond pack contents",
+        "Rations 1 week — extra supply beyond pack contents",
+        "Torch — extra beyond pack contents",
+        "Bedroll — extra beyond pack contents",
+        "Waterskin — extra beyond pack contents"
+      ],
+      "gold_added": {
+        "gp": 0,
+        "sp": 0,
+        "cp": 0
+      },
+      "hp_award_loot": false
+    },
+    {
+      "turn": 19,
+      "source": "Tutorial combat resolution — stripped crew gear and captured thief; sold to Corryn at armorer bench",
+      "items": [
+        "Bruiser's hatchet (1d6+3 S, agile, thrown 10ft) — sold to Corryn as part of gear bundle",
+        "Cutpurse's shortsword (1d6+2 P/S, agile, finesse) — sold to Corryn as part of gear bundle",
+        "Thief's daggers x2 (1d4+2 P/S, agile, finesse, thrown 10ft) — taken from thief's belt before bundling, sold to Corryn",
+        "Bruiser's shirt, trousers, belt, boots — stripped from Bruiser; sold as bundle to Corryn",
+        "Cutpurse's shirt, trousers, belt, boots — stripped from Cutpurse; sold as bundle to Corryn",
+        "8 cp — from Cutpurse's belt pouch, kept by eRmaC"
+      ],
+      "gold_added": {
+        "gp": 7,
+        "sp": 0,
+        "cp": 8
+      },
+      "hp_award_loot": false
+    },
+    {
+      "turn": 20,
+      "source": "Food and drink purchase — flatbread and watered wine for thief (for when she wakes) and armorer Corryn (gesture of goodwill)",
+      "items": [
+        "Flatbread x2 — purchased from Rina Pavlek's vendor cart on strip",
+        "Watered wine x1 (skin) — purchased alongside flatbread"
+      ],
+      "gold_added": {
+        "gp": 0,
+        "sp": -4,
+        "cp": 0
+      },
+      "hp_award_loot": false
+    }
+  ],
+  "hp_ledger": [
+    {
+      "turn": 0,
+      "trigger": "Character creation — base HP calculated: Barbarian 10 (base) + CON mod 3 (CON 16) + Human ancestry 8 (base) = 23 HP at Level 1",
+      "awarded": 23,
+      "pool_after": 23,
+      "overflow_after": 0
+    }
+  ],
+  "xp_ledger": [
+    {
+      "turn": 0,
+      "source": "Character creation — no XP awarded; starting fresh",
+      "amount": 0,
+      "running_total": 0
+    },
+    {
+      "turn": 17,
+      "source": "Tutorial combat — KO'd the Rogue thief with a single Raging Giant Instinct guisarme strike (HIT, 16 damage vs 14 HP; off-guard from Critical Success pursuit; thief downed before she could act)",
+      "amount": 50,
+      "running_total": 50
+    },
+    {
+      "turn": 18,
+      "source": "Tutorial crew — intimidated Bruiser and Cutpurse into full surrender and strip via hostage-control play combined with Raging Intimidation Critical Success (23 vs DC 10); both Frightened 2, both stripped completely, both fled without any combat exchange",
+      "amount": 60,
+      "running_total": 110
+    },
+    {
+      "turn": 19,
+      "source": "Tutorial resolution bonus — captured thief alive and delivered to armorer bench (not abandoned in alley); customer's sword recovered and returned; armorer favor earned; nonlethal takedown completed",
+      "amount": 40,
+      "running_total": 150
+    },
+    {
+      "turn": 20,
+      "source": "Tutorial outcome — first aid rendered to defeated opponent (Medicine SUCCESS); goodwill deeds logged (food purchased for both thief and armorer); public reputation established at 3 (NOTICED); Squire Aldric witnessed",
+      "amount": 50,
+      "running_total": 200
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Never Drew Weapon: gate scene fully resolved across the confrontation without eRmaC ever drawing the guisarme from its back position or equipping any weapon at any point",
+      "amount": 150,
+      "running_total": 350
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Never Used the Invitation: Jamandi's Aldori invitation letter was never shown, never mentioned, never used as leverage or evidence at any point during the gate confrontation; scene resolved entirely on eRmaC's own authority and tactics",
+      "amount": 100,
+      "running_total": 450
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Crowd Dispersed Peacefully: no civilian was harmed at any point; the confrontation stayed verbal; bystanders watched, reacted, and dispersed safely after the arrest",
+      "amount": 50,
+      "running_total": 500
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Malak Arrested By His Own Men: Biggs applied gate-guard manacles to Malak on eRmaC's explicit military command sequence (ARM + TRIANGLE FORMATION + BIGGS SHACKLE HIM); Warfare Lore d20[13]+3=16 vs DC 12 SUCCESS confirmed the prompt was player-directed, not Biggs acting independently",
+      "amount": 200,
+      "running_total": 700
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Malak Trapped Cannot Bolt: TRIANGLE FORMATION command + converge-slowly instruction closed all escape routes before Malak could attempt to flee; formation established while Malak was cornered and out of verbal defenses",
+      "amount": 125,
+      "running_total": 825
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Directive Two Uncovered: player explicitly stated aloud to Biggs and Wedge the conspiracy's mechanism: 'The person that paid you asked you to leave the gates open for him at a certain hour, that hour is now' — gate-window conspiracy identified and named before witnesses; directive_two_uncovered=TRUE",
+      "amount": 125,
+      "running_total": 950
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Biggs and Wedge Both Side With Player: Biggs reached Drift 3 through cumulative comprehension (spoke one flat word, 'Captain.') and Wedge mirrored; both complied with formation commands and gate duty signal on player's military orders; biggs_crowd_hero=TRUE, wedge_crowd_hero=TRUE",
+      "amount": 150,
+      "running_total": 1100
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Crowd Sides with Player: Arrest Celebration Beat fully fired — Pyotr Volkov ('About damn time!'), Rina Pavlek (CLANG + eye contact with Biggs), Mother Talvi (Erastil blessing using Biggs and Wedge by name), Kostya and Mikha (chant), Lyuba Krenn ('For the hero'), Borys Radchenko (gate empty confirm), Grandfather Sava ('Thirty') — all verified crowd responses from named crowd NPCs",
+      "amount": 100,
+      "running_total": 1200
+    },
+    {
+      "turn": 27,
+      "source": "Gate scene — Gate Re-Guarded, Forced Return: on player order Wedge signaled Woody and Wang back to the arch — the gate Malak had stripped of guards was manned again before the procession left; gate_remanned_by=wedge",
+      "amount": 150,
+      "running_total": 1350
+    }
+  ],
+  "fail_log": [
+    {
+      "turn": 18,
+      "code": ".fail 34",
+      "description": "DM began response with multi-paragraph internal reasoning narration before the scene narration, exposing the classification process ('This is a creative hostage-control play combined with a Demoralize...') to the player. Internal reasoning belongs in scratch thought, not in user-facing output. Corrected: acknowledged the failure, issued the Hero Point retroactively as compensation for the dropped-input pattern that preceded it.",
+      "corrected": true
+    },
+    {
+      "turn": 27,
+      "code": ".fail 9 (lazy save)",
+      "description": "DM output a save block built from the prior save's shape rather than the template skeleton from KM_SaveBlock_Template.md. Specific errors: (1) pre_prologue_state was a string 'PP_GATE_EXIT' instead of the template's object with malak_anger, biggs_drift, and other tracker fields; (2) fail_log used field name 'fail_code' instead of template's 'code'; (3) marriage object was duplicated inside player (template has it only in story_flags); (4) template fields tartuccio_evidence, tartuccio_evidence_pressure, drevic_released_on were missing from story_flags; (5) log entries were compact one-liners instead of pretty-printed multi-line format; (6) save was well under the 900-line/40KB floor for Pre-Prologue. Corrected: rebuilt entirely from template skeleton by opening KM_SaveBlock_Template.md this turn and copying the JSON shape key-by-key.",
+      "corrected": true
+    }
+  ],
+  "dispositions": {
+    "merciful": 1,
+    "ruthless": 0,
+    "cunning": 1,
+    "blunt": 2,
+    "scholarly": 1
+  },
+  "companion_titles": {},
+  "pending_hp_loot_rolls": 0,
+  "pending_overflow": 2,
+  "dream_log": [],
+  "dream_cooldown": 0,
+  "player_legacy": [],
+  "current_chapter": "pre_prologue",
+  "current_scene": "restov_gate",
+  "current_location": "Restov — East Gate arch, entering the city; Malak shackled in custody, Biggs holding chain",
+  "discovered_locations": [
+    "Restov — East Gate vendor strip (Corryn armorer bench area)",
+    "Restov — East Gate approach road (confrontation with Malak, 30 paces south of arch)",
+    "Restov — East Gate arch (arrest scene, procession forming)"
+  ],
+  "party_formation": {
+    "vanguard": [
+      "eRmaC",
+      "Hu Tao",
+      "Keqing",
+      "",
+      "",
+      ""
+    ],
+    "rearguard": [
+      "Yor_Forger",
+      "Aerith",
+      "Leliana",
+      "",
+      "",
+      ""
+    ],
+    "reserve": [],
+    "reserve_activities": {},
+    "combat_formation": "shield_wall",
+    "custom_positions": {}
+  },
+  "expedition_funds": 0,
+  "injuries": [],
+  "passive_jealousy": {
+    "WatcherName_watching_RivalName": {
+      "heat": 0,
+      "rival": "",
+      "last_trigger": "",
+      "behavior_tier": "none",
+      "boiling_point": 10,
+      "confrontation_fired": false
+    }
+  },
+  "companion_rivalry": {
+    "CompanionA_CompanionB": {
+      "tier": 0,
+      "cause": "",
+      "last_event": "",
+      "combat_cohesion": true,
+      "mutual_respect": false,
+      "resolution": null
+    }
+  },
+  "date_log": [],
+  "dates_this_chapter": 0,
+  "companion_fights": {
+    "CompanionName": {
+      "fight_active": false,
+      "fight_trigger": "",
+      "fight_chapter": null,
+      "posture_used": "",
+      "paused_duration": 0,
+      "paused_chapters_remaining": 0,
+      "grand_gesture_available": true,
+      "agenda_ignored_count": 0,
+      "mend_attempts": []
+    }
+  },
+  "game_options": {
+    "leveling_mode": "manual",
+    "companion_leveling_mode": "auto",
+    "companion_combat": "auto",
+    "response_length": "medium",
+    "min_paragraphs": 4,
+    "max_paragraphs": 6,
+    "npc_dialogue_beats_min": 6,
+    "tts_mode": true
+  }
+}

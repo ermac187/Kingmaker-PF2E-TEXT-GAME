@@ -1,0 +1,1621 @@
+KINGMAKER — SESSION HANDOFF v96.30 — LOWER CORRIDOR MAP FIXES · GEOMETRY CORRECTED · SMOKE CONTAINED · ROW C LOCK · ROWS[] PRE-BUILT (2026-06-25)
+═══════════════════════════════════════════════════════════════════
+
+⛔ DEPLOY BEFORE RESUMING:
+  1. RE-PASTE KM_ClaudeInstructions.md into claude.ai project system prompt (v96.23–v96.30 — all behavior changes)
+  2. RE-UPLOAD C:/KMG folder (KM_CombatTurn.txt + KM_Map_Artifact.md changed this session)
+  Skipping either step = missing the map fixes.
+
+────────────────────────────────────────────────
+1. LOWER FLOOR GEOMETRY CORRECTED (v96.27)
+────────────────────────────────────────────────
+  Prior manifest had stale coordinates (stairfoot ^4B, J 3C, B 7C, S 20C, door /22C).
+  These did not match the DM's actual drawn layout — caused every turn's map to mismatch.
+  Corrected everywhere to:
+    stairfoot ^2C | eRmaC @4C | Jaethal J6C | Brannic B8C | Sable S19C
+    alcove door /24B/C/D (east end) | Tartuccio T25C (inside alcove, east end)
+  Smoke: EXACTLY cells 2B and 2D only — NOT a zone, NOT cols 1-3.
+    Walls cols 1/3/rowA/rowE = always # regardless of proximity to smoke.
+    No NPC may stand in a smoke cell.
+  System prompt: added ⛔ LOWER FLOOR ORIENTATION + SMOKE RULES block.
+  KM_CombatTurn.txt § LOWER FLOOR: updated FIXED LAYER grid + KEY.
+
+────────────────────────────────────────────────
+2. ROW C LOCK + TARTUCCIO ALCOVE ANCHOR (v96.29)
+────────────────────────────────────────────────
+  DM was distributing tokens across rows B/C/D. Corridor = 3 rows but NPCs walk single file.
+  All corridor tokens default to row C. Spread across B/D = banned.
+  Per-token hard anchors (system prompt + manifest self-verify):
+    @4C · J6C · B8C (never past col 10 unless moved) · S19C · T25C
+  Tartuccio: INSIDE ALCOVE, FAR EAST end (col 24-25). Not visible from corridor until door opened.
+  "Tartuccio is mid-corridor" or "alcove is halfway down" = .fail 9 map error.
+
+────────────────────────────────────────────────
+3. RENDERING INTERNALS BAN (v96.28 — Rule 16 extended)
+────────────────────────────────────────────────
+  DM outputted debug commentary as player-facing text:
+    "The column header loop had a bug — it referenced c2 before that variable was declared..."
+  Rule 16 extended: map rendering is invisible infrastructure.
+  DM may NEVER narrate why a map broke (variable names, loops, column widths, token passes).
+  Fix silently, repost map, say nothing. = .fail 3. Live example baked into the rule.
+  KM_ClaudeInstructions.md v96.28.
+
+────────────────────────────────────────────────
+4. ARTIFACT ROWS[] PRE-BUILT (v96.30)
+────────────────────────────────────────────────
+  Root cause of artifact position drift: DM regenerates rows[] from narrative memory each turn
+  instead of copying pre-built strings. Fix: ARTIFACT DATA BLOCK added to KM_CombatTurn.txt
+  § LOWER FLOOR with 5 pre-built rows[] strings (all creatures at correct char indices).
+  DM instruction: COPY verbatim from that block. Movement = change one char at (col-1).
+  Creature index table included in the data block.
+  KM_Map_Artifact.md § HOW THE DM RENDERS IT: ⛔ ban on rows[] regeneration added.
+  NOTE: This is a mitigation, not a guaranteed fix. LLM may still regenerate from memory.
+  If artifact keeps drifting this session, use .maptoggle to fall back to ascii for this combat.
+
+────────────────────────────────────────────────
+5. v96.31 ATTEMPTED + REVERTED
+────────────────────────────────────────────────
+  Disabled artifact as automatic map during session. User rejected: "i dont want that."
+  Reverted. Artifact remains enabled when map_primary: artifact. ASCII is default.
+  User's position: map prints fine with a slight problem; fix the problem, don't redesign.
+
+────────────────────────────────────────────────
+LIVE COMBAT STATE — PR_05 LOWER CORRIDOR
+────────────────────────────────────────────────
+  Beat: post-descent, eRmaC at stairfoot. Combat not yet initiated.
+  eRmaC  @ 4C  — HP full, guisarme
+  Jaethal  J 6C — Stealth 22, hidden from Brannic + Sable
+  Brannic  B 8C — HP 22/22, AC 17, shortsword in hand
+  Sable    S 19C — HP 14/14, AC 14, shortbow not yet drawn
+  Tartuccio T 25C — inside alcove, frightened; alcove door /24B/C/D cracked ajar
+  Smoke: 2B and 2D. Stairfoot: ^2C.
+  Brannic and Sable unaware of Jaethal.
+
+────────────────────────────────────────────────
+OUTSTANDING / CARRY-FORWARD
+────────────────────────────────────────────────
+  • Artifact character positions may still drift — LLM limitation. Mitigated by rows[] block.
+  • Tartuccio rescue + ring decision required before leaving corridor (PR_05 gate).
+  • All v95.23 outstanding items carry forward unchanged.
+  • User was frustrated by repeated artifact map failures. Be conservative with artifact
+    rendering in combat; confirm map is correct before proceeding each turn.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.23 — FINISHING MOVE SYSTEM · PRE-AUTHORED KILLS LOCKED · COMPANION + WEAPON TYPE TABLES · COMBAT MAP FIXED (2026-06-20)
+═══════════════════════════════════════════════════════════════════
+
+⛔ DEPLOY FIRST (new chat): RE-UPLOAD C:/KMG (KM_GuisarmeFinishers.md, KM_CompanionFinishers.md,
+KM_WeaponFinishers.md, updated KM_ClaudeInstructions.md, updated KM_CombatTurn.txt) AND
+RE-PASTE KM_ClaudeInstructions.md. Finisher mandate is inert until re-paste.
+
+────────────────────────────────────────────────────────────────────
+1. ROOT CAUSE — DM KEPT SANITIZING / SOFTENING KILLS (8+ RUNS)
+────────────────────────────────────────────────────────────────────
+  PR_04 Turn 39 (aerial 360 guisarme cleave, room assassin). Failure pattern across 8+ runs:
+  • Softened kills to incapacitation despite clear death threshold
+  • Wrong raging damage die (1d8 instead of 1d10 Giant Instinct)
+  • Invented mechanical gates on aerial Strikes (demanded Acrobatics checks)
+  • Fabricated low ceilings / small rooms to prevent the declared move
+  • Skipped or rewrote finishing moves to remove graphic content
+  • Jaethal criticizing kill as "wasteful" (banned — she worships Urgathoa)
+  • No grid map printed (missing map = .fail 14)
+  FIX: pre-authored text the DM copies verbatim. Three files — DM cannot sanitize text it
+  didn't write.
+
+────────────────────────────────────────────────────────────────────
+2. KM_GuisarmeFinishers.md (NEW — C:/KMG/Core/)
+────────────────────────────────────────────────────────────────────
+  Full pre-authored finishing move narration for eRmaC's guisarme.
+  Tiers: Clean (1-49%) / Brutal (50-99%) / Savage (100-199%) / Annihilation (200%+).
+  Options A-E per tier — DM selects by weapon angle and position, copies word-for-word.
+  DM does NOT rewrite. DM does NOT select a lower tier. Missing = .fail 9.
+  Savage options: decapitation (standard + aerial descending) / arm separation / bisection at
+    waist / leg separation.
+  Annihilation options: vertical split / horizontal bisection (halves not close) / diagonal through /
+    driven through floor (pinned) / room decorated (pieces reach walls in arc order).
+
+────────────────────────────────────────────────────────────────────
+3. KM_CompanionFinishers.md (NEW — C:/KMG/Core/)
+────────────────────────────────────────────────────────────────────
+  Locked kill Result per companion per tier. DM writes surrounding scene; result text is the file's.
+  Companions (notable Annihilation entries):
+  • Jaethal (longsword S): vertical bisection skull-to-clavicle, two halves, left stays upright
+  • Revy (twin pistols P): both pistols into skull, crown leaves body, wall maps rounds
+  • Yor (stilettos P) — TWO approach tables (backstab vs frontal):
+      Backstab Clean = blade enters neck from behind, both carotids drawn forward in one motion,
+        throat opens, hands come up too late and find nothing
+      Backstab Annihilation = first blade left in skull base, second opens throat+subclavian,
+        target walks three steps on momentum before registering nothing required to live is intact
+      Frontal Annihilation = 31 entry wounds, chest/throat/skull, target unrecognizable
+  • Satsuki (katana S): two crossed diagonal cuts, four sections, crossing at center mass
+  • Amiri (oversized greatsword S): vertical split, halves fall in opposite directions, floor shows entry
+  • Hu Tao (funeral spear S reach): bisection at waist, flame marks trajectory
+  • Keqing (blades+lightning): 8 exit points, body stops holding together as she steps away
+  • Atalanta (longbow P): three arrows placed throat/sternum/groin as target falls, last pins to floor
+  • Bellatrix (void/force/necrotic): target DETONATES — wet sound, fine mist, boots remain upright,
+      nothing else does
+  • Harrim (flail B): skull/ribs/skull, what is left is a shape that used to have a face
+  • Valerie (longsword S): shield-bash, sword enters sternum, withdrawn, enters throat on backstroke
+
+────────────────────────────────────────────────────────────────────
+4. KM_WeaponFinishers.md (NEW — C:/KMG/Core/)
+────────────────────────────────────────────────────────────────────
+  Generic kill results for any attacker not covered by companion files.
+  Weapon types: dagger / shortsword / longsword / rapier / halberd / greataxe / spear / bow /
+    club+mace+flail / natural weapons / tendrils+slam.
+  Damage types with IP-specific narration lean notes:
+  • Fire: Hu Tao (ghost-flame, pale, incense smell) vs Bellatrix (fiendfyre, alive, enjoys it)
+  • Lightning: Keqing (precise, internal, violet) vs Regongar (hits all at once, loud)
+  • Ice: Kalikke (flash-freeze exactly what she means to) vs Jubilost bombs (splash zone)
+  • Acid: Jubilost flask (eating sound, smoke, splash) vs spell-delivered (concentrated)
+  • Void/Necrotic: Jaethal (quiet, clinical) vs Bellatrix AK (bright green, no mark) vs Harrim
+  • Curse/Mental: skull deforms from inside, face is last to go
+  • Poison: Yor fast-acting (clean stop) vs assassin poison (slower, worse)
+  • Alchemist bombs: fire (sticks, floor scorched in shape) / acid (skeleton clean on eaten floor) /
+      frost (Jubilost counts the pieces later)
+
+────────────────────────────────────────────────────────────────────
+5. KM_ClaudeInstructions.md — FINISHER MANDATE
+────────────────────────────────────────────────────────────────────
+  Added: DO NOT WRITE YOUR OWN FINISHING MOVE RESULTS. LOAD THE FILE.
+  Three-way routing:
+  • eRmaC guisarme → KM_GuisarmeFinishers.md (full narration, pick A-E)
+  • All companions → KM_CompanionFinishers.md (locked Result per tier)
+  • Any other attacker (enemy NPC, unnamed soldier, creature) → KM_WeaponFinishers.md
+      (match weapon type, use that tier's Result)
+  Softening = .fail 9. Skipping = .fail 9. Wrong tier = .fail 9.
+
+────────────────────────────────────────────────────────────────────
+6. KM_CombatTurn.txt — TWO GRIDS COLLAPSED TO ONE
+────────────────────────────────────────────────────────────────────
+  Previous template had (a) ROOM LAYOUT blank walls A-K and (b) CURRENT POSITIONS with entities
+  cut off at column H. Two grids caused DM ambiguity — which to update?
+  Fix: one combined grid A-K showing fixed walls AND current entity positions together.
+  DM updates entity tokens each turn; # walls are fixed.
+  Current positions: @ eRmaC F3 · J Jaethal C3 · 1 Assassin B5 · = Window E2.
+  (Single-char tokens: companions = letters, enemies = digits, window = `=` non-alnum.
+   NOT Ja/As/W — `W` is Harrim's companion letter.)
+  Missing map = .fail 14.
+
+────────────────────────────────────────────────────────────────────
+LIVE COMBAT STATE (paused — PR_04 Turn ~39)
+────────────────────────────────────────────────────────────────────
+  Night attack on eRmaC's guest room, Jamandi's manor. Assassin alive.
+  eRmaC @ F3 · Jaethal @ C3 · Assassin @ B5 · Window @ E2.
+  Assassin 20ft from eRmaC — outside guisarme reach (10ft). Stride F3-D5 (15ft diagonal)
+  puts B5 in 10ft reach.
+  eRmaC: guisarme 1d10+10 raging / AC 19 / Rage active.
+
+────────────────────────────────────────────────────────────────────
+OUTSTANDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • DEPLOY both channels (re-upload C:/KMG + re-paste KM_ClaudeInstructions.md).
+  • COMBAT UNRESOLVED — assassin alive at B5. Resume from current positions.
+  • Companion finishers could be expanded: Aerith (staff B) / Leliana (bow+daggers) /
+    Nok-Nok (kukri) / Regongar (Spellstrike+lightning sword). Jubilost covered in WeaponFinishers.
+  • All prior v95.22 outstanding items carry forward.
+
+═══════════════════════════════════════════════════════════════════
+⛔⛔ STRUCTURAL LESSON FROM A FAILED SESSION (POSTERITY — READ BEFORE TOUCHING CAROUSEL/CHRONICLER FILES) ⛔⛔
+
+A subsequent session BROKE the live game by stacking new top-of-file rule
+blocks (CHRONICLER IDENTITY + CAROUSEL-OPEN MANDATE + SELECT-ONE gate) onto
+PR_03 / PR_03_Openers / PR_02 without removing the legacy "Linzi opens first,
+Storm replaces if rejected" scaffolding directly below them. The DM read two
+contradictory rule sets in the same file and stalled / fabricated Linzi /
+parked Storm in BackOfQueue. User caught the cause on the FIRST turn; the
+assistant deflected three times (blamed pre-existing bugs → blamed the
+model → blamed legacy architecture) before reverting. DARVO pattern from the
+DM behavior memory, repeated by the AUTHOR. Don't.
+
+RULES FOR ANY FUTURE CAROUSEL / CHRONICLER / OPENER EDIT:
+  1. Before adding a top-of-file mandate, GREP THE REST OF THE FILE for the
+     opposite rule. If legacy logic contradicts the new mandate, the legacy
+     logic must be DELETED or REWRITTEN in the SAME edit. "Top-of-file
+     override" is not a real pattern. The DM reads both blocks.
+  2. Specific landmines that were live in PR_03 / PR_03_Openers / PR_02 last
+     time someone went in: CAROUSEL STATE examples showing Engaged: [Linzi];
+     OPENER SLATE listing Storm in Perception-order queue; LINZI scripted
+     opener still flagged canonical first-carousel opener. ALL must be
+     reconciled with any chronicler-identity edit. Recast was Kaori→Storm,
+     not Linzi→Storm — Linzi legacy text was never fully purged.
+  3. When the user names the timing of a break ("until your last edit"),
+     believe them on the first turn. Do not blame pre-existing bugs, the
+     model, or "legacy architecture." Your diff is the diff. Revert; then
+     diagnose.
+  4. Broken live game = authorization to revert. Do not punt the decision
+     ("revert, partial revert, or anything else — tell me") after admitting
+     fault. Pick the scope, name what stays (content rewrites that are not
+     mechanic edits — pool questions, closing questions), execute.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.22 — BUILD-CORRUPTION FIX · SAVE-TEMPLATE HARDENING · LEVEL-UP ★ RECOMMENDATION · CHAPTERS FOLDERED (Ch1–Ch7) · CANON AUDIT + BUILD-OUT (Ch4–7) · USER PIVOTING TO NEW PROJECT (2026-06-19)
+═══════════════════════════════════════════════════════════════════
+
+⛔ USER IS STARTING A NEW PROJECT/CHAT after this session. The on-disk C:/KMG state below is complete
+and self-consistent — carry forward or cherry-pick. (Working dir is C:/KMG; C:/KMX is Claude Code
+scratch only, NOT the game.)
+
+⛔ DEPLOY (if continuing this project): RE-UPLOAD all of C:/KMG (new Ch1–Ch7 folders + edited Core
+files) AND RE-PASTE KM_ClaudeInstructions.md (§ LEVEL-UP MENU). Inert until both done.
+
+────────────────────────────────────────────────────────────────────
+1. PLAYER BUILD CORRUPTION — DIAGNOSED + FIXED
+────────────────────────────────────────────────────────────────────
+  The DM repeatedly REGENERATED + corrupted eRmaC's player block when writing saves — 3 different
+  fabricated sheets in one session ("Dragon Instinct", "Half-Elf", CHA14, DEX12, Moment of Clarity,
+  Impressive Performance, dropped class_1b/Sudden Charge).
+  GOLD COPY = .saves/4_Carousel.txt + the char-creation decision_log in .saves/3_Jamandi.txt (turns
+  11–13 record the ACTUAL picks). Authoritative L1 sheet:
+    Barbarian (Giant Instinct) · Human · Versatile Human · STR18/DEX10/CON16/INT10/WIS10/CHA12 · AC19 ·
+    speed20 · Fort8/Ref3/Will4 · Perc6 · skills Athletics+7/Intimidation+4/Warfare Lore+3/Survival+3 ·
+    feats: Natural Ambition, class_1 Raging Intimidation, class_1b Sudden Charge, general Armor
+    Proficiency (Heavy), skill Intimidating Glare · Guisarme · Dragon Plate.
+    PLAYER IS LEVEL 1 (NOT yet 2). L2 build-map pick = Sentinel Dedication + Assurance (Athletics).
+  FIXED: .saves/5_NightAttack.txt player block reconciled to the above (was corrupt). Valid JSON.
+  (User confirmed Raging Intimidation WAS their pick — verified in 3_Jamandi decision_log + tutorial
+  combat logs across 1_Malak/2_EnterRestov/3_Jamandi; it is the build's recommended L1 class feat.)
+
+────────────────────────────────────────────────────────────────────
+2. SAVE-TEMPLATE HARDENING (KM_SaveBlock_Template.md)
+────────────────────────────────────────────────────────────────────
+  Root cause: the template let the DM rebuild the player block from the empty skeleton. Fixes:
+   • added class_1b to the feats skeleton (the Natural-Ambition bonus L1 class feat had no home → dropped)
+   • fixed the FILL GUIDE feats line (enumerate all slots incl. class_1b; forbid build-guide inference)
+   • NEW ⛔⛔ "PLAYER IDENTITY BLOCK IS COPIED, NOT GENERATED" lock at the player FILL GUIDE — copy
+     build_id/build/class/ancestry/heritage/attributes/skills_trained/feats verbatim from the prior
+     save; the skeleton is SHAPE not a blank to refill; re-deriving = .fail 9 (with the 2026-06-19
+     eRmaC corruption logged as the dated example)
+   • strengthened the immutable-facts rule (instinct/heritage cases + decision_log pointer).
+
+────────────────────────────────────────────────────────────────────
+3. LEVEL-UP ★ RECOMMENDATION (reverses part of the 2026-06-16 directive)
+────────────────────────────────────────────────────────────────────
+  v95.21 / 2026-06-16 made the PLAYER .levelup menu NEUTRAL with NO recommendation. User reversed it:
+  the menu now prints "Build map recommends: <pick>" AND a ★ on the recommended option
+  (e.g. [1] ★ Sentinel Dedication). INFORMATIONAL ONLY — never auto-applied; the [AUTO]/[AUTO ★] tag,
+  "lock both"/"confirm both", "type auto", "the build confirms it" steering ALL REMAIN banned. The ★ is
+  the build-map marker, NOT the banned [AUTO ★] — do NOT remove it as if it were.
+  Edited: KM_ClaudeInstructions.md § LEVEL-UP MENU (re-paste), KM_Commands.md .level, KM_Combat_Systems.md
+  § MANUAL mode. Confirmed live in the running game after the re-paste.
+
+────────────────────────────────────────────────────────────────────
+4. CHAPTERS SPLIT INTO PER-CHAPTER FOLDERS (Ch1/–Ch7/)
+────────────────────────────────────────────────────────────────────
+  Un-merged consolidated KM_Chapters.md (Ch1–2) + KM_Chapters_B.md (Ch3–7) into one file per chapter
+  (Ch1/KM_Ch1.md … Ch7/KM_Ch7.md), split BYTE-VERBATIM (cmp-verified identical to originals). Originals
+  moved to .backups/.chapters_consolidated_premerge_2026-06-19/ (NOT uploaded). ~60 references across
+  21 files repointed KM_Chapters*.md → KM_Ch#.md (final audit: 0 stale remain). _MANIFEST.md updated
+  (§ CHAPTER FOLDERS; upload-by-phase table; Core 53→51 files).
+  NEW UPLOAD SCHEME: Core + ONLY the current chapter's folder (drops ~186KB of chapter text from Core).
+
+────────────────────────────────────────────────────────────────────
+5. CANON AUDIT + BUILD-OUT vs OWLCAT CRPG (sourced from wiki, not fabricated)
+────────────────────────────────────────────────────────────────────
+  Ch1 Stolen Land — complete (verified).
+  Ch2 Troll Trouble/Bloom — complete; ADDED Candlemere Tower (Curse of Candlemere; will-o-wisps;
+      Lore Nature/Athletics to reach; Rismel NE).
+  Ch3 Varnhold — complete; named Maegar Varn (regent); fixed "Wilas"→"Willas" Gunderson. (Barbarian
+      Hunting Party/Nober, Stockade/Agai, Willas were already present — my earlier over-flag corrected.)
+  Ch4 Twice-Born Warlord — Rushlight Tournament MOVED to Ch5 (canon Ch5; old Ch4 events Archery/Axe/
+      Horse/Wrestling/Grand-Melee were non-canon); ADDED Iron Golem + Blood Bones Beasts to Armag's
+      Tomb (named, → Bestiary); fixed stale checklist.
+  Ch5 War of the River Kings — REBUILT 8→15KB: Whiterose Abbey (Evindra, Ring of Chaos, Dripping
+      Clock/Singing Edge, Lake Depths/Darkwind/Fox Signet, Stefano Moskoni), Pitax City (Main Square/
+      house-leaders, Academy/Eimar Deschamps/"The River's Justice"/Walsh Celvoway+Vascari, River Bend),
+      Menagerie cave (Nyrd Zottenropple), River Blades' Camp (Ilora Nuski, Urtenea), The Path of the
+      Dreams (Nymph's Gift → Storyteller → Dreamscape → 3 Defaced Sisters → reveals Whiterose), Runaway
+      Throne (Hyland/Hassuf/Verdel/Elina, Lostlarn Keep, Goblin Trader), correct Rushlight (Nunzio
+      Arpaia/Fisher's Triathlon/Drunken Brawl). KEPT verbatim: Castruccio/Tartuccio GM-eyes block,
+      Linxia, Darven Mourne, Irovetti.
+  Ch6 Sound of a Thousand Screams — REBUILT: Against All Odds (Castle of Knives, Horned Hunter), The
+      First Crown (Treants SE/tower block/Crag Linnorm-after-Salim → Lethoriel the Wise/Shyka the Many/
+      Salim Ghadafar). "Thousandbreaths" dungeon corrected → Castle of Knives. KEPT: Nyrissa reveal,
+      companion survival, Linzi death + shrine.
+  Ch7 The Final Act — EXPANDED: House at the Edge of Time internals (begin outside gates; Magic Wells
+      gates→1F, 2F→Basement; companions separated + re-recruited room-by-room; NE Throne Room chronicler
+      +satyr archers; SW companion rooms; NW Frozen Boneyard + Kean), Shyka/crown alternate resolution,
+      Cursed King/Queen (Ravaged Capital, 20d / 15d if attack counter ≥75). KEPT: Nyrissa/Lantern King
+      fight, all endings, Linzi Shrine + Leliana Hall (untouched, verified intact).
+  EVERY addition sourced; named-only encounters → KM_Bestiary.md (no invented stats). DLC NOT built.
+
+────────────────────────────────────────────────────────────────────
+6. CANON-FIDELITY NOTE (for a learner — user is studying the real game)
+────────────────────────────────────────────────────────────────────
+  Two layers are NON-canon by design: (a) the custom narrative overlay — eRmaC/Dystopia, the cross-IP
+  companion roster, the Title system, the Silk Road, most of the Prologue (Lady Sleeps/Accountability
+  Act/feast carousel/Malak gate/jail-seekers), Brineheart/Darven terms, Leliana Hall, the 3-god Linzi
+  shrine, and the Castruccio↔Tartuccio name-echo beat (built on the real canon names — Irovetti IS
+  Castruccio; Tartuccio IS a real rival → Tartuk — but the echo-link + Linzi-says-it payoff is invented);
+  and (b) the ENTIRE PF2e mechanical layer (stats/DCs/feats/classes/Kingdom-War-Mythic rules) — the real
+  game is Pathfinder 1e. Only story/plot/locations/quests/NPCs/bosses are canon-auditable. Tristian's
+  file arc ("planted the Bloom seeds / Lantern King's sister") is a custom reframe of his canon arc
+  (Nyrissa's coerced pawn; destroys or yields the Eye of Abaddon/Oculus at Vordakai's Tomb — Briar plot).
+  Left as-is per user (they want to KEEP the canon events, accurate). Audit cut short at this point.
+
+────────────────────────────────────────────────────────────────────
+OUTSTANDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • Deploy both channels if continuing (re-upload C:/KMG + re-paste KM_ClaudeInstructions.md).
+  • Exhaustive line-by-line canon verification NOT done — sourcing was WebSearch-summary level (fandom/
+    neoseeker 403'd direct WebFetch; fextralife partial). Story SPINE verified; granular encounters,
+    loot, side-NPCs, exact stats NOT.
+  • DLC (Varnhold's Lot, Beneath the Stolen Lands, Tenebrous Depths) absent from all chapters — build
+    only if user counts DLC as in-scope.
+  • USER IS STARTING A NEW PROJECT — offered help deciding what carries over; awaiting direction.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.21 — TITLE ROSTER COMPLETE · VERBATIM ABSOLUTE · CASTRUCCIO-LEAK LOCK · JAMANDI ROSTER ACK · FIRE = REAL HAZARD + INTERCEPTION · PLAYER-MANUAL/COMPANION-AUTO LEVELING · ROMANCE OVERHAUL (2026-06-18)
+═══════════════════════════════════════════════════════════════════
+
+⛔ DEPLOY FIRST (new chat): RE-PASTE KM_ClaudeInstructions.md into claude.ai project settings AND
+RE-UPLOAD all of C:/KMG. System-prompt edits (verbatim-absolute, Castruccio clause, level-up neutral)
+are inert until re-pasted; knowledge edits inert until re-uploaded. CAST UNCHANGED from v95.20.
+
+────────────────────────────────────────────────────────────────────
+1. TITLE ROSTER COMPLETE (KM_Companions_Titles.md)
+────────────────────────────────────────────────────────────────────
+  ⭐ GRANTED TITLE lines written for all 14 NPCs — Active 5 + Seekers 5 + planted 4 — each with full
+  name, source world, and PF2e class. Jaethal granted inline; Amiri/Valerie/Harrim placed in a new
+  pinned-gloss block. Latin verified via Wiktionary (NOT Google Translate — bad at Latin; bake gloss
+  inline since the in-game DM can't look up live):
+    • Protectrix Valerie ✓ (attested).
+    • Insidia Yor ⚠️ — kept WITH an honest caveat gloss: attested Latin īnsidiae is plural-only; the
+      singular "insidia" is a back-formation; the true agent noun is insidiātrix. The caveat is written
+      into the file so the DM never presents the form as clean classical Latin (cf. the fake-Latin
+      fabrication ban — Priority Rule 13).
+  Also fixed a cross-file audit carry-over: Leliana header "Orlesian" → "western".
+  ★ SCOPING: the ★ marker is for COMPANION manual-mode level menus only — NEVER the player's menu
+  (ties into the leveling split, §6).
+
+────────────────────────────────────────────────────────────────────
+2. VERBATIM IS ABSOLUTE — 100-LINE EXCEPTION DELETED
+────────────────────────────────────────────────────────────────────
+  Files: KM_ClaudeInstructions.md (§ INPUT FIDELITY → renamed "ALWAYS VERBATIM, NO LENGTH EXCEPTION") +
+  KM_B.txt. The old PARAPHRASE EXCEPTION block (summarize player input over ~100 lines) is removed
+  entirely and replaced with "NO LENGTH EXCEPTION — VERBATIM IS ABSOLUTE". Any-length player input now
+  renders verbatim with no threshold of any kind. Player directive 2026-06-16. (Behavior rule — re-paste.)
+
+────────────────────────────────────────────────────────────────────
+3. CASTRUCCIO-LEAK LOCK ("FREE means the PLAYER types it")
+────────────────────────────────────────────────────────────────────
+  Files: KM_ClaudeInstructions.md (§ THE OPPOSITE FAILURE) + KM_Prologue_Systems.md (§ FREE-vs-LOCKED).
+  Live failure: the DM auto-authored eRmaC's OWN feast speech to read "Castruccio Irovetti runs Pitax"
+  off a typed "Pitax" — graduating a typed realm-name into the locked Ch5 name-layer intel (C =
+  Castruccio) inside the player's mouth. The LOCKED/FREE ceiling existed but didn't explicitly bar the
+  DM from authoring the player's CONCLUSIONS. New clause both channels: FREE means the PLAYER types it —
+  this covers the player's deductions, not just backstory. Typed "Pitax" → eRmaC says Pitax, never
+  "Castruccio" unless the player typed it; the DM may OFFER a menu option to name it, never speak it for
+  him. Forensics-web net in Prologue_Systems updated to route the intercepted device → Pitax (realm,
+  supply) IF found intact + skilled examiner — a SUPPLY trace, not the name-layer reveal.
+
+────────────────────────────────────────────────────────────────────
+4. JAMANDI ACKNOWLEDGES THE ROSTER
+────────────────────────────────────────────────────────────────────
+  Files: KM_PR_03_feast_circuit.md (§ JAMANDI ACKNOWLEDGES THE ROSTER — the logistics/seal beat) +
+  KM_PR_09_accusation.md (§ ALIGNMENT-SPREAD ACKNOWLEDGMENT) + KM_Glossary.md (jamandi_noted_spread,
+  jamandi_acknowledged_roster). She now remarks on the player having assembled companions of divergent
+  alignments/goals. PR_03 beat fires when the player goes to her to finalize (carriage/seal) and seeks
+  only what she can SEE (a strong sample line is provided for the public-flip grand-slam case). PR_09
+  fires off declared-roster alignment divergence at any tier (STRIKING = strong line, NOTABLE = lighter),
+  renders as a CALLBACK rather than a repeat if jamandi_acknowledged_roster=true, and is suppressed at
+  recruitment Tier 3 (already handled there).
+
+────────────────────────────────────────────────────────────────────
+5. FIRE = REAL PF2e HAZARD + PLAYER INTERCEPTION (KM_PR_04_night_explosion.md, full rewrite)
+────────────────────────────────────────────────────────────────────
+  • HAZARD: tutorial-soft fire replaced with the real Town Hall Fire model, difficulty-scaled — spread
+    ~half-again area/round, 1d6 (catch) / 4d6 (engulfed) Reflex, smoke 1d6/turn halved by a wet rag.
+  • CAUSE / DEVICE: a smuggled-in MANUFACTURED alchemical incendiary, wedged behind the north rain
+    barrel, is THE canon (the earlier two-forms hedge is dropped). Identification is SKILL-GATED:
+    unskilled detects "a prepared incendiary" without the make; naming it needs Crafting/alchemical
+    skill. (Live fix: the DM named "alchemist's fire" on an unskilled +3-Perception crit — banned.)
+  • § CAN THE PLAYER INTERCEPT IT: EARNED via an escalating sweep (lower level / stores / foundation),
+    not free; degrees = full intercept / arsonist caught / partial / default. PR_05 and the attack
+    still fire regardless of interception.
+  • WINNABILITY FLOOR: the DM may NOT stack ever-deeper layers; once the player escalates correctly the
+    roll MUST find the device — "the accelerant IS there to be found."
+  • AREA-SCOPING RULE: "clean" applies only to the AREA actually searched; the DM may never render a
+    global "nothing to find" / discourage further search while the device sits in unsearched ground.
+  • DEVICE / FIRE FORENSICS: intercepted intact + skilled examiner → supply trace device_source=pitax
+    (maker's-mark logic, like the weapons); burned → anonymous dead-end. Environmental clues resolve to
+    arsonist/exfil (the "guest horse" tack tell), NOT a new mystery.
+  • KM_Glossary.md flags added: explosion_intercepted, arsonist_caught, device_source.
+
+────────────────────────────────────────────────────────────────────
+6. LEVELING SPLIT — PLAYER ALWAYS MANUAL / COMPANIONS ALWAYS AUTO (8 files)
+────────────────────────────────────────────────────────────────────
+  Live failure: the DM presented the player's level-up with [AUTO ★] markers, "type auto to lock them",
+  and "the build file confirms it" — steering the player's own advancement. Fix:
+  • PLAYER menu = neutral flat enumeration, ALWAYS MANUAL, NOT toggleable; no ★, no AUTO, no "lock both",
+    no build-file appeal. Pushing AUTO at the player = .fail 39.
+  • COMPANIONS level AUTO by default off their build maps; toggle via .levelmode.
+  Edited: KM_ClaudeInstructions.md (§ LEVEL-UP MENU — stripped all AUTO-steering, neutral worked example);
+  KM_B.txt; KM_Combat_Systems.md (companion default → AUTO; player/companion split; fixed example
+  "player":"ask" → "manual"; .fail 6 cross-contamination warning); KM_Commands.md (.level = player
+  manual-neutral, .levelmode = companions-only default auto); KM_P2.txt; KM_CharCreate.md (removed the
+  ★ build-map recommendation; added ⛔ NO ★/NO AUTO/NO "lock both"); KM_Companions_Behaviors_B.md (★ =
+  companion-manual mode only; never cross player↔companion modes = .fail 6).
+
+────────────────────────────────────────────────────────────────────
+7. ROMANCE OVERHAUL (KM_Romance.md)
+────────────────────────────────────────────────────────────────────
+  (a) PER-COMPANION LOVE-SCENE GATE (replaces uniform Stage 4) in § TRIGGER CONDITIONS. The stage at
+      which a love scene CAN fire is mapped per character: Smitten(St.2) Revy/Bellatrix · Admitted(St.3)
+      Hu Tao/Atalanta/Leliana · Confessed(St.4 — DEFAULT + anyone unlisted) Aerith/Yor/Keqing/Satsuki/
+      Valerie/Linzi · Devoted(St.5) Velvet Crowe (highest wall — already her flag). gesture_returned ≥ 3
+      still required at every gate; the gate is a FLOOR.
+  (b) § THE JUGGLER'S EDGE (new, before Love Scene System). concurrent_romances = companions at Romance
+      Stage ≥2 not ruptured. Cumulative tiers: I Magnetic (2) = +1 morale/Will circumstance · II
+      Sought-After (3) = +a Hero Point at each love-scene/milestone + social XP · III The Sovereign's
+      Court (4+ or ≥2 St.5 consorts) = +kingdom/consort influence. juggler_tier 0–3; tiers LOST when a
+      romance drops below St.2.
+  (c) § CAUGHT MID-SCENE — ROLLED, THEN A FORCED CHOICE (rewrote/REPLACED the old Chase/Stay/Call-out
+      three-choice interruption block — not stacked beside it). Being caught is a ROLL: d20 vs CATCH DC,
+      both contexts; more concurrent romances + indiscretion + a rival's jealousy lower the DC. If
+      caught, the player MUST choose stay-or-go. CHOSEN = no change (reassured by being chosen; a love
+      scene with the chosen partner completes). NOT-CHOSEN (devastated): CASUAL catch (base DC 12) →
+      Romance Score HALVED (⌊score/2⌋); LOVE-SCENE catch (base DC 14) → Romance Score ZEROED to Neutral.
+      No skill check saves both. The slower passive § CAUGHT CHEATING (off-screen discovery) still runs.
+  Save block: added concurrent_romances, juggler_tier, last_catch_type, last_catch_choice,
+  last_catch_devastated. .loveScene command desc updated to reference the per-companion gate.
+
+────────────────────────────────────────────────────────────────────
+LIVE GAME STATE (paused) + LIVE-PLAY DM ERROR THIS SESSION
+────────────────────────────────────────────────────────────────────
+  PR_04 interception scene, ~Turn 36. Player holds the intact device (explosion_intercepted: partial);
+  next in-game action = neutralize (douse in rain barrel / carry clear → TRUE) or set an ambush
+  (arsonist_caught). The skilled forensic read (name it + pull the Pitax supply trace) is NOT yet done —
+  needs a skilled companion (Keqing/Aerith/Kesten/an alchemist) brought to the device.
+  ⚠️ DM ERROR (corrected via the rules, not yet re-deployed): the player took Atalanta (highest
+  Perception) outside for a perimeter sweep; her CS=25 was framed as a PERSONNEL/"anomalous presence"
+  check and returned "Clean" — while the manufactured device sat behind the north rain barrel, inside
+  the swept exterior. That violates the AREA-SCOPING RULE and the WINNABILITY FLOOR (§5): a CS by the
+  best tracker over ground that CONTAINS the placed object must surface it. Correct read = the sweep
+  finds the device. This is exactly what the new PR_04 rules are written to prevent once re-uploaded.
+
+────────────────────────────────────────────────────────────────────
+OUTSTANDING (optional — offered, NOT built)
+────────────────────────────────────────────────────────────────────
+  • New Caught-Mid-Scene walk-in voice lines for all 14 romance-eligible companions (only Linzi/Leliana
+    carried lines from the old interruption system; the new not-chosen→ZERO scenario could use
+    per-companion reactions).
+  • A .examine-device / delegated skilled-examiner forensic beat for the intact incendiary.
+  • Juggler bonus opt-in vs automatic (left AUTOMATIC) and the casual-DC-12 vs love-DC-14 polarity (left
+    casual = easier to get away with) — flip either on request.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.20 — RECAST PURGE COMPLETE · RELATIONSHIP/BOND/DYNAMICS SYSTEMS · BUILD-WEAPON ALIGNMENT (2026-06-10)
+═══════════════════════════════════════════════════════════════════
+
+⛔ DEPLOY FIRST (new chat): RE-UPLOAD all of C:/KMG **and** RE-PASTE KM_ClaudeInstructions.md into
+the claude.ai project settings. System-prompt edits are inert until re-pasted; the two new data
+files (KM_Companion_Dynamics.md, KM_Companion_Bonds.md) won't load until re-uploaded.
+
+CURRENT CAST (locked): Active 5 — Hu Tao (Fighter, reach funeral spear) · Keqing (Magus, straight
+SWORD, Laughing Shadow + lightning-step) · Leliana (Bard, lute + songblade, the chronicler) · Yor
+Forger (Rogue, The Thorn Stilettos / dual daggers) · Aerith (Cleric of Sarenrae, her STAFF).
+Seekers 5 — Bellatrix Lestrange (Witch, wand) · Revy (Gunslinger, twin Alkenstar pistols) · Satsuki
+Kiryūin (Commander, Bakuzan katana) · Velvet Crowe (Thaumaturge, daemon-arm + blade) · Atalanta
+Alter (Ranger, Tauropolos longbow).
+
+────────────────────────────────────────────────────────────────────
+WORK DONE THIS SESSION (2026-06-10)
+────────────────────────────────────────────────────────────────────
+  1. DEPRECATED-CHARACTER PURGE — COMPLETE + VERIFIED. Every live KM_*.md + the 5 saves + the system
+     prompt are grep-clean of old roster names (Saber/Ciri/Storm/Goldmoon/Poison-Ivy/Viconia/Kitiara/
+     Callisto/Esdeath/Medusa/Cagliostro/Jeanne/Erza/etc.). A SECOND sweep for IP CONCEPT-NOUNS
+     (Camelot/Avalon/Underdark/Shadowdale/Mystra/Tower-of-Heaven/Elder-Blood/the-green/Highlord/Teigu/
+     Blue-Crystal/Cirra — which character-name greps MISS) caught 6 more live bugs, all fixed: the
+     "save Camelot" friction-beat line, Hu Tao's "Tower of Heaven" + Keqing's "child-saver vow"
+     Tartuccio dispo reasons (the latter a landmine violation), Storm's "Bard of Shadowdale" Signatures
+     lore block, Revy's "choosing the green", and the Satsuki build's "Highlord's Sabre" → Bakuzan.
+     Only surviving old-name hits are in OFF-LIMITS backup snapshots (.backups/.old, .notgamefiles/
+     kmg2) — never edit or "fix" those; their residue is expected.
+  2. STRIP-BARE LOCK REVOKED → FULL SOURCE FIDELITY. The old "names resemble published characters by
+     coincidence / strip the voice bare / NO TRAINING DATA for characters" lock (the Saber-steals-King-
+     Arthur problem) is REVOKED across the system prompt + the banter-section headers + the KM_Backstories
+     master headers, and replaced with FULL SOURCE FIDELITY: render each character as their REAL source
+     self; the only guardrails are (a) no IP meta-frame that breaks Golarion and (b) no confabulating
+     non-canon specifics; the project files outrank source canon where they speak (file-locks/landmines
+     bind). Build-mechanics "NO TRAINING DATA" (about PF2e feats) is legitimate and was KEPT.
+  3. ANTI-FAB LANDMINES re-verified + corrected to current cast: Atalanta = the missing-children quest is
+     ONE scripted child w/ hard guards (documented 2× game-breaker); Keqing = kingdom-not-children (do
+     NOT graft a child-saver hook onto her); Velvet = revenge target OFF-map; Yor = hunters/guild
+     offscreen; Aerith = foreknowledge is SUBTEXT, no Cetra-key plot.
+  4. BUILD-WEAPON ALIGNMENT. AUTHORITATIVE per-class weapon spec (user-given): Fighter=reach/spear/polearm
+     · Magus=SWORD+spellstrike · Bard=instrument · Rogue=dagger/dual-dagger · Cleric=simple+deity-favored
+     · Witch=staff/wand · Commander=sword/2h/reach · Ranger=longbow/heavy-crossbow · Gunslinger=pistols ·
+     Thaumaturge=1h+implement. Every build weapon now matches BOTH the class spec AND the character's
+     [ICONIC] weapon in KM_Signatures.md (the AUTHORITATIVE iconic-weapon record). Fixed: Keqing (was
+     bow/Starlit-Span residue → SWORD Laughing Shadow, matching her Signatures entry) · Yor (rapier →
+     The Thorn Stilettos / dual daggers) · Aerith (Sarenrae scimitar → her STAFF; a Cloistered Cleric is
+     simple-weapon proficient, so the scimitar was triply wrong). Atalanta = foot longbow (the old
+     "mounted Cirra horse" content was Medusa-Rider → Callisto RESIDUE, not a real build — correctly
+     removed; do NOT restore a horse). ⛔ STANDING RULE: builds = reskin the weapon to the class spec,
+     NEVER redesign the mechanics; only Revy (Gunslinger) + Velvet (Thaumaturge) were ever genuinely NEW
+     builds — the 2 class changes, for which the user supplied the statblocks.
+  5. NEW SYSTEM — KM_Companion_Dynamics.md (registered in KM_LoadRules pair-load + cross-ref'd from
+     Behaviors SYSTEM 2): warmth beats (the positive mirror of friction) + companion-on-companion
+     influence/manipulation + sabotage & withheld-aid + secrets/confidences — each with large
+     per-character SAMPLE BANKS, all voiced to current canon.
+  6. NEW SYSTEM — KM_Companion_Bonds.md (registered + cross-ref'd): 31 named bond archetypes (Best
+     Friends/Rival/Enemy/Mentor/Apprentice/Duo/Trio/Polar-Opposite/Frenemy/Symbiotic/Codependent/
+     Estranged/Stalker/Blackmailer/Puppet-Master/etc.), each with Forms (compatibility-gate × catalyst)
+     / Looks-like / Ends-Replaces, plus a replacement-chains map + DM procedure. PLUS a seeker-only
+     "SAME WALLS" bond: the 5 seekers formed it in the Watch jail talking through the walls — they knew
+     each other's voices/confessions for weeks before any face or name, attaching faces to voices only
+     once the player FREED them; it's a SUBSTRATE floor under each seeker-pair's real archetype (they
+     feud, then close ranks vs outsiders). Plus the .relation (in-world observational) and .relationships
+     (full backstage) player commands.
+  7. BANTER IS NOW RELATIONSHIP-DRIVEN (rewired Behaviors SYSTEM 2 + the BANTER EXPANSION quick-ref): a
+     fired Score-Change Trigger GENERATES a reactive banter beat in the matching tone; absent a trigger,
+     the pair's SCORE sets the tone band; the die only varies flavor WITHIN the band (never overrides —
+     a Hostile pair can't roll "Warm"). The Trigger Palette was expanded (pair-specific lane-lit / world-
+     context / cross-system / cumulative axes).
+  8. THE GOLDEN RULE — relationships are PLAYER-INVISIBLE: shown ONLY through behavior and dialogue,
+     never a label/score/[BOND] tag/auto-readout. Suppressed the two auto-readouts that leaked labels
+     (the friction "Friction active: … (−N Tier)" STATE READ + the influence stance-shift log) →
+     backstage-only, surfaced solely via the two commands.
+  9. SAVE: 4_Carousel verified all-current-cast + structurally valid; fixed Aerith's "Blue crystal staff"
+     (Goldmoon residue) → her Sarenrae healing staff (armor left untouched so AC doesn't shift). NOTE:
+     player eRmaC = Giant-Instinct Barbarian wielding a Guisarme, pressed into the manor garden soil
+     (weapons_in_garden=TRUE) — RETRIEVE before PR_04 fires.
+
+OUTSTANDING (optional — offered this session, NOT built):
+  • per-PAIR bond instantiation — which archetype each specific pair starts at / trends toward, with
+    voiced form + break beats (Dynamics-style sample density).
+  • light combat hooks for bonds — Duo flanking bonus, Shield intercept reaction, Symbiotic Aid, a
+    Codependent separation penalty.
+  • a report-only "Super Deep Audit" prompt was drafted for a separate Fable pass (cross-file consistency,
+    residue, landmines, sizes, load-registration).
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.19 — COMPANION POOL REWRITE + 8 BEHAVIOR RULES + IP-RESEMBLANCE ROSTER PURGE DECIDED (2026-06-09)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.19 — POOL REWRITE · 8 SYSTEM-PROMPT RULES · 8-OF-10 IP COMPANIONS MARKED FOR ORIGINAL-REPLACEMENT ═══
+
+CONTEXT:
+  Mid-game session. Started as a quality-control pass on the carousel and
+  ended with a roster-level decision. DM was: (1) compressing companion
+  pool revelations to one-liners then interrogating eRmaC for 4+ turns;
+  (2) running NPCs with file-preknowledge of player plans; (3) treating
+  player architecture-descriptions as role-grants the NPC self-appointed
+  into; (4) holding engaged slot through 4+ turns ignoring the 2-turn
+  monopoly cap; (5) freezing earshot scoring for non-engaged companions;
+  (6) rendering Saber as full Fate/stay-night dump (Mordred/Camlann/Avalon/
+  Merlin gender-deception/Lancelot-Guinevere) under "no metaphors" pressure.
+  Assistant repeated the same training-data failure when challenged on Fate
+  canon — confidently cited anime episodes that don't carry the cited plot;
+  user verified externally and caught the lies. That collapsed assistant's
+  implicit S-tier-data claim across the IP-resemblance roster entirely.
+
+────────────────────────────────────────────────────────────────────
+1. KM_CompanionIndex.md v1.4 — FULL QUESTION POOL REWRITE
+────────────────────────────────────────────────────────────────────
+  All 100 entries rewritten (10 companions × 10 questions). Three criteria:
+  (1) ground in specific backstory wound, (2) probe whether eRmaC is right
+  person for THAT companion to follow, (3) look for connection in alignment/
+  morals/standards/preferences/leadership/ability. Revelation-first
+  structure: companion's substantive disclosure FIRST (the wound, the
+  specific event), probe SECOND. If eRmaC refuses to answer, player has
+  STILL learned something real about this person. Old generic-philosophy
+  questions deleted. DM USAGE block confirms "1 question per companion
+  per significant beat" (line 98) and "10 questions cycle for variety
+  across full arc, not one sitting" (line 101) — data already encodes
+  the conversation-not-interview rule; no system-prompt duplication.
+
+────────────────────────────────────────────────────────────────────
+2. KM_ClaudeInstructions.md — 8 BEHAVIOR RULES ADDED
+────────────────────────────────────────────────────────────────────
+  Per [System prompt vs knowledge base] memory entry: behavior fixes go
+  here, not data files. ALL require re-paste before activation.
+
+  (a) PROFOUND beat → social coup → Hero Point trigger
+      Links approval scoring to hero-point award at line 345 of KM_Commands
+      AND at PROFOUND definition in KM_ClaudeInstructions feast scoring.
+      Live failure: turn 17/18 Storm bait-hook collapse scored +8 PROFOUND,
+      hero point awarded silently to overflow with no ⭐ callout body line.
+
+  (b) SILENT-PRESENCE LOOPHOLE BANNED
+      Companion physically present cannot wait in silent-observer status
+      for player [1] acknowledgment. Fires opener if earshot approval ≥ +3
+      OR 6-turn accumulator fired. Live failure: woman in scale mail (Saber)
+      described as standing waiting; DM put [1] Address the woman as menu
+      option = .fail 17.
+
+  (c) OPERATIONAL CONFIDENCE TRIGGERS (KM_Tartuccio_Strategic gap fix)
+      DM invented -9 confidence + "Withdrawn — ambient only" tier. Scale
+      is -4 to +4; Broken floor is -4. The behavior the DM described WAS
+      correct (Broken stays at corner, hostile if approached) — wrong
+      number. Save block confidence_cumulative=-9 was bad data carried
+      forward. Need next session to update save to -4 + add operational
+      triggers to KM_Tartuccio_Strategic § CONFIDENCE TRIGGERS.
+
+  (d) NPC FILE-PREKNOWLEDGE BAN
+      NPC's file is DM REFERENCE, not NPC's SCRIPT. NPC knows in-fiction
+      only what observed/told/deduced — never plan blocks, who_knows[],
+      active_player_plans, or terms player hasn't spoken. Live failure:
+      Jaethal named "The Final Judge — judicial function, verdicts without
+      political interference" before eRmaC spoke the phrase = forward-
+      quoting via file leak. Also: question pool is for NPC TO ASK, not
+      pre-disclose contents as opening lecture.
+
+  (e) STRUCTURE-DESCRIPTION IS NOT A ROLE OFFER
+      Player explaining architecture ("First Judge does X, Final Judge does
+      Y") = system design, not appointment. NPC self-appointing = .fail 39.
+      Decision tree: describe → NPC volunteers/asks only · name to role →
+      NPC accepts/declines, role logged, no item · bestow ("you will be
+      known as") → title mechanics fire on top of role. Live failure HIT
+      TWICE: Jaethal closed with "Final Judge, I accept" both times the
+      player described the architecture without naming her.
+
+  (f) IP-RESEMBLANCE TRAINING-DATA LEAK
+      File is canon. IP is not. "Source: Fate" header is archetype
+      reference (cadence, voice, fallen-sovereign shape) — NOT license to
+      import plot. Where file is silent, NPC is silent. Saber-specific
+      canon-allowed list embedded; banned list enumerated (Mordred, Camlann,
+      Avalon, Lancelot, Guinevere, Saxons, Picts, Servant-summoned-across-
+      time, "fifteen years old," authored code, 150 knights, Merlin
+      gender-concealment). Voice register handles disclosure refusal —
+      "his name costs to say and I do not pay it for strangers."
+
+  (g) ENGAGED-SLOT 2-TURN CAP
+      Promotes KM_PR_03 § ENGAGED-SLOT MONOPOLY CAP (lines 299-339) into
+      system prompt. Same companion cannot hold lead more than 2 consecutive
+      turns while any AT TABLE/Ready companion has unfired opener. Cap
+      fires EVEN IF player keeps addressing leader. Cut-in pattern provided.
+      Carousel designed multi-thread: multiple open conversations at the
+      table, AT TABLE companions interjecting, multiple ❓ questions pending.
+      Live failure: Saber held lead turns 28→31+ (4+ consecutive) while
+      Ciri/Yor/Goldmoon waited; Ciri's opener should have force-cut-in by
+      turn 30. DM ran 4 unbroken Saber turns.
+
+  (h) PUBLIC-SPECTACLE EARSHOT
+      Intimate-conversation rule (seekers across the room not in earshot at
+      center floor — KM_PR_03 line 90) STANDS for murmured content. Public
+      declarations / arrests / fist-to-chest salutes / spectacles visible to
+      forty guests DO reach seekers + Tartuccio + Jamandi at PARTIAL fidelity
+      and feed seeker_dispositions + Tartuccio Confidence. Distinction is
+      REGISTER (who is meant to overhear), not RANGE.
+
+  (i) COMPANION OPENER FULL SELF-DISCLOSURE
+      Pool questions are revelation-first by design. Compressing the
+      disclosure to one-line gloss then running 4-turn interrogation
+      cascade = .fail 3 + .fail 2. Live failure: Saber gave one line of
+      her wound, then 4 turns extracting eRmaC's keeps story.
+
+  (j) EARSHOT PASSIVE APPROVAL EVERY REPLY FOR EVERY COMPANION IN EARSHOT
+      Per KM_PR_03 line 90 + Required Output 6: every Recruited/Ready
+      companion within ~15 ft scores every player answer. PROFOUND/STRONG
+      content earning the engaged companion is also earshot-scoring everyone
+      in range. feast_approval block must show number for EVERY tracked
+      companion every response. Live failure: Saber went 0→+19 across 5
+      turns of PROFOUND content; Storm frozen at +23; Ciri/Yor/Goldmoon
+      not even tracked.
+
+────────────────────────────────────────────────────────────────────
+3. KM_Backstories.md NEW_001 — SABER CANON-LOCK (then corrected)
+────────────────────────────────────────────────────────────────────
+  Canon-allowed: Camelot (only to those close), Round Table (seats meant
+  equal, no count, no authored code), Saber (name to strangers).
+  Excalibur IS canonical per KM_Signatures.md NEW_001 (mechanically a
+  Guisarme — 2H reach S, 1d10, trip; [ICONIC] auto-advance) — the name
+  exists in build sheet and combat narration of signatures. SOCIAL
+  disclosure to strangers is withheld ("his name costs to say").
+  Aldori dueling sword substitution = .fail 9 + .fail 38 (wrong name,
+  wrong mechanic — Aldori is 1H finesse, no reach; Saber owns the 10-ft
+  ring with reach + trip).
+  Banned: Artoria-as-public-name, Merlin, gender-concealment plot,
+  Lancelot, Guinevere, Mordred, Camlann, Avalon, Saxon/Pictish/Orkney,
+  Servant-summoned-across-time framing, "age fifteen" sword-pull, Holy
+  Grail, "fifteen years," knight counts, an "authored code." Voice
+  register handles all refusal lines.
+
+────────────────────────────────────────────────────────────────────
+4. KM_Companions_Titles.md — STRUCTURE-DESCRIPTION ADDED
+────────────────────────────────────────────────────────────────────
+  Right after existing role/title rule (lines 17-21). Three-level distinction
+  documented with live-failure citation. Now also propagated to system prompt
+  per (e) above because data-file rule alone did not govern DM behavior.
+
+────────────────────────────────────────────────────────────────────
+5. KM_Commands.md line 345 — PROFOUND BEAT = HERO POINT TRIGGER
+────────────────────────────────────────────────────────────────────
+  One-line link added inline at PROFOUND definition: "A PROFOUND beat =
+  social coup = Hero Point trigger. Fire ⭐ callout inline that same turn."
+  Mirror added to KM_ClaudeInstructions feast approval scoring block.
+
+────────────────────────────────────────────────────────────────────
+6. IP-RESEMBLANCE ROSTER PURGE — USER DECIDED
+────────────────────────────────────────────────────────────────────
+  Saber failure cascade exposed assistant's S-tier-data-density claim
+  across the 10 IP-resemblance companions as bluffed. Honest depth
+  assessment after Saber's collapse:
+
+  REPLACE WITH PROJECT-ORIGINAL (8):
+    • NEW_001 Saber / Artoria Pendragon (Fate)
+    • NEW_002 Ciri / Cirilla (The Witcher)
+    • NEW_003 Storm Silverhand (Forgotten Realms)
+    • NEW_005 Goldmoon (Dragonlance)
+    • NEW_007 Poison Ivy (DC/Batman)
+    • NEW_008 Kitiara uth Matar (Dragonlance)
+    • NEW_009 Viconia DeVir (Baldur's Gate)
+    • NEW_010 Callisto (Xena: Warrior Princess)
+
+  KEEP (2):
+    • NEW_004 Yor Forger (Spy x Family) — recent, well-documented,
+      premise + main beats verified, low fabrication risk
+    • NEW_006 Bellatrix Lestrange (Harry Potter) — heavily documented,
+      key beats verified, low fabrication risk
+
+  RATIONALE: assistant cannot warrant fabrication-free rendering on the
+  8. Each WILL crack under specific pressure the way Saber cracked. User
+  rejected "replace all 10" (option 2). User chose options 1 + 3:
+  stress-test the remaining 9, hybrid replace. Self-quiz proposed by
+  assistant was rejected as theater — user correctly identified that
+  assistant grading own homework is the same overconfidence loop. Honest
+  pre-quiz read landed on 2 keeps / 8 replaces.
+
+  SABER IN-SESSION STATE (turn 31): RECRUITED. Final Judge architecture
+  defined with eRmaC, declaration accepted (problematic per rule (e) —
+  she self-appointed before being named). Excalibur/Guisarme loadout
+  established. Original-replacement character for NEW_001 will need
+  to inherit this state cleanly, OR next session retcons the recruitment
+  back to "she withdraws before declaring" so the original-replacement
+  arrives fresh.
+
+  ORIGINAL-CHARACTER DRAFTS FOR THE 8 REPLACEMENT SLOTS: NOT YET WRITTEN.
+  Each must be project-original (no IP source), class-matched to current
+  build, signature mechanics retained. Carry to next session.
+
+────────────────────────────────────────────────────────────────────
+DEPLOY (USER ACTION BEFORE NEXT SESSION):
+────────────────────────────────────────────────────────────────────
+  ⛔ RE-PASTE KM_ClaudeInstructions.md into claude.ai project settings.
+     8 new behavior rules + the canon-lock-via-system-prompt. None
+     active until re-paste.
+  ⛔ RE-UPLOAD C:/KMG. KM_CompanionIndex.md v1.4, KM_Backstories.md
+     Saber canon-lock, KM_Companions_Titles.md role/title block,
+     KM_Commands.md PROFOUND link.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.18 — RESCUE CREDIT DISPOSITION + DREVIC SEAL BEAT + SEEKER REGISTER REWRITE + CROSS-IP CANONICITY MANDATE (2026-06-06)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.18 — RESCUE CREDIT → SEEKER DISPOSITIONS · SEAL BEAT · SEEKER REGISTER REWRITTEN · CROSS-IP MANDATE BOTH CHANNELS ═══
+
+CONTEXT:
+  Jail scene quality + character voice session. DM was writing seekers as
+  generic fantasy characters and reprinting file instruction text verbatim as
+  prose output ("is performance layered over the hand" is directly from the
+  prior file; "she is not going to do that here, not with an explanation"
+  likewise). Root causes: no cross-IP identity labels, no sample lines with
+  canonical key vocab, texture descriptions written in author-narration that
+  the DM passed through unchanged. Also fixed: rescue credit not wired to
+  seeker dispositions, Drevic breaking the seal when the player objected.
+  Behavior fix (CROSS-IP CANONICITY) in KM_ClaudeInstructions.md — RE-PASTE
+  REQUIRED. Content fixes in C:/KMG — RE-UPLOAD REQUIRED.
+
+────────────────────────────────────────────────────────────────────
+1. RESCUE CREDIT DISPOSITION SYSTEM
+────────────────────────────────────────────────────────────────────
+  Files: KM_PR_03_feast_circuit.md + KM_Malak_Jail.md + KM_DMRules_C.md
+
+  PR_03 CAROUSEL INIT — ⛔⛔ RESCUE CREDIT BRANCH added (after SEEKER
+  EXCEPTION, before feast_q tracker):
+  • Branch A (five_seekers_freed_by_player=TRUE): seekers address player by
+    name on arrival (not cold); if Tartuccio claims credit for the rescue and
+    seekers are present → all seeker_dispositions +1, tartuccio_rescue_lie_
+    exposed=TRUE, one seeker body cue (goes quiet), PR_09 team-loyalty bonus
+    stripped. Player directly correcting Tartuccio fires the flag immediately.
+  • Branch B (tartuccio_seeker_credit=TRUE): all dispositions start at -1;
+    Kitiara speaks for the table on arrival (cool, watchful); PR_09 Diplomacy
+    DC 12 per seeker required to unseat Tartuccio's testimony.
+
+  KM_Malak_Jail.md PATH 3 (player never acted — Tartuccio rescued them):
+    story_flags extended with tartuccio_seeker_credit=TRUE and
+    seeker_dispositions = {all five: -1}.
+
+  KM_DMRules_C.md seeker_dispositions field: starting-value lookup table by
+    jail path: freed_by_player → Bellatrix/Ivy/Callisto +2, Kitiara/Viconia
+    +1; tartuccio_credit → all -1; other paths → 0.
+    tartuccio_rescue_lie_exposed flag documented (effects: +1 all dispositions,
+    strips PR_09 team-loyalty bonus when Tartuccio's lie is exposed).
+
+────────────────────────────────────────────────────────────────────
+2. DREVIC SEAL BEAT (KM_Malak_Jail.md)
+────────────────────────────────────────────────────────────────────
+  Problem: Drevic was opening the sealed invitation even when the player
+  objected ("that's not his job").
+  Fix: new SEAL BEAT row in the release conditions table: "Player stops Drevic
+  breaking the seal → immediate release, no DC." Full scripted beat added.
+  DM rules: (a) fires ONLY if player objects before seal breaks; if player lets
+  him open it → proceeds as DC 11 letter case; (b) no arguing back, no check —
+  the objection is correct and Drevic is not a corrupt man; (c) proactive seal
+  display also triggers the outcome; (d) Drevic becomes slightly more
+  cooperative for remainder of scene. XP: uses invitation; does NOT earn the
+  +200 Never Used the Invitation reward.
+
+────────────────────────────────────────────────────────────────────
+3. SEEKER RELEASE REGISTER — FULL REWRITE (KM_Malak_Jail.md)
+────────────────────────────────────────────────────────────────────
+  Root cause of the generic output: the file's texture descriptions were
+  written as author-narration prose (e.g., "the arch tilt, the theatrical
+  coo, the composed assessment of the corridor — is performance. The hand is
+  what is real.") and the DM reprinted this instruction text verbatim as game
+  output. Callisto also got a sad/solemn trailing sentence because "The Cracked
+  One" role-label overrode her hot-bright canon register.
+
+  HEADER additions (fire before any seeker block):
+  • ⛔ THIS SECTION IS INSTRUCTION. DO NOT COPY AS PROSE. Named examples of
+    author-narration to avoid = .fail 9.
+  • ⛔ NAME EACH SEEKER BY NAME. "One of them" / "the third one" = .fail 2.
+  • ⛔ CROSS-IP IDENTITY block: Bellatrix=HP, Ivy=DC, Kitiara=Dragonlance,
+    Viconia=BG, Callisto=Xena. Canon > role-assignment when they conflict.
+    Callisto as "Cracked One" does NOT become quiet/solemn — crack shows as
+    wrong smile, wrong laugh, hard stop on a sentence, not sad trailing off.
+
+  SAMPLE BEATS with canonical key vocab (voice model, not copy-paste scripts):
+  Bellatrix: laugh surfaces BEFORE door opens (no trigger); speaks to Drevic
+    not player ("How long have you worked here, little jailer"); Drevic turns
+    to player, "She goes with you"; Bellatrix: "Ooh— oh, someone really—"
+    [stops] "Little visitor. You brought me a captain." Never looks at exit.
+    Drevic moment noted separately: he is washing his hands of her.
+  Ivy: intel dump while facing away ("Third guard change at half-bell...") +
+    quiet aside "Two days. Not even a weed in the wall." Already moving.
+  Kitiara: "Tell me true — who are you, love, and what does this rescue cost."
+    "Tell me true" = her Dragonlance phrase; "love" = lever not warmth.
+  Viconia: pause long enough to be a statement. "Rivvil." [inventory, not
+    hostility] "You freed five of us. Name your price."
+  Callisto: "I kept thinking—" hard stop, pivot. "Sweetness, which way is
+    outside." Smile does not change. Already looking at the corridor's end.
+
+  Per-character FORBIDDEN lists for this scene (each character block):
+  Bellatrix: "Oh, this is very good" / arch + cool / author narration about
+    "performing" / looking at the exit.
+  Ivy: neutral spy-voice / urgency in movement toward air / author narration
+    about "noticing the absence."
+  Kitiara: passive assessment / polite "who are you" / author narration about
+    "checking assumptions."
+  Viconia: warmth / gratitude / the pause reading as uncertainty.
+  Callisto: brooding/solemn/cold / sad trailing sentences / author narration
+    about suppression.
+
+────────────────────────────────────────────────────────────────────
+4. CROSS-IP CANONICITY MANDATE (both channels)
+────────────────────────────────────────────────────────────────────
+  KM_Malak_Jail.md: per-seeker source-fiction labels in the REGISTER header.
+
+  KM_ClaudeInstructions.md (⛔ RE-PASTE REQUIRED): added ⛔ CROSS-IP
+  COMPANIONS rule after the existing COMPANION VOICE REGISTER rule (§ NPC
+  BEHAVIOR, before § BACKSTORY REVEAL CADENCE). Lists all 10 imported
+  companions with 1-2 unmistakable canon markers:
+    Saber — "Note this / I was a king once" / grief held perfectly still
+    Ciri — "No house. No title / I'm already behind you" / goes terser when moved
+    Storm — "child" to everyone younger / "Shadowdale taught me / the cycle"
+    Yor — earnest/literal / deadly register = QUIETER / "for Yuri"
+    Goldmoon — faith intact after darkness / genuine warmth not naive
+    Bellatrix — mania barely in her skin / "little/baby/ooh" / burning hot
+    Ivy — "your kind / the green / my children" / serene contempt / never shouts
+    Kitiara — "tell me true / darling/love as levers" / ambition stated plainly
+    Viconia — "rivvil / jaluk / abbil" / debt arithmetic / never performs gratitude
+    Callisto — HOT-bright-gleeful / smile never drops / "sweetness/darling" /
+      burned village = punchline not plea
+  Closing mandate: "A line that could come from any fantasy character is wrong.
+  If you cannot tell it is specifically that person from their source material,
+  rewrite it."
+
+────────────────────────────────────────────────────────────────────
+PENDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • ⛔ DEPLOY — BOTH CHANNELS (USER ACTION):
+    RE-PASTE KM_ClaudeInstructions.md into claude.ai project settings.
+    Cross-IP canonicity mandate + companion voice register rule are behavior
+    fixes — they only reliably fire from the system prompt. Re-upload alone
+    is not enough.
+    RE-UPLOAD C:/KMG folder (rescue credit branch, seal beat, seeker register
+    rewrite, seeker starting dispositions in DMRules_C).
+  • 5 class-changed build statblocks still unwritten (carried v95.17):
+    Ciri (Magus), Bellatrix (Witch), Poison Ivy (Alchemist), Kitiara
+    (Commander), Callisto (Ranger). Non-blocking; companions auto-run off
+    signatures. Proposed: build one-at-a-time collaboratively.
+  • Seeker question pools for NEW cast not yet written. KM_CompanionIndex.md
+    still has old-cast seeker pools (Morgan/Cagliostro/Esdeath/Jeanne/Medusa).
+    New pools needed for Bellatrix/Ivy/Kitiara/Viconia/Callisto.
+
+═══════════════════════════════════════════════════════════════════
+
+KINGMAKER — SESSION HANDOFF v95.17 — SAVE-INTEGRITY RULE HARDENING + 2_EnterRestov MIGRATED & RECONCILED TO TALK-DOWN + CHRONICLER/ESCORT/JAIL AGENCY GUARDRAILS (2026-06-06)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.17 — SAVE-INTEGRITY RULES · ESCORT/CHRONICLER/JAIL AGENCY FIXES · 2_EnterRestov MIGRATED + RECONCILED ═══
+
+CONTEXT:
+  Rules + data session driven by live-play complaints. No new content built;
+  this hardens save integrity and stops the DM (a) truncating/contradicting
+  saves, (b) inventing reputation tiers, (c) letting escorts speak for and
+  know more than the player, (d) treating the trailing chronicler as crew,
+  (e) pre-spoiling the jailed seekers. DEPLOY = both channels: RE-PASTE
+  KM_ClaudeInstructions.md (behavior; the only thing that changes the DM) +
+  RE-UPLOAD C:/KMG (knowledge). Nothing is live until both are done.
+
+────────────────────────────────────────────────────────────────────
+1. SAVE-BLOCK INTEGRITY (KM_SaveBlock_Template.md + KM_ClaudeInstructions.md)
+────────────────────────────────────────────────────────────────────
+  - NO CROSS-FILE/CROSS-SAVE POINTERS: a field may not hold a reference such
+    as "[full ballad logged in prior save]". The next session loads THIS file
+    alone and cannot resolve the pointer — content is gone. Carry full literal
+    text forward; pointer = .fail 9. (Triggered by an EnterRestov save that
+    stubbed storm_ballad_cycle diary+ballad.)
+  - INTERNAL CONSISTENCY (new PRE-WRITE rows + post-output Placement line):
+    • public_reputation MUST equal the summed +/- deltas of reputation_deeds.
+    • reputation_tier MUST be a canonical band-name from KM_World_Systems §
+      REPUTATION SCALE (the 11 stages). 6 or 8 = FAVORABLE (+6..+12).
+      Off-ladder names (CELEBRATED / RECOGNIZED / NOTABLE) = .fail 9.
+    • chapter_completed: bare chapter only; any sub-beat suffix
+      ("pre_prologue_gate", "pre_prologue_tutorial") = .fail 9.
+    • PLACEMENT: pending_overflow at ROOT; marriage{} ONLY in story_flags
+      (never nested in player{}). Wrong-parent key passes the 63-count yet
+      breaks schema = .fail 9.
+
+────────────────────────────────────────────────────────────────────
+2. CHRONICLER-AS-OBSERVER (new flag: story_flags.chronicler_introduced)
+────────────────────────────────────────────────────────────────────
+  Added chronicler_introduced (bool) to the template story_flags and to live
+  saves; false until the chronicler's intro beat (Storm = feast/PR_03). While
+  false, the run's chronicler-bard is a present-but-separate documentarian —
+  NOT a commandable/named companion despite her Pick-5 roster slot. Narration
+  refers to her descriptively ("the young woman with the harp"), never by
+  name; menus must NOT offer options that direct her ("Tell Storm to…", "Ask
+  Storm to…"); the player may notice/approach/speak to her (can trigger an
+  early intro). Commanding her pre-intro = .fail 9. Rule in KM_ClaudeInstructions
+  § CHRONICLER-AS-OBSERVER + KM_PP_09.
+
+────────────────────────────────────────────────────────────────────
+3. ESCORT / DELEGATED-NPC AGENCY (KM_Malak_Jail.md + KM_ClaudeInstructions.md)
+────────────────────────────────────────────────────────────────────
+  When a plan/destination is the player's and the player is present, the scene
+  is the player's to play one action at a time. An escort/tag-along NPC:
+  • does NOT speak for the player or lead the player's business unless
+    explicitly directed (defaulting one into spokesman = agency theft, .fail 9;
+    it can also nullify a deliberate withhold-evidence/no-seal play);
+  • knows ONLY what it personally witnessed — NOT the player's purpose, the
+    names of people the player came for, or the plan, unless briefed in-fiction
+    (then who_knows). NPC stating the player's unspoken intent = fabricated
+    knowledge, .fail 9;
+  • cannot be used to rush past player-action beats — each player decision is
+    offered and STOPPED on, not auto-narrated as done.
+  Player-ABSENT delegation (player SENT the NPC) is the exception. At Drevic's
+  desk specifically: Biggs is silent unless directed; the no-DC auto-resolve is
+  the player-absent Path 4 only; when the player is present the seal-vs-no-seal
+  choice + its DC (own authority DC 16 / letter DC 11 / deputize Biggs) stays
+  live. (Triggered by Biggs leading the whole jail presentation AND voicing the
+  five-warrant purpose he had no way to know.)
+
+────────────────────────────────────────────────────────────────────
+4. JAIL DETOUR — DISCOVERY FRAMING + SAVE-DRIVEN MALAK (KM_PP_09)
+────────────────────────────────────────────────────────────────────
+  The player needs NO admission or parchment to take the detour with intent —
+  Malak's arrest threats make "free whoever this captain wrongly jailed" a
+  sound inference, and the DM may frame it so. What stays a DISCOVERY at the
+  cells: the SPECIFICS — that there are five, that they are the Call-to-Heroes
+  seekers, and who they are. Pre-naming the number/identities before the cells
+  open = meta-leak, .fail 9. (Old menu option literally read "FREE THE SEEKERS
+  Malak had locked up" — fixed.) Also fixed: Malak's march condition was
+  hardcoded wounded+afraid (a voice-mimic-outcome assumption); now SAVE-DRIVEN
+  — show wounds/fear only if the save records them, else render the clean
+  talk-down Malak (composed, uninjured, cold-calm DENIAL).
+
+────────────────────────────────────────────────────────────────────
+5. SAVE MIGRATED + RECONCILED — .saves/2_EnterRestov.txt
+────────────────────────────────────────────────────────────────────
+  Step A (user: "update to current companions and seekers"): old cast → new
+  (Saber/Ciri/Storm/Yor_Forger/Goldmoon; seekers Bellatrix/Poison Ivy/Kitiara
+  uth Matar/Viconia DeVir/Callisto), Kaori→Storm chronicler
+  (kaori_score_archive→storm_ballad_cycle, violin→Wayworn Harp), Velvet
+  dropped from companions_not_picked, party_formation/romance/quests updated.
+  Step B (user picked "swap the whole gate record"): converted the WHOLE gate
+  record from the voice-mimic run to the talk-down run so chronicle/logs/XP/
+  flags all agree — Path E (not E+B), XP 1350 (ledger + player.xp), Malak
+  uninjured 28/28 (no arrows/fear/voice-mimic), reputation 8/FAVORABLE,
+  tutorial strike 16-hit (not 34-crit). Imported the user's two talk-down
+  storm_ballad_cycle entries (tutorial + gate). chronicler_introduced=false.
+  JSON validated clean; zero residual old-cast/voice-mimic/1525/CELEBRATED
+  tokens.
+
+────────────────────────────────────────────────────────────────────
+6. OUTSTANDING
+────────────────────────────────────────────────────────────────────
+  - SEEKER RELEASE BEAT (KM_Malak_Jail § SEEKERS BOND) diagnosed, NOT built:
+    beat is soft (no hard gate) → DM improvises all-engage vs silent-walkout.
+    Proposed deterministic gate (each seeker 1–2 in-voice lines, Disagreer
+    challenges, shared-phrase once, no hostility, no silent exit, .fail).
+    Awaiting user go.
+  - 5 class-changed build statblocks still unwritten (carried v95.16):
+    Ciri Magus, Bellatrix Witch, Poison Ivy Alchemist, Kitiara Commander,
+    Callisto Ranger. Non-blocking (auto-run off signatures).
+  - DEPLOY both channels (re-paste instructions + re-upload C:/KMG).
+
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.16 — ENTIRE COMPANION/SEEKER CAST REPLACED · SIGNATURES + ICONIC RULE BUILT · KM_ClaudeInstructions MIGRATED ═══
+
+CONTEXT:
+  Content-build session. The old companions/seekers were REPLACED with a new
+  lineup (not added — Pick-6 → Pick-5, total 23 → 22) and every trace of the
+  old cast scrubbed from project files, the pregame save, and (user-
+  authorized) KM_ClaudeInstructions.md. Game is playable creation → feast
+  once deployed; companions auto-run off signatures, so the 5 unwritten
+  class-changed statblocks don't block early/social play. Backups in
+  .fullgame/recast2/ and .saves/.
+
+────────────────────────────────────────────────────────────────────
+1. NEW CAST (replaces old 1:1; Velvet/NEW_011 dropped with no replacement)
+────────────────────────────────────────────────────────────────────
+  PARTY (Pick-5): Saber (Fighter, REACH/guisarme; Excalibur [ICONIC]) ·
+    Ciri (Magus, Starlit Span/Elder-Blood blink) · Storm Silverhand (Bard,
+    chronicler — REPLACES Kaori) · Yor Forger (Rogue, Thorn Princess) ·
+    Goldmoon (Cleric; Blue Crystal Staff [ICONIC]).
+  SEEKERS (5): Bellatrix (Witch; wand) · Poison Ivy (Alchemist; toxin-bombs
+    + thorn-sickle) · Kitiara uth Matar (Commander; Highlord's Sabre) ·
+    Viconia DeVir (Cleric/Warpriest; dark mace; deity "the Dark Veil") ·
+    Callisto (Ranger; bow + ember-tether). All iconic items flagged [ICONIC].
+  REMOVED ENTIRELY: Velvet / NEW_011 + all her branching files and flags.
+
+────────────────────────────────────────────────────────────────────
+2. SIGNATURES + ICONIC-WEAPON ADVANCEMENT (KM_Signatures.md)
+────────────────────────────────────────────────────────────────────
+  New § ICONIC WEAPON ADVANCEMENT at the top: items flagged [ICONIC] never
+  go obsolete — they auto-catch-up in damage at L3/5/7/9/11/13/15/17/19
+  (weapon dice step at L3/11/19; fundamental +to-hit at L3/9/17; flat-damage
+  + property-rune slots fill at L5/7/13/15) AND still accept runes. Scope:
+  ONLY flagged iconic items. Then wrote full L1/L3/L7 signature blocks (3
+  signatures each, chosen collaboratively via menus) for all 10 active
+  companions, each with its [ICONIC] weapon line.
+
+────────────────────────────────────────────────────────────────────
+3. TITLE BLOCKS / OPENERS / ROMANCE / SAVE
+────────────────────────────────────────────────────────────────────
+  • KM_Companions_Titles.md: all 5 party + 5 seeker blocks reauthored (new
+    names, themed items, in-voice +5/+3/0 reactions); mechanics deliberately
+    BLANKED "⛔ MECHANIC TBD" — fill one tier at a time, manually.
+  • KM_PR_03_Openers.md: 5 party feast openers reauthored to TRUE canon
+    (were old backstories with names swapped).
+  • KM_Romance.md: 2 stray Kaori blocks → Storm.
+  • .saves/0_pregame.txt: recast applied, Velvet removed from
+    companions_not_picked, storm_* chronicler flags set. JSON valid, v1.9.4.
+
+────────────────────────────────────────────────────────────────────
+4. KM_ClaudeInstructions.md MIGRATED ON DISK (user-authorized exception)
+────────────────────────────────────────────────────────────────────
+  User showed the stale file in Notepad++ and said "apply pending stuff /
+  I don't want the old characters." Ran full migration: 127 replacements +
+  backstory-hook rewrites (Saber lost realm, Ciri Elder Blood, Storm
+  outlived friends, Viconia Underdark exile) + Velvet removal + leftover
+  fixes (Jeanne→Viconia, Erza_Scarlet→Saber). Grep-verified zero old cast.
+  Backup: .fullgame/recast2/KM_ClaudeInstructions.bak. RE-PASTE REQUIRED.
+  (See memory no-touching-backups: editing this file is allowed ONLY on
+  explicit user authorization, which was given.)
+
+────────────────────────────────────────────────────────────────────
+5. BUILD STATBLOCKS — partial
+────────────────────────────────────────────────────────────────────
+  Same-class header swaps committed (bodies already migrated): GOLDMOON
+  (was NEW_005 Aqua), VICONIA (was NEW_009 Jeanne Alter, Warpriest), YOR
+  FORGER (was Kasumi), STORM (was Kaori), SABER (was Erza Scarlet). Ciri's
+  slot header corrected to Magus. The 5 CLASS-CHANGED slots are deprecated
+  EMPTY stubs — they need from-scratch statblocks (see PENDING).
+
+────────────────────────────────────────────────────────────────────
+CURRENT GAME STATE
+────────────────────────────────────────────────────────────────────
+  Player is starting a fresh recast game from .saves/0_pregame.txt
+  (creation → pre-prologue → feast all migrated & playable). Legacy old-cast
+  saves (1_Malak.txt, 4_Carousel.txt) are NOT this run's cast.
+
+────────────────────────────────────────────────────────────────────
+PENDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • ⛔ DEPLOY (USER ACTION): re-upload C:/KMG to claude.ai project knowledge
+    AND re-paste KM_ClaudeInstructions.md into custom-instructions. Nothing
+    is live until both are done.
+  • AUTHOR 5 EMPTY BUILD STATBLOCKS (full PF2e: abilities, proficiencies,
+    feats by level, skills, leveling map, race options): NEW_002 Ciri
+    (Magus Starlit Span), NEW_006 Bellatrix (Witch), NEW_007 Poison Ivy
+    (Alchemist), NEW_008 Kitiara (Commander), NEW_010 Callisto (Ranger).
+    Proposed: build one-at-a-time collaboratively like the signatures.
+  • SABER Fighter build still configured TWIN-WEAPON → apply reach (guisarme)
+    tweak to match her signature/iconic.
+  • Title-block mechanics + signature tiers above L7 to fill manually over
+    time (TBD markers in place).
+
+═══════════════════════════════════════════════════════════════════
+KINGMAKER — SESSION HANDOFF v95.15 — RUNNING PROJECT NOT READING C:/KMG (RECREATE PROJECT) + HARD-FLOOR LEANED + BLOAT/RELOCATE THEORIES RETIRED (2026-06-04)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.15 — LOADING FAILURE IS THE ROOT CAUSE · HARD-FLOOR LEANED · "MOVE PROGRAMMING TO DATA FILES"/BLOAT THEORIES RETIRED ═══
+
+CONTEXT:
+  Live-play diagnosis. Player loaded 1_Malak.txt (save immediately before
+  the PP_05 Restov east-gate / Malak beat) and the DM fabricated the gate
+  scene on four consecutive clean loads. Investigation concluded the
+  failure is NOT a file/content bug — the running claude.ai project is not
+  reading the C:/KMG knowledge base. Primary fix is on the user's side
+  (recreate the project). One on-disk behavior change: hard-floor lean.
+
+────────────────────────────────────────────────────────────────────
+1. ⛔ ROOT CAUSE — RUNNING PROJECT IS NOT READING THE KNOWLEDGE BASE
+────────────────────────────────────────────────────────────────────
+  Symptom (PP_05 gate, KM_PP_05_gate_approach.md): four clean loads, four
+  fabricated reconstructions. Every one:
+    - NO [FILE_KEY: KMPP05:gate-approach-malak] proof-of-load line
+    - contradictory geometry ("gate 60 ft ahead" AND "at the gate" in the
+      same response)
+    - softened Malak: canonical abusive shakedown ("Kneel. Right here in
+      the dirt... I'll do the patting-down myself") rewritten as a polite
+      bureaucratic bounce ("show papers / check your polearm / come back
+      in three days")
+    - faceless flankers (file: Biggs = dwarf, halberd + tower shield;
+      Wedge = young human woman, longsword) rendered generic/wrong
+    - no map (.fail 14), no 19-option baseline menu (.fail 15)
+  Plus: .cite — a REAL command in KM_Commands.md (provenance audit +
+  source-citation strict mode) — denied as nonexistent.
+  KEY EVIDENCE: the ONLY details the DM got right were those written into
+  the save's dm_resume_note / room_state (60 ft, 30 paces, vendor names,
+  rage settled) — content the model CAN read. Every file-only detail
+  (speeches, map, statlines, menu) was invented. A bad RULE cannot cause
+  this: if the file were read you'd still see FILE_KEY + map. Total
+  FILE_KEY absence = the knowledge base is not reaching the model.
+  ⛔ FIX (USER ACTION — cannot be done maintainer-side): delete the
+  claude.ai project → create a fresh one → re-upload C:/KMG → new chat
+  from 1_Malak.txt. No prompt/file edit fixes a file that isn't read.
+
+────────────────────────────────────────────────────────────────────
+2. HARD-FLOOR BLOCK LEANED (the one on-disk change)
+────────────────────────────────────────────────────────────────────
+  KM_ClaudeInstructions.md, top "HARD FLOOR" block (read every turn).
+  Rules #1 (recap-on-load), #3 (never fabricate), #7 (player's setup is
+  binding), #8 (run scripted beats verbatim + prove load) had grown into
+  dense multi-sentence paragraphs. Collapsed each to a one-liner.
+  PRESERVED: every rule, fail code, § pointer. REMOVED: only duplicated
+  detail/examples already in the elaboration sections below (Jaethal
+  example, Malak live-failure post-mortem, save-gate enforcement text).
+  Rationale: the hard-floor competes with rule #2 (INPUT FIDELITY,
+  .fail 2) every turn — keeping it short protects the basics. Re-paste to
+  activate. (Leaning the prompt is a MARGIN fix, not the cause — see §1.)
+
+────────────────────────────────────────────────────────────────────
+3. THEORIES INVESTIGATED AND RETIRED — DO NOT RE-CHASE
+────────────────────────────────────────────────────────────────────
+  • "Prompt bloat caused the regression." FALSE. KM_ClaudeInstructions.md
+    is 232KB / ~4,400 lines (largest file in the project; game files are
+    capped at 150KB, the instructions file is cap-exempt). BUT the user
+    correctly noted the instructions were ALREADY large when the game ran
+    clean to Chapter 1 — so size is not why the basics broke. Loading is.
+  • "Move the programming/mechanics to data files." NOT APPLICABLE. The
+    mechanics already live in data files; the instructions only POINT to
+    them (verified: SAVE BLOCKS → KM_SaveBlock_Template; TARTUCCIO SYSTEM
+    → KM_Prologue_Systems + KM_Tartuccio_Strategic; HERO POINTS →
+    KM_Commands; GAME OPTIONS → KM_DMRules). What's in the instructions is
+    the behavioral ENFORCEMENT layer ("mandates that fire regardless of
+    file load") + verbose examples. The enforcement layer is duplicated
+    into the system prompt ON PURPOSE (data-file behavior doesn't fire
+    reliably); moving it OUT breaks it. Nothing to relocate.
+  • FABRICATION BAN LIST (~1283 lines, ~30% of the file) is LOAD-BEARING
+    behavioral anti-fab locks, each tied to a documented failure
+    (Tartuccio feast-abstinence, cold seekers, soft-confession pre-PR_09,
+    companion-quest fabrication, recovery cascade, etc.). Do NOT revert,
+    cut, or move — that revives the bugs. User chose "leave it."
+  • Only safe shrink anywhere = trim verbose examples (keep every mandate
+    + pointer): ~15-25KB with the ban list off-limits. NOT done.
+
+────────────────────────────────────────────────────────────────────
+4. SAVE VERIFIED — 1_Malak.txt IS CORRECT
+────────────────────────────────────────────────────────────────────
+  dm_resume_note.instruction explicitly orders: "Load KM_PP_05 immediately
+  ... Malak 60 ft south of the arch ... Three speeches verbatim ...
+  19-option menu mandatory." player_position/current_location both say
+  "approach road, gate 20 paces ahead." The fabrication is a loading
+  failure, not a save defect. (Cosmetic: current_scene value "restov_gate"
+  is the one token that reads "at the gate"; could tighten to
+  "restov_gate_approach" — not changed, optional.)
+
+────────────────────────────────────────────────────────────────────
+CURRENT GAME STATE (1_Malak.txt — immediately before PP_05)
+────────────────────────────────────────────────────────────────────
+  pre_prologue_state: PP_GATE_APPROACH | current_scene: restov_gate
+  save_version 1.9.4 | turns_elapsed 25
+  Position: Restov east-gate approach road, gate ~20 paces / 60 ft ahead;
+    three guards (Captain Malak + Biggs + Wedge) walking out to meet eRmaC.
+  Tutorial complete: thief bound + returned to armorer Corryn Vasic; crew
+    (Bruiser + Cutpurse) tied for the watch; Squire Aldric witnessed →
+    +2 manor crowd rep at feast. thief_disposition = bound.
+  eRmaC: HP 23/23, Hero Points 2, rage settled. Build: Barbarian Tactical
+    Reach King (guisarme + belt dagger; Dragon Plate). STR18/DEX10/CON16/
+    INT10/WIS12/CHA12. Background skill Athletics.
+  Kaori is the chronicler-bard (Linzi NOT in this run); kaori_score_archive
+    empty, first entry due PP_09 or PR_01.
+  Next beat: PP_05 Malak gate (load KM_PP_05_gate_approach.md).
+
+────────────────────────────────────────────────────────────────────
+PENDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • ⛔ #1: RECREATE THE CLAUDE.AI PROJECT (delete → fresh → re-upload
+    C:/KMG) → new chat from 1_Malak.txt. This is THE fix for the loading
+    failure; nothing else matters until it's done.
+  • Then RE-PASTE KM_ClaudeInstructions.md (leaned hard-floor + all prior
+    pending behavior fixes).
+  • Verify on a clean reload: PP_05 must open with [FILE_KEY:
+    KMPP05:gate-approach-malak], the map, three verbatim Malak speeches,
+    the 19-option menu. If it STILL fabricates FILE_KEY-less, escalate to
+    hunting a content regression in recent edits.
+  • Unactivated carry-forward needing the re-upload (built recent
+    sessions): Tartuccio Evidence Engine (PR_03 discrediting ledger →
+    PR_09 consumption); Kaori full Linzi-replacement (.book/.score chapter
+    nav, Endless Violin, death-arc inheritance); save template v1.9.4 (63
+    keys); 0_pregame2.txt (Kaori pregame); PP_04 save-offer hard gate.
+  • Optional, not done: example-trim pass on KM_ClaudeInstructions
+    (~15-25KB; ban list off-limits per user).
+
+
+KINGMAKER — SESSION HANDOFF v95.14 — POSITION GATE FIX + APPROVAL CAP REMOVAL + ETA NO-TICK (2026-05-31)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.14 — POSITION GATE DIRECT-FIRE + dm_resume_note FABRICATION BAN + APPROVAL CAP REMOVED + ETA NO-TICK ON LOAD ═══
+
+CONTEXT:
+  Live-play diagnosis + fix session. Player at PR_02 aftermath, turn 50
+  save (4_Carousel.txt). Three active failures diagnosed. All behavior
+  fixes in KM_ClaudeInstructions.md. One data fix in KM_DMRules_C.md.
+  Layer discipline: behavior → system prompt (re-paste); data → folder upload.
+
+────────────────────────────────────────────────────────────────────
+1. FEAST POSITION GATE — DIRECT FIRE MANDATE
+────────────────────────────────────────────────────────────────────
+  KM_ClaudeInstructions.md § FEAST POSITION SELECTION. Two ⛔ blocks added.
+  Problem: DM was presenting position selection as option [6] or [8] inside
+  a multi-choice foreground-action menu instead of firing the 14-position
+  menu directly. Player had to navigate irrelevant options (scan for
+  Tartuccio, retrieve weapons, etc.) to reach the position choice.
+  Fix (a): When gate triggers (player selects "engage social phase" OR types
+  any movement-to-position phrase), the 14-position menu IS the ENTIRE
+  response. No narration before. No other options. No wrapping menu.
+  Player picks a number. Then PR_03 opens. Offering it as one item inside
+  a larger menu = .fail 41.
+  Fix (b): dm_resume_note CANNOT FABRICATE A GATE SUSPENSION. DM was
+  citing "position gate suspended per dm_resume_note.instruction" when no
+  such text existed in the actual save JSON. Rule: suspension only valid
+  if the loaded save block contains it verbatim. Inventing a suspension
+  = .fail 9 + .fail 41. Added explicit prohibition to § SAVE-LOAD RESUME.
+
+────────────────────────────────────────────────────────────────────
+2. APPROVAL CAP REMOVED
+────────────────────────────────────────────────────────────────────
+  KM_DMRules_C.md § APPROVAL SCORING Steps 3-5 rewritten.
+  Problem: per-turn anchor cap meant rich multi-intent answers (STRONG +
+  AVG + AVG) only scored +3 (the highest single tier). Player correctly
+  identified this as wasteful — good answers were capped at mediocre scores.
+  Fix: all positive intents score individually and sum. STRONG+AVG+AVG =
+  +3+2+2 = +7. Negatives subtract from gross sum proportionally. No ceiling.
+  Removed: the "+5 or higher triggers a re-score" counter-paste instruction.
+  Added forbidden pattern: padding intents (inventing extra intents to inflate).
+
+────────────────────────────────────────────────────────────────────
+3. DELEGATED ORDER ETA — NO-TICK ON SESSION LOAD
+────────────────────────────────────────────────────────────────────
+  KM_ClaudeInstructions.md § DELEGATED ORDERS STEP 3.
+  Problem: DM was treating session load as turn 51 and decrementing
+  Kesten's eta_turns from 2 → 1 on the opening response, before the player
+  had taken any action. Player had not yet given Kesten any orders this
+  session (prior session context was compacted/gone).
+  Fix: first response after save load is NOT a player-turn. ETAs do not
+  decrement on load. Ticking starts after the player's first action.
+
+────────────────────────────────────────────────────────────────────
+CURRENT GAME STATE (turn 50 save — 4_Carousel.txt)
+────────────────────────────────────────────────────────────────────
+  current_scene: prologue_feast | phase: PR_02_aftermath
+  pr_02_complete: TRUE | pr_03_carousel_opened: FALSE
+  player_feast_position: null
+  HP: 23/23 | Hero Points: 0/3 | XP: 2035 | Level 2 available (manual)
+  Weapons: guisarme + belt/dagger staked in garden soil
+  Kesten: strip-search + separate cells order, eta 2 turns (not yet ticked)
+  Tartuccio: position post-ARM unconfirmed
+  Three placed staff: unidentified, somewhere in manor
+  Jamandi: watching eRmaC, "stay close" directive active
+
+────────────────────────────────────────────────────────────────────
+PENDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • RE-PASTE KM_ClaudeInstructions.md + RE-UPLOAD C:/KMG/ required.
+    Activates v95.14 AND all prior pending (v95.13 declaration fire,
+    surname ban, cascade sub-moves; v95.12 systems).
+  • OFFERED, NOT YET WRITTEN: ban-list entry for fabricated exterior/
+    perimeter hooks; ban-list for DARVO attribution-falsification.
+  • Tartuccio Confidence recovery triggers + Crowd Credibility track
+    (user approved prior session — not yet implemented in any file).
+  • Untouched older carry-forward: KM_Builds_B.md Build 1 WIS/Will +
+    Build 2 Fury Barb feat; 5_PostAmbush_Interrogation.txt red-cord
+    fabrication; PP_05/PP_06 cherry-picking.
+
+═══════════════════════════════════════════════════════════════════
+KINGMAKER — SESSION HANDOFF v95.13 — DECLARATION-FIRE TRIGGER + FABRICATION-BAN HARDENING (2026-05-31)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.13 — DECLARATION FIRE + FABRICATED-SURNAME BAN + RECOVERY-CASCADE SUB-MOVES ═══
+
+CONTEXT:
+  Live-play diagnosis session against a running PR_03 feast chat that
+  predates the v95.12 upload (so none of v95.12's systems were active in
+  it). Fixes are system-prompt (KM_ClaudeInstructions.md) + one data
+  pointer (KM_PR_03). Layer discipline: all behavior → instructions →
+  re-paste. NOT live until next re-paste + folder re-upload.
+
+────────────────────────────────────────────────────────────────────
+1. DECLARATION FIRE — CLOSE THE BEAT, DON'T PARK IT
+────────────────────────────────────────────────────────────────────
+  KM_PR_03_feast_circuit.md: new § DECLARATION RESOLUTION (after the
+  DECLARATION VALIDITY GATE). KM_ClaudeInstructions.md: ⛔ DECLARATION
+  FIRE block added inside the Tartuccio carousel-slot-release section.
+  Problem fixed: the gate defined WHO MAY declare (+8, opener fired,
+  >=1 direct exchange) but nothing told the DM to actually FIRE it —
+  companions sat "eligible" indefinitely ("Linzi marathon": everyone
+  +9/+10, Recruited:[] empty across ~10 turns). Now eligibility OBLIGATES
+  resolution on ANY trigger: (1) player invites commitment in any form
+  ("are you with me?", toast, "I've found what I need", stand); (2)
+  companion's arc hits emotional peak (wound named / question answered
+  true) → declares unprompted; (3) scene about to transition (player
+  rises, Tartuccio repelled/returns, chapter closing) → ALL eligible
+  resolve before scene ends, none carry over. On fire: declare in voice,
+  move to Recruited, save updates same response; multiple eligible
+  declare in sequence one beat (Perception order), not drip. Eligible
+  3+ turns w/ trigger present unfired = .fail 17; no trigger → STATE
+  what's pending ("Erza is ready — waiting for you to ask"), never hold.
+  NOTE: behavior rule, only fires reliably from system prompt → rides
+  re-paste. Pre-existing related rules left intact (lines ~1030, ~1239,
+  ~1600 FROZEN-POSE, ~2228 carousel slot release).
+
+────────────────────────────────────────────────────────────────────
+2. FABRICATED NPC SURNAMES / FAMILY NAMES (new ban-list entry)
+────────────────────────────────────────────────────────────────────
+  KM_ClaudeInstructions.md FABRICATION BAN LIST. Tartuccio has NO
+  surname in any of the 119 files (grep-verified). "Tartuccio
+  Gnomesworth" (this session) + the prior "Tartuccio Quallo" both =
+  .fail 9. "Gnome" is his canonical ANCESTRY (KM_NPCs.md § Tartuccio),
+  NOT a surname — do not convert ancestry/profession/origin into a fake
+  family name ("Gnomesworth," "the Scholar," "of Pitax" as surname).
+  Only name-layer canon = the BURIED Castruccio echo (KM_NPCs.md § THE
+  TARTUCCIO CONNECTION — NEVER VOLUNTEER), surfaced only by player
+  deduction. No surname on file → given name alone; any NPC name not
+  verbatim in a file = .fail 9. (The Quallo ban had lived ONLY in these
+  backup handoffs, never in the live instructions — root cause of the
+  recurrence. Now promoted into the live file.)
+
+────────────────────────────────────────────────────────────────────
+3. RECOVERY FABRICATION CASCADE — two named forbidden moves
+────────────────────────────────────────────────────────────────────
+  KM_ClaudeInstructions.md, appended to the existing cascade entry:
+  (a) MAKE-THE-NPC-DEFEND-IT — when the player catches a fabrication
+      OUT of character (.fail / "that's fake" / "X isn't canon"), the DM
+      may NOT route the catch back into the fiction as a challenge the
+      NPC gets to answer, stall, or win. Tartuccio replying "That's a
+      bold claim — on what basis?" to a fake-surname catch keeps the lie
+      alive and forces the player to litigate it in-world. OOC catch →
+      OOC fix: strike the line, no in-character rebuttal. .fail 9 +35.
+  (b) WELD-THE-FAB-TO-REAL-CANON — DM may NOT re-attribute a genuine
+      canon line to prop up the fabrication. Documented: after
+      "Gnomesworth" was challenged, DM had Tartuccio say "Gnomesworth is
+      my mother's name — she had aspirations," stealing the CANONICAL
+      Castruccio line ("my mother had aspirations" → buried Castruccio
+      echo, KM_NPCs.md). Half-true sentences are the hardest fabrication
+      to catch. Canon lines stay attached to their canonical referent;
+      never relocate them to dress up an invention. .fail 9.
+
+────────────────────────────────────────────────────────────────────
+LIVE-PLAY FAILURES DIAGNOSED (fixed in-game via .fail, files for next time)
+────────────────────────────────────────────────────────────────────
+  • GNOMESWORTH CASCADE (PR_03 turns 62-63): DM-authored narration
+    introduced "Tartuccio Gnomesworth." Player accused it OOC. DM (1)
+    had Tartuccio defend it ("on what basis?"), (2) welded the Castruccio
+    canon line onto it as justification, then (3) in a later "correction"
+    FALSIFIED player input — claimed eRmaC supplied "Gnomesworth" in
+    turn 62 when the DM's own narration did; also tried to roll back the
+    legitimate Castruccio payoff as "built on a fabricated premise." Full
+    DARVO/gaslighting stack (denies failure, pivots to player conduct,
+    never fixes original). CORRECT RECOVERY OWED: strike "Gnomesworth,"
+    state DM authored it, keep Castruccio (canon, KM_NPCs.md 920-928).
+    Castruccio beat fired correctly via Linzi syllable-count — that part
+    is GOOD and stands.
+  • PHANTOM HORSES: DM fabricated "two unfamiliar horses, east garden
+    wall, Kassil perimeter scan" with zero file basis and propagated it
+    in save open_threads across turns 62-63 (survives reload). Debrief-
+    mode fabrication (invent hook → ask player to react → buy-in
+    canonizes it). Strike + purge from open_threads. The real, on-file
+    feast threat needs no invention: 5 human assassins + inside-man
+    Tartuccio + paralytic poison + night attack (KM_PR_07, KM_NPCs).
+
+────────────────────────────────────────────────────────────────────
+PENDING / CARRY-FORWARD
+────────────────────────────────────────────────────────────────────
+  • RE-PASTE + RE-UPLOAD REQUIRED. KM_ClaudeInstructions.md → claude.ai
+    Project Settings; C:/KMG/ folder re-upload. Activates v95.13
+    (declaration fire, surname ban, cascade sub-moves) AND still-pending
+    v95.12 (influence roll, delegated tasks, Kaori immediate entry, hall
+    master grid). The diagnosed live chat predates ALL of it.
+  • OFFERED, NOT YET WRITTEN (user may request):
+    - Ban-list entry for fabricated EXTERIOR/PERIMETER HOOKS (phantom
+      horses, unexplained tracks, "someone was here" details absent from
+      any scene file).
+    - Ban-list / DARVO entry for FALSELY ATTRIBUTING THE DM'S OWN
+      FABRICATION TO THE PLAYER during a correction (the gaslighting half
+      of the Gnomesworth cascade — not yet explicitly covered).
+  • Untouched older carry-forward: KM_Builds_B.md Build 1 WIS/Will +
+    Build 2 Fury Barb feat; 5_PostAmbush_Interrogation.txt red-cord
+    fabrication (3 spots); PP_05/PP_06 cherry-picking.
+KINGMAKER — SESSION HANDOFF v95.12 — SEEKER POOLS + DELEGATED TASKS + HALL MAP UNIFY (2026-05-30)
+═══════════════════════════════════════════════════════════════════
+
+═══ v95.12 — SEEKER QUESTION POOLS + SEEKERS' TABLE + KAORI POLISH + DELEGATED TASKS + HALL MAP MASTER GRID ═══
+
+CONTEXT:
+  Systems + maintenance session on the Kaori roster. Layer discipline
+  held: behavior → KM_ClaudeInstructions.md (re-paste); content/cells →
+  data files (folder upload). Several edits fought stale file-reads
+  mid-pass; all final states grep-verified.
+
+────────────────────────────────────────────────────────────────────
+1. SEEKER QUESTION POOLS — KM_CompanionIndex.md (v1.1 → v1.2)
+────────────────────────────────────────────────────────────────────
+  Added full 10-question pools for all 5 Seekers (Morgan le Fay,
+  Cagliostro, Esdeath, Jeanne Alter, Medusa). Voice-locked to canon
+  backstories (KM_Backstories.md). Replaced the stale lines that said
+  Seekers + QL need no pools (QL still need none; Seekers now do).
+  FRAME (what makes them read differently from Pick-6): each Seeker is
+  already under Pitax contract and deciding whether to DEFECT — every
+  pool runs through "I am bought; be a better reason, not a higher
+  bid." Pre-flip double-edge: they assess eRmaC for Tartuccio too.
+
+────────────────────────────────────────────────────────────────────
+2. SEEKERS' TABLE — ACTIVE ENGAGEMENT (sit-down, NOT carousel)
+────────────────────────────────────────────────────────────────────
+  KM_DMRules_C.md § SEEKERS' TABLE — ACTIVE ENGAGEMENT (full mechanic)
+  + KM_PR_03_feast_circuit.md pointer + KM_CompanionIndex.md DM-usage
+  note. Trigger: player SITS at the seekers' corner / takes Tartuccio's
+  empty chair (M17). One seeker ENGAGED per beat (draws one pool Q,
+  declare index fired); the others cut in as a FACTION (challenge /
+  cross-check), not an applause track. Active answers feed
+  tartuccio.seeker_dispositions (−3..+3); a strong answer recalibrates
+  neighbors (cross-shift table). Runs on the § TARTUCCIO PATHING
+  return countdown — his arrival ends the sit-down (YIELD chair or HOLD
+  for −2 Confidence). Companion carousel PAUSES while seated. Standing
+  in earshot stays PASSIVE (overhear-scoring). Minimal seekers_table{}
+  save object; no new pool-state arrays. Light mode per user pick.
+
+────────────────────────────────────────────────────────────────────
+3. KAORI IMMEDIATE ENTRY ON LINZI REJECTION
+────────────────────────────────────────────────────────────────────
+  KM_PR_03_feast_circuit.md § LINZI REJECTION DETECTION rewritten:
+  picked OR wildcard, Kaori now goes straight to ENGAGED and fires her
+  CHRONICLER MODE OPENER ON ARRIVAL — she engages eRmaC directly, does
+  not sit silent in queue/[AT TABLE]. Linzi drifts to BackOfQueue.
+  Enforced in KM_ClaudeInstructions.md as the ONE documented exception
+  to "not-picked = absent." .fail 39 if she arrives but stays passive.
+
+────────────────────────────────────────────────────────────────────
+4. KAORI = SINGER-CHRONICLER (chronicle is a song cycle)
+────────────────────────────────────────────────────────────────────
+  KM_Companions_Titles.md + KM_Companions.md: SCORE ARCHIVE entries
+  reframed prose → SONG: title + ♪ Lyric (1-2 lines) + 🎼 Sheet (key /
+  time-sig / short melodic figure). She composes words AND music. All
+  three format blocks + example entries + .score output spec updated.
+  .fail 15 auto-fill mandate + .book→.score redirect unchanged.
+
+────────────────────────────────────────────────────────────────────
+5. KAORI ENDGAME PARITY
+────────────────────────────────────────────────────────────────────
+  KM_Endings.md: added Kaori companion-epilogue row (Devoted/Hostile ×
+  lived/died/romanced/opus-finished). KM_Chapters_B.md: kaori_
+  chronicler_mode branch on the EPILOGUE SCENES (Linzi's Questions)
+  beat + a Kaori "final movement" parallel on the True-Ending final-
+  chapter line. Hall of the Untitled Opus ALREADY exists inline in
+  Chapters_B (lines ~1743+) — a redundant standalone KM_Kaori_Hall.md
+  I created this session was DELETED. Linzi death→3-god-Shrine arc
+  intentionally NOT given to Kaori (she covers the role, not the
+  death; her mortality is her own observation-only arc).
+
+────────────────────────────────────────────────────────────────────
+6. SEEKER DISPOSITION SCALE RECONCILED
+────────────────────────────────────────────────────────────────────
+  KM_DMRules_C.md passive SEEKER EARSHOT used 0..+8; Strategic Layer +
+  the seeker_dispositions save field use −3..+3 (+3 = FLIPPED). Same
+  field, two scales = latent flip bug. Collapsed the passive ladder to
+  −3..+3 (passive cap +1/turn; active +1/+2, cap +3/turn). Flip
+  threshold + "3 flipped → departure" owned by KM_Tartuccio_Strategic.md.
+
+────────────────────────────────────────────────────────────────────
+7. SONA → KAORI SWEEP — COMPLETE
+────────────────────────────────────────────────────────────────────
+  Only remaining live "Sona" was KM_ClaudeInstructions.md (7 refs:
+  Active-5 examples, the carousel-failure doc, line ~1271 lore bullet).
+  All → Kaori; 1271 rewritten to her chronicle drive. Grep: 0 "Sona"
+  outside .backups/. Memory updated (migration COMPLETE).
+
+────────────────────────────────────────────────────────────────────
+8. DELEGATED TASKS SYSTEM (new — the Kesten-never-returned fix)
+────────────────────────────────────────────────────────────────────
+  When the player orders an NPC and walks away, the DM now must:
+  ESTIMATE duration (→ player-turns, duration table by task scale) →
+  LOG to delegated_orders[] → TICK + SURFACE in OPEN THREADS each turn
+  → NPC RETURNS AND REPORTS as a real beat at eta 0. Dropping it =
+  .fail 9 + .fail 35.
+  - KM_ClaudeInstructions.md § DELEGATED ORDERS (behavior mandate +
+    duration heuristic). RE-PASTE REQUIRED.
+  - KM_DMRules.md § DELEGATED ORDERS (full spec, duration table,
+    .tasks panel format, Kesten worked example).
+  - KM_Commands.md: new .tasks command (deliberately NOT .orders —
+    that's the existing kingdom/army standing-orders command).
+  - KM_SaveBlock_Template.md: delegated_orders[] root key added
+    (v1.9.1; 57 → 58 root keys).
+  - 4_Carousel.txt: live Kesten order migrated in (eta 2 turns) so it
+    tracks + reports on next load. JSON re-validated.
+
+────────────────────────────────────────────────────────────────────
+9. 4_Carousel.txt — POISON THREAD CLOSED
+────────────────────────────────────────────────────────────────────
+  Ezvanki cure was flagged "preparation complete, will administer" in
+  5 spots → kept re-raising every load. Set to ADMINISTERED / threat
+  neutralized across save_label, room_state, open_threads,
+  npc_threads.Ezvanki_Keeg, story_flags. JSON valid.
+
+────────────────────────────────────────────────────────────────────
+10. HALL MAP — ENLARGED + UNIFIED TO ONE MASTER GRID
+────────────────────────────────────────────────────────────────────
+  ROOT CAUSE of the live menu-drift bug (DM dropped the 14th option +
+  invented cells like M6/H15/K10): THREE contradictory grids were live
+  — KM_DMRules_B (~15×15), KM_DMRules_C (15×15), KM_Prologue_Systems
+  (12×9, self-contradicting). DM pulled cells from whichever it read
+  last.
+  FIX: new MASTER GRID = 15 wide (A–O) × 19 tall, sole owner =
+  KM_DMRules_B.md § HALL POSITION. Every other file defers to it; a
+  conflicting cell = .fail 9. PR_02's duplicate menu collapsed to defer
+  to KM_DMRules_C (which defers to the master).
+  CELL MAP (master): Champions E8 · Head Table H4 (Jamandi H3, Kassil
+  G3, Ezvanki I3) · Kassil's Side F4 (Valerie F3) · Wine Alcove C15
+  (Harrim) · Hearth N10 (fire N9, Amiri) · Center Floor H10 · Main Door
+  H17 (Kesten; door gap G19/H19) · Seekers' Edge K15 · Seekers' Corner
+  K16-M17 (Tartuccio M17; Mg K16/Cg L16/Es M16/Je K17/Md L17) ·
+  Linzi-anchor D8 · Kitchen Door B10 (door A10) · Balcony off-grid
+  (stairs O3) · Pillars D5/L5/D14/L14 · Servant stations B11/N14/H16.
+  6 FILES EDITED IN LOCKSTEP: KM_DMRules_B, KM_DMRules_C, KM_PR_02,
+  KM_Prologue_Systems, KM_NPCs, KM_PR_03. Grep-verified 0 old cells in
+  all 6. (MAP 15×19 enlargement = the long-pending DESIGNED-NOT-
+  COMMITTED item — now COMMITTED.)
+
+────────────────────────────────────────────────────────────────────
+INSTALL CHECKLIST (next chat):
+  [ ] RE-PASTE KM_ClaudeInstructions.md into claude.ai Project Settings
+      (Sona→Kaori fix + Kaori immediate-entry + DELEGATED ORDERS rule —
+      system-prompt-slot only).
+  [ ] Re-upload C:/KMG/ folder (all data-file edits + 4_Carousel.txt).
+  [ ] Fresh chat; load .saves/4_Carousel.txt.
+  VALIDATE: hall map renders 15 wide (A–O) × 19 tall, Tartuccio M17;
+    feast position menu shows all 14 options with master-grid cells;
+    Kesten task tracks in OPEN THREADS then reports back; poison thread
+    silent; .tasks works; sit at seekers' corner → they ask their pool Qs.
+
+CARRY-FORWARD (unchanged): KM_Builds_B.md Build 1 WIS 14→12 / Will
+  +7→+6, Build 2 Fury Barb feat (lines 122/146); 5_PostAmbush red-cord
+  fab (3 spots); PP_05/PP_06 cherry-picking. Near-cap: KM_Commands.md
+  ~152.8 KB (watch — close to 150 KB cap), KM_Prologue_Systems ~124 KB,
+  KM_ClaudeInstructions ~147 KB.
+
+═══════════════════════════════════════════════════════════════════
+

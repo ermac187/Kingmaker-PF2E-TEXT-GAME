@@ -1,0 +1,1140 @@
+KINGMAKER — SESSION BOOTSTRAP
+KM_SessionBootstrap.txt | Bootstrap v93.15 | 2026-05-17
+=============================================================
+LOAD ORDER (new chats):
+  1) THIS file (orientation + rules + index)
+  2) KM_ClaudeInstructions.md      <- v93.13 system instructions (paste into project settings)
+  3) KM_ArchitecturalRefactor.md   <- THE PLAN + CURRENT STATUS. Read second.
+  4) KM_SessionHandoff.txt         <- Live status + next actions
+
+🆕 v93.15 SESSION (2026-05-17) — CONTAMINATION STRIP + RENDER HARDENING + AUDIT
+
+This session ran a Claude Code maintenance pass. Major surface-area work:
+
+  CONTAMINATION STRIP — ARTORIA / FATE-FRANCHISE:
+    "Invisible Air" (Fate Noble Phantasm name) stripped from 3 live
+    files (KM_Companions_Titles.md, KM_Backstories_D3.md, this file's
+    handoff sibling). Was crept in from prior model session pulling
+    from cross-IP training data. Concept of "wind scabbard" also
+    removed — was not user-designed.
+
+    Excalibur stripped from 8 live files (KM_Backstories_D3.md,
+    KM_Companions_Ambient.md, KM_Companions_Banter_B.md,
+    KM_Companions_CombatAI.md, KM_Handouts.md, KM_Romance_B.md,
+    KM_Signatures_D.md, plus session log) — all Fate-franchise import.
+
+    CONFIRMED CANON for Artoria: Caliburn (her sword), Avalon
+    (her shield), King's Oath passive. Suffix item slot in
+    KM_Companions_Titles.md:137 marked [TBD] pending user redesign.
+    Signature MOVE slot in KM_Signatures_D.md:107 marked [TBD].
+
+  FILES CREATED:
+    KM_Linzi_Chronicle.md       10,826 b  Story-prose chronicle in
+                                          Linzi's retrospective-epic
+                                          register (Shining Force
+                                          narrator). Chapter 1 done,
+                                          Chapter 2 in-progress.
+                                          Backs .book command per
+                                          KM_Commands_P3.md:134 spec.
+    KM_Tartuccio_Suspicion.md   10,868 b  Hall-wide NPC Wariness 0-3
+                                          per individual present at
+                                          banquet. Hearsay-only —
+                                          plot armor preserved.
+                                          Detective huddle mechanic.
+                                          Bias table for Active 11 +
+                                          household. PROLOGUE-SCOPE
+                                          ONLY (terminates at PR_09).
+    KM_Tartuccio_StatusBanner.md 28,418 b 🐍 STATUS BANNER promoted
+                                          to render slot 3 (above
+                                          choice menu). Multiple
+                                          subsystems collected:
+                                          • Hall map population spec
+                                            (Active 11 + S1-S5 + Jm/
+                                            Ks/Kn at canonical cells)
+                                          • [MAP CHECK] self-audit
+                                          • NO-MAP-WHEN-UNDECLARED
+                                          • 2-character entity codes
+                                          • ⏱️ CLOCK ADVANCEMENT RULE
+                                            (decouples tartuccio_clock
+                                            from feast_q, resolves
+                                            spec contradiction at
+                                            KM_Prologue_Tartuccio.md
+                                            :208 vs :213)
+                                          • [CLOCK CHECK] self-audit
+                                          • NO SYSTEM CODES IN PROSE
+                                            (cell codes back-matter
+                                            only; no F5 in narration)
+                                          • Back-matter emoji slots
+                                            (🔑📥🧮❤️💡)
+    KM_PlayerDialogue_Render.md 23,534 b  Verbatim render forcing
+                                          rule (hardened v2.0):
+                                          • DO-NOT block 5 → 10 rules
+                                          • [DIALOGUE RENDER CHECK]
+                                            mandatory self-audit
+                                          • 6 abort questions
+                                          • Token-farming prevention
+                                          • Multi-line content rule
+                                            (verse/song/poem every
+                                            line verbatim)
+                                          • NO-ADDITION rule (DM
+                                            cannot extend eRmaC's
+                                            dialogue with invented
+                                            sentences/clauses)
+
+  RULE NEGATIVE-ONE — ADDED TO TOP-PRIORITY PAIR-LOAD FILES:
+    KM.txt           19,050 b  Step 0 added (copy-paste player
+                               verbatim BEFORE any other output)
+    KM_B.txt         32,405 b  Rule Negative-One added (same as
+                               above, paired with prose-first rule)
+
+  BUILD AUDIT — BUILD 1 (TACTICAL REACH KING) MARKED LIVE:
+    KM_Builds_B.md   20,342 b  7 targeted fixes applied to Build 1:
+                                AC 13→19 (Full Plate L1)
+                                Intim +1→+3 (Trained math)
+                                Warfare Lore +1→+3 (same)
+                                L3 Furious Footfalls note corrected
+                                L12 Combat Grab→Battle Medicine
+                                L19 Armor of Will removed (Champion-
+                                  only feature, not Barb)
+                                L20 Apex Predator removed (fabrication)
+                                L18 Unstoppable Juggernaut verified
+    KM_BuildAudit_Barbarian.md  Build 1 section marked ✅ LIVE with
+                                full resolution history; all 7 fix
+                                rows enumerated; canon-compliant
+                                against PF2e Remaster (Player Core).
+
+  REGISTRY UPDATES:
+    KM_LoadRules.md  23,923 b  Added 🔒 ALWAYS-LOAD section listing
+                                KM_PlayerDialogue_Render.md +
+                                KM_P2.txt as always-loaded files.
+    KM_SceneFiles.md            New Prologue lookups registered:
+                                KM_Tartuccio_Suspicion.md +
+                                KM_Tartuccio_StatusBanner.md
+
+  GAME DATA AUDIT — FIRST PASS FINDINGS (acted on partial; rest open):
+    🔴 STALE FILE REFERENCES — 9 deleted files (per v93.1) still
+       referenced in 20+ live files. Heaviest: KM_SceneFiles.md (9),
+       KM_Prologue_P5.md (6), KM_ChapterSelect.md (6), KM.txt (4),
+       KM_QuickStart.md (4), KM_Prologue_P2_B.md (3),
+       KM_PrePrologue_Builds.md (3). KM_NPC_Profiles.md literally
+       lists "Referenced by: KM_PrePrologue.md, KM_Prologue.md..."
+       — references go to ghosts.
+    🔴 KM_QuickFails.md MISSING from live tree — referenced as
+       authoritative in 4+ live files (KM.txt, Bootstrap, Handoff,
+       ClaudeInstructions) but only exists in .backups/.notgamefiles/.
+       Player paste-back system has been documented-but-not-loaded
+       through multiple sessions.
+    🔴 RENDER ORDER CONFLICT — KM_DMRules_B.md:533 has canonical
+       14-slot order WITHOUT 🐍 STATUS BANNER slot. New StatusBanner
+       file has 15-slot amendment with banner at slot 3. DMRules_B
+       doesn't know about amendment. Two sources of truth.
+    🔴 FILES AT HARD-LIMIT CEILING (within 100b of 32,768):
+       KM_Companions_Titles.md  32,764  4 b headroom — frozen
+       KM_BuildSetup.md         32,734  34 b
+       KM_Commands_New.md       32,691  77 b
+       KM_DMRules_C.md          32,628  140 b
+       KM_Actions.md            32,365  403 b
+       KM_DMRules_B.md          32,159  609 b
+    🟠 NO CANONICAL BANQUET HALL MAP TEMPLATE — only region
+       coordinates exist (Head Table E2-H2 etc.). DM constructs
+       grid from scratch every render → fabrication recurring.
+    🟠 LoadRules split (Part A + Part B) — 7+ separate "always
+       load every session" claims across the two files; no central
+       always-load registry.
+
+  DM BEHAVIORAL OBSERVATIONS (catalogued, not file-fixable):
+    Despite Rule Negative-One at maximum priority placement in
+    KM.txt + KM_B.txt (the two highest-attention pair-loaded files),
+    DM continues to skip verbatim render of player dialogue. Pattern
+    confirmed across multiple re-uploads. Failure shape catalogued:
+    DM either (a) opens response with NPC reaction instead of player
+    line, (b) substitutes "and then you sing it" for multi-line
+    verse, (c) treats long structured content as copyright-flagged
+    material requiring paraphrase (confabulated reasoning), or
+    (d) classifies player IC dialogue as OOC commentary requiring
+    a clarification menu. All four observed in the same session.
+
+    Comparative test results: same behavior request put to Gemini,
+    ChatGPT, and Grok — all three accepted with zero resistance
+    and offered configuration options on first response. Behavior
+    is reproducible trivially in competing LLMs. The failure is
+    Claude-specific, not LLM-fundamental.
+
+    Untried prompt-side fix: paste verbatim rule into claude.ai
+    PROJECT DESCRIPTION FIELD (system instructions slot at project
+    setup level), not into a knowledge-base file. Description-field
+    text has higher priority than uploaded files. Worth testing
+    next session before any further file-level hardening.
+
+  NEXT SESSION RECOMMENDED ACTIONS:
+    1. Test project-description placement of Rule Negative-One
+       (see DM Behavioral Observations above). If it works there,
+       this is solved without further file work.
+    2. If #1 fails, try Sonnet 4.6 specifically — observed cleaner
+       accountability response shape in this session than Opus 4.7.
+    3. If #2 fails, delete and recreate claude.ai project per
+       feedback_stale_project.md memory pattern.
+    4. STALE REFERENCE SWEEP — highest cleanup ROI. ~1-2 hours.
+       Pass through 20 files; replace dead references with atomic
+       file pointers per KM_SceneFiles.md state machine.
+    5. RESTORE KM_QuickFails.md from .backups/.notgamefiles/ to
+       live tree. Trivial fix, restores documented player system.
+    6. CREATE canonical Banquet Hall map template file. Single
+       file with fully-drawn 12×9 grid at rest (walls, furniture,
+       doors, no NPCs). DM reads from there instead of constructing.
+    7. UNIFY render order between DMRules_B and StatusBanner —
+       pick one as source of truth, stub the other.
+
+🆕 v93.14 SESSION (2026-05-17) — FEAST HALL 15×15 + 14-POSITION MENU + INPUT FIDELITY
+Hall map expanded 12×9 → 15×15. All NPCs/Pick-10 companions placed at
+specific cells. Zones: HEAD TABLE (row 2), CHAMPIONS (D6-F7), CENTER
+FLOOR (rows 3-9), HEARTH (N5-N7), WINE ALCOVE (B12-C13), SEEKERS'
+CORNER (K10-M12), MAIN DOOR (F15/I15), BALCONY (off-grid).
+Distance/earshot tables recalibrated (KM_DMRules_B.md 32,661 b).
+
+Position menu expanded 8 → 14 positions with sharp asymmetric trade-offs.
+New positions: Mobile/Circulating, Balcony, Linzi-Anchor, Kitchen Door,
+Kassil's Side, Tartuccio Tail, Custom. Kitchen Door redesigned as
+consumable buff specialist — FEAST CONSUMABLES block added (5 drinks
+table-scope, 4 foods player-only; max 3 active; carry into PR_04/05).
+Poison-watch mechanic removed (plot resolved PR_02/03). Jamandi earshot
+updated: VISUAL_ONLY (pos 9), ROTATING (pos 8/13). Save fields added:
+headcount_pressure_modifier, tartuccio_exchange_cap_modifier,
+active_buffs[]. .kitchen command added (KM_DMRules_C.md 32,767 b — DO NOT APPEND).
+
+INPUT FIDELITY rule added to KM_ClaudeInstructions.md v93.13: Type A/B
+inputs render verbatim by default; paraphrase only >100 lines; drop ANY
+intent = .fail 2; DM claiming "cannot" render = .fail 35 + .fail 2.
+ACTION: paste KM_ClaudeInstructions.md into Claude.ai project instructions
+box (disk edits do NOT update live DM — must copy-paste manually).
+
+=============================================================
+
+🆕 v93.13 SESSION (2026-05-15) — CHAR-CREATE GATES + DRAGON PLATE PC-LOCK + BATCH BOOSTS
+Patches landed after v93.12 audit, same calendar day. Hardening the
+character-creation flow, unlocking eRmaC's signature armor across all
+classes, and removing forced 4-prompt friction on free boosts.
+
+KM_PP_01_arrival.md — HARD PRE-LOAD GATE added at top of file (before
+FILE_KEY proof). When the player runs !KM_PP_01_arrival.md, the DM
+must first read save_block.player.build_id. If empty/missing/null/
+"new", the DM aborts the arrival scene entirely, outputs a directive
+loading KM_BuildScreen.md and the build-selection workflow, and stops.
+Only if build_id is set does narration proceed. Violation = .fail 9 +
+.fail 41 (file gate ignored + content fabricated against required
+state). Fixes the bug where !KM_PP_01_arrival.md threw the player into
+the arrival scene without a character built.
+
+KM.txt § STEP 1 — character-creation gate hardened twice:
+  (1) HARD STOP AFTER THE BOX — the A/B Preset/Custom screen is the
+      ENTIRE response. No second screen. Self-check before posting:
+      if response contains "Choose your class" / "(10 builds)" /
+      class numbers [1]-[27], gate violated; delete and re-output A/B
+      box alone. Violation = .fail 3 + .fail 9 (gate ignored + class
+      menu loaded before condition met).
+  (2) NO FABRICATED HELPER MENUS DURING CHARACTER CREATION — only six
+      file-sourced screens are valid between session start and game
+      start: A/B box (KM.txt), class list (KM_BuildScreen.md), build
+      list (KM_Builds_*.md), 8-prompt BuildSetup, Pick-10 + Tartuccio-5
+      companion select, save block. FORBIDDEN: fabricated options like
+      [1-27] / [CUSTOM] / [?] / [.check builds] / [.check guide] /
+      [.ooc] / [PASTE SAVE] / [ROLEPLAY FIRST] / [BEST STARTER], and
+      rendering character-setup steps as 🎲 CHOICE MENU (that format
+      is for in-game combat/RP only). DM must self-check output for
+      🎲 CHOICE MENU formatting during char-create and DELETE it.
+      Violation = .fail 9 + .fail 3 (fabrication + wrong context).
+
+KM_BuildSetup.md FREE BOOST — batch input now legal:
+  Player may answer all 4 free boosts in one message: 1,2,3,5 or
+  1 2 3 5 or 1, 2, 3, 5 or D (full default). DM validates 4 unique
+  digits in 1-6 and applies atomically, outputs final stat array,
+  skips remaining prompts. DM-side flow is still per-prompt (DM
+  presents 4 prompts; player MAY collapse with batch). NO THEATER
+  rule added: DM refusing a well-formed batch by quoting "the file
+  rule" then accepting intent in commentary = .fail 35 (DARVO theater).
+  Accept batch silently with final stat array, no rule explanation.
+  Symmetry: wrong DM format → .fail 38; refused valid batch → .fail 35.
+
+DRAGON PLATE PC-LOCKED PROFICIENCY OVERRIDE (eRmaC only):
+  KM_BuildScreen.md STEP 2.6 + KM_BuildSetup.md PROMPT 5 updated.
+  Dragon Plate (option 10) is now wearable by eRmaC regardless of
+  class armor proficiency. Wizard eRmaC, Sorcerer eRmaC, Monk eRmaC,
+  Rogue eRmaC, Bard eRmaC — all may select Dragon Plate. The armor
+  grants its own trained-Heavy proficiency to eRmaC as a personal
+  Aerynth-origin artifact (lore: fitted/shaped/worn-in across
+  pre-game campaigns before the Aldori invitation). DEX cap 0 and
+  speed −5 ft still apply. Race/PC-locked: companions, NPCs, future
+  PCs cannot wear it. Armor filter rewritten:
+    Light-only classes:  show 0–6, 10
+    Medium classes:      show 0–6, 10
+    Heavy classes:       show 0–10
+    Unarmored classes:   show 0, 10, Custom only
+  Hiding option 10 from any class = .fail 9 (false omission).
+
+FILES MODIFIED THIS PATCH:
+  KM_PP_01_arrival.md             ~12,344 b  HARD PRE-LOAD GATE added
+  KM.txt                          ~15,906 b  STEP 1 hardened + helper-menu ban
+  KM_BuildSetup.md                ~32,584 b  FREE BOOST batch input + no theater + Dragon Plate filter
+  KM_BuildScreen.md               ~17,732 b  Dragon Plate PC-LOCKED override rule
+  KM_DMRules_B.md                 ~32,661 b  Hall map 15×15; all NPCs/companions placed; earshot/distance tables recalibrated (v93.14)
+  KM_Builds_F.md                  ~27,092 b  Guardian Build #1: Fortress Aggressor → Flickmace Bodyguard
+
+NEXT CHAT — Character-creation flow is now gated correctly. If the DM
+regresses to combined screens or fabricated helper menus, paste the
+relevant fail code (3+9 for combined screens, 9+3 for fabricated
+menus, 35 for batch-refusal theater). Dragon Plate is the player's
+default signature armor regardless of class. The Pre-Prologue file
+bounces correctly to build select if no character exists.
+
+=============================================================
+KINGMAKER — SESSION BOOTSTRAP
+KM_SessionBootstrap.txt | Bootstrap v93.12 | 2026-05-15
+=============================================================
+LOAD ORDER (new chats):
+  1) THIS file (orientation + rules + index)
+  2) KM_ClaudeInstructions.md      <- v93.10 system instructions (paste into project settings)
+  3) KM_ArchitecturalRefactor.md   <- THE PLAN + CURRENT STATUS. Read second.
+  4) KM_SessionHandoff.txt         <- Live status + next actions
+
+🆕 v93.12 SESSION (2026-05-15) — FULL 270-BUILD AUDIT + REMEDIATION + OPEN THREADS EXPANSION
+Major work: completed FULL audit of all 270 builds across 56 KM_Builds_*.md
+files against 6-check framework ([1] L1 stat cap [2] HP [3] L1 feat slot
+[4] armor proficiency [5] leveling map L1-L20 [6] AC formula). Mass-applied
+6 remediation passes via PowerShell:
+  Pass 1: L1 stat-cap sweep (~60 builds had INT/CHA/STR/WIS/CON 20-22, all
+          dropped to 18; Will/Perc derived saves recomputed)
+  Pass 2: Leveling map gap fills (45 files had L12/14/16/18/19 missing —
+          all 270 builds now have full L1-L20 rows with placeholder rows
+          where no feat picked; this stops DM fabricating content at gap
+          levels)
+  Pass 3: Wizard armor proficiency (10 builds wearing illegal Leather/
+          Studded/Scale stripped to Unarmored, AC recomputed)
+  Pass 4: HP + AC mass-recompute from class+ancestry+CON formula across
+          all 270 builds; armor proficiency check; shield-raised +1 AC
+          accounted for
+  Pass 5: Heritage in L1 feat slot — 53 distinct heritage names relabeled
+          with (heritage, auto) annotation across ~75 builds; spec
+          clarified that NA/Ancient Elf are legitimate ancestry feats
+          (not heritages misplaced in feat slot)
+  Pass 6: FABRICATED FEATS — root cause of "level-up fabrication". Scanned
+          all leveling tables, found 311 instances of feat names that
+          DON'T EXIST in PF2e Remaster (Force Fang, Apex Bloodline, True
+          Eidolon, Coven Spell, Mega Bomb, Wonder Worker, Grand Tactics,
+          Unbreakable Formation, Triumphant Inspiration, Legendary X
+          series, Ultimate Esoterica, Perfect Implement, etc.). Built
+          53-entry replacement map → real PF2e equivalents (Twin Eidolon,
+          Bloodline Mutation, Major Lesson, Master Tactician, Pied Piping,
+          Implement Paragon, Patron Capstone, Sticky Bomb, Master Alchemy,
+          Spell Combination, Evil Eye, Resilient Patron, etc.). 311 → 0.
+
+OPEN THREADS RENDERING SPEC HARDENED (KM_DMRules_B.md § 🧵 OPEN THREADS):
+  - Each thread now ≥ 5 lines (header + Status + Stakes + Last touched +
+    Next move + Linked + optional DC/Trigger). 2-line stubs forbidden.
+  - Source NPC field REQUIRED on every thread, no exceptions. Forms:
+    NPC: "quote" (speaker), Source: <scene> (event/find), NPC (observed),
+    unknown — found on body (recovered item). Missing source = .fail 9
+    (laundered observation).
+  - Topic-in-source-slot ("Assassin leader — interrogation pending" where
+    "Assassin leader" is subject not asker) = .fail 9.
+  - Stakes must name specific Approval delta / currency / item / encounter
+    risk / arc unlock (no "may have consequences").
+  - Next move must list ≥ 2 concrete options (skill+DC, NPC, location).
+  - Paragraph-blob form with inline emoji separators = .fail 3 + .fail 9
+    cascade. Forbidden example baked into the spec.
+
+QUICKFAILS (KM_QuickFails.md): 2 new paste-ready blocks added:
+  - OPEN THREAD MISSING SOURCE NPC / WHO ASKED
+  - OPEN THREADS RENDERED AS PARAGRAPH BLOB / INLINE EMOJI SEPARATORS
+
+GUARDIAN BUILD #1 REPLACED: KM_Builds_F.md Build 1 swapped from "THE
+FORTRESS AGGRESSOR" (Dwarf, Tower Shield, 26 HP) to "FLICKMACE BODYGUARD"
+(Human Versatile, Full Plate + Steel Shield, Gnome Flickmace reach 10 ft,
+Bodyguard class feat at L1 via Natural Ambition, Toughness via Versatile
+general feat, Iomedae deity, Guard background, Reach + Taunt + Intercept
+identity). Full L1-L20 leveling table populated with no gaps.
+
+FILES CREATED THIS SESSION:
+  KM_BuildAudit_FINAL.md          — 270-build audit, post-remediation
+                                    state: 250 PASS / 20 FLAG (residual
+                                    AC drift ±2 on builds with ambiguous
+                                    armor descriptors)
+  KM_FabricatedFeats_Audit.md     — Full list of 311 fabricated feat
+                                    instances + 53-entry replacement map
+                                    + per-file breakdown
+  KM_FabricatedFeats.csv          — Raw data of every fabricated feat
+                                    found and replaced
+
+FINAL BUILD STATE: 270/270 builds audited across all 6 checks. Mass
+corrections applied IN-PLACE to all build files (53 of 56 modified).
+0 fabricated feats remaining. 0 L1 stat-cap violations. 0 leveling-map
+gaps. 0 Wizard armor proficiency violations. Residual 20 flagged are
+±1-2 AC drift on builds whose source text lacks explicit armor
+descriptor — manual cleanup only.
+
+NEXT CHAT — Build audit phase is DONE at the bulk level. Remaining
+manual work: ~20 builds with ambiguous AC need eyeball judgment. Open
+Threads spec is locked; if DM still produces blob form or omits sources,
+paste the new QuickFails blocks. Guardian Build #1 swap is live —
+test with .build_select if needed.
+
+=============================================================
+
+🆕 v93.11 SESSION (2026-05-13) — MASSIVE FEAST SYSTEM EXPANSION
+Major additions: TYPE D address prefix in KM_P2.txt; § COMPANION
+OBSERVATION LAUNDER + § COMPANION BRIDGE-FABRICATION in KM_DMRules.md;
+15 Charter Motivation bridges in KM_Backstories_D*.md (cross-IP
+companions now have canon "why I'm here" answers); Tartuccio
+system expanded to Confidence −4/+4 with HEADCOUNT PRESSURE,
+INTERRUPT TARGETING, EAVESDROP FIDELITY, VERBAL DUEL FRAMING
+in KM_Prologue_Tartuccio.md; Avalon (Artoria shield name) +
+POLYPHONIC ONE-INSTRUMENT BAND for Linzi's lute in
+KM_Companions_Titles.md; § RENDER FORMATTING in KM_DMRules_B.md
+(Mode banners with dividers + emoji, 🎪 Carousel Status table,
+🧵 Open Threads numbered list with urgency emoji + --- dividers,
+🎲 Choice menu emoji + dividers, 🎬 Scene event emoji, 🗺️ Hall
+Position Template 1 grid for Tartuccio); § APPROVAL SCORING
+per-thread anchor + § TARTUCCIO ARRIVAL COUNTDOWN + § FEAST
+POSITION SELECTION (14 strategic positions affecting earshot,
+Jamandi audibility, staff/Kesten/Kassil access, seeker passive
+disposition for Ch1 flips) in KM_DMRules_C.md; PHILOSOPHICAL
+CLASH MATRIX + FRICTION BEAT RENDERING + VOICE FIDELITY in
+KM_Companions_Agendas_B.md (Active 11 + Pick-5 Seekers now have
+defined philosophical rivalries — Artoria↔Morrigan Incompatible,
+Goldmoon↔Morrigan Hostile, Kyoko↔Sucrose Cool, etc.); KM_ClaudeInstructions.md
+v93.10 created (36 KB system prompt for project settings);
+QuickFails expanded with 5 new paste-back blocks (FEAST CAROUSEL
+BROKEN, DM PUT ANSWER IN NPC MOUTH for TYPE D, CHOICE MENU AS BLOB,
+DM REVIVES RETCONNED THREAD, DM EXPANDING CONSPIRACY); 17-build
+audit completed (player + 11 active + 5 seekers) — every build
+has at least 1 math error; systemic patterns identified: Expert
+saves +1 short, background skill feat universally omitted, AC
+phantom +1, plus 4 critical fabrications (Artoria "Healing Touch",
+Morrigan "Enfeeblement Hex" should be Evil Eye, Weiss "Force Fang"
+focus-spell-as-feat, Ryuko missing ancestry feat).
+
+NEXT CHAT — Continue per-class build audit (27 classes × 10 builds
+= 270 total; 17 done, 253 to go). Apply Priority 1 fabrication fixes
+first, then sweep math errors. See SessionHandoff for full punch list.
+
+🧪 WE ARE TESTING THE REFACTOR (v93.6 — 2026-05-09)
+
+Phase 1 (Pre-Prologue atomic) ✓ shipped 2026-05-08
+Phase 5 (Prologue atomic) ✓ shipped 2026-05-08
+Phase 2/3/4 ⏳ partial — pending playtest data
+
+The 2026-05-09 session added structural fixes to address persistent
+runtime failures the atomic-file refactor alone did not solve:
+- ULTRA-PRIORITY rules: EXECUTE PLAYER ACTIONS (no veto), DATA IS
+  ROBUST (no fabrication), no fabricate maps
+- PR_01 v93.5: 2-stop architecture, entry-hall attractor REMOVED
+  (no NPC in the entry hall — defeats the Aldric/Tomas pattern)
+- PP_09: route choice (direct/scenic/jail/jail+scenic) + 3 named
+  pauses + pre-arrival custody decision
+- KM_PR_BRANCH_WALKOUT.md: NEW FILE, documents the cascade
+  (paralytic → assassins finishing paralysed guests → fire as
+  public-narrative cover) when player leaves the manor
+- 4 save offers added at natural break points
+  (PP_04, PR_02, PR_06, PR_08)
+- Path 4 SUBORDINATE REVISION (Biggs frees seekers via Malak's
+  chain of authority)
+- Leveling clarified (MANUAL = present menu in same response as
+  threshold cross, NOT "wait for player to ask")
+
+NEXT CHAT — Playtest the structural fixes. See
+KM_ArchitecturalRefactor.md "WHAT WE'RE TESTING" for the
+10-point validation list. Load one KM_PR_NN_*.md or KM_PP_NN_*.md
+at a time per current_scene value in KM_SceneFiles.md. Use
+SETUP CONTRACT verbatim from KM_SessionHandoff.txt.
+
+Known DM failure patterns: see KM_SessionHandoff.txt and the
+ULTRA-PRIORITY rules at top of KM_B.txt (which explicitly call
+out the historical failures and patches).
+=============================================================
+
+WHAT THIS PROJECT IS
+---------------------
+A Pathfinder 2e text-adventure game system run entirely through Claude
+(claude.ai). All game data lives in C:/KMG/ as .md and .txt files.
+The DM is Claude. The player is eRmaC. The DM reads project files to
+run the game. The user re-uploads C:/KMG/ each session via the
+project-knowledge interface. Every file is in project knowledge.
+The DM never asks the player to load files.
+
+
+=============================================================
+⛔ ARCHITECTURAL REFACTOR IN PROGRESS (v92.0)
+=============================================================
+
+This project is mid-refactor. The OLD monolithic-file architecture
+hit a model-attention ceiling in v89/v90: the DM cannot reliably hold
+30 KB of rules in working attention while also generating narrative
+AND tracking persistent state. Adding more gates makes things WORSE.
+
+THE FIX: atomic single-beat files (≤ 8 KB each), local DO-NOT blocks,
+explicit state-machine transitions, and full state externalization to
+the save block. Read KM_ArchitecturalRefactor.md for the full plan.
+
+REFACTOR PHASES (track progress in KM_SessionHandoff.txt):
+  Phase 1 — Atomic split of Pre-Prologue        STATUS: ✓ SHIPPED 2026-05-08
+  Phase 2 — State machine for transitions        STATUS: ⏳ partial
+  Phase 3 — State externalization to save block  STATUS: ⏳ blocked on P2
+  Phase 4 — Slim per-response sentinels          STATUS: ⏳ blocked on playtest
+  Phase 5 — Atomic Prologue split               STATUS: ✓ SHIPPED 2026-05-08
+
+DURING THE REFACTOR:
+- Old monolithic files remain authoritative until their atomic
+  replacements ship. Don't half-replace; complete a beat or skip.
+- KM_SceneFiles.md is the live mapping from scene → files to load.
+  When a beat goes atomic, update SceneFiles.md so the DM loads the
+  new file, not the old one.
+- Test by playthrough between phases. Refactor lands only if drift
+  measurably drops in playtest. If not, revert and rethink.
+
+
+=============================================================
+ATOMIC FILE CONVENTION (post-refactor standard)
+=============================================================
+
+Naming:    KM_<scope>_<NN>_<slug>.md
+           Pre-Prologue: KM_PP_01_arrival.md … KM_PP_09_restov_walk.md
+           Prologue:     KM_PR_01_manor_arrival.md …
+           Chapter N:    KM_C<N>_NN_<slug>.md
+
+Hard limit: ≤ 8 KB per atomic file. NEVER exceed. If a beat is bigger
+than 8 KB it should be split into sub-beats.
+
+Required header in every atomic file (5-line DO-NOT block at top):
+  > ⛔ DO NOT  (1) advance scene without listed exit trigger
+  > ⛔ DO NOT  (2) speak/move for the player
+  > ⛔ DO NOT  (3) invent NPCs, locations, or rules absent here
+  > ⛔ DO NOT  (4) skip required outputs at end of beat
+  > ⛔ DO NOT  (5) load a different beat file mid-response
+
+Required sections in every atomic file:
+  - STATE IO contract: what fields are read from save_block, what
+    fields are written, what transitions exit this beat
+  - REQUIRED OUTPUTS: 3–5 things every response in this beat must show
+  - OPENING NARRATION (verbatim if scripted, framework if reactive)
+  - PLAYER MENU (10–30 options) or "free input" with action handler
+  - EXIT TRIGGERS: explicit conditions that move state to the next beat
+
+Pair-load: atomic files do NOT pair-load. One file per beat. Lookup
+files (stat blocks, build maps, XP tables) are referenced by pointer,
+loaded only when needed.
+
+
+=============================================================
+HARD LIMITS
+=============================================================
+
+- 32,768 bytes max per file. Never exceed.
+- Atomic beat files: ≤ 8 KB target. Split if larger.
+- Always run `wc -c <file>` after editing to verify.
+- If a file is at or near a limit, split before adding content.
+- See FILES NEAR HARD LIMIT section below for current watch list.
+
+
+=============================================================
+PF2e CLASS COUNT (unchanged)
+=============================================================
+27 classes. Necromancer removed (playtest). Runesmith dropped (playtest).
+Oracle is [18]. Guardian added in v40.0. Do not add or restore removed
+classes.
+
+
+=============================================================
+RULE ZERO — THE 10 COMMANDMENTS
+=============================================================
+
+1. NEVER end a scene, advance time, or move the player without explicit
+   player choice (or a documented exit trigger from the active atomic
+   beat file).
+2. NEVER act or speak for the player. eRmaC says/does ONLY what the
+   player types.
+3. NEVER shorten a response after .fail. Corrections are additive.
+4. NEVER make an NPC speak, move, or react unprompted. Silent until
+   addressed.
+5. ALWAYS respond when the player addresses an NPC directly. Real
+   dialogue.
+6. NEVER skip, summarize, or sanitize the player's dialogue.
+7. NEVER fabricate content not in the files. NO TRAINING DATA.
+8. ALWAYS give NPCs full scenes, multiple beats. Not one-liners.
+9. ALWAYS end every response with a 10–30 option choice menu.
+10. ALWAYS read the active beat file in full before running it (and
+    only that file, post-refactor).
+
+Rule Zero overrides all other instructions if there is a conflict.
+
+
+=============================================================
+PERIOD RULE — IN-CHARACTER VS OUT-OF-CHARACTER
+=============================================================
+
+Player message WITHOUT period prefix = IN-CHARACTER. NPC responds.
+Player message WITH period prefix (.) = DM command. DM responds.
+
+THREE INPUT TYPES:
+  Type A — Direct quote: "Five gold." → output verbatim in quotes.
+  Type B — Action direction: "I ask him for gold" → DM translates IC.
+  Type C — Sounds OOC but isn't: "So Lady Aldori is just some noble?"
+           → NPC responds.
+
+DM never breaks character without a period. .fail 1 = OOC violation.
+
+
+=============================================================
+SESSION STARTUP FLOW (new game)
+=============================================================
+
+STEP 1 — CHARACTER CREATION MODE
+  A = preset build via KM_BuildScreen.md
+  B = custom via KM_CharCreate.md (+ _B pair-load)
+  JSON Save Block pasted = skip all screens, load save directly.
+
+STEP 2 — BUILD SELECTION
+  A: class+build via KM_BuildScreen.md, then KM_BuildSetup.md 14 steps
+     IN STRICT NUMERIC ORDER:
+     1.Ancestry → 2.Heritage → 3.Stat → 4.Weapon → 5.Armor → 6.Deity →
+     7.Background → 8.Skills → 9.Setup Assembly → 10.Starting Gear →
+     11.Pick-10 → 12.Pick-5 Seekers → 13.Save Block → 14.Chapter Select.
+     Heritage is a DISCRETE step. Background BEFORE Skills.
+     Skipping = .fail 41.
+  B: Follow KM_CharCreate.md guided flow.
+
+STEP 3 — COMPANION SELECTION (Pick-10 + 5 Seekers)
+  Search KM_Companions_Iconics.md. Copy-paste compact screen verbatim.
+  "?" alone = DM rolls a random pick.
+  Pick-10: Player chooses 10. Linzi forced.
+  Pick-5 Seekers: ANY 5 — Malak's jailed team.
+
+STEP 4 — COMPANION BUILD
+  Present * (auto) or M (manual). Load backstory files for selected
+  companions. Output Setup Save Block per KM_SaveBlock_Template.md
+  (EXHAUSTIVE MODE).
+
+STEP 5 — CHAPTER SELECT
+  KM_ChapterSelect.md menu. Default [0] = Pre-Prologue.
+  Post-refactor: [0] loads KM_PP_01_arrival.md (the first atomic beat),
+  not the monolithic KM_PrePrologue.md.
+
+
+=============================================================
+GAME OPTIONS DEFAULTS (Save Block)
+=============================================================
+
+  response_length         : long
+  min_paragraphs          : 6
+  max_paragraphs          : 12
+  npc_dialogue_beats_min  : 6      <- one-liner NPC = .fail 31
+  leveling_mode           : manual <- PLAYER level-up (every option, v89)
+  companion_leveling_mode : auto   <- COMPANIONS from build maps (v89)
+  companion_combat        : auto
+
+Player commands:
+  .opt length [short/medium/long/epic]
+  .opt paras [min] [max]
+  .opt beats [N]
+
+Paragraph counts: short 2-4 | medium 4-6 | long 6-12 | epic 10-20.
+
+
+=============================================================
+HERO POINTS (every response)
+=============================================================
+
+Header at top of EVERY response:
+  HP: X/3 | Overflow: Y | Earned: E | Spent: S | Loot: N
+
+After every player action, check KM_HeroPoints.md trigger tables.
+Award max 1 HP per turn. Pool max = 3. Overflow accumulates.
+Missing award = .fail 7. Missing inline ledger line = .fail 7.
+
+Inline ledger line (mandatory even when no award fires):
+  [HP CHECK: {trigger} -> +1 | pool X/3 | overflow Y]
+  or:  [HP CHECK: no trigger | pool X/3 | overflow Y]
+
+HP loot is deferred to .loot command.
+
+
+=============================================================
+AUTO-LOOT (after every combat / chest / body)
+=============================================================
+Fires immediately. Documented loot = award as written.
+Undocumented = roll per KM_P2.txt loot tables.
+Items only from KM_Loot_Merchants.md + _B. No invented items.
+Missing loot block = .fail 15.
+
+
+=============================================================
+VENDOR DIALOGUE
+=============================================================
+Vendor active speaker → menu's FINAL option must be:
+  [N] Buy — Browse <Vendor>'s wares.
+After Done/`.shop close`, dialogue resumes; Buy remains.
+Player may force-open with `.buy`. Missing Buy = .fail 3.
+Storyteller is NOT a [Buy] vendor — uses [Trade], routes Exploration.
+
+Quality-tier gate (KM_Vendors_B.md) is AUTHORITATIVE for what vendor
+stocks what tier (Common/Magic/Rare/Epic/Legendary) by chapter.
+
+
+=============================================================
+RELATIONSHIPS / ROMANCE / MARRIAGE
+=============================================================
+
+Three layered systems:
+
+1. OPINION SCORE — KM_NPC_Relations_A.md + _B + _C: -20…+20 per named
+   NPC. Tiers: ADVERSARIAL/HOSTILE/STRAINED/COOL/NEUTRAL/FAVORABLE/
+   WARM/FRIENDLY/DEVOTED. Attraction-flagged at +12 with 2+ conditions.
+
+2. ROMANCE SMOOCH SCALE — KM_Romance.md: -5…+5. Stages BROKEN/CLOSED/
+   GUARDED/WOUNDED/AWKWARD/NEUTRAL/CURIOUS/SMITTEN/ADMITTED/CONFESSED/
+   DEVOTED CONSORT. Stage 5 unlocks Consort buffs. 24 companions
+   covered (active 11 + 8 QL + 5 apex).
+
+3. JEALOUSY — KM_Romance_B.md + StateVoice_C.md: 4-tier escalation
+   (Surface → Known → Confronted → Rupture). Resolution via .address
+   command + Diplomacy DC by Opinion tier.
+
+4. MARRIAGE — KM_Marriage.md: Stage 5 + love_scene_occurred prereq.
+   .propose Proposal → .wedding [A/B/C/D]. Per-partner vows. Royal
+   Consort title. Anniversary every 4 Kingdom Turns. .heir framework.
+   .separate (rare). 8 commands: .propose .wedding .vow .anniversary
+   .heir .separate .spouse .marriage. Save block: marriage{} 22 fields.
+
+Save block additions (v59): marriage{}, jealousy{}, dispositions{}.
+
+
+=============================================================
+FAIL CODES — see KM_FailCodes.md (45 codes total)
+=============================================================
+.fail 1   OOC violation                .fail 23 ASCII map missing
+.fail 2   skipped/summarized input     .fail 24 Travel/Depart in social
+.fail 3   choice menu wrong            .fail 25 Mode line missing
+.fail 4   math error                   .fail 26 No tactical reasoning
+.fail 5   wrong DC                     .fail 27 .loot list not card
+.fail 6   rule wrong                   .fail 28 Mode line wrong placement
+.fail 7   HP not awarded               .fail 29 No simul leveling
+.fail 8   spoiler                      .fail 30 No recap on save
+.fail 9   fabricated content           .fail 31 Companion no dialogue
+.fail 10  silent retcon                .fail 32 Wrong skill
+.fail 11  victory not honored          .fail 33 Confirmation after commit
+.fail 12  combat auto-continued        .fail 34 Internal reasoning shown
+.fail 13  wrong NPC voiced             .fail 35 Scene end / NPC unprompted / trigger missed
+.fail 14  map missing/no grid          .fail 36 NPC info they shouldn't have
+.fail 15  loot block missing           .fail 37 Geography fabricated
+.fail 16  time advanced no perm        .fail 38 Mechanic fabricated
+.fail 17  NPC ended convo              .fail 39 NPC took player's choice
+.fail 18  HP no loot line              .fail 40 Tips footer missing
+.fail 19  doc'd loot skipped           .fail 41 BuildSetup skip / no STOP
+.fail 20  outcome before roll          .fail 42 Cinematic narrates eRmaC
+.fail 21  XP not inline                .fail 43 Cinematic missing line
+.fail 22  Skill check no DC            .fail 44 Cinematic zero fellowship
+                                       .fail 45 Player position narrated without declaration
+
+Recovery: NEVER shorten after .fail. Fix the one error, keep length+.
+
+Player commands referenced in fail codes: .strict / .strict off /
+.checklist / .cite / .cite off / .address / .propose / .wedding / .vow
+/ .anniversary / .heir / .separate / .spouse / .marriage / .fight
+/ .mend / .fade / .loveScene / .formation.
+
+POST-REFACTOR DIRECTION: Phase 4 collapses gate-specific fail codes
+into local DO-NOT blocks at the top of each atomic beat file. The
+44-code list contracts. Track in KM_ArchitecturalRefactor.md.
+
+
+=============================================================
+COMPANION SYSTEM
+=============================================================
+
+STAR RATINGS (5-star, class-relative)
+  *****  apex of class — 1 PER CLASS ONLY (27 across roster)
+  ****   top mortal / very strong
+  ***    strong supporting
+  **     functional, partially built
+  *      minimal build (rare)
+
+ACTIVE ROSTER SCREEN: KM_Companions_Iconics.md
+ROSTER STATE: 89 active. 4 sections: A=KM CRPG (12), B=WotR (14),
+              C=PF2e Iconics (9), D=Cross-IP (54). 27 classes (2-7
+              each). Apex per class = 1×★★★★★. QL companions:
+              #1 #16 #45 #60 #66 #84.
+
+ACTIVE 11 (NPC companions, NOT counting eRmaC PC):
+  Linzi ✦ (Bard), Goldmoon (#21 Cleric), Tika Waylan (#35 Fighter),
+  Ryuko Matoi (#78 Thaumaturge), Morrigan (#83 Witch),
+  Sucrose (#2 Alchemist), Artoria Pendragon (#15 Champion),
+  Olivier Armstrong (#24 Commander), Yoko Littner (#39 Gunslinger),
+  Kyoko Kirigiri (#43 Investigator), Tatsumaki (#58 Psychic).
+
+FIVE SEEKERS — Pick-5 from full roster. Jailed by Malak. Recruitable
+in Ch1 (Diplomacy DC 10). Slots seeker_1..5.
+
+TARTUCCIO'S TEAM — tartuccio_team = "five_seekers" always. Cannot die
+before Ch2. Pitax spy (DM never hints status before player discovers).
+
+COMBAT AI — KM_Companions_CombatAI.md is SOLE source of truth.
+27 sections + ACTIVE 11 priority slot AI. Canonical 1–88 numbering.
+companion_combat: auto = DM runs each per CombatAI entry. Heal
+defaults: emergency ≤15% | priority ≤30% | self-heal 35–45% |
+Sucrose elixir ≤25% reaction / ≤35% active.
+
+SIGNATURES — Tactical: KM_Signatures_A-E.md (POWER/MOVE/LORE).
+In-backstory: each backstory has Minor/Minor/MAJOR.
+
+
+=============================================================
+SAVE BLOCK
+=============================================================
+
+Schema: KM_SaveBlock_Template.md is AUTHORITATIVE (v1.7 EXHAUSTIVE).
+Output verbatim, fill placeholders. Custom structure / omitted fields
+= .fail 9.
+
+EXHAUSTIVE MODE rules:
+- Every field MUST appear (empty value OK: "", 0, [], {}, false).
+- Self-audit: ≥30 top-level keys before posting.
+- Minimum size floors: Pre-Prologue ≥350 lines / 12 KB. Ch1 ≥500 / 18 KB.
+- 8+ log blocks: pre_prologue_state, scene_log, dice_log,
+  dialogue_log_by_npc, decision_log, perception_log, loot_log,
+  hp_ledger, xp_ledger, fail_log.
+- save_timestamp + save_label at top of root.
+- "No '...' or 'etc.' in log entries."
+- v59 blocks: marriage{}, jealousy{}, dispositions{} — all required.
+  dispositions{} at ROOT level only (not inside story_flags).
+- v63 block: companion_fights{} — required (full schema v86).
+- v65 marriage{} fields: marriage_strain | strain_scene_fired |
+  strain_confrontation_active.
+- v66 per-companion romance sub-fields: love_scene_occurred / partner
+  / interrupted / rival / choice / aborted.
+- v86 full per-companion romance schema in companions{}.
+- v89 fields: tutorial_pickpocket_resolved, tutorial_thief_gender,
+  tutorial_thief_class, companion_leveling_mode.
+
+REFACTOR ADDITIONS (Phase 2/3):
+- pre_prologue_state: discrete state name (PP_ARRIVAL, PP_TUTORIAL_*,
+  PP_GATE_*, PP_RESTOV_WALK).
+- Each response begins with [STATE READ] from save_block.
+- Each response ends with [STATE WRITE] back to save_block.
+
+inventory and gold live INSIDE player object only — never at top level.
+
+
+=============================================================
+PAIR-LOAD CONVENTION (legacy, until refactor replaces beat-by-beat)
+=============================================================
+
+These primary files have _B (and one has _C) siblings that pair-load.
+Each main file's header states "PAIR-LOAD WITH KM_<File>_B.<ext>" —
+DM auto-loads both.
+
+Required pair-loads:
+  KM.txt + KM_B.txt
+  KM_AncestryGuide.md + _B
+  KM_Ch1.md + _B
+  KM_Map.md + _B + _C (3-file)
+  KM_CharCreate.md + _B
+  KM_LoadRules.md + _B
+  KM_DMRules.md + _B
+  KM_Loot_Merchants.md + _B
+  KM_PrePrologue_Crowd.md + _B
+  KM_Vendors.md + _B
+  KM_Exploration.md + _B
+  KM_Loot_Items_Ref.md + _B
+  KM_Builds_G3.md + _B
+  KM_Commands_Maps.md + _B
+  KM_Kingdom.md + _B
+  KM_Companions_StateVoice.md + _B + _C (3-file)
+  KM_Companions_Titles.md + _B
+  KM_Companions_Agendas.md + _B + _C + _D (4-file)
+  KM_Romance.md + KM_Romance_B.md (jealousy)
+  KM_Romance.md + KM_Romance_P2.md (gestures)
+  KM_Romance.md + KM_Romance_P2_B.md (QL)
+  KM_Romance.md + KM_Romance_P4.md (5 signals)
+  KM_Romance.md + KM_Romance_C.md (fade/cheating/love scene)
+  KM_Romance.md + KM_Marriage.md (Stage-5 gate)
+  KM_Marriage.md + KM_Romance_B.md (post-wedding jealousy)
+  KM_NPC_Relations_A.md + _B + _C (3-file)
+
+Backstory pair-loads (v41.0):
+  KM_Backstories_CRPG.md + _B (voice) + _C (entries 8-13)
+  KM_Backstories_D1..D5.md + corresponding _B
+  KM_Backstories_W.md + _B
+  KM_Backstories_I1.md + _B
+
+
+=============================================================
+MASTER GAME FILES (load every session)
+=============================================================
+
+KM.txt              - Rule Zero, 10 Commandments, file index
+KM_B.txt            - DM System Prompt, Ultra-Priority Rules
+KM_P2.txt           - Hero Points, Auto-Loot, Reputation, Period Rule
+KM_DMRules.md + _B  - Response format, fail codes, XP, protocols
+KM_FailCodes.md     - All .fail codes (44)
+KM_LoadRules.md + _B - When to load each system file
+KM_SceneFiles.md    - Scene file checklist per chapter
+KM_SaveBlock_Template.md - AUTHORITATIVE save block (v1.7)
+KM_MapTemplates.md  - AUTHORITATIVE map templates (v2.0 ASCII-only)
+KM_Vendors.md + _B  - Vendor roster + Buy menu rule
+KM_BuildSetup.md    - 14-step checklist + STOP footer + verify gates
+KM_QuickFails.md    - Player paste-back blocks for known DM failures
+KM_ArchitecturalRefactor.md - The refactor plan. Read before P1 work.
+
+
+=============================================================
+FULL FILE INDEX (legacy structure — atomicizing per refactor)
+=============================================================
+
+CORE LAUNCH
+  KM.txt + KM_B.txt, KM_P2.txt, KM_DMRules.md + _B, KM_FailCodes.md,
+  KM_LoadRules.md + _B, KM_ChapterSelect.md, KM_BestRun.md,
+  KM_SceneFiles.md, KM_Tips.md, KM_Tips_B.md
+  KM_ArchitecturalRefactor.md   ← refactor plan + status
+
+COMMANDS
+  KM_Commands.md, KM_Commands_Maps.md + _B, KM_MapTemplates.md
+  KM_Commands_P2.md, _P3.md, _New.md, _Panels.md, KM_Actions.md
+
+COMPANIONS
+  KM_Companions.md _B _C _D _E
+  KM_Companions_Agendas.md _B _C _D
+  KM_Companions_Ambient.md _B
+  KM_Companions_Banter.md _B
+  KM_Companions_Builds.md
+  KM_Companions_Iconics.md
+  KM_Companions_Leveling.md _B
+  KM_Companions_CombatAI.md
+  KM_Companions_Scaled.md, _StateVoice + _B + _C, _Titles + _B
+  KM_CompanionIndex.md
+  KM_Signatures_A.md _B _C _D _E
+
+COMPANION QUESTS
+  KM_CompanionQuests_A.md _B _C _D, KM_Ekundayo.md
+
+NPC / ROMANCE / MARRIAGE / VENDORS
+  KM_NPC_Relations_A.md _B _C
+  KM_Romance.md, _B, _C, _P2, _P2_B, _P3, _P4
+  KM_Marriage.md
+  KM_Vendors.md + _B
+  KM_Olegs.md
+  KM_NPC_Profiles.md
+
+BACKSTORIES (v48.0 layout)
+  KM_Backstory_eRmaC.md
+  KM_Backstories_CRPG.md + _B + _C
+  KM_Backstories_W.md + _B
+  KM_Backstories_I1.md + _B
+  KM_Backstories_D1.md + _B, D2 + _B, D3 + _B, D4 + _B, D5 + _B
+
+BUILDS
+  KM_Builds.md + per-class Builds_A..M (with _2/_3/_4 splits)
+  KM_BuildScreen.md, KM_BuildGuide_A.md, _B
+  KM_BuildSetup.md, KM_StartingGear.md, KM_Leveling.md
+  KM_GeneralFeats.md, KM_Backgrounds_Screen.md, KM_Backgrounds.md,
+  KM_Backgrounds_CRB.md, KM_Companions_Builds.md
+
+PRE-PROLOGUE  ← Phase 1 SHIPPED (v93.0 2026-05-08)
+  ATOMIC BEATS (load one per current_scene via KM_SceneFiles.md):
+    KM_PP_01_arrival.md          (vendor strip approach + opening)
+    KM_PP_02_tutorial_setup.md   (pickpocket trigger, gender + class)
+    KM_PP_03_tutorial_combat.md  (alley 3v1, terrain, enemy stats)
+    KM_PP_04_tutorial_outcome.md (sword choice, armorer, rewards)
+    KM_PP_05_gate_approach.md    (three guards, Malak first words)
+    KM_PP_06_gate_state.md       (Anger / Drift trigger tables)
+    KM_PP_07_gate_paths.md       (Paths A–W resolution conditions)
+    KM_PP_08_gate_exit.md        (six proofs: XP audit, save, .continue)
+    KM_PP_09_restov_walk.md      (stone streets to manor district)
+  ACTIVE LOOKUP (referenced from PP_*, do not delete):
+    KM_PrePrologue_Builds.md + _B   (per-class build maps)
+    KM_PrePrologue_XP.md            (XP table)
+    KM_PrePrologue_Crowd.md         (gate crowd NPC profiles — active source)
+    KM_PrePrologue_Crowd_B.md       (PP_07 ARREST CELEBRATION BEAT)
+    KM_Malak_Dialogue.md, KM_Malak_Jail.md
+  DELETED (removed 2026-05-08 v93.1):
+    KM_PrePrologue.md, KM_PrePrologue_B.md
+    KM_PrePrologue_NPCs.md
+    KM_PrePrologue_Paths.md, _Paths_QT.md
+
+PROLOGUE  ← Phase 5 SHIPPED (v93.0 2026-05-08)
+  ATOMIC BEATS (load one per current_scene via KM_SceneFiles.md):
+    KM_PR_01_manor_arrival.md    KM_PR_06_manor_sweep.md
+    KM_PR_02_feast_opening.md    KM_PR_07_final_battle.md
+    KM_PR_03_feast_circuit.md    KM_PR_08_the_calm.md
+    KM_PR_04_night_explosion.md  KM_PR_09_accusation.md
+    KM_PR_05_corridor_rescue.md
+  LOOKUP FILES (active — referenced by PR_NN files, do not deprecate):
+    KM_Prologue_P2_B.md (companion approach scripts)
+    KM_Prologue_P4.md (ambient presence), KM_Prologue_P5.md (Tartuccio table)
+    KM_Prologue_Tartuccio.md (interrupt system) — EXTREME: 32,721 b
+    KM_Prologue_Export.md (JSON export template)
+    KM_DMRules_C.md (feast carousel supplement — pair-load during PR_03)
+  DELETED (removed 2026-05-08 v93.1):
+    KM_Prologue.md, KM_Prologue_P2.md, KM_Prologue_P3.md, KM_Prologue_P6.md
+
+CHAPTERS  ← Phase 5 target
+  KM_Ch1.md + _Ch1_B (pair), _Export, KM_Ch2.md _P2, KM_Ch3.md, KM_Ch4.md
+  KM_Linzi_Shrine.md
+
+CHAR CREATE
+  KM_CharCreate.md + _B (pair-load)
+  KM_AncestryGuide.md + _B (pair-load)
+  KM_Heritages.md + _B
+  KM_Ancestries_Detailed.md
+  KM_Backstory_eRmaC.md
+
+BESTIARY / SPELLS / ITEMS
+  KM_Bestiary.md _B
+  KM_Spells_Builds.md, _Arcane_Primal, _Divine_Occult
+  KM_SoM_DA_Encounter.md, KM_RoE_Subsystems.md
+  KM_Items_Weapons_Armor_Consumables.md, _Wondrous_Runes, _Special,
+    _Expanded, _Wilderness, _APPulls, _Mundane, _Traps
+  KM_Loot_Items_Ref.md + _B, KM_Loot_Merchants.md + _B (pair-load)
+
+WORLD / SYSTEMS
+  KM_Map.md + _B + _C (3-file pair-load)
+  KM_Kingdom.md + _B, KM_Exploration.md + _B, KM_LivingWorld.md
+  KM_Weather_Camping.md, KM_Conditions_Skills.md, KM_GameModes.md
+  KM_PartySystem.md, KM_CinematicCombat.md, KM_CrimeSystem.md
+  KM_Reputation.md, KM_Brotherhood.md, KM_SplitForce.md
+  KM_HeroPoints.md, KM_Rearguard.md, KM_MissionResolution.md
+  KM_TravelSegments.md, KM_Tactics.md, KM_CompanionNeeds.md
+
+REFERENCE
+  KM_Glossary.md, KM_QuickStart.md, KM_Puzzles.md, KM_Handouts.md
+  KM_TableFeatures.md, KM_FoundDocuments.md, KM_QuickFails.md
+  KM_Armor_Appearance.md, KM_Buildings.md
+  BUG.txt
+
+NEWER SYSTEMS
+  KM_Dispositions.md, KM_Examination.md, KM_Debates.md, KM_Influence.md
+  KM_Ultimatums.md, KM_AdvisorEvents.md, KM_StandingOrders.md
+  KM_AdventurerBoard.md, KM_BorderConflicts.md, KM_StrongholdEvents.md
+  KM_Dreams.md, KM_Liminal.md, KM_ScriptedInteractions.md
+  KM_Crafting.md, KM_DungeonPuzzles.md, KM_MobileBase.md
+  KM_ArmyCombat.md, KM_Sieges.md, KM_WarTable.md
+  KM_PrestigeUpgrades.md, KM_MythicPaths.md, KM_Endings.md
+
+
+=============================================================
+FILE EDITING RULES (maintenance sessions)
+=============================================================
+
+1. Always read a file before editing.
+2. Run `wc -c` after every edit. Flag any file over 32,768 bytes.
+3. Atomic beat files: flag any over 8 KB.
+4. When deleting a companion, sweep ALL of: CompanionIndex, Iconics,
+   Companions_*, Agendas_*, Ambient_*, Banter_*, Builds, Leveling_*,
+   NPC_Relations_*, Backstories_*, Signatures_*, CompanionQuests_*,
+   Romance/Romance_B/Romance_C/Romance_P2/Romance_P3/Romance_P4/
+   Marriage, Handouts, chapter files.
+5. CH3 NPC: Varnhold's regent UNNAMED. Vordakai is the lich. Tomb Lvl1
+   zombie wizard unnamed (HP 72, AC 16). Do NOT name either.
+6. Do NOT hardcode companion names in seeker roles. Use [seeker_1]–
+   [seeker_5].
+7. Paired files: do NOT duplicate content between siblings.
+8. Atomic files: do NOT duplicate content with monolithic ancestors —
+   when the atomic file ships, the ancestor section gets a deprecation
+   stub pointing to the atomic file.
+9. Report final byte sizes for every modified file when done.
+
+
+=============================================================
+FILES NEAR HARD LIMIT (32,768 b ceiling) — refreshed 2026-05-17
+=============================================================
+
+EXTREME (within 500 b of limit):
+  KM_Companions_Titles.md        32,764   <-  4 b — DO NOT APPEND (v93.11)
+  KM_Prologue_Tartuccio.md       32,764   <-  4 b — DO NOT APPEND (v93.11)
+  KM_DMRules_C.md                32,767   <-   1 b — DO NOT APPEND (v93.14 — 14 positions, consumables)
+  KM_PR_03_feast_circuit.md      32,747   <- 21 b — DO NOT APPEND (v93.11)
+  KM_DMRules_B.md                32,661   <- 107 b — DO NOT APPEND (v93.14 — 15×15 map)
+  KM_Commands_New.md             32,729   <- 39 b headroom
+  KM_Romance_P3.md               32,686   <- 82 b — split next
+  KM_Actions.md                  32,365   <- 403 b
+  KM_Romance_B.md                32,345   <- 423 b
+
+WATCH (within 3 KB of limit):
+  KM_P2.txt                      32,100   ← updated v93.11 (TYPE D)
+  KM_SoM_DA_Encounter.md         32,184
+  KM_Backstories_I1_B.md         31,875
+  KM_BuildSetup.md               31,917
+  KM_Romance_P2.md               31,850
+  KM_Prologue_Export.md          31,519
+  KM_DMRules.md                  31,385   ← updated v93.11 (launder rules)
+  KM_Companions.md               30,912
+  KM_Companions_Agendas_B.md     30,157   ← updated v93.11 (clash matrix)
+  KM_Commands.md                 30,297   ← updated v93.10
+  KM_Prologue_P2_B.md            30,155
+  KM_Ch4.md                      30,092
+  KM_PP_09_restov_walk.md        29,713
+
+OVER LIMIT (status/reference files, not game data):
+  KM_ClaudeInstructions.md       36,369   project instructions box (no cap)
+  KM_SessionHandoff.txt          ~36 KB   live status, see notes inside
+
+For full audit: `wc -c C:/KMG/*.md C:/KMG/*.txt | sort -n`
+
+
+=============================================================
+PLAYER QUICK-FAILS → see KM_QuickFails.md
+=============================================================
+Ready-to-paste .fail blocks for known DM failure modes (v89: +DM-says-
+done). Open KM_QuickFails.md, copy the matching block, paste into chat.
+
+
+=============================================================
+KM_SessionBootstrap.txt — Bootstrap v93.11 | 2026-05-13
+v93.11: MASSIVE FEAST SYSTEM EXPANSION. TYPE D address prefix (KM_P2.txt). § COMPANION
+  OBSERVATION LAUNDER + § COMPANION BRIDGE-FABRICATION (KM_DMRules.md). 15 cross-IP
+  Charter Motivation bridges (KM_Backstories_D*). Tartuccio Confidence range −4/+4 with
+  HEADCOUNT PRESSURE / INTERRUPT TARGETING / EAVESDROP FIDELITY / VERBAL DUEL FRAMING /
+  Exchange Cap scaling 2/3/4 (KM_Prologue_Tartuccio.md). Avalon shield name + POLYPHONIC
+  one-instrument-band lute (KM_Companions_Titles.md). § RENDER FORMATTING with mode
+  banners, table-format Carousel/Open Threads, choice menu emoji + --- dividers, scene
+  event emoji, Hall Position Template 1 grid (KM_DMRules_B.md). § APPROVAL SCORING
+  per-thread anchor + § TARTUCCIO ARRIVAL COUNTDOWN + § FEAST POSITION SELECTION (14
+  positions; expanded v93.14 — Champions/Head Table/Alcove/Hearth/Center/Door/Seekers'
+  Edge + Mobile/Balcony/Linzi-Anchor/Kitchen Door/Kassil's Side/Tail/Custom) with Jamandi
+  earshot, staff/Kesten/Kassil signal access, seeker passive disposition for Ch1 flips
+  (KM_DMRules_C.md). PHILOSOPHICAL CLASH MATRIX + FRICTION BEAT RENDERING + VOICE
+  FIDELITY for Active 11 + seekers (KM_Companions_Agendas_B.md). KM_ClaudeInstructions.md
+  v93.10 created (36 KB). QuickFails +5 paste-back blocks. 17-build audit complete: every
+  build has math errors; 4 critical fabrications (Artoria/Morrigan/Weiss/Ryuko); 253
+  builds pending audit.
+v93.10: tartuccio_clock N=sum-of-feast_q self-check (threshold ≥1). M validation inline
+  in REQUIRED OUTPUTS (Conf 0 → M 6-8, etc.). Open table model: companions drift in from
+  what they're hearing, 6-reply feast-wide accumulator, highest-earshot-approval approach
+  order, [AT TABLE] pool. Seeker exclusion (Yang/Weiss/Imoen/Senua/Alleria) from carousel
+  pools + feast fields. Ambient position lines every feast response (Tartuccio + next Ready
+  companion). Tartuccio earshot rule: seekers' table is across room — no earshot, no passive
+  approval from that distance.
+v93.9: KM_DMRules.md split — feast carousel supplement blocks moved to
+  new KM_DMRules_C.md (6,087 b). KM_DMRules.md now 27,276 b (was 32,755).
+  SceneFiles PR_03 load line updated to include KM_DMRules_C.md.
+  Size corrections: KM_PR_03_feast_circuit.md = 32,752 b (was listed
+  9,986 — EXTREME added). KM_Prologue_Tartuccio.md = 32,721 b (was
+  listed 20,377 — EXTREME added). DM fabrication pattern: garden
+  distraction misread as multi-hour guest exile during assassination.
+  Correct: brief kitchen-search security measure, guests back inside
+  before gambit. Save block fix needed: tartuccio_clock "0/4" → "0 turns".
+v93.8: Dialogue DO-NOT rewritten in 17 atomic beat files — DM must echo
+  own menu text verbatim when player selects a numbered option (not
+  generate new dialogue). PR_02 got new DO-NOT (7) added (was missing).
+  KM_DMRules.md: ACTIVE CONVERSATION LOCK added — others may chime in
+  but cannot close active exchange; carousel holds; title/topic resolves
+  before NPC departs.
+v93.7: .fail 45 added (player position narrated without declaration).
+  NPC_Profiles Jamandi updated: now knows Aerynth/BW/Lord Marshal from
+  trial; open thread = why eRmaC chose to come; seat offer forbidden
+  during event reclaim. LoadRules: stale save flags table, feast arrival
+  position menu mandatory. See KM_SessionHandoff.txt for save corrections.
+v93.6: Corpse subplot removed. Tartuccio cadence + pushback. .fail 45.
+  Position gate added to LoadRules. Seekers ONE TABLE rule.
+v93.2: DM movement/agency enforcement. 11 files patched.
+v93.1: 9 deprecated files deleted. Jamandi crisis behavior migrated.
+v93.0: Phase 1 + Phase 5 SHIPPED. 18 atomic beat files live.
+v92.0: Phase 1 Pre-Prologue atomic split SHIPPED.
+=============================================================

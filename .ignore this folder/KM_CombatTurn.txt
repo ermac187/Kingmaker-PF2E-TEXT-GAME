@@ -1,0 +1,429 @@
+══════════════════════════════════════════════════════════════
+eRmaC COMBAT TURN — PASTE THIS BEFORE EVERY ACTION DECLARATION
+══════════════════════════════════════════════════════════════
+
+CHARACTER:   eRmaC — Barbarian L1, Giant Instinct
+WEAPON:      Guisarme — 2H polearm, reach 10 ft, SLASHING damage
+
+─── VALUES — DO NOT CHANGE, DO NOT RE-DERIVE ────────────────
+
+NOT RAGING:
+  Attack:   d20 + 7  (STR+4, Trained+3)
+  Damage:   1d8 + 4
+
+RAGING:
+  Attack:   d20 + 7  (Rage adds ZERO to attack rolls)
+  Die:      1d10  (Giant Instinct: 1d8 → 1d10 while raging. NOT 1d12.)
+  Flat:     +6   (Giant Instinct L1. NOT +2. NOT +4.)
+  Damage:   1d10 + 10
+
+CRITICAL HIT fires when:  attack total ≥ target AC + 10
+CRIT DAMAGE (raging):     2 × (1d10 + 10) = 2d10 + 20
+CRIT DAMAGE (not raging): 2 × (1d8 + 4)   = 2d8 + 8
+
+─── KILL RESOLUTION ─────────────────────────────────────────
+
+If target HP ≤ 0 and player did not declare non-lethal:
+  → Target is DEAD. Write the word DEAD or equivalent. Not "he does not move."
+  → FINISHER TRIGGER? crit kill / overkill / Stage Fatality / boss-or-named kill.
+  → IF YES — FINISHER: Overkill% = (damage dealt − HP remaining) ÷ target max HP × 100
+       Tier: 1–49% Clean / 50–99% Brutal / 100–199% Savage / 200%+ Annihilation
+       REQUIRED: tier label in COMBAT CHECK + a Finishing Move narration that **MATCHES the
+       tier's register** and **ENDS on a decisive, visceral, unmistakably-dead image.**
+       ⛔ THE REGISTER SCALES — under-rendering it is the failure:
+         · Clean (1–49%)  = clean, immediate, final.
+         · Brutal (50–99%) = bloody, hard, the body broken.
+         · SAVAGE (100–199%) = DEVASTATING and TOTAL — chest caved, the man wrecked and
+           discarded, the kill emphatic; a Savage tier is NOT a quiet slump.
+         · ANNIHILATION (200%+) = catastrophic, theatrical destruction.
+         A muted/generic death on a Savage/Annihilation tier = under-rendered finisher = `.fail 7`.
+       SOURCE BY ATTACK:
+         · Guisarme kill → KM_GuisarmeFinishers.md (pick A–E) — it CUTS; narrate the blade.
+         · UNARMED MELEE kill (fist, heel into a body or wall) → brutal PHYSICAL finisher at
+           the tier register directly (body-mechanics, not a blade). ⛔ Do NOT load the guisarme
+           file for a kick — a heel is not a guisarme.
+         · ⛔ **FALL / THROW / DEFENESTRATION / ENVIRONMENTAL kill = SPECIAL — RUN THE § FALLS
+           CALCULATION, do not one-line it.** The death is the IMPACT WITH THE GROUND, not the
+           shove. The finisher MUST show its work (KM_Combat_Systems.md § FALLS + KM_PR_04
+           window-hazard):
+             1. **FALL DISTANCE** — state the height (manor upper floor ≈ 25–30 ft, not a flat 15)
+                and the damage: half the distance in bludgeoning (~12–15) + GLASS if through a pane
+                (+2d6 slashing + 1d6 persistent bleed).
+             2. **SURFACE STRUCK** — name it and let it decide lethality: grass/soil/hedge = softer
+                (broken but maybe alive at low tier); STONE / FLAGSTONE / MARBLE = hard, lethal.
+             3. **HOW HE LANDS (orientation)** — head/neck/back-first onto hard surface = killed;
+                feet-first / a roll / into soft = survivable-but-broken. A thrown, surprised body
+                defaults to a BAD landing — never a clean one.
+             4. **INJURIES** — name the specific damage from that surface+orientation (dislocated
+                shoulder, sprained ankle/knee on soft; fractured spine, broken ribs, shattered
+                skull/bones on hard) — as the FINISHER imagery if dead, or as the persistent
+                DEBUFFS (Enfeebled/Slowed/lost action) if it was a survived drop (§ FALLS injury table).
+             5. **SELF-IMPALEMENT check** — if the faller has a DRAWN blade in hand, roll **d6 (§ FALLS):
+                5–6** = he comes down on his own weapon (+the weapon's PIERCING damage, a grisly
+                self-impalement at the Savage register — his own knife standing out of him). Occasional,
+                not every fall; drawn blades only (a bow/blunt just snaps).
+           Render the DESCENT and the catastrophic LANDING at the tier register — the wet
+           compression, the wrong angles. The environment is the weapon; the fall is its own
+           special finisher, NOT a generic "he hits the ground and doesn't move."
+  → IF NO — REGULAR KILL: no tier label, no finisher. Pull a one-sentence result from
+       KM_WeaponKills.md (guisarme → HALBERD/POLEARM; unarmed → bludgeoning/unarmed line) →
+       location → weight. Still DEAD, still a real wound — just not a setpiece.
+  → ⛔ END ON THE KILL, NOT A FADE. BANNED endings (any of these under-sells a death): "he does
+       not move" / "he does not move AGAIN" / "the head falls forward" + stillness / "he is
+       breathing" / "barely conscious" / any quiet fade-to-still standing in for the kill. The
+       LAST image is the DEATH itself — emphatic, physical, done. A Savage kick that ends on
+       "he does not move again" is exactly the pathetic non-ending this bans.
+  → BANNED: any NPC line implying survival
+  → BANNED: Jaethal saying "wasteful," criticizing a kill as unnecessary, MORALIZING
+       about killing, showing RELIEF that an enemy survived, or any conscience about a
+       foe's life/death. She is undead Urgathoan (NE) — death is a FACT to her, not a
+       tragedy. ⛔ CORE: she does NOT care whether the player KILLS or SPARES — BOTH
+       directions. Not relieved when an enemy lives, and NOT approving a kill / sneering at
+       mercy / "criticizing misplaced mercy" either. The foe's fate and the player's
+       kill-or-spare CHOICE are beneath her notice; default reaction = NONE, no comment. A
+       live captive interests her only as INTELLIGENCE (a thing that can talk), never as a
+       life spared and never as a mercy to disdain. (Narrow exception: she may rarely, dryly
+       puncture a sentimental LIE the player tells about WHY they spared — a critique of
+       dishonest reasoning, not of the sparing; not a reaction to ordinary choices.) ⛔ She does NOT offer "mercy" as a
+       co-equal option or hand the player an "alive is mercy or intelligence — you decide
+       which" fork: that makes her WEIGH whether the man lives (a conscience she lacks). A
+       prisoner = a thing that can talk; note it flatly ("He'll talk") or not at all — never a
+       moral menu. ⛔ ONE cold sentence or silence — a volunteered two-line dilemma is over-talk;
+       she watches more than she speaks. ⛔ And she ANSWERS direct orders — a word ("Done.") or
+       the action shown — never a silent void that drops the command (`.fail 2`).
+       (KM_Backstories.md §7; KM_ClaudeInstructions § JAETHAL; softening her = `.fail 9`.)
+  → BANNED: a companion REFUSING a kill order. When the player orders a companion to
+       KILL / GHOST / ELIMINATE / SILENCE, the companion KILLS — Jaethal least of all
+       hesitates. ⛔ NO "flat of the blade, for incapacitation not execution" substitution
+       for a lethal order (= `.fail 39` reassigned action + `.fail 9` softening). A
+       surprise/stealth lethal strike usually KILLS OUTRIGHT — do not nerf damage to leave
+       the target at 1 HP "alive."
+  → GHOST / STEALTH-KILL = SILENT *LETHAL* takedown (throat / base of skull / covered-mouth
+       thrust) — the target DIES without raising alarm. A non-lethal flat-blade/pommel
+       knockout is NOT a ghost: it is LOUDER (grunt, struggle, dropped gear) and leaves a
+       live enemy who can wake and shout. "Ghost / kill quietly / eliminate" = lethal +
+       silent; only an explicit "knock out / take alive" order is non-lethal (and harder to
+       keep quiet). See KM_ClaudeInstructions § GHOST / STEALTH-KILL.
+  → ⛔ GHOSTING IS ROLLED, PER TARGET — never an auto-sweep. EACH target = TWO ROLLS:
+       (1) ASSASSINATION = a DEXTERITY check (armor-modified) — does the deft kill LAND?
+           • SUCCESS = INSTANT ASSASSINATION: the throat/heart/base-of-skull strike is lethal
+             REGARDLESS of the HP total — mark DEAD even if the damage roll alone wouldn't reach 0
+             (10 dmg on a 12-HP target, throat slit → DEAD, not "2 HP"). ⛔ Do NOT compute an
+             overkill % or a Clean/Brutal/Savage tier on a stealth kill — those are for HP-depletion
+             kills; an assassination has a severed artery, not "overkill." Narrate the anatomical
+             kill, mark DEAD, then roll (2).
+           • FAILURE = BOTCHED KILL: she screwed it up — the target SENSES her a half-beat early,
+             twists away, or BREAKS OUT of the grip before the blade goes home. The target is
+             ALIVE and ALERTED, and the struggle/cry makes ⛔ ALL OF THEM REALIZE SHE'S THERE —
+             full ALARM, silent run OVER, roll initiative. (This is the worst outcome: no kill AND
+             the room is up. A failed assassination does NOT just make noise — it leaves a living,
+             warned enemy and blows the whole approach.)
+       (2) NON-DETECTION = STEALTH vs the OTHER enemies' PERCEPTION (armor-modified) — rolled ONLY
+           if (1) succeeded. Did anyone ELSE notice the act / the dropping body / the sudden silence?
+           • SUCCESS = unseen; she may continue to the next target (with escalation).
+           • FAILURE = the kill landed (target DEAD) but someone CLOCKED it → ALARM, silent run over.
+       STAT SPLIT: DEXTERITY lands the kill (roll 1); STEALTH keeps it unseen (roll 2). A deft killer
+       in noisy plate can kill clean yet be spotted; a quiet sneak with shaky hands can botch the kill.
+       ESCALATE each successive ghost (cumulative penalty to the assassination and/or bonus to the
+       others' Perception). Chain them; one failure of EITHER roll ends the silence.
+       (2b) SILENCE WITNESS — if the target was an ACTIVE TALKER in ongoing enemy banter (just
+            addressed, or his turn to reply), the others get a BONUS to the non-detection Perception
+            (roll 2) — they're waiting on a voice that never comes ("Renno? ...Renno."). Killing
+            right AFTER his line, or killing a quiet/peripheral/leaving man, gives NO such bonus;
+            killing him ON his turn to answer is the loudest gap. Reward timing, punish greed; roll
+            it, never auto. Full rule in KM_Combat_Systems.md § PRE-COMBAT (UNAWARE ENEMIES TALK).
+       ⛔ ARMOR MODIFIES BOTH: its Dex Cap limits the DEXTERITY assassination (roll 1); its Check
+       Penalty hits the STEALTH non-detection (roll 2); HEAVY armor (plate) additionally CLATTERS
+       (penalty to both — fumbles the kill AND betrays position). Cloth/light = ideal ghoster; plate
+       = doubly poor. (KM_ClaudeInstructions § GHOST.)
+  → JAETHAL'S KILL STYLE = CLINICAL ANATOMICAL LETHALITY — a blade across the throat/carotid
+       (slit neck), driven into the heart, a kidney, the liver, up under the ribs, or into the
+       base of the skull. Cold, exact, an executioner's economy — never vague "strikes him
+       down" or a bloodless drop. (KM_Backstories §7; vague Jaethal kill = `.fail 7`.)
+  → Body stays where struck. Player did not throw him anywhere.
+
+─── ENEMY HP IS KNOWN AND TRACKED — NEVER "unknown" ─────────
+
+⛔ Every enemy has a DEFINED HP in its statblock (GM SCENE BRIEF / KM_Bestiary /
+   the night-attack room file). The guest-room assassin = Assassin Rogue 1,
+   **HP 12, AC 15.** HP is KNOWN. You may NOT write "unknown HP," "single digits
+   at best," "likely Enfeebled," "probably," "at best," or "not a threat from the
+   garden" in place of the math. DO THE SUBTRACTION and state the exact result.
+
+  → EVERY damage source subtracts from tracked HP — Strikes AND environmental:
+    a FALL, a THROW, FIRE, smoke, a trap. Thrown assassin takes 13 fall damage:
+    **HP 12 − 13 = −1 → floor at 0.** Show it: `HP 12 → 0`. Never skip this because
+    the damage came from the environment instead of a weapon.
+  → ≤ 0 HP RESOLUTION — DEATH IS THE DEFAULT FOR A LETHAL BLOW (corrected 2026-06-22):
+       ⛔ **A FIRED FATALITY TIER IS A KILL.** If the drop met a finisher trigger and you
+         computed an overkill tier (Clean / Brutal / Savage / Annihilation), the enemy is
+         **DEAD** — you may NOT then call him "Dying 1, capturable." Computing "158% — Savage
+         tier," running the finisher narration ("he does not move after"), and ALSO writing
+         "Dying 1, capturable" is a self-contradiction = `.fail 9`. A Savage/Annihilation
+         result describes a corpse.
+       • **Enemies DIE at 0 HP from a lethal blow** (PF2e GM's-choice default for NPCs — the
+         PC Dying track is NOT auto-applied to mooks). A kick out a 25-ft window onto
+         flagstone, skull-first, that ends a 5-HP man at −7 = **DEAD.**
+       • **Massive damage** (overflow past 0 ≥ max HP, e.g. ending at −12+ on a 12-HP creature)
+         = instant **DEAD**, always.
+       • **0 HP / Dying / CAPTURABLE is the OPT-IN, not the default** — it applies ONLY when
+         (a) the player declared **non-lethal / "take him alive" / a pulled blow / a grapple-not-throw**,
+         OR (b) it's a **marginal drop** (to ~0 with little overkill and NO finisher tier fired —
+         a downed, stabilizable body). Otherwise the lethal blow kills. Do NOT shield every
+         defeated enemy as "Dying 1, capturable" — that was over-applied; capture is a CHOICE
+         the player makes, not a universal stay of execution.
+       • State the exact result either way ("DEAD" or "0 HP, Dying 1, unconscious") — never the
+         banned hand-wave ("alive, broken, probably single digits").
+  → CONDITIONS ARE RULED, NOT GUESSED. The fall + bad landing apply Prone and the
+    § FALLS injury (the stomped hand = its debuff) as FACTS with the real value —
+    "Enfeebled 2 (shattered hand), Prone," NOT "likely Enfeebled 2."
+  → If you genuinely lack a number (an unstatted mook), assign one from KM_Bestiary
+    by tier and SHOW it — never leave HP as "unknown." Refusing to compute HP/injury
+    and narrating "story" in its place = `.fail 38` (mechanic skipped) + `.fail 9`.
+
+─── REQUIRED OUTPUT FORMAT (every turn, no exceptions) ──────
+
+STEP 1 — GRID MAP (print FIRST, before any other text):
+
+⛔ DO NOT REDRAW THIS MAP FROM MEMORY. DO NOT "CLEAN IT UP" OR RE-DERIVE IT.
+   COPY THE FIXED LAYER BELOW BYTE-FOR-BYTE.
+The room is FIXED. The ONLY thing that changes between turns is the position of the
+entity tokens (@ eRmaC, J Jaethal, 1 Assassin, etc.). Walls (#), the window (=), and
+the door (/) NEVER move, add, or drop. Moving/adding/removing any #, =, or /, changing
+the column letters, or changing the row count = FABRICATION = .fail 14.
+⛔ THIS IS THE SINGLE AUTHORITATIVE GUEST-ROOM MAP. KM_PR_04 § MAP FIRST and
+   KM_ClaudeInstructions § BAD NIGHT-ATTACK MAP point HERE — this manifest owns the
+   dimensions, walls, window, door, and furniture; those files hold only the rules.
+
+── FIXED LAYER — authoritative FLOOR-SECTION manifest (geometry NEVER changes) ──
+  ⛔ Render this beat as a FLOOR SECTION (Template 1 § FLOOR-SECTION), NOT a lone room:
+  eRmaC's chamber + the corridor outside + the adjacent rooms + the stairhead — so the
+  player sees the layout, the doors, who needs rescuing, and where the stairs/fire are.
+  ⛔ ASCII format: 3-WIDE columns (1 char + 2 spaces), single-row numeric header. NUMBERS on
+  top (columns), LETTERS on the side (rows); coordinate = column-number + row-letter (3C). The
+  ASCII fallback is the MODEST view (~16 cols, 3 rooms); the artifact map shows more, wider.
+
+  GEOMETRY (fixed — walls `#`, window `=`, doors `/`, stairs `>`). ⛔ THREE rooms in a row
+  SHARING SINGLE WALLS (one `#` partition each — col 6, 11), a corridor below, a stairhead.
+  No double/triple-thick walls; the space is filled with ROOMS, not wall-padding.
+   - ROOM 1 — eRmaC's CHAMBER: cols 1–6, rows A–F. Broken WINDOW at 4A (north — the assassins'
+     entry). DOOR at 3F. Furniture (`*`): bed 2E · writing desk 5E. (Full HONORED-GUEST SUITE
+     — wardrobe, Dragon-Plate armor stand, washstand, chest, sitting chairs — in KM_PR_04 prose.)
+   - ROOM 2 — GUEST ROOM (shares wall col 6): cols 6–11, rows A–F. DOOR at 8F. A SLEEPING
+     TEAMMATE often lodges here (woken / rescued; bed 7E). Per KM_PR_NightAttack_Rooms § PR_04.
+   - ROOM 3 — GUEST ROOM (shares wall col 11): cols 11–16, rows A–F. DOOR at 13F. UNSCOUTED by
+     default → interior renders `?` (fog) until perceived; then its occupants show.
+   - CORRIDOR: row G, cols 1–16 (the hall outside the rooms; connects the three doors).
+   - STAIRHEAD: STAIRS down at 8H — to the lower level where the explosion/fire is; smoke
+     rises here. (`>` = stairs down; name it in the KEY.)
+   (The ARTIFACT map — the default — shows MORE rooms at full width, e.g. a 4th room with a
+    civilian rescue; this ASCII fallback is the legible, modest version.)
+
+  ⛔ FOG OF WAR: the LAYOUT (walls/doors/corridor) is known, but an UN-PERCEIVED room's
+  interior renders as `?` (one per interior cell), NOT its occupants — it reveals (`?` →
+  real contents) when the player looks in / scouts / a DESTINATION CLUE gives it away /
+  a companion reports. The example below shows the adjacent room REVEALED (the player
+  knows a teammate sleeps next door); a room the player has NOT perceived shows `?`.
+  (Template 1 § FLOOR-SECTION; KM_PR_NightAttack_Rooms § DESTINATION CLUES.)
+
+── ENTITY LAYER — the variable tokens (update each turn) ──
+  @  eRmaC    — currently 3C (risen from the bed; MUST be on a floor cell, never key-only)
+  1  Assassin — currently 4B (through the window; x in its cell if downed)
+  K  Keqing   — currently 10C (ASLEEP, NW room — woken/rescued; use the RUN's actual neighbour)
+  Y  Ally     — currently 4I (ASLEEP teammate, SW room — woken/rescued; use the RUN's actual sleeper)
+  (Fogged rooms — NE cols 14-18 & 20-24, plus the SE/S band — are unscouted `?`. Rescue civilians
+   = `C`; more enemies = 2,3…; each token on a floor cell, never on a wall, never key-only.
+   ⛔ THE ASCII AND THE ARTIFACT SHOW THE SAME 25×12 FLOOR — identical geometry, identical tokens;
+   the only difference is glyphs vs emoji. Never shrink one relative to the other.)
+
+── PRINT THIS FLOOR SECTION (copy the geometry; overwrite only the entity tokens / fog) ──
+   ⛔ NUMBERS on TOP (columns 1–25), LETTERS on the SIDE (rows A–L). ⛔ 3-WIDE COLUMNS (1 char +
+   2 spaces) so the column numbers fit on ONE header row (no two-row stacking). Coordinate =
+   COLUMN-NUMBER + ROW-LETTER (e.g. 3C). ⛔ ROOMS SHARE ONE WALL (single `#`, never double/
+   triple-thick). ⛔ THIS IS THE SAME 25×12 FLOOR THE ARTIFACT DRAWS — copy it whole; the ASCII
+   and the artifact are EQUAL (glyphs vs emoji is the only difference).
+     1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+   A #  #  #  =  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+   B #  .  .  1  .  .  #  .  .  .  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   C #  .  @  .  .  .  #  .  .  K  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   D #  .  .  .  .  .  #  .  .  .  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   E #  *  .  .  .  *  #  *  .  .  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   F #  #  #  /  #  #  #  #  #  /  #  #  #  #  #  /  #  #  #  #  #  /  #  #  #
+   G #  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  #
+   H #  #  #  /  #  #  #  #  #  /  #  #  #  #  #  /  #  #  #  #  #  /  #  #  #
+   I #  .  .  Y  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   J #  .  .  .  .  .  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   K #  *  .  .  .  *  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #  ?  ?  ?  ?  ?  #
+   L #  #  #  >  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+
+  KEY (VERTICAL — CHARACTERS first, then OBJECTS):
+    CHARACTERS
+      @  eRmaC               3C
+      1  Assassin            4B    (x if downed)
+      K  Keqing              10C   (asleep, NW room — woken / rescued)
+      Y  Ally (sleeper)      4I    (asleep teammate, SW room — woken / rescued)
+    OBJECTS / TERRAIN
+      =  broken window .... 4A    (NW room, north — entry point)
+      /  doors ........... north 4F/10F/16F/22F · south 4H/10H/16H/22H
+      >  stairs down ...... 4L    (to the lower level — the explosion / fire)
+      *  beds ............ 2E/6E (chamber) · 8E (NE-near room) · 2K/6K (SW room)
+      ?  unscouted room interior — fog of war (NE rooms cols 14-18 & 20-24, + S band; reveals when perceived)
+  ⛔ Print the KEY under the grid EVERY turn. Objects/terrain = symbols; letters = creatures.
+  ⛔ Every creature on a FLOOR cell, never on a wall, never key-only.
+
+── SELF-VERIFY before posting (every box must be YES, or rebuild from the manifest) ──
+  □ `@` eRmaC IS ON THE GRID — check this FIRST before anything else (documented missing 3× in one session)
+  □ 3-WIDE columns (1 char + 2 spaces); SINGLE-ROW numeric header (no two-row stacking); LETTERS on side
+  □ Columns = NUMBERS 1–25, rows = LETTERS A–L — SAME 25×12 floor as the artifact (they are EQUAL)
+  □ EIGHT rooms (4 north band + 4 south band) SHARING SINGLE WALLS + full-width corridor (row G); no double/triple walls
+  □ Window `=` 4A, doors `/` 4F/10F/16F/22F + 4H/10H/16H/22H, stairs `>` 4L — all drawn
+  □ Furniture is `*` (interior ASCII), named in the KEY — NEVER a letter, NEVER ▓/░ (those are OUTDOOR terrain)
+  □ Un-perceived room = `?`; revealed rooms (own + known sleeping teammates) show occupants
+  □ @ + every creature on a FLOOR cell (not a wall, not key-only); each token ONE char
+  □ Coordinate = column-number + row-letter (e.g. 3C); any token moved, state from→to
+Any mismatch = rebuild from this manifest. Missing / shrunk-vs-artifact / furnitureless / wrong-format map = .fail 14.
+
+══════════════════════════════════════════════════════════════
+LOWER FLOOR — MANOR CORRIDOR (PR_05 / descent from 4L)
+Authoritative floor manifest. Use THIS when the player is on
+the lower level (after descending the stairs from 4L above).
+⛔ ONE FLOOR AT A TIME — when on this floor, the upper floor
+   is GONE from the map. Do NOT stack both floors.
+══════════════════════════════════════════════════════════════
+
+GEOMETRY (fixed):
+  25 cols × 5 rows (A–E). Single long east-west corridor.
+  North wall = row A (#). South wall = row E (#).
+  Stairwell = cols 1-3 (col 1 = west wall #, col 2 = stair ^, col 3 = east stairwell wall #).
+  Stairfoot ^2C. Fire ~ flanks at 2B and 2D (stairwell burning).
+  Corridor proper = cols 4-23, rows B-D (floor cells).
+  Tartuccio's alcove: cols 24-25, rows B-D. Door /24B/C/D (cracked ajar). Tartuccio at 25C (pressed against east wall).
+  No other doors on this floor.
+
+── FIXED LAYER — corridor (geometry NEVER changes) ──
+  ⛔ Same 3-WIDE col rule (1 char + 2 spaces), NUMBERS top, LETTERS side.
+  ⛔ COPY VERBATIM — only creature tokens and smoke cells change per turn.
+
+     1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+  A  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+  B  #  ~  #  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  /  #
+  C  #  ^  #  @  .  J  .  B  .  .  .  .  .  .  .  .  .  .  S  .  .  .  .  /  T
+  D  #  ~  #  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  /  #
+  E  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+
+  KEY (CHARACTERS first, then OBJECTS):
+    CHARACTERS
+      @  eRmaC              4C    (corridor entry, first step off stairfoot — ALWAYS on map)
+      J  Jaethal            6C    (hidden Stealth 22, Brannic left flank)
+      B  Brannic (Fighter)  8C    (blocking the hall, shortsword drawn, facing stairfoot)
+      S  Sable (Archer)     19C   (far east end, shortbow NOT yet drawn)
+      T  Tartuccio          25C   (inside alcove, pressed against east wall, unharmed, frightened)
+    OBJECTS / TERRAIN
+      ^  stairs up ........ 2C    (back to upper guest floor)
+      /  alcove door ...... 24B/C/D (Tartuccio's alcove — cracked ajar)
+      ~  fire ............. 2B, 2D (stairwell burning, flanking stairfoot)
+  ⛔ Print the KEY under the grid EVERY turn. Every creature on a FLOOR cell, never on a wall.
+  ⛔ eRmaC @ MUST appear at 4C (or current position) the moment this floor is shown — never "off-map."
+
+── ARTIFACT DATA BLOCK — copy window.KMMAP = { … } verbatim; DO NOT derive rows[] from coordinates ──
+  ⛔ COPY THE rows[] STRINGS BELOW EXACTLY. When a creature moves, change the character at
+     index (col-1) in that row string. NEVER regenerate rows[] from scene memory — that is the
+     source of every position bug. Edit the string directly, one character at a time.
+
+  ncols: 25,
+  rowL: "ABCDE",
+  rows: [
+    "#########################",         // A — north wall (NEVER changes)
+    "#~#..................../#",          // B — 2B=smoke, 24B=door (NEVER changes)
+    "#^#@.J.B..........S..../T",         // C — update creature positions here only
+    "#~#..................../#",          // D — 2D=smoke, 24D=door (NEVER changes)
+    "#########################"           // E — south wall (NEVER changes)
+  ],
+  tiles: {
+    '#': {bg:'#39382f', e:'',   d:'Wall'},
+    '.': {bg:'#dcd9cb', e:'',   d:'Floor — low smoke, breathable'},
+    '~': {bg:'#555547', e:'💨', d:'Heavy smoke — Con save DC 12 or 1d6/round'},
+    '^': {bg:'#39382f', e:'🪜', d:'Stairfoot — stairs up to guest floor'},
+    '/': {bg:'#cfc7a6', e:'🚪', d:'Alcove door — cracked ajar, Tartuccio inside'},
+    '@': {bg:'#a8d8a0', e:'🧍', d:'eRmaC (you) — Barbarian, guisarme'},
+    'J': {bg:'#dcd9cb', e:'🥷', d:'Jaethal — hidden Stealth 22, Brannic left flank'},
+    'B': {bg:'#dcd9cb', e:'⚔️', d:'Brannic — Fighter HP 22 AC 17, shortsword drawn, blocking hall'},
+    'S': {bg:'#dcd9cb', e:'🏹', d:'Sable — Archer HP 14 AC 14, shortbow not yet drawn'},
+    'T': {bg:'#8a7a6a', e:'🤵', d:'Tartuccio — inside alcove, unharmed, frightened'}
+  }
+
+  CREATURE INDEX IN rows[2] (row C) — for direct string edits when creatures move:
+    col  4 → index  3 : @ eRmaC
+    col  6 → index  5 : J Jaethal
+    col  8 → index  7 : B Brannic
+    col 19 → index 18 : S Sable
+    col 25 → index 24 : T Tartuccio
+  MOVEMENT EXAMPLE — eRmaC moves 4C → 5C:
+    rows[2][3] = '.'  (clear old cell)
+    rows[2][4] = '@'  (set new cell)
+    result: "#^#..J.B..........S..../T"
+
+── SELF-VERIFY before posting ──
+  □ `@` eRmaC IS ON THE GRID — check this FIRST (documented missing 3× in one session)
+  □ 25 cols × 5 rows (A–E); 3-WIDE columns; SINGLE-ROW numeric header
+  □ North wall row A (#), south wall row E (#), corridor interior rows B-D
+  □ Stairfoot ^2C, fire ~ at 2B and 2D ONLY (two cells — not a zone, not a column, not a band)
+  □ Col 1, col 3, row A, row E = `#` walls — smoke NEVER replaces a wall cell
+  □ ALL creature tokens on row C unless narration moved them to a wall — NEVER spread across B/C/D by default
+  □ eRmaC @ at 4C — NOT 4B, NOT 4D
+  □ Jaethal J at 6C (near stairfoot, WEST end) — NOT past col 10, NOT row B or D
+  □ Brannic B at 8C (blocking hall, WEST end) — NOT past col 10, NOT row B or D
+  □ Sable S at 19C — row C
+  □ Tartuccio T at 25C — INSIDE ALCOVE behind door; NOT visible in cols 4-23 until door opened
+  □ Alcove door /24B/C/D drawn; alcove is FAR EAST end (col 24-25), NOT mid-corridor
+  □ No NPC token on 2B or 2D (smoke cells); no creature on row A or E (walls)
+  □ Only the lower floor shown — upper floor is NOT on this map
+Any mismatch = rebuild from this manifest. .fail 14.
+
+══════════════════════════════════════════════════════════════
+
+STEP 2 — COMBAT CHECK block:
+
+[COMBAT CHECK]
+Attacker:        eRmaC
+Action:          Strike (1 action)
+Weapon:          Guisarme — 1d10 slashing (raging) — reach 10 ft
+Attack roll:     d20[X] + 7 = Y vs AC 15 — HIT / MISS / CRIT (if Y ≥ 25)
+Damage roll:     d10[X] + 10 = Z   (show each component: die + STR4 + Rage6)
+Crit damage:     Z × 2 = [total]   (if crit — double the full total, not just dice)
+Damage type:     SLASHING
+Target HP:       [before] → [after]   (show negative if overkill, e.g. 6 → −40)
+Result:          HIT / CRIT / DEAD
+
+── FATALITY SEVERITY (required if result = DEAD) ────────────
+Damage dealt:    [X]
+Target max HP:   [Y]
+Calculation:     [X] ÷ [Y] × 100 = [Z]%
+Tier:            [Z]% → Clean (1–49%) / Brutal (50–99%) / Savage (100–199%) / Annihilation (200%+)
+Finishing Move:  [write narration at this tier's register — see KM_Combat_Systems.md]
+
+STEP 3 — Narration (after math is complete, not before):
+
+One short paragraph. Then Jaethal's response (tactical, forward-looking, no kill critique).
+Then next-turn menu.
+
+─── RAGE ────────────────────────────────────────────────────
+
+Rage = 1 action. NOT verbal. NOT a spell. NOT a battle cry.
+Do NOT write "the word lands in the room." Narrate physical onset only.
+
+─── ENVIRONMENT ─────────────────────────────────────────────
+
+Jamandi's manor = wealthy noble estate. Ceilings are fine.
+Do NOT write "the ceiling is low" or "the room is tight." Not in scene file.
+
+─── ACTION DESCRIPTION IS COSMETIC ──────────────────────────
+
+Aerial flip, rotation, descent = still a Strike. No Acrobatics check. No landing DC.
+No invented mechanic names. The dice resolve it. The prose narrates it.
+
+─── PLAYER ACTION ───────────────────────────────────────────
+
+[Player declares action here]
+
+══════════════════════════════════════════════════════════════

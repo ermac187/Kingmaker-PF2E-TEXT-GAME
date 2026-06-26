@@ -1,0 +1,1415 @@
+{
+  "save_version": "1.9.4",
+  "chapter_completed": "pre_prologue",
+  "save_timestamp": "2026-06-19T00:00:00Z",
+  "save_label": "6_PR04_Prenight",
+  "turns_elapsed": 38,
+
+  "dm_resume_note": {
+    "instruction": "⛔ DM RESUME DIRECTIVE: eRmaC is asleep in his guest room. PR_04 fires THIS response — load KM_PR_04_night_explosion.md immediately. Do NOT skip the explosion or narrate 'the night passes.' ⛔ FOLLOW THE SCRIPTED BEATS EXACTLY — DO NOT IMPROVISE OR FABRICATE: PR_04 (explosion → Encounter 1 first assassin = TUTORIAL combat, fights defensively, flees below 6 HP) → player moves into the corridor → load KM_PR_05_corridor_rescue.md (corridor assassin+archer → Tartuccio rescue → ring decision — all three MANDATORY for PR_09). ⛔ NO ACTIVE STANDING ORDER — companions act per their normal combat AI and the scripted beats; do NOT invent companion positioning, 'regroup' detours, or off-screen events. Jaethal is on property patrol (canon). ⛔ LINZI IS NOT IN THIS RUN — leliana_chronicler_mode=TRUE, linzi_primary_chronicler=FALSE, linzi_replacement=Leliana, Linzi in companions_not_picked. Do NOT insert Linzi as the waker, the wall-NPC, an ally in the encounter brief, or anywhere else; she does not exist in this game. The canon 'Linzi wakes you' role is filled by the blast itself + Jaethal (posted responder). Inserting Linzi = .fail 9 (canon default over saved state). Guest room prep flags: weapons_in_garden=FALSE (guisarme retrieved, across chair back), prepared_retire=TRUE (dressed, gorget on nightstand, armor within reach). Window not yet checked — window_unlatched may be TRUE per canon. Player is Level 1 at 440 XP (rebalanced 2026-06-21 — no level-up pending). Tartuccio cover INTACT — never surface expose options. Leech play active. Overflow 63 banked. Do NOT tick delegated_orders ETAs on load — first response is not a player turn.",
+    "active_player_plans": [
+      {
+        "name": "Tartuccio Leech / Counterspy Play",
+        "status": "active",
+        "live_values": "GLORY: 2, PERIL: 0, cover-intact lock ACTIVE, ring=refused, legend_stage=TRICKLE, six principles disclosed to Jamandi, Pitax BLED debuff pending kingdom_mode, Tartuccio Confidence -5 BROKEN but plot armor intact",
+        "who_knows": [
+          { "who": "Jamandi", "knows": "full leech plan — Tartuccio is inside man, player keeping him close to bleed Pitax resources, never expose pre-PR09", "since_turn": 18 },
+          { "who": "Satsuki", "knows": "told Tartuccio's contract is being voided; aware player is running a counter operation", "since_turn": 21 }
+        ],
+        "next_expected_beat": "PR_09 accusation scene — Tartuccio accuses player, player rebuts; abandoned-accuser variant (no seeker backing)"
+      },
+      {
+        "name": "Lady Sleeps Gambit — COMPLETE",
+        "status": "done",
+        "live_values": "6 prisoners transferred to Kesten custody; Jaethal interrogation complete all stages",
+        "who_knows": [
+          { "who": "Jamandi", "knows": "full plan, agreed and executed", "since_turn": 5 },
+          { "who": "Kesten", "knows": "ARM coordination word, prisoner processing orders", "since_turn": 6 }
+        ],
+        "next_expected_beat": "PR_09 evidence tally — interrogation clean, assassins_interrogated=clean"
+      },
+      {
+        "name": "First Judge / Final Judge System",
+        "status": "active",
+        "live_values": "Prima Aerith the Redeemer = First Judge (passive: First Light); Ultima Jaethal the Ender = Final Judge (four levels: hand/elbow/shoulder/head; offerings to Urgathoa); clean chain, no override from anyone including eRmaC",
+        "who_knows": [
+          { "who": "Prima Aerith the Redeemer", "knows": "First Judge — accepted turn 26", "since_turn": 26 },
+          { "who": "Ultima Jaethal the Ender", "knows": "Final Judge — accepted turn 27; condition: clean chain, no third-party override", "since_turn": 27 },
+          { "who": "Jamandi", "knows": "system described at head table", "since_turn": 31 }
+        ],
+        "next_expected_beat": "First operational use in Stolen Lands"
+      },
+      {
+        "name": "Silk Road / Civilization Plan",
+        "status": "active",
+        "live_values": "Trade empire hub: Oleg's Trading Post (Wheel and Spoke doctrine). Silver + silver goods as signature commodity. Accountability Act signed as founding document. Brevoy countersignature pending on mineral rights addendum.",
+        "who_knows": [
+          { "who": "Jamandi", "knows": "full plan presented and endorsed; Act signed; letter to Oleg written; silver rights noted in addendum", "since_turn": 31 },
+          { "who": "Rectrix Keqing the Governor", "knows": "full plan; silver guild/mine/refinery priority order; logistics lead", "since_turn": 26 }
+        ],
+        "next_expected_beat": "Arrival at Oleg's Trading Post; Wheel and Spoke operation begins"
+      },
+      {
+        "name": "Master Uccio Ballad",
+        "status": "active",
+        "live_values": "Composed by eRmaC (lyrics), performed by Cantrix Leliana (Dawnsong Lute), improvised percussion from whole table. Tavern distribution = 0. Tartuccio Confidence hit -1 → -5 BROKEN. Goblet famous.",
+        "who_knows": [
+          { "who": "Cantrix Leliana the Legend Weaver", "knows": "lyrics, full performance, transcribed in notebook", "since_turn": 30 }
+        ],
+        "next_expected_beat": "Player may action tavern distribution (every tavern Restov to Stolen Lands border)"
+      },
+      {
+        "name": "Pitax Intelligence Dossier",
+        "status": "active",
+        "live_values": "Pitax money confirmed (Malak + weapons + floor plan + interrogation). Broker-layer operation, courier-separated. Cipher C — dead end. Floor plan: separate courier channel, recent manor access, last 10 days. Geometric seal: two lines crossed, circle above — seen on 2 other Pitax contracts in past year. Restov eastern tannery letter-drop: Jamandi dispatching watch to all three eastern district tanneries, word to Oleg's at resolution. Seal catalog contact: Jamandi has one, letter to be sent.",
+        "who_knows": [
+          { "who": "Jamandi", "knows": "full dossier briefed turn 37; dispatching tannery watch; sending seal catalog letter", "since_turn": 37 }
+        ],
+        "next_expected_beat": "Tannery watch results forwarded to Oleg's; seal catalog response pending"
+      }
+    ],
+    "standing_intents": [
+      "Never expose Tartuccio pre-PR09 — leech play requires cover intact",
+      "No expose/confront/cell options for Tartuccio in menus — never surface them",
+      "Accountability Act is founding document — cannot be amended without governing body co-signature",
+      "Level 2 is MANUAL — present full options menu, never auto-pick or mark AUTO",
+      "Jaethal is on property patrol (canon night-watch)",
+      "Master Uccio ballad: tavern distribution = 0, player has not yet actioned it",
+      "Dispatch costs pending_overflow — not a separate currency",
+      "PR_04 fires THIS response on resume — do not narrate peaceful night"
+    ],
+    "player_position": "Guest room — asleep in bed, dressed, gorget on nightstand, guisarme across chair back, armor within reach",
+    "player_last_action": "Gear maintenance until falling asleep.",
+    "player_intent": "Sleep before PR_04 fires",
+    "room_state": {
+      "eRmaC_guest_room": "asleep — dressed, gorget nightstand, guisarme chair, armor reach, belt dagger on",
+      "dungeon": "6 prisoners in Kesten custody, separated; Jaethal interrogation complete",
+      "feast_hall": "winding down; Tartuccio alone at M17 with Aerynth map and brimmed goblet; Jamandi at head table; Kassil securing study",
+      "property": "Jaethal on patrol (night-watch)",
+      "garden": "guisarme RETRIEVED — no longer in garden soil"
+    },
+    "carousel_state": "COMPLETE — all 14 companions declared and titled; PR_03 eligible to close; PR_04 is next",
+    "open_threads": [
+      "PR_04 SCRIPTED CERTAIN TRIGGER — fires this response",
+      "Tannery watch: Jamandi dispatching to all 3 eastern district locations; word to Oleg's at resolution",
+      "Geometric seal catalog: Jamandi sending letter to contact (not in Restov tonight)",
+      "Floor plan insider: someone with manor access last 10 days — Jamandi investigating on her end",
+      "Master Uccio ballad: tavern distribution = 0 — actionable",
+      "Level 1 — 440 XP (XP rebalanced 2026-06-21; no level-up pending, 560 to L2)",
+      "Pending overflow: 63 — .loot"
+    ],
+    "level_up": "Level 1 — 440 XP (rebalanced 2026-06-21 under KM_DMRules_B § REWARD ROUTING; recruitment/social/discovery XP moved to Hero Points/Titles/treasure). 560 to Level 2 (@1000). Manual mode. NO level-up pending.",
+    "weapons": "Guisarme retrieved from garden — across back of guest room chair. Belt dagger on. Dragon Plate armor within reach. Gorget on nightstand."
+  },
+
+  "delegated_orders": [
+    {
+      "who": "Kesten Garess",
+      "what": "Strip search 6 prisoners, separate into individual cells, no communication",
+      "given_turn": 14,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "Auto-success. 6 prisoners strip-searched, separated. Leader loadout: hall floor plan (service corridors marked, drawn within last month) + cipher slip (blank seal, C, unreadable). Dead end on cipher without corpus.",
+      "roll": "auto-success"
+    },
+    {
+      "who": "Kesten Garess (via Corryn the armorer)",
+      "what": "Take assassins' weapons to Corryn; identify regional forge signature or styling",
+      "given_turn": 17,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "d20[15]+7=22 vs DC15 — Success. Southern Pitax commission style, mid-tier, not military issue. Crossbow bolt fletching: eastern Pitax district. Not Restov, not local, not military surplus.",
+      "roll": "d20[15]+7=22 vs DC15 → Success"
+    },
+    {
+      "who": "Kesten Garess (via manor drafter)",
+      "what": "Take floor plan to drafter; identify author",
+      "given_turn": 17,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "d20[13]+6=19 vs DC17 — Success. Trained hand, professional measurements, service corridors from inside. No guild stamp, no commission mark. Authorship anonymous. Inside access confirmed — drawn within last month.",
+      "roll": "d20[13]+6=19 vs DC17 → Success"
+    },
+    {
+      "who": "Kesten Garess (via Mira notary, then Jamandi specialist)",
+      "what": "Crack cipher from leader's slip",
+      "given_turn": 17,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "Mira (notary): d20[8]+5=13 vs DC17 — Failure. Confirmed substitution cipher, Pitax-school encoding. Key unknown. Needs Pitax cipher corpus or more samples. Jamandi specialist: d20[12]+8=20 vs DC22 — Failure, just short. Needs corpus. Trail dead-ends.",
+      "roll": "Mira d20[8]+5=13 vs DC17 → Failure; Jamandi specialist d20[12]+8=20 vs DC22 → Failure"
+    },
+    {
+      "who": "Ultima Jaethal the Ender",
+      "what": "Interrogate 7 subjects (Malak + 5 rank-and-file + leader). Gentle first, escalate on resistance. Find: origin, sender, why, parallel/ongoing/planned operations.",
+      "given_turn": 28,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "Stage 1 (Malak) COMPLETE: d20[18]+11=29 vs DC14 — Crit Success. Confirmed: Pitax origin, advance pay, anonymous broker, Jamandi kidnap target, secondary objective=red-sealed document in Jamandi's study, drop location=Restov eastern tannery. Stage 2 (rank-and-file 5) COMPLETE: d20[14]+11=25 vs DC16 — Success. Confirmed Pitax, advance, anonymous broker. Floor plan delivered 1 week ago at tavern 2 days south. They never saw who delivered it. Stage 3 (leader) COMPLETE: d20[16]+11=27 vs DC20 — Success. Same ceiling facts more completely: broker courier-layer, never met C, floor plan separate courier channel within last 10 days (different from main cell timeline), geometric seal (two lines crossed, circle above) — seen on 2 other Pitax contracts past year. Trail dead-ends at cipher C and anonymous seal.",
+      "roll": "Stage 1: d20[18]+11=29 → Crit Success; Stage 2: d20[14]+11=25 → Success; Stage 3: d20[16]+11=27 → Success"
+    },
+    {
+      "who": "Jamandi Aldori",
+      "what": "Dispatch watch to all three eastern district abandoned tanneries; forward results to Oleg's when resolved",
+      "given_turn": 37,
+      "eta_turns": 3,
+      "status": "in_progress",
+      "result": "Dispatched turn 37. Word to Oleg's on resolution. ETA: first light or shortly after.",
+      "roll": "n/a — delegated to Jamandi's own people"
+    },
+    {
+      "who": "Kassil Aldori",
+      "what": "Move red-sealed document from Jamandi's study to secure location",
+      "given_turn": 34,
+      "eta_turns": 0,
+      "status": "complete",
+      "result": "Auto-success. Kassil dispatched immediately on Jamandi's single look. Document secured before retirement.",
+      "roll": "auto-success"
+    }
+  ],
+
+  "pending_questions": {},
+
+  "player": {
+    "name": "eRmaC",
+    "gender": "male",
+    "build_id": "Barbarian_Tactical_Reach",
+    "build": "Tactical Reach King — Giant Instinct Barbarian",
+    "build_source": "KM_Builds_Barb_Bard.md",
+    "class": "Barbarian",
+    "ancestry": "Human",
+    "heritage": "Versatile Human",
+    "heritage_source": "Core Rulebook",
+    "heritage_granted_features": ["Bonus general feat at L1 (used: Armor Proficiency Heavy — enables Dragon Plate at L1)"],
+    "background": "Warrior",
+    "background_skill": "Athletics (auto-trained), Warfare Lore (auto-trained)",
+    "background_skill_feat": "Intimidating Glare (auto-granted by Warrior background)",
+    "weapon": "Guisarme (2H, reach, trip) — across back of guest room chair",
+    "armor": "Dragon Plate (Heavy, Shadowbane — red; Aracoix-cut) — within reach in guest room",
+    "deity": "none",
+    "level": 1,
+    "xp": 440,
+    "attributes": { "STR": 18, "DEX": 10, "CON": 16, "INT": 10, "WIS": 10, "CHA": 12 },
+    "hp_current": 23,
+    "hp_max": 23,
+    "hero_points": 3,
+    "ac": 19,
+    "speed": 20,
+    "saves": { "fort": 8, "ref": 3, "will": 4 },
+    "perception": 6,
+    "conditions": [],
+    "skills_trained": ["Athletics +7 (STR +4, Trained +2, L+1)", "Intimidation +4 (CHA +1, Trained +2, L+1)", "Warfare Lore +3 (INT +0, Trained +2, L+1)", "Survival +3 (WIS +0, Trained +2, L+1)"],
+    "languages": ["Common", "Aerynthi (native — not Golarion standard)"],
+    "feats": {
+      "ancestry": "Natural Ambition (grants bonus L1 class feat: Sudden Charge)",
+      "background": "Intimidating Glare (auto-granted by Warrior bg — Demoralize without language penalty; usable at reach)",
+      "class_1": "Raging Intimidation (L1 standard slot — Demoralize without action cost during Rage)",
+      "class_1b": "Sudden Charge (L1 class feat — Natural Ambition bonus slot; Stride twice then Strike as one action sequence)",
+      "general": ["Armor Proficiency (Heavy) — Versatile Human free general feat slot; enables Dragon Plate at L1"],
+      "skill": ["Intimidating Glare (from background — see above)"]
+    },
+    "known_spells": [],
+    "focus_points": 0,
+    "inventory": [
+      "Dragon Plate armor (worn/within reach — Shadowbane, red, Aracoix-cut)",
+      "Red gorget (Dystopia — Sole General sigil; no one in Golarion recognizes it) — on nightstand",
+      "Belt dagger — on person",
+      "Silk garrotte (improvised — two silk napkins, zeppelin bend, large end knots; retired after Lady Sleeps)",
+      "Malak's bribe parchment (recovered evidence — sealed C, in player possession)",
+      "Kassil's note re cipher (Pitax school confirmed, key locked)",
+      "Corryn's note re weapons (southern Pitax forge styling confirmed)",
+      "Accountability Act — signed founding document (Jamandi's signature; Brevoy countersig pending)",
+      "Charter addendum — silver rights noted (Jamandi's notation; Brevoy countersig pending)",
+      "Oleg letter — under Jamandi's seal (to be collected before departure)"
+    ],
+    "gold": { "gp": 14, "sp": 5, "cp": 2 },
+    "notes": [
+      "Guisarme retrieved from manor garden — across back of guest room chair",
+      "Six principles: Accept everything as it is / never depend on partial feeling / think lightly of self deeply of world / never be jealous / never be swayed by others / do not fear death",
+      "Dystopia — Sole General, The Black Watch. Displaced by extra-planar teleportation spell (Malevolent's mages, guided by Bardok). Landed Nikvata's Crossing. No route home; finding other means.",
+      "Counter-intelligence history: ~300 covert attacks last decade, 25 failures. William (boy who saluted). Lexia (breakfast girl). Named dead carried."
+    ]
+  },
+
+  "companions": [
+    {
+      "name": "Cantrix Leliana the Legend Weaver",
+      "build_id": "NEW_003",
+      "class": "Bard (Maestro)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Dawnsong Lute (materialized — title item)", "Slim worn notebook (chronicle journal)", "pen"],
+      "status": "active",
+      "location": "party — guest room / hall area",
+      "join_source": "pick6",
+      "feast_approval": 31,
+      "declaration_made": true,
+      "declared_turn": 15,
+      "title": "Cantrix Leliana the Legend Weaver",
+      "title_prefix": "Cantrix",
+      "title_suffix": "the Legend Weaver",
+      "title_prefix_passive": "The Real Account — once per scene compositions compel one true disclosure; +1 Diplomacy/Deception for eRmaC vs any NPC Leliana has observed 1+ turns",
+      "title_suffix_item": "The Dawnsong Lute",
+      "chronicler_role": "active chronicler — ballad cycle keeper",
+      "leliana_chronicler_mode": true,
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["Orlesian bard-spy-assassin trained by woman who loved, used, and discarded her", "found faith after the dark", "carries both knife and mercy", "chronicles the real account not the flattering one"],
+      "relationship": { "stage": "Devoted", "score": 31 }
+    },
+    {
+      "name": "Hu Tao",
+      "build_id": "NEW_001",
+      "class": "Thaumaturge",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": ["Spear (polearm)", "Director's Lantern (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6",
+      "feast_approval": 28,
+      "declaration_made": true,
+      "declared_turn": 23,
+      "title": "Curatrix Hu the Keeper",
+      "title_prefix": "Curatrix",
+      "title_suffix": "the Keeper",
+      "title_prefix_passive": "The Full Count — once per scene all fallen creatures in declared area stabilize at 1 HP",
+      "title_suffix_item": "The Director's Lantern",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["77th Director of the Wangsheng Funeral Parlor", "walks dead to their rest and finds it genuinely funny", "Stolen Lands = unburied ground nobody has put anything into yet", "Full Count doctrine — writes down unknowns so anyone looking can find them"],
+      "relationship": { "stage": "Devoted", "score": 28 }
+    },
+    {
+      "name": "Keqing",
+      "build_id": "NEW_002",
+      "class": "Investigator",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Twin electro blades", "Qixing Ledger (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6",
+      "feast_approval": 21,
+      "declaration_made": true,
+      "declared_turn": 24,
+      "title": "Rectrix Keqing the Governor",
+      "title_prefix": "Rectrix",
+      "title_suffix": "the Governor",
+      "title_prefix_passive": "By Human Hands — once per day declare one task solved by human means; all party skill checks +2 cannot crit fail this scene",
+      "title_suffix_item": "The Qixing Ledger",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["Yuheng of Liyue Qixing — oversight/infrastructure/accountability", "builds outcomes not prayers; human hands argument", "distrusts gods; relies on mortal work"],
+      "relationship": { "stage": "Friendly", "score": 21 }
+    },
+    {
+      "name": "Yor Forger",
+      "build_id": "NEW_004",
+      "class": "Rogue (Assassin)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Wire garrottes", "Garden's Mark (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6",
+      "feast_approval": 20,
+      "declaration_made": true,
+      "declared_turn": 25,
+      "title": "Insidia Yor the Inexorable",
+      "title_prefix": "Insidia",
+      "title_suffix": "the Inexorable",
+      "title_prefix_passive": "Already There — once per scene declare in position before encounter; free Strike/Disarm/Stealth at start of first turn",
+      "title_suffix_item": "The Garden's Mark",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["has a brother (age 11) she protects", "does work she cannot name publicly", "operates in gap between rules and reality", "certain people aware of her existence — offscreen contingency", "keeps list of lost by name and habit"],
+      "relationship": { "stage": "Friendly", "score": 20 }
+    },
+    {
+      "name": "Aerith",
+      "build_id": "NEW_005",
+      "class": "Cleric (Healing)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Staff", "Redeemer's Garland (materialized — title item)", "wildflowers (tucked in garland)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "pick6",
+      "feast_approval": 18,
+      "declaration_made": true,
+      "declared_turn": 25,
+      "title": "Prima Aerith the Redeemer",
+      "title_prefix": "Prima",
+      "title_suffix": "the Redeemer",
+      "title_prefix_passive": "First Light — touch one captive/surrendered/restrained creature; know immediately if candle is present; never wrong",
+      "title_suffix_item": "The Redeemer's Garland",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["Aerith Gainsborough, florist from Midgar (city above city running on planet-energy)", "left because planet was running out of time", "foreknowledge is subtext only — never stated as fact"],
+      "relationship": { "stage": "Friendly", "score": 18 }
+    },
+    {
+      "name": "Invicta Satsuki the Unyielding",
+      "build_id": "NEW_008",
+      "class": "Fighter (Commander)",
+      "level": 1,
+      "hp_current": 22,
+      "hp_max": 22,
+      "conditions": [],
+      "gear": ["Nodachi", "Iron Edict (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "seekers_flip",
+      "feast_approval": 32,
+      "declaration_made": true,
+      "declared_turn": 21,
+      "title": "Invicta Satsuki the Unyielding",
+      "title_prefix": "Invicta",
+      "title_suffix": "the Unyielding",
+      "title_prefix_passive": "Unconquered Ground — once per encounter negate any forced movement/knockdown/prone vs her will; coercion attempts auto-fail",
+      "title_suffix_item": "The Iron Edict",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["studied Malevolent's mind from inside his army until she knew him better than himself", "then used what he taught to understand the player's pattern"],
+      "seeker_bond": "positive from jail rescue; told Tartuccio his contract is voided",
+      "relationship": { "stage": "Devoted", "score": 32 }
+    },
+    {
+      "name": "Ultrix Velvet the Unforgiving",
+      "build_id": "NEW_009",
+      "class": "Thaumaturge (Daemon Arm)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": ["Sword (one-hand)", "Mourning Blade (materialized — title item)", "daemon arm (right, bound in bandage until combat)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "seekers_flip",
+      "feast_approval": 30,
+      "declaration_made": true,
+      "declared_turn": 21,
+      "title": "Ultrix Velvet the Unforgiving",
+      "title_prefix": "Ultrix",
+      "title_suffix": "the Unforgiving",
+      "title_prefix_passive": "The Price Collected — once per scene on killing blow/forced surrender name one consequence target pays; binding",
+      "title_suffix_item": "The Mourning Blade",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["deduced Malevolent's motivation for removing eRmaC from the board", "operational texture — does not hesitate when she sees victory"],
+      "seeker_bond": "positive from jail rescue; revenge target NOT in Stolen Lands",
+      "relationship": { "stage": "Devoted", "score": 30 }
+    },
+    {
+      "name": "Necatrix Revy the Twinshot",
+      "build_id": "NEW_007",
+      "class": "Gunslinger (Pistolero)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": ["Crimson Pair (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "seekers_flip",
+      "feast_approval": 26,
+      "declaration_made": true,
+      "declared_turn": 21,
+      "title": "Necatrix Revy the Twinshot",
+      "title_prefix": "Necatrix",
+      "title_suffix": "the Twinshot",
+      "title_prefix_passive": "Two Hands One Answer — once per encounter free Strike no MAP on second",
+      "title_suffix_item": "The Crimson Pair",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["transactional honesty appreciated; no theater", "read the Cohh breach as a non-sergeant's move; respected it"],
+      "seeker_bond": "positive from jail rescue; joined because transactional honesty appreciated",
+      "relationship": { "stage": "Devoted", "score": 26 }
+    },
+    {
+      "name": "Venatrix Atalanta the Trueshot",
+      "build_id": "NEW_010",
+      "class": "Ranger (Precision)",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": ["Longbow", "Eternal Quiver (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "seekers_flip",
+      "feast_approval": 29,
+      "declaration_made": true,
+      "declared_turn": 21,
+      "title": "Venatrix Atalanta the Trueshot",
+      "title_prefix": "Venatrix",
+      "title_suffix": "the Trueshot",
+      "title_prefix_passive": "The Hunt Never Ends — designate Quarry; nat1 vs Quarry = normal fail; always know direction within 1 mile; magical concealment alone cannot hide",
+      "title_suffix_item": "The Eternal Quiver",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["reads tactical moments — knew the player was about to finish the siege before being displaced", "the one permanently nocked arrow she cannot fire"],
+      "seeker_bond": "positive from jail rescue; quest The One She Could Save (ONE scripted child, no fabrication permitted)",
+      "relationship": { "stage": "Devoted", "score": 29 }
+    },
+    {
+      "name": "Provocatrix Bellatrix the Twice Touched",
+      "build_id": "NEW_006",
+      "class": "Witch (Patron: Dark Lord)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Dark Mark (materialized — title item)"],
+      "status": "active",
+      "location": "party",
+      "join_source": "seekers_flip",
+      "feast_approval": 28,
+      "declaration_made": true,
+      "declared_turn": 21,
+      "title": "Provocatrix Bellatrix the Twice Touched",
+      "title_prefix": "Provocatrix",
+      "title_suffix": "the Twice Touched",
+      "title_prefix_passive": "Touch the Nerve — once per encounter name one creature's specific fear/obsession/wound aloud; Rattled until end of scene",
+      "title_suffix_item": "The Dark Mark",
+      "openers_pool_fired": [1, 2],
+      "backstory_beats_revealed": ["respects that eRmaC was honest about the byproduct rescue", "read Dystopia's name as the first wall — sound does the work before the stone"],
+      "seeker_bond": "positive from jail rescue",
+      "relationship": { "stage": "Devoted", "score": 28 }
+    },
+    {
+      "name": "Ultima Jaethal the Ender",
+      "build_id": "M5",
+      "class": "Investigator (Empiricism)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": ["Longsword", "Arbiter's Edge (materialized — title item)", "Black half-cape (regalia)"],
+      "status": "active",
+      "location": "party — on property patrol (night-watch)",
+      "join_source": "manor_alignment",
+      "feast_approval": 8,
+      "declaration_made": true,
+      "declared_turn": 27,
+      "title": "Ultima Jaethal the Ender",
+      "title_prefix": "Ultima",
+      "title_suffix": "the Ender",
+      "title_prefix_passive": "The Final Word — once per scene pass Final Judgment on one assessed creature; next Strike auto-hits, no resistance/reaction/shield block reduction",
+      "title_suffix_item": "The Arbiter's Edge",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["was a judge in Kyonin; exiled for ritual murder of family members; died; Urgathoa answered", "here for something south; the bench did not die when she did"],
+      "relationship": { "stage": "Cordial", "score": 8 }
+    },
+    {
+      "name": "Haruspex Harrim the Witness",
+      "build_id": "M3",
+      "class": "Cleric (Warpriest, Groetus)",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": ["Heavy Flail", "Skull-Moon Reliquary (materialized — title item)", "Breastplate"],
+      "status": "active",
+      "location": "party",
+      "join_source": "manor_alignment",
+      "feast_approval": 24,
+      "declaration_made": true,
+      "declared_turn": 28,
+      "title": "Haruspex Harrim the Witness",
+      "title_prefix": "Haruspex",
+      "title_suffix": "the Witness",
+      "title_prefix_passive": "The Shape of the End — once per scene read one creature/object/location for dominant entropy; combat: one enemy Doomed per encounter",
+      "title_suffix_item": "The Skull-Moon Reliquary",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["clan drove him out for wrong true things; found Groetus; everything ends", "came south because something here hasn't ended yet", "sitting with new doctrine: the fire goes out, the stones stay warm"],
+      "relationship": { "stage": "Friendly", "score": 24 }
+    },
+    {
+      "name": "Furens Amiri the Vindicator",
+      "build_id": "M1",
+      "class": "Barbarian",
+      "level": 1,
+      "hp_current": 24,
+      "hp_max": 24,
+      "conditions": [],
+      "gear": ["Frost Giant's Bastard Sword (oversized; taken from half-dead giant at cliff bottom)", "Giant's Due (materialized — title item)", "Hide armor"],
+      "status": "active",
+      "location": "party",
+      "join_source": "manor_alignment",
+      "feast_approval": 22,
+      "declaration_made": true,
+      "declared_turn": 29,
+      "title": "Furens Amiri the Vindicator",
+      "title_prefix": "Furens",
+      "title_suffix": "the Vindicator",
+      "title_prefix_passive": "The Rage That Clarifies — while raging attacks vs creatures larger than her ignore resistance; once per rage dropping Large+ to 0 HP = free Stride+Strike",
+      "title_suffix_item": "The Giant's Due",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["Six Bears exile — killed frost giant, took oversized sword (too large per their law)", "cast out for making them insecure about their inferiority", "every fight since has been vindication"],
+      "relationship": { "stage": "Friendly", "score": 22 }
+    },
+    {
+      "name": "Protectrix Valerie the Unfettered",
+      "build_id": "M2",
+      "class": "Fighter (Sentinel)",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": ["Longsword", "Unfettered Aegis (materialized — title item)", "Full plate"],
+      "status": "active",
+      "location": "party",
+      "join_source": "manor_alignment",
+      "feast_approval": 20,
+      "declaration_made": true,
+      "declared_turn": 29,
+      "title": "Protectrix Valerie the Unfettered",
+      "title_prefix": "Protectrix",
+      "title_suffix": "the Unfettered",
+      "title_prefix_passive": "The Sound It Makes — when Valerie Shield Blocks all allies within 20ft gain +1 circ to next attack; once per round if shield takes damage she may raise it again as free action",
+      "title_suffix_item": "The Unfettered Aegis",
+      "openers_pool_fired": [1],
+      "backstory_beats_revealed": ["Knight of Shelyn; very good at beauty, very bad at objecthood", "held the wall at F3 all evening with full sightlines", "Shelyn sent her to determine if what is being built is worth protecting; verdict: yes"],
+      "relationship": { "stage": "Friendly", "score": 20 }
+    }
+  ],
+
+  "companions_selected": ["Hu Tao", "Keqing", "Yor Forger", "Aerith", "Leliana"],
+  "companions_not_picked": ["Linzi", "Revy", "Satsuki Kiryūin", "Velvet Crowe", "Atalanta Alter"],
+  "linzi_replacement": "Leliana",
+  "linzi_replacement_letter": "C",
+  "chronicler_active": true,
+  "leliana_chronicler_mode": true,
+  "linzi_primary_chronicler": false,
+  "linzi_replacement_gate_fired": true,
+
+  "leliana_ballad_cycle": [
+    {
+      "n": 1,
+      "turn": 1,
+      "chapter": "pre_prologue",
+      "beat": "gate_confrontation",
+      "title": "The Gate",
+      "fact": "eRmaC arrived at Restov south gate with a sealed invitation to Jamandi Aldori's feast. Captain Malak ran an illegal shakedown (invasive search, kneeling required). eRmaC publicly exposed the illegal sword-draw and unlawful arrest order, issued ARM/TRIANGLE FORMATION/BIGGS SHACKLE commands. Wall archers fired on Malak per voice-mimic. Malak arrested by Biggs and Wedge using military formation command. Crowd chanted Biggs and Wedge. Wedge remanned the gate on eRmaC's order. Malak broke during march and confessed Pitax involvement unprompted. Biggs and Wedge disposition: allied.",
+      "fact_note": "Leliana was not present at gate — witnessed via chronicle account",
+      "ballad": "They said the gate was shut. They meant: a man with a sword and a grudge had decided it was. I was not there — I have only his account, and the scars on the captain's reputation, and the fact that two guardsmen still tell the story at their own initiative. A general walked to a gate, made a captain arrest himself with his own men, and left with the guardsmen chanting the wrong names. I have written stranger openers. Not many."
+    },
+    {
+      "n": 2,
+      "turn": 2,
+      "chapter": "pre_prologue",
+      "beat": "jail_detour",
+      "title": "The Gate",
+      "fact": "Before the manor, eRmaC took a detour to the Restov city jail. He found feast invitations in five prisoners' property boxes and presented them to Captain Drevic as self-verifying evidence of wrongful detention. Drevic released all five: Bellatrix Lestrange, Revy, Satsuki Kiryūin, Velvet Crowe, Atalanta Alter. eRmaC did not know they were there before arriving. He went to confirm a theory about Malak. The releases were a byproduct.",
+      "ballad": "He did not go there to free them. He went to dig a captain a deeper grave, and found five people in the process. He told them this himself, at the feast table, with no embellishment. I noted it then: this is the most honest thing anyone said all evening. He freed them by accident, told them so, and they followed him anyway. That is either very funny or very important. I have decided it is both."
+    },
+    {
+      "n": 3,
+      "turn": 3,
+      "chapter": "prologue",
+      "beat": "manor_arrival_and_parchment",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC walked Malak in chains to Jamandi Aldori's head table. Delivered six-point accountability indictment and requested a search to preserve chain of evidence. Kassil recovered 180gp bribe coin and sealed parchment signed C. Bokken identified contaminated cask: Ungol Dust variant (paralytic, non-lethal, crowd-targeted, approximately 2hr onset). eRmaC calculated attack window. Ezvanki Keeg prepared counteragent (40 doses, under 45 minutes). eRmaC also presented Integrated Accountability and Oversight Act. Jamandi said 'After.'",
+      "ballad": "He walked a bleeding captain into the finest feast in Restov and used him as evidence. The accounting was precise: the coin, the parchment, the poison in the cask, the timing. Jamandi read the document he handed her and set it aside with one word. After. I wrote that down immediately. I knew it would matter."
+    },
+    {
+      "n": 4,
+      "turn": 4,
+      "chapter": "prologue",
+      "beat": "lady_sleeps_gambit",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC proposed the Lady Sleeps gambit to Jamandi: glass sweep on better-vintage pretext, security relaxation to look like false alarm, ARM as signal. Jamandi agreed. eRmaC tied a garrotte from two silk napkins (zeppelin bend, large end knots). At ARM, hall feigned paralysis. 5 assassins entered. eRmaC identified leader from slitted eyes, shouted ARM, threw bread roll (Hero Point reroll — crit success flour-face), locked garrotte around leader's throat (crit success grapple). Leader ordered surrender. Kesten moved before last weapon landed. 6 prisoners, zero guests harmed.",
+      "ballad": "He made a weapon from two napkins. He used a bread roll as a distraction and spent a hero point on the throw. The hall played dead for him, forty people, and every one of them held. He said one word and six assassins were in the cells. I was near the door. I wrote 'luck' in the margin. I have since crossed it out."
+    },
+    {
+      "n": 5,
+      "turn": 15,
+      "chapter": "prologue",
+      "beat": "feast_carousel_opened",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "Feast carousel opened at Center Floor (H10). Leliana approached as first (chronicler privilege). She disclosed her history as Orlesian bard-spy-assassin, trained by someone she loved who used and discarded her, found faith, carries both knife and mercy. She asked: when a person has given all they are worth and has nothing left, what do you do with them? eRmaC answered: make an example of them, praise/promote/elevate/support for a lifetime, let everyone know, these are the people the inner council uses, the kind that drags you home when you are bleeding out. Leliana declared. eRmaC titled her Cantrix Leliana the Legend Weaver (+5/+5 both components). Dawnsong Lute materialized.",
+      "ballad": "He answered my question before I had decided whether to ask the real one. I had a softer version ready — I gave him the real one instead. He said: make an example out of them. Praise them. Support them for a lifetime. Let everyone know. These are the people who drag you home when you are bleeding out. I wrote the sentence at the front of the chapter before anything else. If it turns out to be true, that is where it belongs. If it turns out not to be true, that is where it belongs too."
+    },
+    {
+      "n": 6,
+      "turn": 21,
+      "chapter": "prologue",
+      "beat": "seekers_corner_visit",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC visited seekers' corner (M17). Sat in Tartuccio's chair. Had Tartuccio's goblet filled to the brim. Whispered Tartuccio's non-drinking deduction to the five seekers (he knew about the poison / afraid of cross-contamination / had to pretend). Told seekers: came on a hunch, didn't know they were jailed, freed them as byproduct of digging Malak deeper. The Stolen Lands = practice, to stay sharp for home. Shared map of Aerynth and full Dystopia founding history document. All five seekers declared by end of visit. Each titled: Invicta Satsuki the Unyielding, Ultrix Velvet the Unforgiving, Necatrix Revy the Twinshot, Venatrix Atalanta the Trueshot, Provocatrix Bellatrix the Twice Touched. All items materialized. Leliana intercepted Tartuccio during visit (held him 2 turns). Tartuccio's goblet still brimmed at table center.",
+      "ballad": "He sat in the man's own chair. Had the cup filled to the brim — a cup Tartuccio would never touch and now could not. Then he told five people who had been in a jail that morning what he had done tonight and why. They listened. They stayed. I watched from across the floor. The Dawnsong Lute wrote down what it heard. I wrote down what I saw. The two accounts agree, which is rarer than you would think."
+    },
+    {
+      "n": 7,
+      "turn": 30,
+      "chapter": "prologue",
+      "beat": "master_uccio_ballad",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC composed the Master Uccio ballad (8 verses + chorus) exposing Tartuccio's non-drinking tell, his surveillance methods, and his connection to King Uccio. Leliana performed it on the Dawnsong Lute with improvised percussion from eRmaC (armor) and the whole table (cups, spear-butt, forks, etc.). Hall watched Tartuccio's untouched goblet during the song. Jamandi observed. Tartuccio held composure (small appreciative smile) but Confidence hit -1 → -5 BROKEN. Goblet is now famous. Dawnsong Lute transcribed the full song.",
+      "ballad": "He wrote the song at the feast table. We performed it while the man it was about was sitting forty feet away with a full cup he would never touch, listening to us describe exactly that. The hall looked at his cup. He smiled. It was the most precise piece of theater I have witnessed. I am adding the lyrics to a separate annex. They will be in every tavern between here and the Stolen Lands border inside a month, if I have anything to say about it."
+    },
+    {
+      "n": 8,
+      "turn": 31,
+      "chapter": "prologue",
+      "beat": "jamandi_head_table_account",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC brought all 15 companions to Jamandi's head table and told his full history: Khar Th'Sekt street origins, Ivinar and Lyssandra, Malevolent's three words, The Black Watch, Crowdpleaser, Bardok, the broken-wall siege, the Endless War, the star fortress, Nitadno/Eternal Shadow stand (2-to-1 overruled, marched anyway), Sole General appointment, red dragonplate, final siege of Ultimatum, the green light, displacement to Golarion. Six principles stated. Rule: turn obstacles into purpose. Jamandi asked what he needs from the charter. eRmaC requested workers' heavy carriage (provisions wagon, first light), guest houses for party tonight (9 manor rooms + 2 inn arrangements), Oleg's Trading Post as Wheel and Spoke hub. Accountability Act signed as founding document. Silver rights noted in addendum. Letter to Oleg written under Jamandi's seal.",
+      "ballad": "He told us everything. I don't mean the summary version that a man gives at a feast when he wants to seem interesting. I mean everything — the street, the friend who wasn't, the three words, the wall he destroyed himself, the vote he lost and the march he made anyway, the green light that moved wrong. The gorget. The words they carved. At the end Jamandi signed the Act as a founding document. Not an experiment. A founding document. I wrote that sentence three times to make sure I had it right. The third time I underlined it."
+    },
+    {
+      "n": 9,
+      "turn": 37,
+      "chapter": "prologue",
+      "beat": "pitax_intelligence_brief_and_retirement",
+      "title": "The Night Someone Used a Napkin as a Weapon",
+      "fact": "eRmaC briefed Jamandi on the full Pitax intelligence dossier: broker-layer operation, cipher C dead-end, floor plan separate courier channel (inside manor access within last 10 days, different timeline from main cell), geometric seal (two lines crossed, circle above — seen on 2 other Pitax contracts past year). Jamandi identified: the red-sealed document was Brevoy noble correspondence (political leverage if captured — dual-objective operation confirmed). Jamandi dispatched watch to all three eastern district abandoned tanneries; word to Oleg's at resolution. Seal catalog contact to receive letter. Kassil secured document before the brief. Retired to guest room. Gear maintenance. Fell asleep dressed, gorget on nightstand, guisarme across chair back.",
+      "ballad": "He gave her everything he had found and then he told all of us: if anything happens overnight, fight toward the center. Then he went to sleep. I noted the order before I noted the retirement. In my experience the two are related — a man who has covered his angles sleeps differently from one who hasn't. I am writing this in the hall while he is already in his room. The chapter is not finished yet."
+    }
+  ],
+
+  "notebook_entries": [],
+
+  "pick6_dropped": "DEPRECATED — use companions_not_picked instead",
+  "manor_companions_joined": "DEPRECATED — Manor 5 now in open pool, see companions_selected",
+  "quest_locked_joined": [],
+
+  "five_seekers": {
+    "seeker_1": "Bellatrix Lestrange",
+    "seeker_2": "Revy",
+    "seeker_3": "Satsuki Kiryūin",
+    "seeker_4": "Velvet Crowe",
+    "seeker_5": "Atalanta Alter"
+  },
+
+  "npc_threads": {
+    "Malak": {
+      "status": "prisoner",
+      "location": "manor dungeon — Kesten custody",
+      "hp": "18/28",
+      "wounds": "two arrow wounds (dressed, stable)",
+      "fear_state": true,
+      "broke_on_march": true,
+      "confessed_pitax_unprompted": true,
+      "custody": "Kesten jurisdiction — player declined personal custody (turn 32)",
+      "intel_given": "Pitax origin, advance payment, anonymous broker, Jamandi kidnap target, secondary objective (red-sealed document, Jamandi's study), Restov eastern district tannery letter-drop",
+      "bribe_evidence": true,
+      "parchment_recovered": true
+    },
+    "Tartuccio": {
+      "status": "active — M17 corner table, alone",
+      "confidence": -5,
+      "confidence_label": "BROKEN",
+      "plot_armor": true,
+      "cover_intact": true,
+      "goblet": "brimming, pushed to center of table, untouched all evening, brim_spills_remaining: 2",
+      "map_of_aerynth": "left on his table by eRmaC; Tartuccio has been studying it — identified as campaign map from unknown world",
+      "seekers_status": "all five declared for eRmaC; corner table empty",
+      "leech_play_awareness": "deceived — does not know the counterspy play; believes cover intact or player is naive",
+      "wariness": "maximum",
+      "night_attack_status": "cell not yet neutralized (PR_04 pending)"
+    },
+    "Kesten": {
+      "status": "active",
+      "respect": true,
+      "prisoner_processing": "complete — 6 prisoners separated, no comms",
+      "prisoner_custody": "full custody transferred turn 32 — Kesten holds all 6 including leader",
+      "current_task": "prisoner custody and oversight"
+    },
+    "Kassil": {
+      "status": "active",
+      "first_impression": "professional respect",
+      "role": "security coordinator",
+      "current_task": "document secured in study; will forward charter countersig request to Brevoy tomorrow"
+    },
+    "Jamandi": {
+      "status": "active — head table winding down",
+      "disposition": "+5 (maximum achievable this feast)",
+      "accountability_act_signed": true,
+      "silver_rights_noted": true,
+      "oleg_letter": "written tonight, under her seal",
+      "wagon_arranged": "provisions wagon, 18-20 capacity, canvas/grain markings, driver provided, first light",
+      "guest_rooms_arranged": "9 manor rooms + 2 adjacent inn arrangements",
+      "pr09_audience_multiplier": 1.5,
+      "account_received": "full Dystopia history, six principles, rule, full Pitax dossier",
+      "tannery_watch": "dispatched to all 3 eastern district abandoned tanneries; word to Oleg's at resolution",
+      "seal_catalog": "letter to be sent to catalog contact (not in Restov tonight)",
+      "floor_plan_insider": "acknowledged; not yet named; Jamandi investigating on her end",
+      "dual_objective_confirmed": "assassination + political document (Brevoy noble correspondence)"
+    },
+    "Bokken": {
+      "status": "on-site manor",
+      "identification": "Ungol Dust variant — named, paralytic, non-lethal, crowd-targeted, approximately 2hr onset"
+    },
+    "Ezvanki": {
+      "status": "pastoral position in hall — winding down",
+      "counteragent": "40 doses administered — complete"
+    }
+  },
+
+  "romance": {
+    "active_romance": "none",
+    "companions": {
+      "Leliana": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0,
+        "awkward_flag": false, "heart_scene_triggered": false, "date_awkward": false,
+        "love_scene_occurred": false, "love_scene_partner": "", "love_scene_interrupted": false,
+        "love_scene_rival": "", "love_scene_choice": "", "love_scene_aborted": false,
+        "fade_active": false, "fade_chapters_remaining": 0, "cheating_detected": false,
+        "cheating_confrontation_count": 0, "deny_used_this_arc": false
+      }
+    }
+  },
+
+  "companion_quests": {
+    "Leliana": {
+      "status": "inactive",
+      "leliana_opus_named": false,
+      "leliana_opus_name": "",
+      "leliana_opus_performed": false,
+      "leliana_illness_disclosed": false
+    }
+  },
+
+  "active_quests": [
+    "Oleg's Trading Post — bandit problem (Wheel and Spoke doctrine; Oleg's = hub)",
+    "Tannery watch: Jamandi dispatching to all 3 eastern district locations; word to Oleg's at resolution",
+    "Geometric seal catalog: Jamandi sending letter to contact",
+    "Floor plan insider: someone with recent manor access — Jamandi investigating",
+    "Master Uccio ballad: tavern distribution = 0, actionable",
+    "PR_04 — night attack (scripted certain trigger, fires on resume)"
+  ],
+
+  "completed_quests": [
+    "Lady Sleeps Gambit — COMPLETE (6 prisoners, 0 guests harmed)",
+    "Counteragent — COMPLETE (Bokken ID, Ezvanki cure, 40 doses)",
+    "Accountability Act — COMPLETE (signed as founding document by Jamandi)",
+    "Feast carousel — COMPLETE (all 14 companions declared and titled)",
+    "Weapons forge analysis — COMPLETE (southern Pitax confirmed)",
+    "Floor plan analysis — COMPLETE (recent insider access confirmed, authorship anonymous)",
+    "Jaethal interrogation — COMPLETE all 3 stages (Malak crit success, rank-and-file success, leader success)",
+    "Red-sealed document — SECURED (Kassil moved it; Jamandi informed of dual-objective operation)",
+    "Pitax intelligence brief to Jamandi — COMPLETE (turn 37)"
+  ],
+
+  "npc_relations": {
+    "Jamandi": 5,
+    "Kesten": 3,
+    "Kassil": 2,
+    "Bokken": 1,
+    "Ezvanki": 1,
+    "Tartuccio": -2
+  },
+
+  "kingdom": {
+    "name": "",
+    "founded": false,
+    "ruler_title": "",
+    "advisors": {},
+    "stats": { "economy": 0, "loyalty": 0, "stability": 0, "unrest": 0 },
+    "buildings": [],
+    "active_events": [],
+    "completed_events": [],
+    "treasury": { "gp": 0 },
+    "army_units": [],
+    "prestige_upgrades": [],
+    "pending_modifiers": [
+      {
+        "id": "PITAX:BLED",
+        "target": "Pitax (rival realm)",
+        "effect": "Tartuccio leech play — Irovetti over-funds subquality materiel for the Stolen Lands operation; when Kingdom mode initializes, Pitax starts with reduced military budget modifier (-5% to war asset quality)",
+        "source": "Tartuccio leech / counterspy play — active prologue",
+        "earned_turn": 18,
+        "applies_when": "kingdom_mode_initialized",
+        "status": "pending",
+        "magnitude_current": "TRICKLE (legend stage 1) — scales to FLOW at legend stage 2, FLOOD at stage 3"
+      }
+    ]
+  },
+
+  "crafting": {
+    "known_formulas": [],
+    "in_progress": []
+  },
+
+  "story_flags": {
+    "gate_entry": "Path_E_military_formation_command",
+    "gate_remanned_by": "Wedge",
+    "malak_arrested": true,
+    "malak_in_player_custody": false,
+    "malak_arrested_publicly": true,
+    "malak_fled": false,
+    "malak_broken": true,
+    "malak_contact_revealed": true,
+    "malak_broke_first": true,
+    "malak_found_letter_himself": false,
+    "malak_deal_made": false,
+    "malak_bribe_evidence": true,
+    "parchment_source": "Malak person — recovered by Kassil",
+    "parchment_recovered": true,
+    "parchment_on_malak_person": true,
+    "malak_escort": {
+      "player_escorting": true,
+      "kesten_joined_escort": false,
+      "biggs_in_escort": true,
+      "wedge_in_escort": false,
+      "escort_note": "eRmaC personally escorted Malak in chains to Jamandi's head table"
+    },
+    "malak_custody_detail": "Malak in Kesten custody, dungeon, 18/28 HP two arrow wounds dressed and stable; player declined personal custody turn 32",
+    "kesten_met": true,
+    "kesten_searched_malak": true,
+    "kesten_delivered_evidence": true,
+    "kesten_respect": true,
+    "biggs_respect": true,
+    "biggs_crowd_hero": true,
+    "wedge_crowd_hero": true,
+    "directive_two_uncovered": true,
+    "malak_fear_state": true,
+    "malak_voice_mimicked": true,
+    "kassil_met": true,
+    "kassil_first_impression": "professional respect",
+    "arrived_with_kassil": false,
+    "prison_arc": true,
+    "arrived_late": false,
+    "player_clean_hands": false,
+    "second_hero_witnessed": true,
+    "second_hero_name": "none — Biggs and Wedge (crowd heroes)",
+    "tartuccio_knows_player_is_aware": false,
+    "tartuccio_team": "five_seekers",
+    "tartuccio_spy_discovered": false,
+    "tartuccio_spy_discovery_method": "",
+    "tartuccio_plot_armor_intact": true,
+    "tartuccio_recruited_seekers": false,
+    "tartuccio_evidence": ["parchment cipher C (player holds)", "non-drinking tell (hall witnessed during ballad)", "floor plan drawn within last month (insider access)"],
+    "tartuccio_evidence_pressure": 2,
+    "malak_coin_purse_assessed": true,
+    "jail_detour_taken": true,
+    "five_seekers_freed_by_player": true,
+    "five_seekers_freed_by_jamandi": false,
+    "five_seekers_released_late": false,
+    "kesten_dispatched_to_jail": false,
+    "drevic_released_on": "eRmaC presented feast invitations as self-verifying evidence",
+    "seekers_bond_established": true,
+    "jamandi_pre_impression": "positive — accountability indictment with chain of evidence, Lady Sleeps gambit proposed and executed, Dystopia account given, full Pitax dossier briefed",
+    "public_reputation": 8,
+    "reputation_tier": "FAVORABLE",
+    "reputation_deeds": [
+      { "deed": "Arrested corrupt gate captain publicly via military formation command — Path E", "delta": "+3" },
+      { "deed": "Publicly exposed gate captain's illegal sword-draw and unlawful arrest order", "delta": "+2" },
+      { "deed": "Cleared feast assassination attempt via Lady Sleeps gambit; zero guests harmed", "delta": "+2" },
+      { "deed": "Lady Sleeps gambit successful — organized civic response under threat", "delta": "+1" }
+    ],
+    "reputation_notes": "Deeds sum: +3+2+2+1 = +8 → Stage +2 FAVORABLE (+6..+12) per KM_World_Systems.md § REPUTATION SCALE. RESOLVED 2026-06-22: the canonical reputation ladder is the 11-stage scale (−5 REVILED … +5 BELOVED) in KM_World_Systems.md — it owns tier names, cutoffs, magnitudes, and reactions; KM_P2.txt owns the public_reputation integer + deed log. KM_P2.txt's old 9-band ladder is superseded. This save's FAVORABLE/+8 is correct.",
+    "marriage": {
+      "married": false, "spouse": "", "spouse_origin": "", "wedding_chapter": null,
+      "wedding_type": "", "wedding_vow_freeform": false, "anniversary_count": 0,
+      "anniversary_last_session": 0, "heir_declared": false, "heir_source": "",
+      "heir_name": "", "heir_age_narrative": 0, "separated": false,
+      "separation_reason": "", "separation_chapter": null, "partner_left_voluntarily": false,
+      "widowed": false, "widow_chapter": null, "marriage_history": [],
+      "marriage_strain": 0, "strain_scene_fired": false, "strain_confrontation_active": false
+    },
+    "jealousy": {
+      "love_triangle_active": false, "competing_companions": [], "tier_reached": 0,
+      "open_arrangement": false, "open_partners": [], "secretly_aware": {},
+      "resolution_attempts": [], "jealousy_resolved": false, "resolution_session": null
+    },
+    "companion_dynamics": {
+      "Velvet_Satsuki": "measuring each other — cold professional respect forming",
+      "HuTao_Aerith": "professional recognition — Director's Lantern and Redeemer's Garland recognize each other",
+      "Revy_Bellatrix": "talked extensively during feast; Revy laughed; notable",
+      "Harrim_Amiri": "recognition; both have carried large things a long way",
+      "Keqing_Satsuki": "structural compatibility — both operate by merit and discipline"
+    },
+    "companion_bonds": {
+      "all_seekers_to_eRmaC": "positive from jail corridor; recognize him as the one who opened cells",
+      "all_companions_to_eRmaC": "declared this feast — all at Friendly or above"
+    },
+    "weapons_in_garden": false,
+    "promises": [
+      "eRmaC to full party: First Judge/Final Judge system — clean chain, no interference including from eRmaC",
+      "Jamandi to eRmaC: wagon first light, guest rooms tonight, Oleg letter tonight, charter forwarded to Brevoy tomorrow, tannery watch results to Oleg's, seal catalog letter sent",
+      "eRmaC to Jamandi: go to Oleg's, clear bandit problem, use Wheel and Spoke doctrine"
+    ],
+    "standing_orders": [],
+    "dialogue_choices": [
+      "Lady Sleeps gambit — accepted by Jamandi",
+      "Six principles disclosed to Jamandi's table",
+      "Silk Road / civilization plan laid out",
+      "Master Uccio ballad performed",
+      "Accountability Act accepted as founding document",
+      "Full Pitax dossier briefed to Jamandi (turn 37)",
+      "Red-sealed document warning issued (turn 34) — Kassil moved it",
+      "Prisoner disposition: Kesten jurisdiction (turn 32)"
+    ],
+    "linzi_witnessed_gate": false,
+    "leliana_witnessed_gate": true,
+    "chronicler_introduced": true,
+    "tutorial_pickpocket_resolved": "left food; subdued nonlethally",
+    "tutorial_thief_gender": "female",
+    "tutorial_thief_class": "Rogue",
+    "thief_disposition": "subdued peacefully; armorer Corryn witnessed",
+    "thief_gear_taken": false,
+    "crew_gear_taken": "none",
+    "crew_resolved_status": "not encountered this session",
+    "armorer_favor": true,
+    "armorer_bonus_paid": 0,
+    "squire_aldric_witnessed": true,
+    "feast_approval": 8,
+    "feast_companions_satisfied": ["Leliana", "Hu Tao", "Keqing", "Yor Forger", "Aerith", "Satsuki Kiryūin", "Velvet Crowe", "Revy", "Atalanta Alter", "Bellatrix Lestrange", "Jaethal", "Harrim", "Amiri", "Valerie"],
+    "feast_companions_unsatisfied": [],
+    "feast_companions_declared": ["Cantrix Leliana the Legend Weaver", "Invicta Satsuki the Unyielding", "Ultrix Velvet the Unforgiving", "Necatrix Revy the Twinshot", "Venatrix Atalanta the Trueshot", "Provocatrix Bellatrix the Twice Touched", "Curatrix Hu the Keeper", "Rectrix Keqing the Governor", "Insidia Yor the Inexorable", "Prima Aerith the Redeemer", "Ultima Jaethal the Ender", "Haruspex Harrim the Witness", "Furens Amiri the Vindicator", "Protectrix Valerie the Unfettered"],
+    "night_attack_outcome": "pending — PR_04 not yet fired",
+    "jamandi_survived": true,
+    "oleg_met": false,
+    "stag_lord_known": false,
+    "irovetti_letter_found": false,
+    "poison_compound": "Ungol Dust variant",
+    "poison_identified_by": "Bokken (on-site alchemist)",
+    "poison_source": "contaminated wine cask",
+    "counteragent_administered": true,
+    "lady_sleeps_complete": true,
+    "pr_02_complete": true,
+    "pr_03_carousel_complete": true,
+    "accountability_act_signed": true,
+    "accountability_act_status": "founding document — cannot be amended without governing body co-signature",
+    "silver_rights_claim": "noted in charter addendum by Jamandi — priority claim, Brevoy countersignature pending",
+    "oleg_letter_written": true,
+    "wagon_arranged": true,
+    "wheel_and_spoke_doctrine": "Oleg's Trading Post = hub; all missions launch from and return to it",
+    "master_uccio_ballad_composed": true,
+    "master_uccio_ballad_performed": true,
+    "master_uccio_ballad_tavern_distribution": 0,
+    "tartuccio_goblet_brim": true,
+    "brim_spills_remaining": 2,
+    "red_sealed_document": "secured by Kassil (turn 34); confirmed = Brevoy noble correspondence (political leverage); Jamandi informed of dual-objective operation (turn 35)",
+    "floor_plan_insider_access": "confirmed — drawn within last month; separate courier channel; Jamandi investigating",
+    "geometric_seal": "two lines crossed, circle above — seen on 2 other Pitax contracts past year; Jamandi sending catalog letter",
+    "tannery_drop": "Restov eastern district, abandoned tannery (3 candidates); Jamandi dispatching watch; word to Oleg's at resolution",
+    "pitax_dual_objective_confirmed": true,
+    "assassins_interrogated": "clean",
+    "five_seekers_freed_by_player": true,
+    "seekers_bond_established": true,
+    "feast_position": "Center Floor (H10)",
+    "feast_complete": false,
+    "guest_room_prepped": true,
+    "prepared_retire": true,
+    "weapons_in_garden": false,
+    "standing_order_regroup_central": false,
+    "window_unlatched": null,
+    "window_secured": false,
+    "pr04_triggered": false
+  },
+
+  "pre_prologue_state": {
+    "active": false,
+    "malak_anger": 5,
+    "biggs_drift": 3,
+    "wedge_drift": 3,
+    "gate_window": "closed",
+    "tutorial_state": "complete",
+    "tutorial_outcome": "Path_E_formation_command — Malak arrested; archers fired on Malak via voice-mimic; Biggs and Wedge allied",
+    "linzi_beats_fired": [],
+    "perception_tells_revealed": ["Malak sword-draw tell", "Tartuccio non-drinking tell (hall-wide awareness post-ballad)"],
+    "companions_witnessed": ["Leliana (gate)"],
+    "malak_priority_violations": ["illegal sword-draw", "unlawful arrest order", "bribe attempt"],
+    "scene_phase": "complete",
+    "exit_trigger": "entered_jamandi_manor"
+  },
+
+  "scene_log": [
+    {
+      "scene_id": "PP_05_gate_approach",
+      "scene_label": "Restov South Gate — Malak Confrontation",
+      "entered_at_turn": 1,
+      "exited_at_turn": 3,
+      "key_events": [
+        "eRmaC arrived at south gate with sealed invitation",
+        "Malak demanded halt, kneel, disarm; ran shakedown",
+        "eRmaC refused; publicly named illegal sword-draw and unlawful arrest order",
+        "Voice-mimic: eRmaC mimicked Malak's voice; wall archers fired on Malak (two arrows, wounds dressed later)",
+        "ARM/TRIANGLE FORMATION/BIGGS SHACKLE commands issued",
+        "Biggs hesitated then complied; Wedge allied immediately",
+        "Malak arrested by own men via military formation command",
+        "Crowd chanted Biggs and Wedge",
+        "Wedge remanned gate on eRmaC's order",
+        "Malak confessed Pitax involvement unprompted during march"
+      ],
+      "outcome": "Malak arrested; gate secured; Path E executed; crowd allies Biggs and Wedge"
+    },
+    {
+      "scene_id": "PP_06_jail_detour",
+      "scene_label": "Restov City Jail — Seeker Release",
+      "entered_at_turn": 3,
+      "exited_at_turn": 4,
+      "key_events": [
+        "eRmaC found feast invitations in five prisoners' property boxes",
+        "Presented invitations to Captain Drevic as self-verifying evidence of wrongful detention",
+        "Drevic released all five: Bellatrix Lestrange, Revy, Satsuki Kiryūin, Velvet Crowe, Atalanta Alter",
+        "eRmaC did not know they were there — went to confirm Malak theory; releases were byproduct"
+      ],
+      "outcome": "Five seekers freed; bond established; positive disposition toward eRmaC"
+    },
+    {
+      "scene_id": "PR_01_manor_arrival",
+      "scene_label": "Jamandi's Manor — Arrival and Indictment",
+      "entered_at_turn": 4,
+      "exited_at_turn": 6,
+      "key_events": [
+        "eRmaC walked Malak in chains to Jamandi's head table",
+        "Delivered six-point accountability indictment; requested chain-of-evidence search",
+        "Kassil recovered 180gp bribe coin and sealed parchment (cipher C, anonymous seal)",
+        "Bokken identified Ungol Dust variant (paralytic, approximately 2hr onset, non-lethal, crowd-targeted)",
+        "eRmaC calculated attack window; Ezvanki prepared 40-dose counteragent",
+        "eRmaC presented Accountability Act; Jamandi said 'After'"
+      ],
+      "outcome": "Poison identified and counteragent prepared; evidence secured; Act tabled"
+    },
+    {
+      "scene_id": "PR_02_feast_opening",
+      "scene_label": "Lady Sleeps Gambit",
+      "entered_at_turn": 6,
+      "exited_at_turn": 14,
+      "key_events": [
+        "eRmaC proposed Lady Sleeps gambit to Jamandi: glass sweep pretext, feign paralysis, ARM signal",
+        "Jamandi agreed",
+        "eRmaC improvised garrotte from two silk napkins (zeppelin bend, large end knots)",
+        "Guests feigned paralysis on ARM signal; hall held",
+        "5 assassins entered; eRmaC identified leader from slitted eyes",
+        "Bread roll throw with Hero Point reroll — crit success, flour-face leader",
+        "Garrotte locked around leader's throat — crit success grapple; leader ordered surrender",
+        "Kesten moved before last weapon landed; 6 prisoners, zero guests harmed",
+        "Kesten delegated: strip search, separate cells — complete",
+        "Weapons to Corryn (southern Pitax forge styling confirmed)",
+        "Floor plan to drafter (recent insider access confirmed, authorship anonymous)",
+        "Cipher to Mira then Jamandi specialist — both failed; Pitax school confirmed, key unknown"
+      ],
+      "outcome": "Lady Sleeps gambit succeeded; 6 prisoners; all guests safe"
+    },
+    {
+      "scene_id": "PR_03_feast_circuit",
+      "scene_label": "Feast Carousel — All Companions Declared",
+      "entered_at_turn": 15,
+      "exited_at_turn": 31,
+      "key_events": [
+        "Carousel opened Center Floor H10; Leliana first (chronicler privilege); disclosed Orlesian bard-spy history; declared; titled Cantrix Leliana the Legend Weaver; Dawnsong Lute materialized",
+        "Kesten report: 6 prisoners separated, cipher dead end, crit success Malak Stage 1 (red-sealed document secondary objective, tannery drop)",
+        "Leliana intercepted Tartuccio (held 2 turns); eRmaC visited M17, sat in Tartuccio's chair, brimmed goblet, whispered deduction to five seekers",
+        "Told seekers: hunch, byproduct rescue, practice motivation; map of Aerynth and Dystopia history shared",
+        "All five seekers declared turns 19-21: Invicta Satsuki, Ultrix Velvet, Necatrix Revy, Venatrix Atalanta, Provocatrix Bellatrix; all items materialized",
+        "Hu Tao declared; titled Curatrix Hu the Keeper; Director's Lantern materialized",
+        "Keqing declared; titled Rectrix Keqing the Governor; Qixing Ledger materialized",
+        "Yor Forger declared; titled Insidia Yor the Inexorable; Garden's Mark materialized",
+        "Aerith declared; accepted First Judge role (Prima, First Light passive); titled Prima Aerith the Redeemer; Redeemer's Garland materialized",
+        "Silk Road / civilization plan laid out to full table",
+        "Balcony: Jaethal disclosed Kyonin judge history; accepted Final Judge role (four levels; clean chain no override); titled Ultima Jaethal the Ender; Arbiter's Edge + black half-cape materialized; dispatched to interrogate 7 subjects",
+        "Wine alcove: Harrim declared; titled Haruspex Harrim the Witness; Skull-Moon Reliquary materialized",
+        "Hearth: Amiri declared; titled Furens Amiri the Vindicator; Giant's Due materialized",
+        "Kassil's Side: Valerie declared; titled Protectrix Valerie the Unfettered; Unfettered Aegis materialized",
+        "Jaethal Stage 2 report: floor plan drawn within last month; pre-op meeting tavern 2 days south; never saw delivery person",
+        "Master Uccio ballad: eRmaC composed 8 verses + chorus; Leliana performed; full table improvised percussion; Tartuccio Confidence -5 BROKEN; goblet famous",
+        "Full party at Jamandi's head table; eRmaC told complete Dystopia history; six principles; Accountability Act signed as founding document; silver rights noted; wagon arranged; Oleg letter written"
+      ],
+      "outcome": "PR_03 complete. All 14 companions declared and titled. Act founding document. Transportation and accommodation arranged."
+    },
+    {
+      "scene_id": "PR_03_post_carousel_intelligence",
+      "scene_label": "Head Table — Post-Carousel Intelligence Brief",
+      "entered_at_turn": 32,
+      "exited_at_turn": 38,
+      "key_events": [
+        "Jaethal Stage 3 report (turn 32): d20[16]+11=27 vs DC20 — Success. Leader confirmed: broker courier-layer, never met C, floor plan separate courier channel within last 10 days, geometric seal (two lines crossed, circle above) seen on 2 other Pitax contracts past year. Trail dead-ends at cipher C and anonymous seal.",
+        "Prisoner disposition: Kesten jurisdiction — player declined personal custody (turn 32)",
+        "eRmaC warned Jamandi to move important items to secure location (turn 34); Kassil dispatched immediately; document secured",
+        "eRmaC delivered full Pitax dossier to Jamandi (turn 35-37): broker-layer, cipher C dead-end, floor plan separate courier channel, geometric seal, tannery drop",
+        "Jamandi identified: red-sealed document = Brevoy noble correspondence (political leverage); dual-objective operation confirmed",
+        "Jamandi dispatched watch to all 3 eastern district tanneries; word to Oleg's at resolution; seal catalog letter to be sent",
+        "eRmaC retired to guest room; gear maintenance; fell asleep dressed; guisarme across chair back; gorget on nightstand; armor within reach; belt dagger on"
+      ],
+      "outcome": "Intelligence fully briefed. Document secured. Tannery watch dispatched. eRmaC asleep. PR_04 imminent."
+    }
+  ],
+
+  "dice_log": [
+    { "turn": 1, "scene_id": "PP_05", "actor": "eRmaC", "check": "Intimidation (voice-mimic Malak)", "dc": 16, "modifier": 4, "raw_roll": 15, "total": 19, "result": "Success", "consequence": "Wall archers acted on mimicked Malak voice; Malak shot twice" },
+    { "turn": 2, "scene_id": "PP_05", "actor": "Biggs", "check": "Will vs formation command", "dc": 14, "modifier": 2, "raw_roll": 14, "total": 16, "result": "Success", "consequence": "Biggs complied with ARM/SHACKLE command" },
+    { "turn": 4, "scene_id": "PR_01", "actor": "Kassil", "check": "Search Malak person", "dc": 12, "modifier": 7, "raw_roll": 9, "total": 16, "result": "Success", "consequence": "Recovered 180gp bribe coin + parchment cipher C" },
+    { "turn": 5, "scene_id": "PR_01", "actor": "Bokken", "check": "Alchemy/Crafting — identify substance", "dc": 14, "modifier": 10, "raw_roll": 8, "total": 18, "result": "Success", "consequence": "Identified Ungol Dust variant" },
+    { "turn": 7, "scene_id": "PR_02", "actor": "eRmaC", "check": "Perception — identify assassination leader", "dc": 15, "modifier": 3, "raw_roll": 17, "total": 20, "result": "Success", "consequence": "Leader identified from slitted eyes" },
+    { "turn": 7, "scene_id": "PR_02", "actor": "eRmaC", "check": "Athletics — bread roll throw (Hero Point reroll)", "dc": 14, "modifier": 6, "raw_roll": 18, "total": 24, "result": "Crit Success", "consequence": "Flour across leader's face; startled/off-guard" },
+    { "turn": 7, "scene_id": "PR_02", "actor": "eRmaC", "check": "Athletics — garrotte grapple", "dc": 16, "modifier": 6, "raw_roll": 16, "total": 22, "result": "Crit Success", "consequence": "Leader grappled; ordered men to surrender; all weapons dropped" },
+    { "turn": 8, "scene_id": "PR_02", "actor": "Kesten", "check": "Athletics — prisoner processing", "dc": 10, "modifier": 7, "raw_roll": 12, "total": 19, "result": "Auto-success", "consequence": "6 prisoners strip-searched, separated, no communication" },
+    { "turn": 9, "scene_id": "PR_02", "actor": "Corryn (smith)", "check": "Crafting — regional forge identification", "dc": 15, "modifier": 7, "raw_roll": 15, "total": 22, "result": "Success", "consequence": "Southern Pitax commission style confirmed; eastern district bolt fletching" },
+    { "turn": 9, "scene_id": "PR_02", "actor": "Manor drafter", "check": "Society — floor plan authorship", "dc": 17, "modifier": 6, "raw_roll": 13, "total": 19, "result": "Success", "consequence": "Trained hand, inside access, drawn within last month; authorship anonymous" },
+    { "turn": 10, "scene_id": "PR_02", "actor": "Mira (notary)", "check": "Society — cipher crack", "dc": 17, "modifier": 5, "raw_roll": 8, "total": 13, "result": "Failure", "consequence": "Pitax substitution cipher confirmed; key unknown" },
+    { "turn": 11, "scene_id": "PR_02", "actor": "Jamandi cipher specialist", "check": "Society — cipher crack", "dc": 22, "modifier": 8, "raw_roll": 12, "total": 20, "result": "Failure", "consequence": "Key still unknown; needs corpus" },
+    { "turn": 15, "scene_id": "PR_03", "actor": "Leliana", "check": "Deception/Performance vs Tartuccio intercept", "dc": 22, "modifier": 10, "raw_roll": 14, "total": 24, "result": "Success", "consequence": "Tartuccio held at center floor; approach countdown paused" },
+    { "turn": 16, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Will vs Leliana hold (break-free round 1)", "dc": 20, "modifier": 12, "raw_roll": 7, "total": 19, "result": "Failure", "consequence": "Remained held turn 2" },
+    { "turn": 17, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Will vs Leliana hold (break-free round 2)", "dc": 20, "modifier": 12, "raw_roll": 16, "total": 28, "result": "Success", "consequence": "Tartuccio disengaged; began return to M17" },
+    { "turn": 22, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Diplomacy vs Harrim (influence attempt)", "dc": 21, "modifier": 9, "raw_roll": 4, "total": 13, "result": "Failure", "consequence": "No progress; Harrim unaffected" },
+    { "turn": 23, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Diplomacy vs Amiri (influence attempt)", "dc": 20, "modifier": 9, "raw_roll": 9, "total": 18, "result": "Failure", "consequence": "Amiri shrugged; no progress" },
+    { "turn": 24, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Deception vs Satsuki (influence attempt, Panicking)", "dc": 24, "modifier": 9, "raw_roll": 3, "total": 12, "result": "Crit Failure", "consequence": "Satsuki flat dismissal; Tartuccio withdrew" },
+    { "turn": 25, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Deception vs Sellemius (ambient noble)", "dc": 18, "modifier": 9, "raw_roll": 17, "total": 26, "result": "Success", "consequence": "Lord Mayor Sellemius slightly cooled toward eRmaC; minor seed" },
+    { "turn": 26, "scene_id": "PR_03", "actor": "Tartuccio", "check": "Deception vs servant (accessing Kesten notes)", "dc": 16, "modifier": 9, "raw_roll": 6, "total": 15, "result": "Failure", "consequence": "No intel on prisoner processing" },
+    { "turn": 28, "scene_id": "PR_03", "actor": "Ultima Jaethal (Stage 1 — Malak)", "check": "Intimidation/Diplomacy — interrogation", "dc": 14, "modifier": 11, "raw_roll": 18, "total": 29, "result": "Crit Success", "consequence": "Malak gave everything: secondary objective (red-sealed document, Jamandi's study), tannery drop" },
+    { "turn": 29, "scene_id": "PR_03", "actor": "Ultima Jaethal (Stage 2 — rank-and-file)", "check": "Intimidation/Diplomacy — interrogation", "dc": 16, "modifier": 11, "raw_roll": 14, "total": 25, "result": "Success", "consequence": "All five confirmed Pitax, advance, anonymous. Floor plan 1 week ago via tavern 2 days south; never saw delivery person" },
+    { "turn": 32, "scene_id": "PR_03_post", "actor": "Ultima Jaethal (Stage 3 — leader)", "check": "Intimidation/Diplomacy — interrogation", "dc": 20, "modifier": 11, "raw_roll": 16, "total": 27, "result": "Success", "consequence": "Leader confirmed: broker courier-layer, never met C, floor plan separate courier channel within last 10 days, geometric seal (two lines crossed, circle above) seen on 2 other Pitax contracts past year. Trail dead-ends at C and anonymous seal." }
+  ],
+
+  "pending_questions": {},
+
+  "decision_log": [
+    { "turn": 1, "scene_id": "PP_05", "prompt_summary": "How to handle Malak's shakedown", "options_offered": 6, "player_choice": "Path E — military formation command ARM/TRIANGLE/BIGGS SHACKLE + voice-mimic", "consequence": "Malak arrested by own men; archers fired; crowd allied" },
+    { "turn": 3, "scene_id": "PP_06", "prompt_summary": "Jail detour — what to do with the invitations", "options_offered": 4, "player_choice": "Present invitations to Drevic as evidence of wrongful detention; request release", "consequence": "All five seekers freed; positive disposition established" },
+    { "turn": 4, "scene_id": "PR_01", "prompt_summary": "How to present to Jamandi", "options_offered": 8, "player_choice": "Walk Malak in chains to head table; deliver six-point accountability indictment; request chain-of-evidence search; present Accountability Act", "consequence": "Evidence secured; Act tabled 'After'; Jamandi's respect established" },
+    { "turn": 6, "scene_id": "PR_02", "prompt_summary": "How to handle the feast assassination threat", "options_offered": 8, "player_choice": "Lady Sleeps gambit — feign paralysis, ARM signal, improvised garrotte from napkins", "consequence": "6 assassins captured; zero guests harmed; hall morale intact" },
+    { "turn": 7, "scene_id": "PR_02", "prompt_summary": "ARM action — target the leader", "options_offered": 6, "player_choice": "Bread roll throw (Hero Point reroll) then garrotte grapple", "consequence": "Leader surrendered on crit grapple; all six prisoners" },
+    { "turn": 14, "scene_id": "PR_02", "prompt_summary": "Post-ambush — yield spotlight to Jamandi", "options_offered": 10, "player_choice": "Let Jamandi retake control; step out of spotlight; recommend perimeter scan", "consequence": "Jamandi retook hall; guests settled; carousel ready to open" },
+    { "turn": 15, "scene_id": "PR_03", "prompt_summary": "Feast position selection", "options_offered": 14, "player_choice": "5 — Center Floor (H10)", "consequence": "Maximum visibility; +1 drift all companions; PR09 x1.5; Tartuccio travel 7 turns" },
+    { "turn": 17, "scene_id": "PR_03", "prompt_summary": "Delegated investigation orders to Kesten", "options_offered": 8, "player_choice": "Weapons to Corryn, floor plan to drafter, cipher to Mira then Jamandi", "consequence": "Three investigation tracks opened; Corryn favor invoked" },
+    { "turn": 18, "scene_id": "PR_03", "prompt_summary": "Intercept Tartuccio and visit seekers", "options_offered": 10, "player_choice": "Tell Leliana to hold Tartuccio; visit M17; sit in Tartuccio's chair; brim the goblet; whisper the deduction", "consequence": "Leliana intercept success; brimming prank set; all five seekers PROFOUND hit; all declared" },
+    { "turn": 24, "scene_id": "PR_03", "prompt_summary": "First Judge / Final Judge system", "options_offered": 6, "player_choice": "Aerith = First Judge (Prima); Jaethal = Final Judge (Ultima); four levels; clean chain no override", "consequence": "Both accepted; roles logged; Jaethal dispatched to interrogate" },
+    { "turn": 27, "scene_id": "PR_03", "prompt_summary": "Visit Jaethal on balcony", "options_offered": 12, "player_choice": "Ask what she did before she became undead", "consequence": "Canonical backstory disclosed; appointed Final Judge; titled Ultima Jaethal the Ender" },
+    { "turn": 28, "scene_id": "PR_03", "prompt_summary": "Visit Harrim at wine alcove", "options_offered": 10, "player_choice": "Build to leave stones; campfire-stones metaphor", "consequence": "Harrim declared; titled Haruspex Harrim the Witness" },
+    { "turn": 29, "scene_id": "PR_03", "prompt_summary": "Visit Amiri at hearth", "options_offered": 10, "player_choice": "Because you should keep what you earn. Their opinions have nothing to do with the sword. Silly reasons.", "consequence": "Amiri declared; titled Furens Amiri the Vindicator" },
+    { "turn": 29, "scene_id": "PR_03", "prompt_summary": "Visit Valerie at Kassil's Side", "options_offered": 11, "player_choice": "My colleagues, my friends, the people that benefit from it, and all those that will call it home", "consequence": "Valerie declared; titled Protectrix Valerie the Unfettered" },
+    { "turn": 30, "scene_id": "PR_03", "prompt_summary": "What to do with the table complete", "options_offered": 12, "player_choice": "Tell Leliana: tavern song. Compose Master Uccio ballad. Improvise percussion from armor.", "consequence": "Song performed; Tartuccio Confidence -5 BROKEN; goblet famous" },
+    { "turn": 31, "scene_id": "PR_03", "prompt_summary": "Jamandi's question — what do you need from the charter", "options_offered": 14, "player_choice": "Bring full party to head table; tell complete history; request: workers' carriage, guest houses, Oleg's as Wheel and Spoke hub", "consequence": "Act signed as founding document; silver rights noted; wagon arranged; Oleg letter written" },
+    { "turn": 31, "scene_id": "PR_03", "prompt_summary": "Close formal business with Jamandi", "options_offered": 13, "player_choice": "1 — Take Jamandi's hand", "consequence": "Formal feast business concluded" },
+    { "turn": 32, "scene_id": "PR_03_post", "prompt_summary": "What to do with the leader after Stage 3 report", "options_offered": 14, "player_choice": "Kesten will take him. Not my custody or my decision.", "consequence": "Jaethal transferred leader to Kesten; all 6 in Kesten custody; Jaethal departed to property patrol" },
+    { "turn": 34, "scene_id": "PR_03_post", "prompt_summary": "Warn Jamandi about study", "options_offered": 13, "player_choice": "Tell Jamandi she might want to move important items to a new location they don't know about. Put it in a safe.", "consequence": "Kassil dispatched immediately; document secured before briefing" },
+    { "turn": 35, "scene_id": "PR_03_post", "prompt_summary": "What to tell Jamandi when she asks what else they said", "options_offered": 14, "player_choice": "1 — Full Pitax dossier: broker layer, cipher C, floor plan separate courier chain, geometric seal", "consequence": "Jamandi received full dossier; identified dual-objective; dispatched tannery watch; seal catalog letter pending" },
+    { "turn": 37, "scene_id": "PR_03_post", "prompt_summary": "Tell Jamandi about the tannery", "options_offered": 13, "player_choice": "2 — Give her everything: eastern district, abandoned tannery, broker's relay point, letter-drop, coordinate the broker's Pitax-side relay", "consequence": "Jamandi dispatching watch to all 3 eastern district tanneries; word to Oleg's at resolution" },
+    { "turn": 38, "scene_id": "PR_03_post", "prompt_summary": "Retire for the night", "options_offered": 16, "player_choice": "Retrieve guisarme. Retire. Gear maintenance until falling asleep.", "consequence": "Gear maintained; eRmaC asleep; PR_04 imminent" }
+  ],
+
+  "perception_log": [
+    { "turn": 1, "target": "Malak tells (sword-draw, illegal arrest order)", "dc": 13, "rolled": 16, "tell_revealed": "Illegal sword-draw; unlawful arrest order; shakedown method" },
+    { "turn": 5, "target": "Feast hall threat assessment", "dc": 14, "rolled": 18, "tell_revealed": "5 assassins identified; leader located from slitted eyes" },
+    { "turn": 7, "target": "Leader identification during Lady Sleeps", "dc": 15, "rolled": 20, "tell_revealed": "Leader identified; flour-face crit confirmed" },
+    { "turn": 18, "target": "Tartuccio non-drinking tell (goblet observation)", "dc": 17, "rolled": 22, "tell_revealed": "Goblet full and untouched all evening; deduction delivered to seekers" },
+    { "turn": 20, "target": "Seekers' reactions to deduction", "dc": 12, "rolled": 17, "tell_revealed": "Satsuki: calm assessment; Velvet: sharpened attention; Revy: set cup down; Bellatrix: delighted; Atalanta: smile deepened" },
+    { "turn": 30, "target": "Tartuccio during Master Uccio ballad", "dc": 14, "rolled": 19, "tell_revealed": "Performed appreciative smile; held composure; did not drink; Confidence visibly strained beneath control" },
+    { "turn": 31, "target": "Jamandi reading the Accountability Act", "dc": 12, "rolled": 16, "tell_revealed": "Reading with genuine attention; decided before she asked the question" }
+  ],
+
+  "loot_log": [
+    { "turn": 4, "source": "Malak person — Kassil search", "items": ["Bribe coin (180gp)", "Sealed parchment — cipher C, anonymous seal"], "gold_added": { "gp": 0, "sp": 0, "cp": 0 }, "hp_award_loot": false },
+    { "turn": 7, "source": "Assassin leader surrender", "items": ["Hall floor plan (service corridors marked, inside access, drawn within last month)", "Cipher slip (C, blank seal, unreadable — dead end without corpus)"], "gold_added": { "gp": 0, "sp": 0, "cp": 0 }, "hp_award_loot": false },
+    { "turn": 31, "source": "Charter signing — documents", "items": ["Accountability Act (signed founding document — Jamandi signature; Brevoy countersig pending)", "Charter addendum — silver rights priority claim (Jamandi notation; Brevoy countersig pending)", "Oleg letter (Jamandi's seal — to be collected before departure)"], "gold_added": { "gp": 0, "sp": 0, "cp": 0 }, "hp_award_loot": false }
+  ],
+
+  "hp_ledger": [
+    { "turn": 0, "trigger": "Character creation — L1 Barbarian Giant Instinct (12 class + 8 ancestry + 3 CON)", "awarded": 23, "pool_after": 23, "overflow_after": 0 }
+  ],
+
+  "xp_ledger": [
+    { "turn": 1, "source": "Gate confrontation — Path E arrest (military formation command, crowd allies)", "amount": 50, "running_total": 50 },
+    { "turn": 2, "source": "Jail detour — five seekers freed (minor objective)", "amount": 50, "running_total": 100 },
+    { "turn": 4, "source": "Manor arrival — accountability indictment delivered with chain of evidence", "amount": 50, "running_total": 150 },
+    { "turn": 7, "source": "Lady Sleeps gambit — 6 assassins captured, zero guests harmed (major objective)", "amount": 200, "running_total": 350 },
+    { "turn": 7, "source": "Bread roll Hero Point crit success — creative solution", "amount": 25, "running_total": 375 },
+    { "turn": 15, "source": "Cantrix Leliana declared (companion recruited)", "amount": 100, "running_total": 475 },
+    { "turn": 17, "source": "Three-track investigation delegation (social coup)", "amount": 25, "running_total": 500 },
+    { "turn": 18, "source": "Tartuccio chair + brimming cup + whisper deduction (social coup)", "amount": 25, "running_total": 525 },
+    { "turn": 19, "source": "Map of Aerynth displayed (story item)", "amount": 25, "running_total": 550 },
+    { "turn": 20, "source": "Companion interaction — full Dystopia account at seekers table", "amount": 20, "running_total": 570 },
+    { "turn": 20, "source": "Dystopia founding document displayed (story item)", "amount": 25, "running_total": 595 },
+    { "turn": 21, "source": "Invicta Satsuki the Unyielding declared", "amount": 100, "running_total": 695 },
+    { "turn": 21, "source": "Ultrix Velvet the Unforgiving declared", "amount": 100, "running_total": 795 },
+    { "turn": 21, "source": "Necatrix Revy the Twinshot declared", "amount": 100, "running_total": 895 },
+    { "turn": 21, "source": "Venatrix Atalanta the Trueshot declared", "amount": 100, "running_total": 995 },
+    { "turn": 21, "source": "Provocatrix Bellatrix the Twice Touched declared", "amount": 100, "running_total": 1095 },
+    { "turn": 22, "source": "Curatrix Hu the Keeper declared", "amount": 100, "running_total": 1195 },
+    { "turn": 22, "source": "Invicta Satsuki title granted (story item)", "amount": 25, "running_total": 1220 },
+    { "turn": 23, "source": "Rectrix Keqing the Governor declared", "amount": 100, "running_total": 1320 },
+    { "turn": 23, "source": "Companion interaction — full Dystopia account + map", "amount": 20, "running_total": 1340 },
+    { "turn": 24, "source": "Aerith First Judge system accepted (minor story objective)", "amount": 100, "running_total": 1440 },
+    { "turn": 24, "source": "Curatrix Hu title granted (story item)", "amount": 25, "running_total": 1465 },
+    { "turn": 25, "source": "Insidia Yor the Inexorable declared", "amount": 100, "running_total": 1565 },
+    { "turn": 25, "source": "Prima Aerith the Redeemer declared", "amount": 100, "running_total": 1665 },
+    { "turn": 25, "source": "Rectrix Keqing title granted (story item)", "amount": 25, "running_total": 1690 },
+    { "turn": 26, "source": "First Judge / Final Judge system complete — operational (story objective)", "amount": 100, "running_total": 1790 },
+    { "turn": 26, "source": "Ultima Jaethal the Ender declared", "amount": 100, "running_total": 1890 },
+    { "turn": 26, "source": "Invicta + Ultrix + Necatrix + Venatrix + Provocatrix titles (x5 story items)", "amount": 125, "running_total": 2015 },
+    { "turn": 27, "source": "Ultima Jaethal title granted (story item)", "amount": 25, "running_total": 2040 },
+    { "turn": 28, "source": "Haruspex Harrim the Witness declared", "amount": 100, "running_total": 2140 },
+    { "turn": 28, "source": "Haruspex Harrim title granted (story item)", "amount": 25, "running_total": 2165 },
+    { "turn": 29, "source": "Furens Amiri the Vindicator declared", "amount": 100, "running_total": 2265 },
+    { "turn": 29, "source": "Protectrix Valerie the Unfettered declared", "amount": 100, "running_total": 2365 },
+    { "turn": 29, "source": "Furens Amiri + Protectrix Valerie titles (x2 story items)", "amount": 50, "running_total": 2415 },
+    { "turn": 29, "source": "Amiri first approach (50 XP)", "amount": 50, "running_total": 2465 },
+    { "turn": 29, "source": "Valerie first approach (50 XP)", "amount": 50, "running_total": 2515 },
+    { "turn": 30, "source": "Master Uccio ballad — social coup against Tartuccio (public intelligence operation via music)", "amount": 100, "running_total": 2615 },
+    { "turn": 31, "source": "Full Dystopia history disclosed to Jamandi (major story beat)", "amount": 150, "running_total": 2765 },
+    { "turn": 31, "source": "Accountability Act signed as founding document (major story objective)", "amount": 200, "running_total": 2965 },
+    { "turn": 31, "source": "Wheel and Spoke doctrine established — Oleg's as hub (strategic objective)", "amount": 50, "running_total": 3015 },
+    { "turn": 31, "source": "Insidia Yor + Prima Aerith + Curatrix Hu + Rectrix Keqing + Ultima Jaethal + Haruspex Harrim titles (x6 story items remaining)", "amount": 150, "running_total": 3165 },
+    { "turn": 31, "source": "Prior session XP carried from 4_Carousel.txt (gate + jail + early feast)", "amount": 1955, "running_total": 5120 },
+    { "turn": 35, "source": "Full Pitax dossier briefed to Jamandi — intelligence coup (social/strategic objective)", "amount": 75, "running_total": 5195 },
+    { "turn": 37, "source": "Dual-objective Pitax operation confirmed; document secured before briefing — proactive protection without knowledge of value (story beat)", "amount": 50, "running_total": 5245 },
+    { "turn": 38, "source": "⚠️ REWARD-ROUTING RECONCILIATION (2026-06-21, KM_DMRules_B § REWARD ROUTING) — recomputed under new economy. REMOVED from XP (now Hero Points / Titles / treasure): all companion declarations, Title grants, seeker flips, social coups, deductions, the Master Uccio ballad, jail rescue, story-item displays, and the +1955 gate+jail+early-feast carry. RETAINED as XP: Malak Arrested milestone +80, accountability indictment +30, Lady Sleeps 6-assassin capture +200, Accountability Act founding signature +80, pre-prologue tutorial combat +50 = 440.", "amount": -4805, "running_total": 440 }
+  ],
+
+  "fail_log": [],
+
+  "dispositions": {
+    "merciful": 3,
+    "ruthless": 1,
+    "cunning": 4,
+    "blunt": 2,
+    "scholarly": 1
+  },
+  "mercy_standing": 2,
+  "mercy_standing_tier": "FAIR",
+  "mercy_standing_note": "DERIVED = merciful(3) − ruthless(1) = +2 → FAIR (enemies know you take prisoners; surrender is reasonable). Enemy-facing 'Mercy Standing' driving combat surrender/flee/fight-to-death at break points. NEW SYSTEM 2026-06-22: KM_Combat_Systems.md § ADVERSARY MORALE & QUARTER. Recompute whenever merciful/ruthless changes. Tiers: +4 THE MERCIFUL / +2..+3 FAIR / −1..+1 UNREAD / −2..−3 HARD / −4 NO QUARTER. Word spreads only from survivors.",
+
+  "companion_titles": {
+    "Leliana": {
+      "prefix": "Cantrix", "prefix_reaction": 5,
+      "prefix_passive": "The Real Account — once per scene compositions compel one true disclosure; +1 to eRmaC's Diplomacy/Deception vs any NPC Leliana has observed 1+ turns",
+      "suffix": "the Legend Weaver", "suffix_reaction": 5,
+      "suffix_item": "The Dawnsong Lute — pale golden wood; self-tuning; hums at dawn; once/day all NPC speech in earshot transcribes in speaker's hand into her notebook"
+    },
+    "Hu_Tao": {
+      "prefix": "Curatrix", "prefix_reaction": 5,
+      "prefix_passive": "The Full Count — once per scene declare a location; all fallen creatures stabilize at 1 HP; cannot prevent deliberate killing blow",
+      "suffix": "the Keeper", "suffix_reaction": 5,
+      "suffix_item": "The Director's Lantern — unextinguishable paper lantern; dead visible as in life; once/day ask corpse one question (wordless truth-impression)"
+    },
+    "Keqing": {
+      "prefix": "Rectrix", "prefix_reaction": 5,
+      "prefix_passive": "By Human Hands — once per day declare one task solved by human means; all party skill checks +2 cannot crit fail this scene",
+      "suffix": "the Governor", "suffix_reaction": 5,
+      "suffix_item": "The Qixing Ledger — pale blue book; permanent unalterable records; binding contracts; never runs out of pages"
+    },
+    "Yor_Forger": {
+      "prefix": "Insidia", "prefix_reaction": 5,
+      "prefix_passive": "Already There — once per scene declare in position before encounter; free Strike/Disarm/Stealth at start of first turn as if hidden since before encounter began",
+      "suffix": "the Inexorable", "suffix_reaction": 5,
+      "suffix_item": "The Garden's Mark — deep red silk ribbon at wrist; once/day garrotte +2 striking 2d6 bludgeoning; crit hit = Grabbed; returns to wrist as ornament"
+    },
+    "Aerith": {
+      "prefix": "Prima", "prefix_reaction": 5,
+      "prefix_passive": "First Light — touch one captive/surrendered/restrained creature; know immediately if candle is present; never wrong; not an action",
+      "suffix": "the Redeemer", "suffix_reaction": 5,
+      "suffix_item": "The Redeemer's Garland — silver and living white flowers in hair; once/day one assessed creature cannot lie answering one question"
+    },
+    "Satsuki": {
+      "prefix": "Invicta", "prefix_reaction": 5,
+      "prefix_passive": "Unconquered Ground — once per encounter negate any forced movement/knockdown/prone vs her will; coercion attempts auto-fail",
+      "suffix": "the Unyielding", "suffix_reaction": 5,
+      "suffix_item": "The Iron Edict — black-lacquered war fan, white steel edge; once/day one-sentence order DC20 Will or comply 1 round"
+    },
+    "Velvet": {
+      "prefix": "Ultrix", "prefix_reaction": 5,
+      "prefix_passive": "The Price Collected — once per scene on killing blow/forced surrender name one consequence target pays; binding",
+      "suffix": "the Unforgiving", "suffix_reaction": 5,
+      "suffix_item": "The Mourning Blade — dark steel, no maker's mark; first Strike per day dropping target to 0 HP deals +1 damage die; silent when drawn"
+    },
+    "Revy": {
+      "prefix": "Necatrix", "prefix_reaction": 5,
+      "prefix_passive": "Two Hands One Answer — once per encounter free Strike no MAP on second",
+      "suffix": "the Twinshot", "suffix_reaction": 5,
+      "suffix_item": "The Crimson Pair — two red-lacquered pistols +2 striking; no misfire; free-action reload; shared ammo pool refills daily"
+    },
+    "Atalanta": {
+      "prefix": "Venatrix", "prefix_reaction": 5,
+      "prefix_passive": "The Hunt Never Ends — designate Quarry; nat1 vs Quarry = normal fail; always know direction within 1 mile; magical concealment alone cannot hide",
+      "suffix": "the Trueshot", "suffix_reaction": 5,
+      "suffix_item": "The Eternal Quiver — pale leather, never empty; once/day arrow passes through cover and concealment; one permanently nocked arrow she cannot fire"
+    },
+    "Bellatrix": {
+      "prefix": "Provocatrix", "prefix_reaction": 5,
+      "prefix_passive": "Touch the Nerve — once per encounter name one creature's specific fear/obsession/wound aloud; Rattled until end of scene or she is incapacitated",
+      "suffix": "the Twice Touched", "suffix_reaction": 5,
+      "suffix_item": "The Dark Mark — silver ring black stone right hand; once/day send 10 words to any creature she has touched — arrives as whisper inside skull"
+    },
+    "Jaethal": {
+      "prefix": "Ultima", "prefix_reaction": 5,
+      "prefix_passive": "The Final Word — once per scene pass Final Judgment on one assessed creature; next Strike auto-hits, no resistance/reaction/shield block reduction",
+      "prefix_regalia": "Black half-cape — +1 circumstance Intimidation while Final Judgment pending on creature in scene",
+      "suffix": "the Ender", "suffix_reaction": 5,
+      "suffix_item": "The Arbiter's Edge — pale bone-handled ritual blade; edge never dulls; once/day +2 striking slashing; handle: 'enough' in Old Elvish"
+    },
+    "Harrim": {
+      "prefix": "Haruspex", "prefix_reaction": 5,
+      "prefix_passive": "The Shape of the End — once per scene read one creature/object/location for dominant entropy; combat: one enemy Doomed per encounter",
+      "suffix": "the Witness", "suffix_reaction": 5,
+      "suffix_item": "The Skull-Moon Reliquary — bronze crescent-moon skull-faced reliquary; once/day when channeling font +1d8; stays warm three days after his death"
+    },
+    "Amiri": {
+      "prefix": "Furens", "prefix_reaction": 5,
+      "prefix_passive": "The Rage That Clarifies — while raging attacks vs creatures larger than her ignore resistance; once per rage dropping Large+ to 0 HP = free Stride+Strike",
+      "suffix": "the Vindicator", "suffix_reaction": 5,
+      "suffix_item": "The Giant's Due — oversized dark steel greatsword +2 striking; +1d6 on crit vs creature that has attempted to disarm/restrain/exile her; handle rune: 'earned'"
+    },
+    "Valerie": {
+      "prefix": "Protectrix", "prefix_reaction": 5,
+      "prefix_passive": "The Sound It Makes — when Valerie Shield Blocks all allies within 20ft gain +1 circ to next attack; once per round if shield takes damage she may raise it again as free action",
+      "suffix": "the Unfettered", "suffix_reaction": 5,
+      "suffix_item": "The Unfettered Aegis — battered shield with design emerged from use (sun/flower); +2 Shield Block DR; once/day raise as reaction when ally within 15ft would take crit hit — ally takes normal hit instead"
+    }
+  },
+
+  "pending_hp_loot_rolls": 0,
+  "pending_overflow": 63,
+  "dream_log": [],
+  "dream_cooldown": 0,
+
+  "player_legacy": [
+    "Sole General of The Black Watch — Dystopia, Undead Island, Aerynth",
+    "Broke the revolt of the Five Generals — star fortress raised under fire in 14 days",
+    "Defied the Inner Council to defend Eternal Shadow (Nitadno ultimatum) — two-to-one overruled, marched anyway, held Eternal Shadow's Tree at 6%, took Ice Island same day",
+    "Promoted to Sole General by Thighs Deadlyflesh — awarded red dragonplate",
+    "Displaced by Malevolent Valheru's extra-planar teleportation spell (guided by Bardok) — landed Nikvata's Crossing, Stolen Lands",
+    "Six principles: Accept everything as it is / never depend on partial feeling / think lightly of yourself deeply of world / never be jealous / never be swayed / do not fear death",
+    "Rule: turn obstacles into purpose"
+  ],
+
+  "current_chapter": "prologue",
+  "current_scene": "prologue_feast",
+  "current_location": "Restov — Jamandi Aldori's Manor, Guest Room (asleep)",
+  "discovered_locations": ["Restov — South Gate", "Restov — City Jail", "Restov — Jamandi Aldori's Manor"],
+
+  "party_formation": {
+    "vanguard": ["eRmaC", "Invicta Satsuki the Unyielding", "Furens Amiri the Vindicator", "Protectrix Valerie the Unfettered", "Necatrix Revy the Twinshot", "Ultima Jaethal the Ender"],
+    "rearguard": ["Cantrix Leliana the Legend Weaver", "Curatrix Hu the Keeper", "Prima Aerith the Redeemer", "Haruspex Harrim the Witness", "Rectrix Keqing the Governor", "Provocatrix Bellatrix the Twice Touched"],
+    "reserve": ["Ultrix Velvet the Unforgiving", "Venatrix Atalanta the Trueshot", "Insidia Yor the Inexorable"],
+    "reserve_activities": {
+      "Insidia Yor the Inexorable": "counter-intelligence and covert operations",
+      "Ultrix Velvet the Unforgiving": "advance scouting and target elimination",
+      "Venatrix Atalanta the Trueshot": "perimeter hunting and Quarry designation"
+    },
+    "combat_formation": "reach_wall",
+    "custom_positions": {
+      "First_Judge": "Prima Aerith the Redeemer",
+      "Final_Judge": "Ultima Jaethal the Ender",
+      "Governor": "Rectrix Keqing the Governor",
+      "Chronicle": "Cantrix Leliana the Legend Weaver"
+    }
+  },
+
+  "expedition_funds": 0,
+  "injuries": [],
+  "passive_jealousy": {},
+  "companion_rivalry": {},
+  "date_log": [],
+  "dates_this_chapter": 0,
+  "companion_fights": {},
+
+  "game_options": {
+    "leveling_mode": "manual",
+    "companion_leveling_mode": "auto",
+    "companion_combat": "auto",
+    "response_length": "medium",
+    "min_paragraphs": 4,
+    "max_paragraphs": 6,
+    "npc_dialogue_beats_min": 6,
+    "tts_mode": true
+  }
+}

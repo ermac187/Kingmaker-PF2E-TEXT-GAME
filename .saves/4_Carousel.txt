@@ -1,0 +1,1383 @@
+{
+  "save_version": "1.9.4",
+  "chapter_completed": "pre_prologue",
+  "save_timestamp": "2026-06-08T03:00:00Z",
+  "save_label": "PR01_LadySleeps_FeastAssaultCapture_KestenHandoff",
+  "turns_elapsed": 14,
+
+  "dm_resume_note": {
+    "instruction": "DM RESUME DIRECTIVE: PR_01 investigation complete. Lady Sleeps gambit COMPLETE — 5 assassins captured alive, leader submitted to Kesten this turn. Kesten processing prisoners: strip search + separate cells + no communication before interrogation (delegated, eta ~2 turns from save point; do NOT tick on load — first action of new session does not count). Guisarme still in manor garden soil (weapons_in_garden=TRUE) — player unarmed; retrieve before PR_04 fires. PR_04 night_explosion is the NEXT scripted certain beat — it fires after player retires or attempts to leave the hall; do NOT skip regardless of what player does. Malak: manor dungeon, medical care for two arrow wounds, 18/28 HP; formal charge pending player direction. Five seekers observed eRmaC in action: all positive disposition from jail rescue AND Lady Sleeps spring. Tartuccio: cover intact but confidence badly shaken (−3 cumulative — held at the PR_03 Panicking floor; he is STILL circulating/engaging, NOT Broken; Broken/−4 cannot be reached until the carousel closes); his night-attack cell is still on the grounds and on schedule; he cannot warn them; do NOT surface expose/confront/arrest options for Tartuccio — he must reach PR_09 un-exposed per the leech play. ARM is the established coordination signal word: known to Jamandi and Kassil (who_knows list). Level 2 AVAILABLE (manual — do NOT auto-level; offer .levelup). Pending overflow: 11 (nudge .loot every response). DO NOT auto-open PR_03 carousel or feast position menu — Lady Sleeps replaced normal feast circuit; carousel SUSPENDED during operation. On load: RECAP from leliana_ballad_cycle fact fields FIRST, then present foreground menu of post-capture actions (retrieve weapon, interrogate direction, Malak charges, PR_04 prep, .levelup, .loot, .save, custom). PR_02 feast opening never formally loaded — Jamandi's formal charter address is pending; it may happen in modified form after the dust settles or skip into PR_08 resolution path.",
+    "active_player_plans": [
+      {
+        "name": "Lady Sleeps Gambit",
+        "status": "complete",
+        "live_values": "glass_sweep=DONE, counteragent=DONE, security_relax=DONE, ARM_signal=established, feast_assault_cell=captured (5 assassins + leader), casualties=0, who_knows=[Jamandi, Kassil], player_invented=TRUE",
+        "who_knows": [
+          { "who": "Jamandi", "knows": "full plan: glass sweep, feigned sleep, ARM signal, ambush spring", "since_turn": 12 },
+          { "who": "Kassil", "knows": "glass sweep directive and security relax order; ARM signal via Jamandi briefing", "since_turn": 12 }
+        ],
+        "next_expected_beat": "Kesten prisoner report (eta 2 turns); PR_04 night explosion (next scripted certain)"
+      },
+      {
+        "name": "Tartuccio Counterspy / Leech Play",
+        "status": "active",
+        "live_values": "GLORY=0 (no public credit given yet), PERIL=0, cover=intact, confidence_cumulative=-3, wariness=high, ring=not_relevant_yet, legend_stage=0, ARM_word_known_to_Jamandi_not_Tartuccio=TRUE, night_attack_cell_active=TRUE (Tartuccio cannot warn them), feast_cell_captured=TRUE (operational blow to Tartuccio but he must pretend surprise), expose_options=NEVER_SURFACE",
+        "who_knows": [
+          { "who": "eRmaC", "knows": "Tartuccio is the inside coordinator; never expose pre-PR_09", "since_turn": 1 }
+        ],
+        "next_expected_beat": "PR_09 accusation scene — Tartuccio accuses eRmaC; this is when his role is revealed canonically. Do not advance this."
+      }
+    ],
+    "standing_intents": [
+      "Never expose Tartuccio before PR_09 — the accusation scene needs him free and believing his cover holds",
+      "ARM is the established coordination signal word — use it for any future mass-coordination beat",
+      "Do not auto-level — player manages level-up manually via .levelup",
+      "Delegation costs pending_overflow (overflow missions) not gold",
+      "Guisarme must be retrieved from garden before PR_04 fires"
+    ],
+    "player_position": "H6 — between head table and center floor, angled for hall-wide sightlines; close to Jamandi (3 squares), view of main door, balcony stairs, kitchen passage, seekers corner",
+    "player_last_action": "Submitted feast assault leader to Kesten; gave orders: strip search, remove lockpicks and escape devices, separate cells, no communication before interrogation",
+    "player_intent": "Post-combat consolidation; retrieve weapon; direct prisoner processing; prepare for PR_04",
+    "room_state": {
+      "feast_hall": "post-Lady-Sleeps spring; 40 guests shaken but unharmed; 5 assassins restrained and being processed by Kesten; Jamandi at head table; Kassil operational; Tartuccio feigning surprise at seekers corner; Ezvanki completing pastoral rounds",
+      "wine": "all glasses replaced with clean stock (sweep complete); contaminated cask in storage (never tapped)",
+      "poison_status": "neutralized — counteragent distributed, no guests exposed",
+      "prisoners": "6 total (leader + 5); Kesten taking to dungeon for strip search and cell separation"
+    },
+    "carousel_state": "SUSPENDED — Lady Sleeps operation replaced normal feast circuit; PR_03 carousel never opened; companions still strangers at feast positions; resume only if scene returns to social register (unlikely before PR_04)",
+    "open_threads": [
+      "Kesten: strip search + separate cells + no communication — eta 2 turns",
+      "Guisarme: in garden soil (weapons_in_garden=TRUE) — player unarmed",
+      "Malak: manor dungeon, two arrow wounds, medical care; formal charge pending player",
+      "Accountability Act document: on head table, Jamandi set aside (after); thread still open",
+      "Five seekers: positive disposition; Satsuki Kiryūin had blade out during spring; all ready for Ch1 potential flip",
+      "Tartuccio: cover intact; night-attack cell still active; watch for PR_04",
+      "Level 2 available (manual) — .levelup",
+      "Pending overflow: 11 — .loot"
+    ],
+    "level_up": "Level 2 available — 1705 XP (threshold 1000 XP passed). Manual mode. Offer .levelup next response if not yet declared.",
+    "weapons": "Guisarme planted in manor garden soil (player unarmed at feast by choice). Improvised garrotte (2 silk napkins, zeppelin bend, end knots) — in right hand, functional, used this combat."
+  },
+
+  "delegated_orders": [
+    {
+      "who": "Kesten",
+      "what": "Strip search all 6 prisoners (leader + 5 assassins); remove all lockpicks, concealed blades, escape devices, cipher tools; separate into individual cells with no sight lines to each other; no communication permitted before interrogation",
+      "given_turn": 14,
+      "eta_turns": 2,
+      "status": "in_progress",
+      "roll": "auto-success — squarely in Kesten's wheelhouse (Guard Captain +7 search/secure, restrained cooperative prisoners)"
+    },
+    {
+      "who": "Ezvanki Keeg",
+      "what": "Precautionary counteragent for Ungol Dust variant — mass blessing, Cleanse Affliction, blessed waters, 40 doses distributed as pastoral feast rounds",
+      "given_turn": 9,
+      "eta_turns": 0,
+      "status": "complete",
+      "roll": "auto-success (High Priest of Erastil, divine Medicine, uncontested)",
+      "result": "40 doses distributed; no guests exposed (contaminated cask never tapped); hall cleared; Ezvanki available for Malak's wound care"
+    },
+    {
+      "who": "Servants (via Kassil)",
+      "what": "Glass sweep — replace all wine glasses in hall with uncontaminated stock from sealed tables; use better-vintage pretext; take each glass and replace with fresh full cup; claim better vintage for anyone who resists",
+      "given_turn": 12,
+      "eta_turns": 0,
+      "status": "complete",
+      "roll": "auto-success (routine feast service behavior; no guest resisted)",
+      "result": "All circulating glasses replaced with clean stock; contaminated cask isolated in back-row storage; no guests drank from the poisoned supply"
+    },
+    {
+      "who": "Household staff (via Kassil)",
+      "what": "Attend Malak's wounds (two arrow shafts embedded: shoulder and side); move him to manor dungeon; monitor for infection",
+      "given_turn": 11,
+      "eta_turns": 0,
+      "status": "complete",
+      "roll": "auto-success (routine medical care, arrows removed, wounds bound)",
+      "result": "Malak in manor dungeon, wounds dressed; arrows removed; 18/28 HP; stable"
+    }
+  ],
+
+  "pending_questions": {},
+
+  "player": {
+    "name": "eRmaC",
+    "gender": "male",
+    "build_id": "Barb_Build_1",
+    "build": "Tactical Reach King",
+    "build_source": "KM_Builds_Barb_Bard.md",
+    "class": "Barbarian (Giant Instinct)",
+    "ancestry": "Human",
+    "heritage": "Versatile Human",
+    "heritage_source": "Core Rulebook",
+    "heritage_granted_features": ["Bonus general feat at L1 (used: Armor Proficiency Heavy — enables Dragon Plate at L1)"],
+    "background": "Warrior",
+    "background_skill": "Athletics (auto-trained), Warfare Lore (auto-trained)",
+    "background_skill_feat": "Intimidating Glare (auto-granted by Warrior background)",
+    "weapon": "Guisarme (2H S, 1d10+4 / +1d10+10 Large+Rage, Reach 10 ft, Trip) — currently in manor garden soil; improvised garrotte (held) also available",
+    "armor": "Dragon Plate (Aerynth artifact: AC+6, Bulwark — treat failed Reflex vs area as success, Resist fire 5; Heavy armor, DEX cap 0, speed -10 ft)",
+    "deity": "none",
+    "level": 1,
+    "xp": 1705,
+    "attributes": {
+      "STR": 18,
+      "DEX": 10,
+      "CON": 16,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 12
+    },
+    "hp_current": 23,
+    "hp_max": 23,
+    "hero_points": 3,
+    "ac": 19,
+    "speed": 20,
+    "saves": {
+      "fort": 8,
+      "ref": 3,
+      "will": 4
+    },
+    "perception": 6,
+    "conditions": [],
+    "skills_trained": [
+      "Athletics +7 (STR +4, Trained +2, L+1)",
+      "Intimidation +4 (CHA +1, Trained +2, L+1)",
+      "Warfare Lore +3 (INT +0, Trained +2, L+1)",
+      "Survival +3 (WIS +0, Trained +2, L+1)"
+    ],
+    "languages": ["Common", "Varisian"],
+    "feats": {
+      "ancestry": "Natural Ambition (grants bonus L1 class feat: Sudden Charge)",
+      "background": "Intimidating Glare (auto-granted by Warrior bg — Demoralize without language penalty; usable at reach)",
+      "class_1": "Raging Intimidation (L1 standard slot — Demoralize without action cost during Rage; use Intimidating Glare/Scare to Death while raging)",
+      "general": ["Armor Proficiency (Heavy) — Versatile Human free general feat slot; enables Dragon Plate at L1"],
+      "skill": ["Intimidating Glare (from background — see above)"]
+    },
+    "known_spells": [],
+    "focus_points": 0,
+    "inventory": [
+      "Dragon Plate (Aerynth artifact — worn; AC+6, Bulwark, Resist fire 5, Heavy, DEX cap 0)",
+      "Improvised garrotte (2 silk napkins, zeppelin bend, large end knots — held in right hand; Athletics-based grapple/strangle weapon; concealable as napkin when loose)",
+      "Adventurer's pack",
+      "Flint and steel",
+      "Torches x3",
+      "Rations (5 days)",
+      "Waterskin",
+      "Rope (50 ft, hempen)",
+      "Grappling hook"
+    ],
+    "gold": {
+      "gp": 14,
+      "sp": 5,
+      "cp": 2
+    },
+    "notes": [
+      "Guisarme is NOT in inventory — planted in manor garden soil (weapons_in_garden=TRUE). Retrieve before PR_04.",
+      "Guisarme stats when retrieved: 2H S, 1d10+4 / 2d8+10 Large+Rage, Reach 10 ft (15 ft with Giant Rage), Trip.",
+      "Dragon Plate is an Aerynth artifact — homebrew. Identical stats to Full Plate (AC +6, Bulwark, Resist fire 5) but named differently.",
+      "Rage (Giant Instinct): +6 damage on Strikes; wield oversized (Large) weapons; damage die steps up one size; become Large for reach; -2 AC while raging; cannot cast spells. Temporary HP: +7 on Rage activation.",
+      "Sudden Charge (via Natural Ambition): 2 actions — Stride twice and Strike. Works while raging.",
+      "Speed 20 ft due to Heavy armor (30 base - 10 Heavy armor penalty)."
+    ]
+  },
+
+  "companions": [
+    {
+      "name": "Hu Tao",
+      "build_id": "NEW_001",
+      "class": "Fighter (Warrior background)",
+      "level": 1,
+      "hp_current": 19,
+      "hp_max": 19,
+      "conditions": [],
+      "gear": ["Her funeral spear (guisarme, reach [ICONIC])", "Hide armor"],
+      "status": "active",
+      "location": "hall — stranger (carousel not opened; unintroduced to eRmaC)",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Keqing",
+      "build_id": "NEW_002",
+      "class": "Magus (Laughing Shadow)",
+      "level": 1,
+      "hp_current": 24,
+      "hp_max": 24,
+      "conditions": [],
+      "gear": ["Her lightning-channeling sword (straight sword [ICONIC])", "Leather armor"],
+      "status": "active",
+      "location": "hall — stranger (carousel not opened; unintroduced to eRmaC)",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Leliana",
+      "build_id": "NEW_003",
+      "class": "Bard (Maestro) — CHRONICLER-BARD for this run",
+      "level": 1,
+      "hp_current": 20,
+      "hp_max": 20,
+      "conditions": [],
+      "gear": ["The Traveler's Lute (personal instrument)", "Her songblade (dagger [ICONIC])", "Leather armor"],
+      "status": "active",
+      "location": "hall — unintroduced observer/chronicler (chronicler_introduced=FALSE; documenting from near the door; not commandable until introduction beat fires)",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Yor Forger",
+      "build_id": "NEW_004",
+      "class": "Rogue (Thief)",
+      "level": 1,
+      "hp_current": 18,
+      "hp_max": 18,
+      "conditions": [],
+      "gear": ["The Thorn Stilettos (paired daggers [ICONIC])", "Leather armor"],
+      "status": "active",
+      "location": "hall — stranger (carousel not opened; unintroduced to eRmaC)",
+      "join_source": "pick6"
+    },
+    {
+      "name": "Aerith",
+      "build_id": "NEW_005",
+      "class": "Cleric (Cloistered, Sarenrae)",
+      "level": 1,
+      "hp_current": 16,
+      "hp_max": 16,
+      "conditions": [],
+      "gear": ["Her staff (quarterstaff, Sarenrae-blessed healing focus [ICONIC])", "Explorer's clothing"],
+      "status": "active",
+      "location": "hall — stranger (carousel not opened; unintroduced to eRmaC)",
+      "join_source": "pick6"
+    }
+  ],
+
+  "companions_selected": ["Hu Tao", "Keqing", "Leliana", "Yor Forger", "Aerith"],
+  "companions_not_picked": ["Linzi", "Amiri", "Valerie", "Harrim", "Jaethal"],
+  "linzi_replacement": "Leliana",
+  "linzi_replacement_letter": null,
+  "chronicler_active": true,
+  "leliana_chronicler_mode": true,
+  "linzi_primary_chronicler": false,
+  "linzi_replacement_gate_fired": true,
+
+  "leliana_ballad_cycle": [
+    {
+      "n": 1,
+      "turn": 2,
+      "chapter": "pre_prologue",
+      "beat": "pp_tutorial_pickpocket",
+      "chapter_title": "The Night Someone Used a Napkin as a Weapon",
+      "title": "Small Hands, Smaller Debt",
+      "fact": "At the east vendor strip outside Restov's south gate, eRmaC caught a pickpocket attempting to steal from a vendor. He subdued her nonlethally with a single restraint (no weapon drawn), stabilized her, and left her with food. Armorer Corryn witnessed. Squire Aldric witnessed. Reputation +3 (tier: NOTICED).",
+      "diary": "I was behind the armorer's stall when I saw him move. Not toward a weapon — toward the girl. One hand, controlled, no blood. He could have had her arrested. Instead he checked her breathing and left bread. I wrote 'prologue' in the margin and wondered if I was right about him.",
+      "ballad": "[Verse] A hand in the crowd, a girl going fast, / he reached and he caught her — she couldn't get past. / No sword, no shout, no blood on the stone, / just a steadied breath and a crust she could own. [Chorus] Sing it soft, for the small things done right — / the ones no one sees in the noise of the night. / He let her breathe and he left her the bread. / That is the kind of story I follow instead. [Outro] (quietly) The armorer saw. The squire saw. I saw. Three witnesses for one girl who got to walk away."
+    },
+    {
+      "n": 2,
+      "turn": 5,
+      "chapter": "pre_prologue",
+      "beat": "pp_gate_confrontation",
+      "chapter_title": "The Night Someone Used a Napkin as a Weapon",
+      "title": "ARM",
+      "fact": "Captain Malak ran a shakedown 30 paces south of Restov's south gate (gate deliberately unmanned). eRmaC did not draw his weapon, did not produce his invitation, and did not comply with orders to kneel. He named Malak's DARVO pattern publicly, deduced the gate-window conspiracy, and issued ARM + TRIANGLE FORMATION + BIGGS SHACKLE commands to guards Biggs (12-year veteran, Drift 3) and Wedge. Biggs complied; Wedge mirrored. Malak's own wall archers fired when eRmaC mimicked Malak's voice — two arrows embedded (shoulder + side, 6+4 piercing; Malak 28 HP to 18 HP). Malak arrested by his own men. Crowd chanted Biggs and Wedge. Gate remanned by Wedge on eRmaC's order. Malak confessed Pitax involvement unprompted during the march. Reputation +3 (arrest) +2 (exposure) = +5 additional, total 8 (FAVORABLE).",
+      "diary": "The gate was empty. He noticed before I did — I was still looking at the crowd. He stood 30 paces from an armed captain and named what he was doing, piece by piece. I have heard generals issue orders. I have not often heard someone issue them in the middle of being threatened. When his voice came out of Malak's mouth — the wall archers loosed. It was either brilliance or a miracle. I am still deciding. The crowd chanted two guards' names, not his. He seemed to prefer it that way.",
+      "ballad": "[Intro] (a march cadence, one drumbeat) [Verse 1] He walked to the captain who owned the gate's gap, / no sword drawn, no papers, no diplomatic trap. / Named the play in plain speech — the DARVO, the seam — / and the captain's own archers decided what that would mean. [Verse 2] 'ARM,' said the soldier, and 'TRIANGLE,' and 'HOLD' — / the guards on the road heard a voice they were told / belonged to their captain. The wall heard it too. / Two arrows found Malak. The thing that he knew / was that words, placed exactly, can aim what they own. [Chorus] ARM! Let it ring on the stone! / ARM! Every witness has known: / the gate was a trap and the trap swallowed whole — / the man who set it took the first toll. [Outro] (steady, without triumph) He marched Malak to the manor. The crowd found different names to chant. He didn't correct them."
+    },
+    {
+      "n": 3,
+      "turn": 7,
+      "chapter": "pre_prologue",
+      "beat": "pp_jail_rescue_seekers",
+      "chapter_title": "The Night Someone Used a Napkin as a Weapon",
+      "title": "The Open Door",
+      "fact": "eRmaC took the jail_detour route and presented Captain Drevic with self-verifying evidence: feast invitations found in the property boxes of five jailed prisoners, establishing they were invited guests wrongfully detained. Drevic released all five: Bellatrix Lestrange, Atalanta Alter, Revy, Satsuki Kiryūin, Velvet Crowe. The five recognized eRmaC as the one who had opened their cells for nothing in return; they knew one another already from the shared cells and left together, carrying a debt they had not expected. Bond recorded (the jail bond — they recognize eRmaC as their liberator). Satsuki Kiryūin's obsidian house signet ring lost in the exchange (Ch1 thread). Seekers departed separately toward the manor.",
+      "diary": "He went out of his way. That is the right phrase — out of his way, when the manor was straight ahead and the evening was already complicated. The captain released them on evidence eRmaC found in their own property boxes. Simple. Clean. No argument. Five people walked out. I watched the one with the obsidian ring — she looked back once. I do not think she had expected to be let go by someone with nothing to gain from it. The five knew one another already — you could see it, the easy way of people who have shared a dark place. And they marked HIM, too — the man who had opened the door for nothing — and that was enough.",
+      "ballad": "[Verse] Five names in the cells and the invitations there, / in the boxes the captain had sealed with his care. / He found the proof, and the door opened wide — / and five who'd been bought stepped out to his side. [Chorus] He went out of his way for a thing with no pay — / opened the iron and turned away. / Five who'd been caged, and a door swinging free: / the kind of small thing that a chronicle keeps. [Bridge] (softer) The ring hit the floor. She didn't go back. / Some things you leave in the crack of the track. / He didn't ask what they owed him. They knew. / They had each other from the dark they came through. [Outro] Five walked to the manor. I followed behind."
+    },
+    {
+      "n": 4,
+      "turn": 8,
+      "chapter": "prologue",
+      "beat": "pr_01_manor_parchment_investigation",
+      "chapter_title": "The Night Someone Used a Napkin as a Weapon",
+      "title": "Empty Him Here",
+      "fact": "eRmaC walked Malak in chains to Jamandi Aldori's head table at the manor feast. He delivered a six-point accountability indictment (incompetence, sabotage, corruption, dishonesty, defiance, betrayal) and requested a search to preserve chain of evidence. Jamandi issued the search order. Kassil recovered: 180gp bribe coin (fresh Brevish mint) and a sealed parchment (broker C, three placed serving staff, guest arrest bounties, no lethal action authorized). Jamandi read the parchment and named three things — the gate, the guests, the workers in her house. eRmaC identified the caravan lineup as a deliberate visual screen covering both eRmaC's sightlines and the vendor strip. eRmaC proposed and Jamandi accepted an investigative protocol: staff interviews, kitchen sweep, house alchemist to identify, no intimidation of staff. Bokken (on-site alchemist) identified the contaminated cask substance as Ungol Dust variant (paralytic, non-lethal, 2hr onset, crowd-targeted). Jamandi sent for Ezvanki Keeg (High Priest of Erastil) for counteragent. eRmaC calculated the attack window: 2hr40min from feast start (second cask 40min from tapping + 2hr onset). eRmaC also presented the Integrated Accountability and Oversight Act (governance document — Jamandi set aside: 'After.'). Parchment recovered, bribe exposed, poison plot known.",
+      "diary": "The hall looked like a feast. What it was: an indictment. He had the chain of evidence in the man he was escorting. He had the argument ready before he arrived. Jamandi said 'empty him here' and when the coat came open there was a parchment that named three things she had not known five minutes before. I have watched people receive bad news. She took it in under three seconds and moved. The governance document was a different kind of move — he handed her an architecture for oversight in the middle of a crisis, and she said 'after.' Which means she read it.",
+      "ballad": "[Verse 1] He walked the man in chains to the table's head, / laid the evidence out like a map to be read. / Six points of the law. She said empty him. Now. / The coat opened up and the parchment said how. [Verse 2] The gate, said the list. The guests. The workers inside. / Three sentences of damage on a letter unsigned. / The alchemist named the dust in the wine. / The priest would be ready. The clock said: design. [Chorus] Empty him here — that was the word. / Empty him here — and the truth was transferred. / Not with a sword and not with a shout — / just a parchment and a captain who couldn't get out. [Bridge] He handed her governance as she read her own siege. / She said after. Which meant she heard it. [Outro] (quiet) I wrote 'attack window: 2hr40min' and drew a line under it. She had moved faster than I could write."
+    },
+    {
+      "n": 5,
+      "turn": 14,
+      "chapter": "prologue",
+      "beat": "lady_sleeps_spring",
+      "chapter_title": "The Night Someone Used a Napkin as a Weapon",
+      "title": "One Word, and the Floor Rose to Meet Them",
+      "fact": "eRmaC devised the Lady Sleeps gambit: directed a glass sweep to remove contaminated wine (servants replaced all glasses under better-vintage pretext), ordered a security relax to appear as a false alarm, and had Jamandi announce a party game in which all guests feign sleep. ARM established as the signal word. All guests played the game; the feast hall appeared fully incapacitated. The feast assault cell (5 human assassins + 1 leader) entered believing the paralytic had worked. eRmaC observed from slitted eyes, identified the leader by his hand signals to the other five. He shouted ARM — the hall rose. He threw a bread roll at the leader's face (flour in the eyes; Hero Point spent for reroll to hit). He applied the improvised napkin garrotte (2 silk napkins, zeppelin bend, end knots — constructed earlier this evening) in a critical-success Grapple: leader fully Restrained. The leader, unable to escape and seeing his men surrounded, commanded his men to disarm. All 5 assassins dropped weapons. Kesten secured the five. eRmaC submitted the leader to Kesten with orders for strip search, separate cells, and no communication before interrogation. 6 prisoners in custody. 0 guests harmed. Ezvanki's counteragent distributed. Lady Sleeps gambit: PLAYER-INVENTED (canonical legacy moment per KM_Prologue_Systems.md PHASE 4.5).",
+      "diary": "He made a garrotte out of two napkins and a knot I have only seen sailors use. I watched him tie it while Jamandi was still absorbing the plan. The plan itself — the whole hall going down like a wave because a woman said 'the lady sleeps' — I have seen more complicated strategies fail. This one did not fail. The bread roll hit the leader across the nose and I heard the sound of someone who had expected to walk through a paralyzed hall suddenly understand he would not be doing that. ARM. One word. The floor rose. I did not get out of the way fast enough and nearly put an elbow through my journal. That is how quickly it happened. Six people in the dungeon. Not one of ours lost.",
+      "ballad": "[Intro] (low, held — the hush of a room that nearly broke) [Verse 1] He spoke one word and the bright hall rose as one, / and every blade came hunting throats and found none. / Five wrists in iron, the leader in silk — / a napkin and a bend and a face full of milk. [Verse 2] The dust was in the cask and the cask was pulled back, / the glasses were clean and the servants kept track. / She said: the lady sleeps, and the hall said: agreed. / The knives walked in blind and found everyone freed. [Chorus] ARM! Let the long table tell: / the word was given and not one of us fell. / They brought a paralytic and a plan for the night — / he brought two napkins and a bend tied right. [Bridge] (grinning) He spent a Hero Point on a bread roll. / That is the real story. That is the whole. / Flour in the eyes. Silk at the throat. / 'I only loosen if you give them the note.' [Chorus] ARM! Sing it low for the hall! / ARM! He said one word and they all / dropped everything — the knives and the plan — / into the hands of a very prepared man. [Outro] (stopping on a held note) Zero dead. Six in the cells. Two napkins retired from active service."
+    }
+  ],
+
+  "notebook_entries": [],
+
+  "pick6_dropped": "DEPRECATED — use companions_not_picked instead",
+  "manor_companions_joined": "DEPRECATED — Manor 5 now in open pool, see companions_selected",
+  "quest_locked_joined": [],
+
+  "five_seekers": {
+    "seeker_1": "Bellatrix Lestrange",
+    "seeker_2": "Revy",
+    "seeker_3": "Satsuki Kiryūin",
+    "seeker_4": "Velvet Crowe",
+    "seeker_5": "Atalanta Alter"
+  },
+
+  "npc_threads": {
+    "Jamandi": {
+      "status": "active",
+      "last_seen": "head table, post-Lady Sleeps spring, turn 14",
+      "trust": "strong positive — established operational relationship; accepted parchment evidence, investigative protocol, Lady Sleeps plan, ARM signal, accountability framework (deferred)",
+      "knows": ["parchment content", "poison plot (Ungol Dust variant)", "caravan-as-screen", "Lady Sleeps plan", "ARM signal word", "feast assault cell captured"],
+      "disposition": "evaluating-to-committed",
+      "next_thread": "PR_02 feast formal opening (deferred/modified); PR_09 accusation scene (needs her present)"
+    },
+    "Kassil": {
+      "status": "active",
+      "last_seen": "operational position post-Lady Sleeps, turn 14",
+      "kassil_first_impression": "professional-respect",
+      "knows": ["glass sweep directive", "security relax order", "ARM signal (via Jamandi briefing)"],
+      "disposition": "neutral-to-positive",
+      "next_thread": "operational arm throughout prologue; kesten coordination"
+    },
+    "Kesten": {
+      "status": "active — first direct interaction turn 14",
+      "last_seen": "received prisoners at turn 14; marching them to dungeon",
+      "knows": ["prisoner processing orders: strip search, separate cells, no communication"],
+      "disposition": "working-respect (received orders without question; professional)",
+      "kesten_respect": true,
+      "delegated_active": "strip search + cell separation, eta 2 turns"
+    },
+    "Tartuccio": {
+      "status": "active — cover intact",
+      "last_seen": "seekers corner (M17), feigning surprise, turn 14",
+      "confidence_cumulative": -3,
+      "clock_n": 5,
+      "clock_m": 5,
+      "tier": "panicking",
+      "panic_state_active": true,
+      "wariness": "high",
+      "cover_intact": true,
+      "knows_player_is_aware": false,
+      "feast_cell_captured_reaction": "feigning surprise; cannot warn night-attack cell; operational catastrophe for him but must maintain innocence",
+      "plot_armor_intact": true,
+      "next_thread": "PR_09 accusation scene — he accuses eRmaC; this is when his role is revealed. Do not advance this."
+    },
+    "Malak": {
+      "status": "custody — manor dungeon",
+      "hp": 18,
+      "hp_max": 28,
+      "wounds": "two arrow shafts removed (shoulder + side); wounds dressed; stable",
+      "fear_state": true,
+      "malak_broke_first": true,
+      "confessed_pitax": true,
+      "custody_type": "informal pending formal charge; formal charge direction = player decision",
+      "intel_value": "confessed Pitax involvement; knows gate-conspiracy details; interrogation pending at player discretion"
+    },
+    "Biggs": {
+      "status": "active — at south gate",
+      "disposition": "allied (crowd-hero, full cooperation at gate arrest)",
+      "knows": ["ARM formation command (witnessed at gate)", "Malak's bribe letter context"],
+      "next_thread": "potential witness for caravan/vendor observations; gate security ongoing"
+    },
+    "Wedge": {
+      "status": "active — manning south gate per eRmaC's order",
+      "disposition": "allied (followed Biggs, remanned gate on eRmaC's order)",
+      "next_thread": "gate security ongoing"
+    },
+    "Bokken": {
+      "status": "on-site — manor feast",
+      "role": "identified Ungol Dust variant from recovered cask residue; not a combat asset",
+      "knows": ["contaminated cask substance: Ungol Dust variant (paralytic, non-lethal, 2hr onset, 40-person dose)"]
+    },
+    "Ezvanki": {
+      "status": "on-site — completed counteragent task",
+      "role": "High Priest of Erastil; divine Medicine/counteragent",
+      "task_complete": true,
+      "doses_distributed": 40,
+      "next_available": "wound care (Malak); PR_04 triage if needed"
+    },
+    "Captain_Drevic": {
+      "status": "jail — Restov south quarter",
+      "disposition": "respected; released seekers on self-verifying evidence without resistance",
+      "knows": ["five seekers released on eRmaC's presentation of self-verifying evidence"]
+    }
+  },
+
+  "romance": {
+    "active_romance": "none",
+    "companions": {
+      "Hu Tao": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0, "awkward_flag": false,
+        "heart_scene_triggered": false, "date_awkward": false, "love_scene_occurred": false,
+        "love_scene_partner": "", "love_scene_interrupted": false, "love_scene_rival": "",
+        "love_scene_choice": "", "love_scene_aborted": false, "fade_active": false,
+        "fade_chapters_remaining": 0, "cheating_detected": false, "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Keqing": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0, "awkward_flag": false,
+        "heart_scene_triggered": false, "date_awkward": false, "love_scene_occurred": false,
+        "love_scene_partner": "", "love_scene_interrupted": false, "love_scene_rival": "",
+        "love_scene_choice": "", "love_scene_aborted": false, "fade_active": false,
+        "fade_chapters_remaining": 0, "cheating_detected": false, "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Leliana": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0, "awkward_flag": false,
+        "heart_scene_triggered": false, "date_awkward": false, "love_scene_occurred": false,
+        "love_scene_partner": "", "love_scene_interrupted": false, "love_scene_rival": "",
+        "love_scene_choice": "", "love_scene_aborted": false, "fade_active": false,
+        "fade_chapters_remaining": 0, "cheating_detected": false, "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Yor Forger": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0, "awkward_flag": false,
+        "heart_scene_triggered": false, "date_awkward": false, "love_scene_occurred": false,
+        "love_scene_partner": "", "love_scene_interrupted": false, "love_scene_rival": "",
+        "love_scene_choice": "", "love_scene_aborted": false, "fade_active": false,
+        "fade_chapters_remaining": 0, "cheating_detected": false, "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      },
+      "Aerith": {
+        "stage": 0, "score": 0, "declaration_made": false, "declaration_result": "",
+        "consort_unlocked": false, "date_count": 0, "gesture_returned": 0, "awkward_flag": false,
+        "heart_scene_triggered": false, "date_awkward": false, "love_scene_occurred": false,
+        "love_scene_partner": "", "love_scene_interrupted": false, "love_scene_rival": "",
+        "love_scene_choice": "", "love_scene_aborted": false, "fade_active": false,
+        "fade_chapters_remaining": 0, "cheating_detected": false, "cheating_confrontation_count": 0,
+        "deny_used_this_arc": false
+      }
+    }
+  },
+
+  "companion_quests": {
+    "Leliana": {
+      "status": "inactive",
+      "leliana_opus_named": false,
+      "leliana_opus_name": "",
+      "leliana_opus_performed": false,
+      "leliana_illness_disclosed": false
+    }
+  },
+
+  "active_quests": [],
+  "completed_quests": [],
+
+  "npc_relations": {
+    "Jamandi Aldori": 8,
+    "Kassil": 3,
+    "Kesten": 2,
+    "Biggs": 5,
+    "Wedge": 3,
+    "Captain Drevic": 2,
+    "Malak": -5,
+    "Tartuccio": 0,
+    "Bokken": 2,
+    "Ezvanki Keeg": 3,
+    "Bellatrix Lestrange": 2,
+    "Atalanta Alter": 2,
+    "Revy": 2,
+    "Satsuki Kiryūin": 1,
+    "Velvet Crowe": 1
+  },
+
+  "kingdom": {
+    "name": "",
+    "founded": false,
+    "ruler_title": "",
+    "advisors": {},
+    "stats": { "economy": 0, "loyalty": 0, "stability": 0, "unrest": 0 },
+    "buildings": [],
+    "active_events": [],
+    "completed_events": [],
+    "treasury": { "gp": 0 },
+    "army_units": [],
+    "prestige_upgrades": [],
+    "pending_modifiers": []
+  },
+
+  "crafting": {
+    "known_formulas": [],
+    "in_progress": []
+  },
+
+  "story_flags": {
+    "gate_entry": "path_E_military_formation_arrest",
+    "gate_remanned_by": "Wedge (on eRmaC's direct order)",
+    "malak_arrested": true,
+    "malak_in_player_custody": false,
+    "malak_arrested_publicly": true,
+    "malak_fled": false,
+    "malak_broken": true,
+    "malak_contact_revealed": true,
+    "malak_broke_first": true,
+    "malak_found_letter_himself": false,
+    "malak_deal_made": false,
+    "malak_bribe_evidence": true,
+    "parchment_source": "Malak coat lining (inner pocket, found by Kassil on Jamandi's search order)",
+    "parchment_recovered": true,
+    "parchment_on_malak_person": true,
+    "malak_escort": {
+      "player_escorting": false,
+      "kesten_joined_escort": false,
+      "biggs_in_escort": true,
+      "wedge_in_escort": false,
+      "escort_note": "eRmaC walked Malak in chains to Jamandi's head table; Biggs held the chain during the search and head-table interrogation; prisoner transferred to Kesten at turn 14 for dungeon processing"
+    },
+    "malak_custody_detail": "Malak is in the manor dungeon under medical care; two arrow wounds dressed and arrow shafts removed; wounds stable at 18/28 HP; formal charge pending player direction; will be available for interrogation",
+    "kesten_met": true,
+    "kesten_searched_malak": false,
+    "kesten_delivered_evidence": false,
+    "kesten_respect": true,
+    "biggs_respect": true,
+    "biggs_crowd_hero": true,
+    "wedge_crowd_hero": true,
+    "directive_two_uncovered": true,
+    "malak_fear_state": true,
+    "malak_voice_mimicked": true,
+    "kassil_met": true,
+    "kassil_first_impression": "professional-respect — Jamandi's operational arm; accepted directives efficiently",
+    "arrived_with_kassil": false,
+    "prison_arc": false,
+    "arrived_late": false,
+    "player_clean_hands": false,
+    "second_hero_witnessed": false,
+    "second_hero_name": "",
+    "tartuccio_knows_player_is_aware": false,
+    "tartuccio_team": "five_seekers",
+    "tartuccio_spy_discovered": false,
+    "tartuccio_spy_discovery_method": "",
+    "tartuccio_plot_armor_intact": true,
+    "tartuccio_recruited_seekers": false,
+    "tartuccio_evidence": [],
+    "tartuccio_evidence_pressure": 0,
+    "malak_coin_purse_assessed": true,
+    "jail_detour_taken": true,
+    "five_seekers_freed_by_player": true,
+    "five_seekers_freed_by_jamandi": false,
+    "five_seekers_released_late": false,
+    "kesten_dispatched_to_jail": false,
+    "drevic_released_on": "self-verifying evidence (feast invitations found in property boxes of detained guests)",
+    "seekers_bond_established": true,
+    "seekers_shared_phrase": "(none — jail bond, no recited catchphrase)",
+    "seekers_dispositions": {
+      "Bellatrix Lestrange": 2,
+      "Atalanta Alter": 2,
+      "Revy": 2,
+      "Satsuki Kiryūin": 1,
+      "Velvet Crowe": 1
+    },
+    "satsuki_signet_ring_lost": true,
+    "jamandi_pre_impression": "strong positive — six-point indictment of Malak, chain-of-evidence protocol, investigative leadership, Lady Sleeps gambit (player-invented), established ARM signal, no casualties; relationship: operational trust established",
+    "public_reputation": 11,
+    "reputation_tier": "FAVORABLE",
+    "reputation_deeds": [
+      "(NOTICED, private +3 — tracked separately, NOT counted in public_reputation) subdued pickpocket nonlethally at east vendor strip and provided food aid — witnessed by Corryn (armorer) and Squire Aldric",
+      "+3 arrested corrupt gate captain Malak via military formation command (Path E) — crowd witnessed",
+      "+2 publicly exposed gate captain's illegal sword-draw and unlawful arrest order (Path B) — crowd witnessed",
+      "+3 freed five wrongfully detained seekers from Restov jail using self-verifying evidence — witnessed by Captain Drevic and five seekers",
+      "+3 invented and executed Lady Sleeps gambit — captured feast assault cell of 6, zero guests harmed, witnessed by ~40 guests at Aldori Manor"
+    ],
+    "reputation_notes": "public_reputation 11 = gate arrest +3 (Path E) + gate exposure +2 (Path B) + jail rescue +3 + Lady Sleeps +3. The tutorial pickpocket deed was NOTICED-tier private (+3) and is tracked separately, not included in the public total. Carried forward from 3_Jamandi.txt.",
+    "weapons_in_garden": true,
+    "promises": [
+      "Jamandi: 'The accountability framework warrants a conversation. Tonight is not that conversation. After.' — Integrated Accountability and Oversight Act pending review"
+    ],
+    "dialogue_choices": [],
+    "linzi_witnessed_gate": false,
+    "leliana_witnessed_gate": true,
+    "chronicler_introduced": false,
+    "tutorial_pickpocket_resolved": "nonlethal_subdued_aided",
+    "tutorial_thief_gender": "female",
+    "tutorial_thief_class": "unknown",
+    "thief_disposition": "subdued nonlethally, stabilized, given food — released",
+    "thief_gear_taken": false,
+    "crew_gear_taken": "none",
+    "crew_resolved_status": "not_applicable",
+    "armorer_favor": true,
+    "armorer_bonus_paid": 0,
+    "squire_aldric_witnessed": true,
+    "lady_sleeps_proposed": true,
+    "lady_sleeps_accepted": true,
+    "lady_sleeps_complete": true,
+    "lady_sleeps_invented_by_player": true,
+    "lady_sleeps_signal_word": "ARM",
+    "lady_sleeps_who_knows": ["Jamandi", "Kassil"],
+    "feast_assault_cell_captured": true,
+    "feast_assault_leader_in_custody": true,
+    "feast_assault_five_surrendered": true,
+    "feast_assault_casualties": 0,
+    "poison_cask_neutralized": true,
+    "counteragent_complete": true,
+    "glass_sweep_complete": true,
+    "caravan_screen_identified": true,
+    "vendor_screen_identified": true,
+    "attack_window_established": true,
+    "attack_window_timing": "2hr40min from feast start (second cask 40min from tapping + 2hr onset = late evening, low light)",
+    "player_feast_position": "near-head-table broad-view (H6 equivalent — between head table and center floor, angled for hall-wide sightlines)",
+    "player_feast_cell": "H6",
+    "pr_01_complete": true,
+    "pr_02_complete": false,
+    "pr_03_carousel_opened": false,
+    "pr_04_pending": true,
+    "feast_approval": {},
+    "feast_companions_satisfied": [],
+    "feast_companions_unsatisfied": [],
+    "feast_companions_declared": [],
+    "night_attack_outcome": "",
+    "jamandi_survived": true,
+    "oleg_met": false,
+    "stag_lord_known": false,
+    "irovetti_letter_found": false,
+    "marriage": {
+      "married": false, "spouse": "", "spouse_origin": "", "wedding_chapter": null,
+      "wedding_type": "", "wedding_vow_freeform": false, "anniversary_count": 0,
+      "anniversary_last_session": 0, "heir_declared": false, "heir_source": "", "heir_name": "",
+      "heir_age_narrative": 0, "separated": false, "separation_reason": "", "separation_chapter": null,
+      "partner_left_voluntarily": false, "widowed": false, "widow_chapter": null,
+      "marriage_history": [], "marriage_strain": 0, "strain_scene_fired": false,
+      "strain_confrontation_active": false
+    },
+    "jealousy": {
+      "love_triangle_active": false, "competing_companions": [], "tier_reached": 0,
+      "open_arrangement": false, "open_partners": [], "secretly_aware": {},
+      "resolution_attempts": [], "jealousy_resolved": false, "resolution_session": null
+    }
+  },
+
+  "pre_prologue_state": {
+    "active": false,
+    "malak_anger": 10,
+    "biggs_drift": 3,
+    "wedge_drift": 2,
+    "gate_window": "closed — Wedge remanning",
+    "tutorial_state": "complete",
+    "tutorial_outcome": "nonlethal_subdued_aided — pickpocket caught, stabilized, given food, released",
+    "linzi_beats_fired": [],
+    "perception_tells_revealed": ["Malak DARVO pattern identified", "gate-window conspiracy deduced", "caravan-screen identified"],
+    "companions_witnessed": ["Leliana (unintroduced — trailing observer)"],
+    "malak_priority_violations": ["drew sword against an unarmed/non-threatening target", "issued unlawful arrest order", "ran deliberate gate conspiracy"],
+    "scene_phase": "complete — entered manor",
+    "exit_trigger": "entered_jamandi_manor"
+  },
+
+  "scene_log": [
+    {
+      "scene_id": "PP_01_restov_arrival",
+      "scene_label": "Restov South Gate — Arrival",
+      "entered_at_turn": 1,
+      "exited_at_turn": 1,
+      "key_events": [
+        "eRmaC arrived at Restov's south gate with Jamandi's feast invitation.",
+        "Leliana observed from a distance (unintroduced chronicler).",
+        "Noted the gate was understaffed relative to a major event.",
+        "East vendor strip active — Corryn armorer, Squire Aldric, vendors present."
+      ],
+      "outcome": "Arrived without incident; proceeding toward the gate."
+    },
+    {
+      "scene_id": "PP_tutorial_pickpocket",
+      "scene_label": "East Vendor Strip — Pickpocket Encounter",
+      "entered_at_turn": 2,
+      "exited_at_turn": 2,
+      "key_events": [
+        "A young woman pickpocketed a vendor at the east strip.",
+        "eRmaC caught her with a single restraint hold — no weapon drawn.",
+        "Subdued her nonlethally and stabilized her (she was not hurt).",
+        "Left food with her before moving on.",
+        "Witnessed by: Corryn (armorer), Squire Aldric, strip vendors.",
+        "Reputation: +3 (nonlethal response, aid given) — tier: NOTICED."
+      ],
+      "outcome": "Pickpocket subdued and aided; armorer_favor=TRUE; squire_aldric_witnessed=TRUE; public_reputation: 3."
+    },
+    {
+      "scene_id": "PP_05_06_gate_confrontation",
+      "scene_label": "South Gate — Malak Confrontation and Arrest",
+      "entered_at_turn": 3,
+      "exited_at_turn": 6,
+      "key_events": [
+        "Gate deliberately unmanned; Malak running shakedown 30 paces south of arch.",
+        "Malak ordered eRmaC to halt, disarm, kneel, and submit to invasive search.",
+        "eRmaC did NOT draw weapon, did NOT produce invitation.",
+        "Named Malak's DARVO pattern publicly (Deny, Attack, Reverse Victim and Offender).",
+        "Deduced the gate-window conspiracy: gate unmanned to allow passage during confrontation.",
+        "Identified caravan lineup as deliberate screen covering both confrontation sightlines and vendor strip.",
+        "Issued ARM coordination word + TRIANGLE FORMATION command to Biggs and Wedge.",
+        "Issued BIGGS SHACKLE command.",
+        "Biggs (12-year veteran, Drift 3) complied; Wedge mirrored.",
+        "eRmaC mimicked Malak's voice — triggered Malak's own wall archers.",
+        "Two arrows hit Malak: shoulder (6 piercing) and side (4 piercing); Malak 28 HP to 18 HP.",
+        "Crowd sided with eRmaC; Biggs and Wedge chanted as crowd heroes.",
+        "Gate remanned by Wedge on eRmaC's direct order.",
+        "Malak confessed Pitax involvement unprompted during march to manor.",
+        "Reputation: +3 arrest, +2 public exposure = +5; total 8 (FAVORABLE)."
+      ],
+      "outcome": "Malak arrested via military formation command; gate secured; Biggs and Wedge allied; Pitax contact confessed; public_reputation: 8 (FAVORABLE)."
+    },
+    {
+      "scene_id": "PP_07_jail_rescue",
+      "scene_label": "Restov Jail — Seeker Rescue",
+      "entered_at_turn": 7,
+      "exited_at_turn": 7,
+      "key_events": [
+        "eRmaC took the jail_detour route before the manor.",
+        "Presented Captain Drevic with self-verifying evidence: feast invitations found in the property boxes of five detained prisoners.",
+        "Evidence established they were wrongfully detained invited guests.",
+        "Drevic released all five without argument.",
+        "Five seekers freed: Bellatrix Lestrange (+2 disposition), Atalanta Alter (+2), Revy (+2), Satsuki Kiryūin (+1), Velvet Crowe (+1).",
+        "Bond established: the shared jail (they recognize eRmaC as their liberator); no recited catchphrase.",
+        "Satsuki Kiryūin's obsidian house signet ring was lost during the release exchange (Ch1 thread open).",
+        "Five seekers departed separately toward the manor.",
+        "five_seekers_freed_by_player=TRUE; seekers_bond_established=TRUE."
+      ],
+      "outcome": "Five seekers freed; positive dispositions established; jail bond recorded (they recognize eRmaC as liberator); signet ring thread open."
+    },
+    {
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "scene_label": "Aldori Manor — Arrival, Head Table, Parchment Reveal",
+      "entered_at_turn": 8,
+      "exited_at_turn": 11,
+      "key_events": [
+        "eRmaC pressed guisarme into manor garden soil before entering (voluntary disarmament; weapons_in_garden=TRUE).",
+        "Walked Malak in chains to Jamandi Aldori's head table.",
+        "Jamandi recognized eRmaC by Dragon Plate armor and riders' descriptions.",
+        "Floor-handover delivered: Jamandi said 'I've heard his account. Now I want yours.'",
+        "eRmaC delivered six-point accountability indictment: (1) incompetence, (2) sabotage — paid to intercept champions, (3) corruption — awaiting bribe, (4) dishonesty — feigned ignorance of the feast, (5) defiance — called Jamandi's seal 'just a letter from some noble,' (6) betrayal — left gate open for infiltrators.",
+        "Requested search of Malak's person to preserve chain of evidence.",
+        "Offered personal accountability: 'if I am wrong I will take his place in the dungeon or on the chopping block.'",
+        "Cleared Biggs and Wedge explicitly.",
+        "Presented the Integrated Accountability and Oversight Act (governance document — blind-seal petition system, mandatory investigation triggers, independent Magistrate-Inspector).",
+        "Jamandi's response at point 5: thumb touched pommel — 'just a letter from some Noble.'",
+        "Jamandi issued mandatory search order: 'Empty him. Here. Now.'",
+        "Kassil searched Malak — coat lining, belt, boots, interior pocket.",
+        "Kassil recovered: 180gp Brevish gold coin purse (fresh mint, bribe payment) + sealed parchment (plain wax seal, intact).",
+        "Jamandi read the parchment.",
+        "Parchment Section I: gate positioning 30 paces, passable hour, 40gp confirmation fee, east lantern unlit.",
+        "Parchment Section II: guest arrest bounties (named seekers, named manor companions), double for arrested; no lethal action authorized.",
+        "Parchment Section III: three candidates placed in serving staff pool, names on attached slip (destroyed after reading), 60gp confirmation + 180gp enclosed. Signed: C.",
+        "Jamandi: 'The gate. The guests. The workers in my house.' / 'Three placed in the serving staff. Tonight. He destroyed the slip.' / 'You brought me exactly what I needed. Stay close. We do this quietly.'",
+        "Accountability Act received, set aside: 'This warrants a conversation. Tonight is not that conversation. After.'",
+        "eRmaC recommended investigative protocol: pause wine service, search kitchen/cellar, staff interviews, use house alchemist.",
+        "Jamandi: 'Bokken is in the manor. Already. I've had him here since the invitations went out.'",
+        "Wine service halted quietly; Kassil dispatched for expanded sweep.",
+        "Staff interviews result: three unknown workers arrived late afternoon on valid manifest, departed before feast — trail dead-ends at service entrance (canonical — placed staff gone the instant poison planted).",
+        "Kitchen sweep: one wine cask in back-row storage, seal re-done (wax color off); positioned as next-in-rotation; not yet served from.",
+        "Bokken identified substance from recovered cask: Ungol Dust variant (paralytic, non-lethal, 2hr onset from ingestion, 40-person concentration, voluntary motor paralysis 6-8hr).",
+        "Ezvanki Keeg (High Priest of Erastil) fetched; precautionary counteragent track initiated (mass blessing + Cleanse Affliction + blessed waters, 40 doses).",
+        "eRmaC calculated attack window: 2hr40min from feast start (second cask 40min from tapping + 2hr onset = late evening, low light).",
+        "Jamandi redirected from arrival-time questioning to wine-rotation timing on eRmaC's correction.",
+        "Kassil confirmed: first cask three-quarters low at halt; second cask would have been tapped ~40min from feast start.",
+        "Jamandi released eRmaC to the feast: 'What you do with the rest of the evening is your decision.'"
+      ],
+      "outcome": "Parchment recovered; bribe exposed; poison plot known; placed staff identified as gone (trail dead); Bokken identified Ungol Dust variant; attack window calculated; investigative protocol running; eRmaC released to the feast."
+    },
+    {
+      "scene_id": "PR_01_lady_sleeps_planning",
+      "scene_label": "Aldori Manor — Lady Sleeps Gambit Planning",
+      "entered_at_turn": 12,
+      "exited_at_turn": 13,
+      "key_events": [
+        "eRmaC whispered the Lady Sleeps gambit to Jamandi: counteragent (already handled), glass sweep with better-vintage pretext, security relax to appear as false alarm, Jamandi announces a party game called The Lady Sleeps, all guests feign paralysis, wait for attackers to enter believing the hall is incapacitated, spring on ARM signal.",
+        "Jamandi received: 'Ezvanki is already working on it.' (counteragent acknowledged); glass sweep accepted; security relax accepted; Lady Sleeps game adopted as new information — player-invented, Jamandi heard it as new ('The lady sleeps. Yes.').",
+        "Jamandi calculated the mechanic: everyone down on her signal; attackers see success; inside the hall is awake and ready.",
+        "ARM established as signal word (eRmaC's answer to Jamandi's 'Signal to rise — what word?').",
+        "who_knows: Jamandi + Kassil.",
+        "Security relax ordered: Kassil held Kesten back; guards returned to parade posture.",
+        "Glass sweep ordered: servants replaced all wine glasses using better-vintage pretext — COMPLETE before announcement.",
+        "eRmaC improvised a garrotte from two silk napkins: zeppelin bend joining the napkins, large overhand knots at each end for handles. Held in right hand as a napkin until deployed.",
+        "eRmaC positioned at H6 (between head table and center floor) — close to Jamandi (3sq), sightlines to all hall entrances (main door, balcony stairs, kitchen passage, seekers corner).",
+        "player_feast_position: near-head-table broad-view (H6). Carousel SUSPENDED — Lady Sleeps operation replaced normal feast circuit."
+      ],
+      "outcome": "Lady Sleeps gambit planned and staged; ARM signal established; glass sweep complete; counteragent distributed; improvised garrotte in hand; player in tactical position."
+    },
+    {
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "scene_label": "Aldori Manor — Lady Sleeps Spring and Feast Assault Capture",
+      "entered_at_turn": 14,
+      "exited_at_turn": 14,
+      "key_events": [
+        "Feast assault cell entered the hall during the Lady Sleeps game, believing the hall fully paralyzed by Ungol Dust.",
+        "eRmaC observed from slitted eyes: identified the leader (the one not checking bodies, giving hand signals to the other five, tracking the cell's movement).",
+        "Perception check to ID leader: d20[16]+3=19 vs DC14 — CRITICAL SUCCESS.",
+        "eRmaC shouted ARM — the hall rose. Jamandi, Kassil, Kesten, 40 guests sprang from feigned sleep.",
+        "eRmaC grabbed a heavy powdery bread roll from the nearest place setting.",
+        "Threw bread roll at leader's face: d20[9]+2=11 vs flat-footed AC 15 — MISS; Hero Point spent for reroll: d20[14]+2=16 vs AC15 — HIT. Flour and crumb exploded across the leader's eyes; he flinched back one step.",
+        "eRmaC moved inside the leader's guard and applied the napkin garrotte from behind.",
+        "Garrotte grapple (Athletics): d20[15]+7=22 vs leader's Fortitude DC 16 — CRITICAL SUCCESS. Leader RESTRAINED (cannot move, flat-footed, -2 to attacks). Dragon Plate against leader's spine.",
+        "eRmaC: 'I dont stop if you pass out. I only loosen if you Command your men to disarm. If you delay it would be the last thing you do.'",
+        "Leader assessed: restrained, flour-blinded, six men surrounded by 40 standing fighters (Jamandi, Kassil, Kesten, companions, guests). Five seekers had weapons drawn (Velvet Crowe, Satsuki Kiryūin visible).",
+        "Leader commanded his men: 'Stand down. Drop it. All of it.'",
+        "Five assassins dropped weapons. Kesten moved in before the last weapon landed.",
+        "All six prisoners secured.",
+        "Ezvanki confirmed: 0 guests exposed to Ungol Dust (cask never tapped; all glasses replaced with clean stock). Zero casualties.",
+        "eRmaC submitted the leader to Kesten with orders: strip search (find all lockpicks, escape devices, ciphers, evidence); separate cells with no sight lines; no communication before interrogation.",
+        "Kesten received prisoners. kesten_met=TRUE (first direct interaction).",
+        "Lady Sleeps gambit recorded as PLAYER-INVENTED legacy moment (KM_Prologue_Systems PHASE 4.5)."
+      ],
+      "outcome": "Feast assault cell captured: 6 prisoners (leader + 5 assassins), 0 guests harmed, Ungol Dust neutralized. Lady Sleeps complete. Kesten processing prisoners (strip search, separate cells, eta 2 turns). PR_04 pending."
+    }
+  ],
+
+  "dice_log": [
+    {
+      "turn": 2,
+      "scene_id": "PP_tutorial_pickpocket",
+      "actor": "eRmaC",
+      "check": "Athletics — grapple/restrain pickpocket",
+      "dc": 12,
+      "modifier": 7,
+      "raw_roll": 8,
+      "total": 15,
+      "result": "SUCCESS",
+      "consequence": "Pickpocket subdued nonlethally; no damage dealt; stabilized."
+    },
+    {
+      "turn": 3,
+      "scene_id": "PP_05_06_gate_confrontation",
+      "actor": "eRmaC",
+      "check": "Deception — voice mimicry of Malak",
+      "dc": 18,
+      "modifier": 3,
+      "raw_roll": 17,
+      "total": 20,
+      "result": "SUCCESS",
+      "consequence": "Wall archers heard Malak's voice; fired two arrows; Malak hit (shoulder + side). Two arrows embedded."
+    },
+    {
+      "turn": 3,
+      "scene_id": "PP_05_06_gate_confrontation",
+      "actor": "Wall Archers (2)",
+      "check": "Strike vs Malak (friendly fire)",
+      "dc": 0,
+      "modifier": 5,
+      "raw_roll": 14,
+      "total": 19,
+      "result": "HIT (arrow 1 — shoulder)",
+      "consequence": "6 piercing damage; Malak 28 HP to 22 HP."
+    },
+    {
+      "turn": 3,
+      "scene_id": "PP_05_06_gate_confrontation",
+      "actor": "Wall Archers (2)",
+      "check": "Strike vs Malak (arrow 2)",
+      "dc": 0,
+      "modifier": 5,
+      "raw_roll": 11,
+      "total": 16,
+      "result": "HIT (arrow 2 — side)",
+      "consequence": "4 piercing damage; Malak 22 HP to 18 HP. Both arrows embedded."
+    },
+    {
+      "turn": 3,
+      "scene_id": "PP_05_06_gate_confrontation",
+      "actor": "Biggs",
+      "check": "Will save — ARM formation command compliance",
+      "dc": 14,
+      "modifier": 4,
+      "raw_roll": 13,
+      "total": 17,
+      "result": "SUCCESS",
+      "consequence": "Biggs complied with ARM + TRIANGLE FORMATION + BIGGS SHACKLE commands."
+    },
+    {
+      "turn": 7,
+      "scene_id": "PP_07_jail_rescue",
+      "actor": "eRmaC",
+      "check": "Society — assess parchment self-verifying value",
+      "dc": 12,
+      "modifier": 3,
+      "raw_roll": 10,
+      "total": 13,
+      "result": "SUCCESS",
+      "consequence": "Correctly identified feast invitations in property boxes as self-verifying evidence of wrongful detention."
+    },
+    {
+      "turn": 8,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "actor": "eRmaC",
+      "check": "Society — assess parchment source and implications",
+      "dc": 15,
+      "modifier": 3,
+      "raw_roll": 14,
+      "total": 17,
+      "result": "SUCCESS",
+      "consequence": "Deduced operational implications: three placed staff now unidentifiable (slip destroyed), broker C anonymous by design, attack window calculable from wine rotation."
+    },
+    {
+      "turn": 10,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "actor": "eRmaC",
+      "check": "Perception — deduce attack window from wine rotation timing",
+      "dc": 13,
+      "modifier": 6,
+      "raw_roll": 9,
+      "total": 15,
+      "result": "SUCCESS",
+      "consequence": "Correctly identified that the arrival-time question was wrong; recalculated attack window as 2hr40min from feast start."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "actor": "eRmaC",
+      "check": "Perception — identify leader from feigned sleep",
+      "dc": 14,
+      "modifier": 3,
+      "raw_roll": 16,
+      "total": 19,
+      "result": "CRITICAL SUCCESS",
+      "consequence": "Leader identified: the one not checking bodies, giving hand signals, tracking cell movement. Pinpointed for first action."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "actor": "eRmaC",
+      "check": "Strike — improvised throw (bread roll) at leader face — FIRST ROLL (missed)",
+      "dc": 0,
+      "modifier": 2,
+      "raw_roll": 9,
+      "total": 11,
+      "result": "MISS vs flat-footed AC 15",
+      "consequence": "Hero Point spent for reroll."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "actor": "eRmaC",
+      "check": "Strike — improvised throw (bread roll) at leader face — HERO POINT REROLL",
+      "dc": 0,
+      "modifier": 2,
+      "raw_roll": 14,
+      "total": 16,
+      "result": "HIT vs flat-footed AC 15",
+      "consequence": "Flour and crumb across leader's eyes; flinched back one step; temporarily impaired vision (dazzled); set up garrotte approach."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "actor": "eRmaC",
+      "check": "Athletics — Grapple (napkin garrotte application) vs leader",
+      "dc": 16,
+      "modifier": 7,
+      "raw_roll": 15,
+      "total": 22,
+      "result": "CRITICAL SUCCESS",
+      "consequence": "Leader RESTRAINED — cannot move, flat-footed, -2 to attacks. Dragon Plate against his spine. Garrotte taut before he could get a hand under it. Human shield position established. Leader commanded men to disarm."
+    }
+  ],
+
+  "dialogue_log_by_npc": {
+    "Malak": [
+      "Issued halt + disarm + kneel demands (shakedown); fabricated '60-ft inspection rule'; threatened the wall archers; backed off when eRmaC refused to comply and began naming his tactics.",
+      "When voice-mimicked: archers fired; he could not countermand them fast enough.",
+      "During arrest march: unprompted confession of Pitax involvement — stated he had been paid from Pitax; did not name the broker."
+    ],
+    "Biggs": [
+      "Hesitated before complying with ARM command; asked 'on what charge?' — eRmaC answered with the charge; Biggs complied.",
+      "Crowd chanted his name alongside Wedge after Malak's arrest.",
+      "Held Malak's chain throughout the manor arrival sequence."
+    ],
+    "Wedge": [
+      "Mirrored Biggs on the ARM command.",
+      "Remanned the gate on eRmaC's direct order.",
+      "Crowd chanted his name alongside Biggs."
+    ],
+    "Leliana": [
+      "No dialogue this session — unintroduced chronicler, documenting from near the hall door; has not spoken to or been spoken to by eRmaC."
+    ],
+    "Squire_Aldric": [
+      "Witnessed the tutorial pickpocket encounter; no direct dialogue; expression: surprised approval."
+    ],
+    "Kesten": [
+      "First direct interaction turn 14: received the leader from eRmaC's garrotte. Received prisoner processing orders (strip search, lockpick removal, separate cells, no communication). Response: 'Done.' One word. Already moving."
+    ],
+    "Kassil": [
+      "Searched Malak on Jamandi's order; recovered 180gp coin purse and sealed parchment; reported findings.",
+      "Received glass sweep directive; directed servants accordingly.",
+      "Received security relax order (hold Kesten back, return to parade posture); executed.",
+      "Received ARM signal briefing via Jamandi."
+    ],
+    "Jamandi": [
+      "Floor-handover: 'I've heard his account. Now I want yours.'",
+      "At point 5 of indictment ('just a letter from some noble'): thumb touched pommel; no spoken response — body language only.",
+      "Search order: 'Empty him. Here. Now.'",
+      "Parchment reception: 'The gate. The guests. The workers in my house.' / 'Three placed in the serving staff. Tonight. He destroyed the slip.' / 'You brought me exactly what I needed. Stay close. We do this quietly.'",
+      "On Accountability Act: 'This warrants a conversation. Tonight is not that conversation. After.'",
+      "On Bokken: 'Bokken is in the manor. Already. I've had him here since the invitations went out.'",
+      "On Malak medical: gave order to attend wounds and move him.",
+      "Q: 'What time did you reach the gate. Approximately.' — then received the correction and redirected.",
+      "Released eRmaC: 'The feast continues. What you do with the rest of the evening is your decision.'",
+      "Received Lady Sleeps gambit as new: 'The lady sleeps. Yes.' / 'Ezvanki is already working on it.' / Accepted all elements efficiently.",
+      "On ARM signal: 'ARM.' (confirmed, committed.) Then: 'Then we play.'"
+    ],
+    "Tartuccio": [
+      "No direct dialogue this session — seated at seekers corner throughout; feigning appropriate reactions; no words addressed to eRmaC."
+    ]
+  },
+
+  "decision_log": [
+    {
+      "turn": 2,
+      "scene_id": "PP_tutorial_pickpocket",
+      "prompt_summary": "Pickpocket caught — how to respond?",
+      "options_offered": 6,
+      "player_choice": "Subdue nonlethally, stabilize, give food — do NOT arrest, do NOT take gear.",
+      "consequence": "reputation +3; armorer_favor=TRUE; thief_gear_taken=FALSE; thief_disposition=aided."
+    },
+    {
+      "turn": 3,
+      "scene_id": "PP_05_06_gate_confrontation",
+      "prompt_summary": "Malak's shakedown — how to respond at the gate?",
+      "options_offered": 8,
+      "player_choice": "Do NOT draw weapon; do NOT produce invitation; name DARVO pattern; deduce gate conspiracy; issue ARM + TRIANGLE FORMATION + BIGGS SHACKLE commands.",
+      "consequence": "Path E (military formation arrest); Biggs and Wedge allied; Malak arrested; crowd sided with player; reputation +3+2=+5."
+    },
+    {
+      "turn": 7,
+      "scene_id": "PP_07_jail_rescue",
+      "prompt_summary": "Proceed straight to manor OR take jail detour?",
+      "options_offered": 4,
+      "player_choice": "Take jail_detour — use feast invitations in property boxes as self-verifying evidence to release five seekers.",
+      "consequence": "five_seekers_freed=TRUE; seekers_bond=TRUE; satsuki_signet_ring_lost=TRUE."
+    },
+    {
+      "turn": 8,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "prompt_summary": "Enter manor — how?",
+      "options_offered": 6,
+      "player_choice": "Press guisarme into garden soil (enter unarmed); walk Malak in chains to head table.",
+      "consequence": "weapons_in_garden=TRUE; established voluntary disarmament; Jamandi's impression: positive."
+    },
+    {
+      "turn": 8,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "prompt_summary": "Respond to Jamandi's floor-handover 'I've heard his account, now I want yours.'",
+      "options_offered": 8,
+      "player_choice": "Delivered six-point accountability indictment; offered personal accountability for being wrong; cleared Biggs and Wedge; presented Accountability Act.",
+      "consequence": "Jamandi ordered search; parchment recovered; bribe exposed; poison plot known."
+    },
+    {
+      "turn": 9,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "prompt_summary": "How to respond to poison threat?",
+      "options_offered": 10,
+      "player_choice": "Recommended investigative protocol: pause wine service quietly, staff interviews, kitchen sweep, use house alchemist, do NOT intimidate staff.",
+      "consequence": "Contaminated cask found; Bokken identified Ungol Dust variant; Ezvanki counteragent track initiated."
+    },
+    {
+      "turn": 10,
+      "scene_id": "PR_01_manor_arrival_parchment",
+      "prompt_summary": "Jamandi asked what time eRmaC arrived at gate.",
+      "options_offered": 8,
+      "player_choice": "Corrected Jamandi — arrival time is wrong variable; what matters is when the second-rotation wine was scheduled to be tapped.",
+      "consequence": "Jamandi redirected to Kassil; attack window calculated as 2hr40min from feast start."
+    },
+    {
+      "turn": 12,
+      "scene_id": "PR_01_lady_sleeps_planning",
+      "prompt_summary": "What to do with the poison-plot intelligence?",
+      "options_offered": 15,
+      "player_choice": "Devised and proposed the Lady Sleeps gambit to Jamandi (whispered): glass sweep + security relax + fake-paralysis game + ARM spring.",
+      "consequence": "Jamandi accepted all elements; glass sweep ordered; counteragent distributed; ARM signal established; lady_sleeps_invented_by_player=TRUE."
+    },
+    {
+      "turn": 13,
+      "scene_id": "PR_01_lady_sleeps_planning",
+      "prompt_summary": "Signal word for rising from Lady Sleeps?",
+      "options_offered": 6,
+      "player_choice": "ARM — the same coordination word used at the gate arrest.",
+      "consequence": "ARM established as signal word; known to Jamandi and Kassil."
+    },
+    {
+      "turn": 13,
+      "scene_id": "PR_01_lady_sleeps_planning",
+      "prompt_summary": "Where to position for the Lady Sleeps trap?",
+      "options_offered": 4,
+      "player_choice": "Improvised napkin garrotte (2 silk napkins, zeppelin bend, end knots); positioned at H6 (near head table, broad view of hall).",
+      "consequence": "player_feast_position=H6; improvised garrotte in inventory; carousel SUSPENDED."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "prompt_summary": "Spring the Lady Sleeps trap — how to take down the leader?",
+      "options_offered": 8,
+      "player_choice": "Observe from slitted eyes to ID leader; shout ARM; throw bread roll (Hero Point); apply napkin garrotte (crit success); use leader as human shield; demand disarm.",
+      "consequence": "Leader restrained (crit grapple); 5 assassins disarmed; 6 captured; 0 casualties; Hero Point spent + reearned."
+    },
+    {
+      "turn": 14,
+      "scene_id": "PR_01_lady_sleeps_combat",
+      "prompt_summary": "What to do with the leader after restraint?",
+      "options_offered": 16,
+      "player_choice": "Submit leader to Kesten; order strip search, lockpick removal, separate cells, no communication before interrogation.",
+      "consequence": "kesten_met=TRUE; delegated order logged; Kesten processing prisoners eta 2 turns."
+    }
+  ],
+
+  "perception_log": [
+    {
+      "turn": 3,
+      "target": "Gate situation — Malak's DARVO pattern",
+      "dc": 14,
+      "rolled": 18,
+      "tell_revealed": "Malak's DARVO pattern identified; gate deliberately unmanned; 30-pace position was operational (screen + confrontation distance)"
+    },
+    {
+      "turn": 8,
+      "target": "Parchment — implications of 'C' signature and destroyed slip",
+      "dc": 15,
+      "rolled": 17,
+      "tell_revealed": "Broker C anonymous by design; placed staff permanently unidentifiable (slip destroyed); trail correctly dead-ends"
+    },
+    {
+      "turn": 10,
+      "target": "Attack window calculation from wine rotation",
+      "dc": 13,
+      "rolled": 15,
+      "tell_revealed": "Attack window: 2hr40min from feast start; second cask 40min from tapping + 2hr onset = late evening low-light timing"
+    },
+    {
+      "turn": 11,
+      "target": "Caravan as visual screen for vendors",
+      "dc": 12,
+      "rolled": 16,
+      "tell_revealed": "Caravan lineup blocked vendor sightlines to gate arch as well as eRmaC's sightlines — deliberate operational screen covering all witnesses"
+    },
+    {
+      "turn": 14,
+      "target": "Feast assault cell — identify leader from feigned sleep",
+      "dc": 14,
+      "rolled": 19,
+      "tell_revealed": "CRITICAL SUCCESS — leader identified: the one not checking bodies, giving hand signals to the other five, running the cell's movement pattern"
+    }
+  ],
+
+  "loot_log": [
+    {
+      "turn": 2,
+      "source": "Personal funds — food for pickpocket",
+      "items": [],
+      "gold_added": { "gp": 0, "sp": 0, "cp": 0 },
+      "gold_deducted": { "gp": 0, "sp": 2, "cp": 0 },
+      "net_note": "2sp spent on food left for pickpocket. Session starting gold was 14gp 7sp 2cp; after deduction: 14gp 5sp 2cp.",
+      "hp_award_loot": false
+    },
+    {
+      "turn": 8,
+      "source": "Malak's person — 180gp bribe coin purse (Brevish gold, fresh mint)",
+      "items": ["180gp Brevish bribe coin (EVIDENCE — not player loot; held as evidence for Jamandi's investigation)"],
+      "gold_added": { "gp": 0, "sp": 0, "cp": 0 },
+      "net_note": "Bribe coin is EVIDENCE seized on Jamandi's order; not added to player gold.",
+      "hp_award_loot": false
+    },
+    {
+      "turn": 13,
+      "source": "Feast hall — improvised weapon crafted",
+      "items": ["Improvised garrotte — 2 silk napkins, zeppelin bend, large overhand knots at each end; Athletics-based grapple/strangle weapon; concealable"],
+      "gold_added": { "gp": 0, "sp": 0, "cp": 0 },
+      "net_note": "No gold cost; improvised from feast materials.",
+      "hp_award_loot": false
+    }
+  ],
+
+  "hp_ledger": [
+    {
+      "turn": 1,
+      "trigger": "Session start — hero points carried from prior session",
+      "awarded": 0,
+      "pool_after": 3,
+      "overflow_after": 7
+    },
+    {
+      "turn": 9,
+      "trigger": "Hero Point — proactive investigative protocol (recommended staff interviews, kitchen sweep, house alchemist, no intimidation; caught the contaminated cask before any guest was poisoned)",
+      "awarded": 1,
+      "pool_after": 3,
+      "overflow_after": 8
+    },
+    {
+      "turn": 10,
+      "trigger": "Hero Point — wine rotation timing correction (redirected Jamandi from wrong variable to correct one; established 2hr40min attack window)",
+      "awarded": 1,
+      "pool_after": 3,
+      "overflow_after": 9
+    },
+    {
+      "turn": 11,
+      "trigger": "Hero Point — caravan-as-vendor-screen identification (identified the caravan blocked vendor sightlines as well as eRmaC's sightlines — full operational picture)",
+      "awarded": 1,
+      "pool_after": 3,
+      "overflow_after": 10
+    },
+    {
+      "turn": 12,
+      "trigger": "Hero Point — Lady Sleeps gambit proposed (player-invented solution that turned enemy's timing and incapacitation plan into a controlled ambush; removed all casualty risk from attack window; saving multiple lives)",
+      "awarded": 1,
+      "pool_after": 3,
+      "overflow_after": 11
+    },
+    {
+      "turn": 14,
+      "trigger": "Hero Point SPENT — bread roll reroll (first roll d20[9]+2=11 missed flat-footed AC15; Hero Point reroll d20[14]+2=16 hit)",
+      "awarded": -1,
+      "pool_after": 2,
+      "overflow_after": 11
+    },
+    {
+      "turn": 14,
+      "trigger": "Hero Point AWARDED — combat execution sequence (identified leader Perception crit success; bread roll distraction under fire; critical-success garrotte grapple; human shield; zero casualties in a 40-person feast hall ambush)",
+      "awarded": 1,
+      "pool_after": 3,
+      "overflow_after": 11
+    }
+  ],
+
+  "xp_ledger": [
+    {
+      "turn": 2,
+      "source": "Tutorial — pickpocket subdued nonlethally and aided",
+      "amount": 50,
+      "running_total": 50
+    },
+    {
+      "turn": 3,
+      "source": "Gate confrontation — deduced conspiracy; named DARVO pattern publicly; rallied Biggs and Wedge; Malak arrested via ARM formation command",
+      "amount": 900,
+      "running_total": 950
+    },
+    {
+      "turn": 3,
+      "source": "Path E bonus — gate remanned, crowd sided with player, public exposure of unlawful arrest order",
+      "amount": 200,
+      "running_total": 1150
+    },
+    {
+      "turn": 7,
+      "source": "Jail rescue — five seekers freed via self-verifying evidence; no confrontation required; bond established",
+      "amount": 100,
+      "running_total": 1250
+    },
+    {
+      "turn": 8,
+      "source": "Manor arrival — six-point indictment delivered; accountability offer; Biggs and Wedge cleared; Accountability Act presented",
+      "amount": 80,
+      "running_total": 1330
+    },
+    {
+      "turn": 8,
+      "source": "Parchment recovery — chain-of-evidence preserved; bribe, poison plot, and placed staff revealed from one source",
+      "amount": 80,
+      "running_total": 1410
+    },
+    {
+      "turn": 8,
+      "source": "Coin purse assessed — Malak's bribe evidence formally assessed and recorded",
+      "amount": 30,
+      "running_total": 1440
+    },
+    {
+      "turn": 9,
+      "source": "Investigative protocol — correctly identified three-job framework (search, identify, cure); no intimidation of staff; caught contaminated cask before any poisoning",
+      "amount": 65,
+      "running_total": 1505
+    },
+    {
+      "turn": 10,
+      "source": "Attack window deduction — redirected Jamandi to wine rotation variable; calculated 2hr40min window",
+      "amount": 60,
+      "running_total": 1565
+    },
+    {
+      "turn": 11,
+      "source": "Caravan-as-screen identified — full operational picture of the gate deception established",
+      "amount": 40,
+      "running_total": 1605
+    },
+    {
+      "turn": 14,
+      "source": "Lady Sleeps combat — feast assault cell (5 assassins + leader) captured; zero casualties; critical-success garrotte; leader surrendered",
+      "amount": 80,
+      "running_total": 1685
+    },
+    {
+      "turn": 14,
+      "source": "Creative bonus — Lady Sleeps gambit flawlessly executed; human shield mechanic; zero guests harmed in a 40-person ambush",
+      "amount": 20,
+      "running_total": 1705
+    }
+  ],
+
+  "fail_log": [],
+
+  "dispositions": {
+    "merciful": 3,
+    "ruthless": 0,
+    "cunning": 5,
+    "blunt": 4,
+    "scholarly": 2
+  },
+
+  "companion_titles": {},
+
+  "pending_hp_loot_rolls": 0,
+  "pending_overflow": 11,
+  "dream_log": [],
+  "dream_cooldown": 0,
+  "player_legacy": [
+    "Invented the Lady Sleeps gambit — a player-devised fake-paralysis trap that turned the enemy's own weapon timing against them; captured 6 assassins without a single casualty in a 40-person feast hall (canonical legacy moment, KM_Prologue_Systems PHASE 4.5)",
+    "ARM — established the coordination signal word at the Restov gate; reused at the manor feast spring",
+    "Freed five seekers from the Restov jail via self-verifying evidence before the feast — jail bond (they recognize eRmaC as their liberator)"
+  ],
+
+  "current_chapter": "prologue",
+  "current_scene": "prologue_feast",
+  "current_location": "Restov — Aldori Manor, Great Feast Hall",
+  "discovered_locations": [
+    "Restov — South Gate",
+    "Restov — East Vendor Strip",
+    "Restov — South Quarter Jail",
+    "Restov — Aldori Manor (exterior grounds)",
+    "Restov — Aldori Manor, Great Feast Hall"
+  ],
+
+  "party_formation": {
+    "vanguard": ["eRmaC", "", "", "", "", ""],
+    "rearguard": ["", "", "", "", "", ""],
+    "reserve": [],
+    "reserve_activities": {},
+    "combat_formation": "tactical_reach",
+    "custom_positions": {
+      "note": "eRmaC uses 10ft reach (15ft in Giant Rage); companions not yet assigned to formation (carousel not opened; all strangers)"
+    }
+  },
+
+  "expedition_funds": 0,
+  "injuries": [],
+
+  "passive_jealousy": {},
+  "companion_rivalry": {},
+  "date_log": [],
+  "dates_this_chapter": 0,
+  "companion_fights": {},
+
+  "game_options": {
+    "leveling_mode": "manual",
+    "companion_leveling_mode": "auto",
+    "companion_combat": "auto",
+    "response_length": "medium",
+    "min_paragraphs": 4,
+    "max_paragraphs": 6,
+    "npc_dialogue_beats_min": 6,
+    "tts_mode": true
+  }
+}
